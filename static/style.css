@@ -15,7 +15,7 @@ nav ol {list-style:none;margin:0;padding:0;}
 nav ol li {float:left;margin:0;padding:0;}
 nav ol li a {padding:.625em;display:block;}
 
-.random {margin:.625em 0 2.5em;}
+.random {margin:1.25em 0 2.5em;}
 
 .cards > li {width:25%;float:left;box-sizing:border-box;padding:0 1em 1em;}
 
@@ -34,7 +34,7 @@ nav ol li a {padding:.625em;display:block;}
 .card .stranka .zares {background:orange;}
 .card .stranka .sd {background:red;color:#fff;}
 /* img */
-.card .img {border:1px solid #999;height:245px;overflow:hidden;}
+.card .img {border:1px solid #999;height:240px;overflow:hidden;}
 .card .img img {max-width:100%;width:100%;display:block;}
 /* stats */
 .card dt {float:left;}
