@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'delajozate.views.home', name='home'),
     # url(r'^delajozate/', include('delajozate.foo.urls')),
     url(r'^search/', include('search.urls')),
+    url(r'^hs/', include('haystack.urls')),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

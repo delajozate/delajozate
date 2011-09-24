@@ -1,6 +1,10 @@
 from django.db import models
 
 # Modeli za magnetograme
+from haystack.fields import CharField
+from haystack.indexes import SearchIndex
+from haystack.sites import site
+
 class Seja(models.Model):
     naslov = models.CharField(max_length=255)
     seja = models.CharField(max_length=255) # TODO: check validity
