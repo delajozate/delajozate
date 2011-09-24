@@ -1,4 +1,5 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 
 class Oseba(models.Model):
 	ime = models.CharField(max_length=32)
@@ -10,6 +11,16 @@ class Oseba(models.Model):
 	spletna_stran = models.URLField(blank=True)
 	twitter = models.CharField(max_length=32, blank=True)
 	facebook = models.URLField(blank=True)
+
+	def save(self, *args, **kwargs):
+		if not self.slug:
+			self.slug = slug = slugify("%s %s" % (self.ime, self.priimek))
+			count = 2
+			while Company.objects.filter(slug=self.slug).count():
+				self.slug = "%s-%d" % (slug, count)
+				count += 1
+				
+		super(Oseba, self).save(*args, **kwargs)
 
 
 class Stranka(models.Model):
