@@ -1,3 +1,6 @@
+import os
+here = lambda x: os.path.join(os.path.dirname(os.path.abspath(__file__)), x)
+
 # Django settings for delajozate project.
 
 ADMINS = (
@@ -11,9 +14,9 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
+        'NAME': 'delajozate',                      # Or path to database file if using sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
+        'PASSWORD': 'zemanta',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -153,6 +156,10 @@ LOGGING = {
         },
     }
 }
+
+FIXTURE_DIRS = (
+	here('fixtures/'),
+)
 
 import traceback
 try:

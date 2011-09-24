@@ -6,7 +6,7 @@ class Oseba(models.Model):
 	priimek = models.CharField(max_length=64)
 	slug = models.SlugField(max_length=96)
 	email = models.EmailField(max_length=64, blank=True)
-	rojstni_dan = models.DateField(blank=True)
+	rojstni_dan = models.DateField(blank=True, null=True)
 	slika = models.URLField(blank=True)
 	spletna_stran = models.URLField(blank=True)
 	twitter = models.CharField(max_length=32, blank=True)
@@ -16,7 +16,7 @@ class Oseba(models.Model):
 		if not self.slug:
 			self.slug = slug = slugify("%s %s" % (self.ime, self.priimek))
 			count = 2
-			while Company.objects.filter(slug=self.slug).count():
+			while Oseba.objects.filter(slug=self.slug).count():
 				self.slug = "%s-%d" % (slug, count)
 				count += 1
 				
