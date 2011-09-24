@@ -5,7 +5,7 @@ from dz.models import Mandat, Oseba, Poslanec
 mandates = Mandat.objects.all()
 
 # Specify source file
-source_file = 'C:/Development/Projects/delajozate/poslanci_data/poslanci_clean.csv'
+source_file = 'csv_fixtures/poslanci_clean.csv'
 
 rdr = csv.reader(open(source_file))
 
