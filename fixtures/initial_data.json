@@ -180,21 +180,6 @@
     }
   }, 
   {
-    "pk": 15, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Geza", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "geza-dzuban", 
-      "priimek": "D\u017euban", 
-      "slika": ""
-    }
-  }, 
-  {
     "pk": 16, 
     "model": "dz.oseba", 
     "fields": {
@@ -251,21 +236,6 @@
       "facebook": "", 
       "slug": "benjamin-henigman", 
       "priimek": "Henigman", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 20, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Franc", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "franc-feri-horvat", 
-      "priimek": "(Feri) Horvat", 
       "slika": ""
     }
   }, 
@@ -660,21 +630,6 @@
     }
   }, 
   {
-    "pk": 50, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Rudolf", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "rudolf-moge", 
-      "priimek": "Moge", 
-      "slika": ""
-    }
-  }, 
-  {
     "pk": 51, 
     "model": "dz.oseba", 
     "fields": {
@@ -926,21 +881,6 @@
       "facebook": "", 
       "slug": "vika-potocnik", 
       "priimek": "Poto\u010dnik", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 70, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Maria", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "maria-pozsonec", 
-      "priimek": "Pozsonec", 
       "slika": ""
     }
   }, 
@@ -1425,21 +1365,6 @@
     }
   }, 
   {
-    "pk": 103, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Josip", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "josip-bajc", 
-      "priimek": "Bajc", 
-      "slika": ""
-    }
-  }, 
-  {
     "pk": 104, 
     "model": "dz.oseba", 
     "fields": {
@@ -1481,21 +1406,6 @@
       "facebook": "", 
       "slug": "ivan-bozic", 
       "priimek": "Bo\u017ei\u010d", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 108, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Stanislav", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "stanislav-brencic", 
-      "priimek": "Bren\u010di\u010d", 
       "slika": ""
     }
   }, 
@@ -1635,6 +1545,66 @@
     }
   }, 
   {
+    "pk": 20, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Franc", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "franc-feri-horvat", 
+      "priimek": "(Feri) Horvat", 
+      "slika": "/static/img/poslanci/small/franc-feri-horvat.jpg"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Geza", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "geza-dzuban", 
+      "priimek": "D\u017euban", 
+      "slika": "/static/img/poslanci/small/geza-dzuban.jpg"
+    }
+  }, 
+  {
+    "pk": 103, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Josip", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "josip-bajc", 
+      "priimek": "Bajc", 
+      "slika": "/static/img/poslanci/small/josip-bajc.jpg"
+    }
+  }, 
+  {
+    "pk": 50, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Rudolf", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "rudolf-moge", 
+      "priimek": "Moge", 
+      "slika": "/static/img/poslanci/small/rudolf-moge.jpg"
+    }
+  }, 
+  {
     "pk": 115, 
     "model": "dz.oseba", 
     "fields": {
@@ -1646,36 +1616,6 @@
       "facebook": "", 
       "slug": "metod-dragonja", 
       "priimek": "Dragonja", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 116, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Andrej", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "andrej-fabjan", 
-      "priimek": "Fabjan", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 117, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Slavko", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "slavko-gaber", 
-      "priimek": "Gaber", 
       "slika": ""
     }
   }, 
@@ -1781,36 +1721,6 @@
       "facebook": "", 
       "slug": "roman-jakic", 
       "priimek": "Jaki\u010d", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 125, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Franc", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "franc-jazbec", 
-      "priimek": "Jazbec", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 127, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Aurelio", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "aurelio-juri", 
-      "priimek": "Juri", 
       "slika": ""
     }
   }, 
@@ -1935,21 +1845,6 @@
     }
   }, 
   {
-    "pk": 137, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Janez", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "janez-kramberger", 
-      "priimek": "Kramberger", 
-      "slika": ""
-    }
-  }, 
-  {
     "pk": 138, 
     "model": "dz.oseba", 
     "fields": {
@@ -1961,21 +1856,6 @@
       "facebook": "", 
       "slug": "majda-ana-kregelj-zbacnik", 
       "priimek": "Ana Kregelj Zba\u010dnik", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 139, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Darja", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "darja-lavtizar-bebler", 
-      "priimek": "Lavti\u017ear Bebler", 
       "slika": ""
     }
   }, 
@@ -2111,21 +1991,6 @@
       "facebook": "", 
       "slug": "anton-partljic", 
       "priimek": "Partlji\u010d", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 149, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Sa\u0161o", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "saso-pece", 
-      "priimek": "Pe\u010de", 
       "slika": ""
     }
   }, 
@@ -2385,21 +2250,6 @@
     }
   }, 
   {
-    "pk": 172, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Bogomir", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "bogomir-zamernik", 
-      "priimek": "Zamernik", 
-      "slika": ""
-    }
-  }, 
-  {
     "pk": 173, 
     "model": "dz.oseba", 
     "fields": {
@@ -2546,21 +2396,6 @@
       "facebook": "", 
       "slug": "marko-diaci", 
       "priimek": "Diaci", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 186, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Janez", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "janez-drobnic", 
-      "priimek": "Drobni\u010d", 
       "slika": ""
     }
   }, 
@@ -2865,21 +2700,6 @@
     }
   }, 
   {
-    "pk": 209, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Anton", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "anton-rop", 
-      "priimek": "Rop", 
-      "slika": ""
-    }
-  }, 
-  {
     "pk": 210, 
     "model": "dz.oseba", 
     "fields": {
@@ -2895,21 +2715,6 @@
     }
   }, 
   {
-    "pk": 211, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Alojz", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "alojz-sok", 
-      "priimek": "Sok", 
-      "slika": ""
-    }
-  }, 
-  {
     "pk": 212, 
     "model": "dz.oseba", 
     "fields": {
@@ -2921,36 +2726,6 @@
       "facebook": "", 
       "slug": "stanislava-stopar", 
       "priimek": "Stopar", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 213, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Franc", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "franc-susnik", 
-      "priimek": "Su\u0161nik", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 214, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Majda", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "majda-sirca", 
-      "priimek": "\u0160irca", 
       "slika": ""
     }
   }, 
@@ -2981,21 +2756,6 @@
       "facebook": "", 
       "slug": "borut-suklje", 
       "priimek": "\u0160uklje", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 217, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Matja\u017e", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "matjaz-svagan", 
-      "priimek": "\u0160vagan", 
       "slika": ""
     }
   }, 
@@ -3045,21 +2805,6 @@
     }
   }, 
   {
-    "pk": 223, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Cveta", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "cveta-zalokar-orazem", 
-      "priimek": "Zalokar Ora\u017eem", 
-      "slika": ""
-    }
-  }, 
-  {
     "pk": 224, 
     "model": "dz.oseba", 
     "fields": {
@@ -3071,36 +2816,6 @@
       "facebook": "", 
       "slug": "jasa-zlobec-lukic", 
       "priimek": "Zlobec Luki\u010d", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 225, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Majda", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "majda-zupan", 
-      "priimek": "Zupan", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 226, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Andrej", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "andrej-brucan", 
-      "priimek": "Bru\u010dan", 
       "slika": ""
     }
   }, 
@@ -3210,6 +2925,171 @@
     }
   }, 
   {
+    "pk": 211, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Alojz", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "alojz-sok", 
+      "priimek": "Sok", 
+      "slika": "/static/img/poslanci/small/alojz-sok.jpg"
+    }
+  }, 
+  {
+    "pk": 226, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Andrej", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "andrej-brucan", 
+      "priimek": "Bru\u010dan", 
+      "slika": "/static/img/poslanci/small/andrej-brucan.jpg"
+    }
+  }, 
+  {
+    "pk": 209, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Anton", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "anton-rop", 
+      "priimek": "Rop", 
+      "slika": "/static/img/poslanci/small/anton-rop.jpg"
+    }
+  }, 
+  {
+    "pk": 172, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Bogomir", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "bogomir-zamernik", 
+      "priimek": "Zamernik", 
+      "slika": "/static/img/poslanci/small/bogomir-zamernik.jpg"
+    }
+  }, 
+  {
+    "pk": 139, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Darja", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "darja-lavtizar-bebler", 
+      "priimek": "Lavti\u017ear Bebler", 
+      "slika": "/static/img/poslanci/small/darja-lavtizar-bebler.jpg"
+    }
+  }, 
+  {
+    "pk": 125, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Franc", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "franc-jazbec", 
+      "priimek": "Jazbec", 
+      "slika": "/static/img/poslanci/small/franc-jazbec.jpg"
+    }
+  }, 
+  {
+    "pk": 186, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Janez", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "janez-drobnic", 
+      "priimek": "Drobni\u010d", 
+      "slika": "/static/img/poslanci/small/janez-drobnic.jpg"
+    }
+  }, 
+  {
+    "pk": 214, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Majda", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "majda-sirca", 
+      "priimek": "\u0160irca", 
+      "slika": "/static/img/poslanci/small/majda-sirca.jpg"
+    }
+  }, 
+  {
+    "pk": 225, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Majda", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "majda-zupan", 
+      "priimek": "Zupan", 
+      "slika": "/static/img/poslanci/small/majda-zupan.jpg"
+    }
+  }, 
+  {
+    "pk": 149, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Sa\u0161o", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "saso-pece", 
+      "priimek": "Pe\u010de", 
+      "slika": "/static/img/poslanci/small/saso-pece.jpg"
+    }
+  }, 
+  {
+    "pk": 117, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Slavko", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "slavko-gaber", 
+      "priimek": "Gaber", 
+      "slika": "/static/img/poslanci/small/slavko-gaber.jpg"
+    }
+  }, 
+  {
     "pk": 227, 
     "model": "dz.oseba", 
     "fields": {
@@ -3240,21 +3120,6 @@
     }
   }, 
   {
-    "pk": 230, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Marjan", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "marjan-drofenik", 
-      "priimek": "Drofenik", 
-      "slika": ""
-    }
-  }, 
-  {
     "pk": 231, 
     "model": "dz.oseba", 
     "fields": {
@@ -3266,216 +3131,6 @@
       "facebook": "", 
       "slug": "jozef-ficko", 
       "priimek": "Ficko", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 235, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Ale\u0161", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "ales-gulic", 
-      "priimek": "Guli\u010d", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 237, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Bojan", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "bojan-homan", 
-      "priimek": "Homan", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 238, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Jo\u017eef", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "jozef-horvat", 
-      "priimek": "Horvat", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 239, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Sre\u010dko", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "srecko-hvauc", 
-      "priimek": "Hvauc", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 241, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Kristijan", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "kristijan-janc", 
-      "priimek": "Janc", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 242, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Ivan", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "ivan-jelen", 
-      "priimek": "Jelen", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 245, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Anton", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "anton-kokalj", 
-      "priimek": "Kokalj", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 246, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Drago", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "drago-koren", 
-      "priimek": "Koren", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 247, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Dimitrij", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "dimitrij-kovacic", 
-      "priimek": "Kova\u010di\u010d", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 249, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Mojca", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "mojca-kucler-dolinar", 
-      "priimek": "Kucler Dolinar", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 251, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Matej", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "matej-lahovnik", 
-      "priimek": "Lahovnik", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 252, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Mitja", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "mitja-ljubeljsek", 
-      "priimek": "Ljubelj\u0161ek", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 254, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Martin", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "martin-mikolic", 
-      "priimek": "Mikoli\u010d", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 255, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Stane", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "stane-pajk", 
-      "priimek": "Pajk", 
       "slika": ""
     }
   }, 
@@ -3495,171 +3150,6 @@
     }
   }, 
   {
-    "pk": 257, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Milan", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "milan-petek", 
-      "priimek": "Petek", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 260, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Alojz", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "alojz-posedel", 
-      "priimek": "Posedel", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 261, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Mihael", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "mihael-prevc", 
-      "priimek": "Prevc", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 262, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Sre\u010dko", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "srecko-prijatelj", 
-      "priimek": "Prijatelj", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 264, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Bojan", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "bojan-rugelj", 
-      "priimek": "Rugelj", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 266, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Mitja", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "mitja-slavinec", 
-      "priimek": "Slavinec", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 267, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Bojan", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "bojan-starman", 
-      "priimek": "Starman", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 268, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Ciril", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "ciril-testen", 
-      "priimek": "Testen", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 269, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Marjetka", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "marjetka-uhan", 
-      "priimek": "Uhan", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 270, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Rudi", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "rudi-versnik", 
-      "priimek": "Ver\u0161nik", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 271, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Bo\u0161tjan", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "bostjan-zagorac", 
-      "priimek": "Zagorac", 
-      "slika": ""
-    }
-  }, 
-  {
     "pk": 273, 
     "model": "dz.oseba", 
     "fields": {
@@ -3671,21 +3161,6 @@
       "facebook": "", 
       "slug": "miran-zver", 
       "priimek": "Zver", 
-      "slika": ""
-    }
-  }, 
-  {
-    "pk": 274, 
-    "model": "dz.oseba", 
-    "fields": {
-      "rojstni_dan": null, 
-      "ime": "Barbara", 
-      "twitter": "", 
-      "email": "", 
-      "spletna_stran": "", 
-      "facebook": "", 
-      "slug": "barbara-zgajner-tavs", 
-      "priimek": "\u017dgajner Tav\u0161", 
       "slika": ""
     }
   }, 
@@ -4107,6 +3582,531 @@
       "slug": "zvonko-cernac", 
       "priimek": "\u010cerna\u010d", 
       "slika": "/static/img/poslanci/small/zvonko-cernac.jpg"
+    }
+  }, 
+  {
+    "pk": 235, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Ale\u0161", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "ales-gulic", 
+      "priimek": "Guli\u010d", 
+      "slika": "/static/img/poslanci/small/ales-gulic.jpg"
+    }
+  }, 
+  {
+    "pk": 260, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Alojz", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "alojz-posedel", 
+      "priimek": "Posedel", 
+      "slika": "/static/img/poslanci/small/alojz-posedel.jpg"
+    }
+  }, 
+  {
+    "pk": 116, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Andrej", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "andrej-fabjan", 
+      "priimek": "Fabjan", 
+      "slika": "/static/img/poslanci/small/andrej-fabjan.jpg"
+    }
+  }, 
+  {
+    "pk": 245, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Anton", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "anton-kokalj", 
+      "priimek": "Kokalj", 
+      "slika": "/static/img/poslanci/small/anton-kokalj.jpg"
+    }
+  }, 
+  {
+    "pk": 127, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Aurelio", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "aurelio-juri", 
+      "priimek": "Juri", 
+      "slika": "/static/img/poslanci/small/aurelio-juri.jpg"
+    }
+  }, 
+  {
+    "pk": 274, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Barbara", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "barbara-zgajner-tavs", 
+      "priimek": "\u017dgajner Tav\u0161", 
+      "slika": "/static/img/poslanci/small/barbara-zgajner-tavs.jpg"
+    }
+  }, 
+  {
+    "pk": 237, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Bojan", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "bojan-homan", 
+      "priimek": "Homan", 
+      "slika": "/static/img/poslanci/small/bojan-homan.jpg"
+    }
+  }, 
+  {
+    "pk": 264, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Bojan", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "bojan-rugelj", 
+      "priimek": "Rugelj", 
+      "slika": "/static/img/poslanci/small/bojan-rugelj.jpg"
+    }
+  }, 
+  {
+    "pk": 267, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Bojan", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "bojan-starman", 
+      "priimek": "Starman", 
+      "slika": "/static/img/poslanci/small/bojan-starman.jpg"
+    }
+  }, 
+  {
+    "pk": 271, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Bo\u0161tjan", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "bostjan-zagorac", 
+      "priimek": "Zagorac", 
+      "slika": "/static/img/poslanci/small/bostjan-zagorac.jpg"
+    }
+  }, 
+  {
+    "pk": 268, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Ciril", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "ciril-testen", 
+      "priimek": "Testen", 
+      "slika": "/static/img/poslanci/small/ciril-testen.jpg"
+    }
+  }, 
+  {
+    "pk": 223, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Cveta", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "cveta-zalokar-orazem", 
+      "priimek": "Zalokar Ora\u017eem", 
+      "slika": "/static/img/poslanci/small/cveta-zalokar-orazem.jpg"
+    }
+  }, 
+  {
+    "pk": 247, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Dimitrij", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "dimitrij-kovacic", 
+      "priimek": "Kova\u010di\u010d", 
+      "slika": "/static/img/poslanci/small/dimitrij-kovacic.jpg"
+    }
+  }, 
+  {
+    "pk": 246, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Drago", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "drago-koren", 
+      "priimek": "Koren", 
+      "slika": "/static/img/poslanci/small/drago-koren.jpg"
+    }
+  }, 
+  {
+    "pk": 213, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Franc", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "franc-susnik", 
+      "priimek": "Su\u0161nik", 
+      "slika": "/static/img/poslanci/small/franc-susnik.jpg"
+    }
+  }, 
+  {
+    "pk": 242, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Ivan", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "ivan-jelen", 
+      "priimek": "Jelen", 
+      "slika": "/static/img/poslanci/small/ivan-jelen.jpg"
+    }
+  }, 
+  {
+    "pk": 137, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Janez", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "janez-kramberger", 
+      "priimek": "Kramberger", 
+      "slika": "/static/img/poslanci/small/janez-kramberger.jpg"
+    }
+  }, 
+  {
+    "pk": 238, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Jo\u017eef", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "jozef-horvat", 
+      "priimek": "Horvat", 
+      "slika": "/static/img/poslanci/small/jozef-horvat.jpg"
+    }
+  }, 
+  {
+    "pk": 241, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Kristijan", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "kristijan-janc", 
+      "priimek": "Janc", 
+      "slika": "/static/img/poslanci/small/kristijan-janc.jpg"
+    }
+  }, 
+  {
+    "pk": 70, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Maria", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "maria-pozsonec", 
+      "priimek": "Pozsonec", 
+      "slika": "/static/img/poslanci/small/maria-pozsonec.jpg"
+    }
+  }, 
+  {
+    "pk": 230, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Marjan", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "marjan-drofenik", 
+      "priimek": "Drofenik", 
+      "slika": "/static/img/poslanci/small/marjan-drofenik.jpg"
+    }
+  }, 
+  {
+    "pk": 269, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Marjetka", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "marjetka-uhan", 
+      "priimek": "Uhan", 
+      "slika": "/static/img/poslanci/small/marjetka-uhan.jpg"
+    }
+  }, 
+  {
+    "pk": 254, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Martin", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "martin-mikolic", 
+      "priimek": "Mikoli\u010d", 
+      "slika": "/static/img/poslanci/small/martin-mikolic.jpg"
+    }
+  }, 
+  {
+    "pk": 251, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Matej", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "matej-lahovnik", 
+      "priimek": "Lahovnik", 
+      "slika": "/static/img/poslanci/small/matej-lahovnik.jpg"
+    }
+  }, 
+  {
+    "pk": 217, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Matja\u017e", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "matjaz-svagan", 
+      "priimek": "\u0160vagan", 
+      "slika": "/static/img/poslanci/small/matjaz-svagan.jpg"
+    }
+  }, 
+  {
+    "pk": 261, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Mihael", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "mihael-prevc", 
+      "priimek": "Prevc", 
+      "slika": "/static/img/poslanci/small/mihael-prevc.jpg"
+    }
+  }, 
+  {
+    "pk": 257, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Milan", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "milan-petek", 
+      "priimek": "Petek", 
+      "slika": "/static/img/poslanci/small/milan-petek.jpg"
+    }
+  }, 
+  {
+    "pk": 252, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Mitja", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "mitja-ljubeljsek", 
+      "priimek": "Ljubelj\u0161ek", 
+      "slika": "/static/img/poslanci/small/mitja-ljubeljsek.jpg"
+    }
+  }, 
+  {
+    "pk": 266, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Mitja", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "mitja-slavinec", 
+      "priimek": "Slavinec", 
+      "slika": "/static/img/poslanci/small/mitja-slavinec.jpg"
+    }
+  }, 
+  {
+    "pk": 249, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Mojca", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "mojca-kucler-dolinar", 
+      "priimek": "Kucler Dolinar", 
+      "slika": "/static/img/poslanci/small/mojca-kucler-dolinar.jpg"
+    }
+  }, 
+  {
+    "pk": 270, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Rudi", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "rudi-versnik", 
+      "priimek": "Ver\u0161nik", 
+      "slika": "/static/img/poslanci/small/rudi-versnik.jpg"
+    }
+  }, 
+  {
+    "pk": 239, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Sre\u010dko", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "srecko-hvauc", 
+      "priimek": "Hvauc", 
+      "slika": "/static/img/poslanci/small/srecko-hvauc.jpg"
+    }
+  }, 
+  {
+    "pk": 262, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Sre\u010dko", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "srecko-prijatelj", 
+      "priimek": "Prijatelj", 
+      "slika": "/static/img/poslanci/small/srecko-prijatelj.jpg"
+    }
+  }, 
+  {
+    "pk": 255, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Stane", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "stane-pajk", 
+      "priimek": "Pajk", 
+      "slika": "/static/img/poslanci/small/stane-pajk.jpg"
+    }
+  }, 
+  {
+    "pk": 108, 
+    "model": "dz.oseba", 
+    "fields": {
+      "rojstni_dan": null, 
+      "ime": "Stanislav", 
+      "twitter": "", 
+      "email": "", 
+      "spletna_stran": "", 
+      "facebook": "", 
+      "slug": "stanislav-brencic", 
+      "priimek": "Bren\u010di\u010d", 
+      "slika": "/static/img/poslanci/small/stanislav-brencic.jpg"
     }
   }, 
   {
