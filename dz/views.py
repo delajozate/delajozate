@@ -26,7 +26,6 @@ def home(request):
 	if not poslanci:
 		if not mandat:
 			mandat = Mandat.objects.filter(st=mandat_st)[0]
-		#poslanci = Poslanec.objects.filter(mandat=mandat,do__isnull=True).values('id', 'oseba')
 		poslanci = Poslanec.objects.filter(mandat=mandat)
 		cache.set('dz-poslanci', poslanci)
 
