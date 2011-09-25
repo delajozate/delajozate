@@ -31,10 +31,10 @@ def home(request):
 
 	# Izberi 4 nakljucne
 	st_poslancev = len(poslanci)
-	picked = []
+	picked = set([])
 	izbrani = []
-	for i in range(4):
-		picked.append(poslanci[random.randint(0, st_poslancev-1)])
+	while len(picked) < 4:
+		picked.add(poslanci[random.randint(0, st_poslancev-1)])
 
 	# Za vsakega kandidata poberi...
 	for k in picked:
