@@ -43,6 +43,7 @@ def home(request):
 		# ... osebne podatke (ime, sliko)
 		oseba = k.oseba
 		kandidat['ime'] = "%s %s" % (oseba.ime, oseba.priimek)
+		kandidat['slug'] = oseba.slug
 		kandidat['slika'] = oseba.slika
 
 		# ... mandate v katerih je bil (=> izracunaj stevilo in obdobje v dneh)
