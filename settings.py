@@ -135,7 +135,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'south',
     'dz',
-    #'haystack',
+    'haystack',
     'search'
 )
 
