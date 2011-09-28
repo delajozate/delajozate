@@ -1,3 +1,4 @@
+# coding: utf-8
 from django.db import models
 from django.template.defaultfilters import slugify
 
@@ -7,11 +8,18 @@ class Oseba(models.Model):
 	slug = models.SlugField(max_length=96)
 	email = models.EmailField(max_length=64, blank=True)
 	rojstni_dan = models.DateField(blank=True, null=True)
-	slika = models.URLField(blank=True)
+	slika = models.CharField(max_length=200, blank=True)
 	spletna_stran = models.URLField(blank=True)
 	twitter = models.CharField(max_length=32, blank=True)
 	facebook = models.URLField(blank=True)
-
+	
+	class Meta:
+		ordering = ('priimek', 'ime')
+		verbose_name_plural = u'Osebe'
+	
+	def __unicode__(self):
+		return u'%s %s' % (self.ime, self.priimek)
+	
 	def save(self, *args, **kwargs):
 		if not self.slug:
 			self.slug = slug = slugify("%s %s" % (self.ime, self.priimek))
@@ -33,30 +41,50 @@ class Stranka(models.Model):
 	spletna_stran = models.URLField(blank=True)
 	twitter = models.CharField(max_length=32, blank=True)
 	facebook = models.URLField(blank=True)
-
+	
+	class Meta:
+		verbose_name_plural = u'Stranke'
 
 class Skupina(models.Model): # Poslanska
 	ime = models.CharField(max_length=64)
 	stranka = models.ForeignKey(Stranka, null=True, blank=True)
+	
+	class Meta:
+		verbose_name_plural = u'Skupine'
 
 
 class ClanStranke(models.Model):
 	oseba = models.ForeignKey(Oseba)
 	od = models.DateField()
 	do = models.DateField(blank=True)
+	
+	class Meta:
+		verbose_name = u'Član stranke'
+		verbose_name_plural = u'Člani strank'
 
 
 class Mandat(models.Model):
 	st = models.IntegerField() # Kateri mandat
 	od = models.DateField()
 	do = models.DateField(blank=True)
-
+	
+	class Meta:
+		verbose_name_plural = u'Mandati'
+	
+	def __unicode__(self):
+		return unicode(self.st)
 
 class Poslanec(models.Model):
 	oseba = models.ForeignKey(Oseba)
 	mandat = models.ForeignKey(Mandat)
 	od = models.DateField()
 	do = models.DateField(blank=True)
+	
+	class Meta:
+		verbose_name_plural = u'Poslanci'
+	
+	def __unicode__(self):
+		return u'%s (%s)' % (self.oseba, self.mandat)
 
 
 class Odbor(models.Model):
@@ -64,6 +92,9 @@ class Odbor(models.Model):
 	mandat = models.ForeignKey(Mandat)
 	od = models.DateField()
 	do = models.DateField(blank=True)
+	
+	class Meta:
+		verbose_name_plural = u'Odbori'
 
 
 class ClanOdbora(models.Model):
@@ -73,3 +104,8 @@ class ClanOdbora(models.Model):
 	funkcija = models.CharField(max_length=32)
 	od = models.DateField()
 	do = models.DateField(blank=True)
+	
+	class Meta:
+		verbose_name = u'Član odbora'
+		verbose_name_plural = u'Člani odbora'
+	
