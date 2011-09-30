@@ -20,11 +20,14 @@ class SejaInfo(models.Model):
 
 class Zasedanje(models.Model):
     seja = models.ForeignKey(Seja)
-    datum = models.DateField()
+    naslov = models.CharField(max_length=255, null=True)
+    datum = models.DateField(null=True)
+    zacetek = models.TimeField(null=True)
+    konec = models.TimeField(null=True)
+    url = models.URLField(null=True)
+    tip = models.CharField(max_length=255, null=True)
 
-class Povezava(models.Model):
+class Zapis(models.Model):
     zasedanje = models.ForeignKey(Zasedanje)
-    url = models.URLField()
-    text = models.TextField()
-    naslov = models.CharField(max_length=255)
-    tip = models.CharField(max_length=255)
+    odstavki = models.TextField(null=True)
+    govorec = models.CharField(max_length=255, null=True)

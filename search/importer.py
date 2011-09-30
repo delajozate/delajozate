@@ -1,7 +1,8 @@
 import json
 import os
 import dateutil.parser
-from search.models import Seja, SejaInfo, Zasedanje, Povezava
+import time
+from search.models import Seja, SejaInfo, Zasedanje, Zapis
 
 class Importer():
 
@@ -11,8 +12,25 @@ class Importer():
         """
         self.file_directory = file_directory
 
+    def parse_time(self, time_string):
+        try:
+            parsed_time = time.strptime(time_string, "%H.%S")
+        except:
+            try:
+                parsed_time = time.strptime(time_string, "%H")
+            except:
+                parsed_time = None
+
+        if parsed_time:
+            return time.strftime("%H:%S", parsed_time)
+        else:
+            return None
+
     def do_import(self):
         files = os.listdir(self.file_directory)
+
+        for seja in Seja.objects.all():
+            seja.delete()
 
         for file in files:
             try:
@@ -44,18 +62,25 @@ class Importer():
 
             # Zasedanja
             for jsonZasedanje in jsonData.get('zasedanja'):
-                zasedanje = Zasedanje()
-                zasedanje.datum = dateutil.parser.parse(jsonZasedanje.get('datum'), dayfirst=True)
-                zasedanje.seja = seja
-                zasedanje.save()
-
                 for jsonPovezava in jsonZasedanje.get('povezave'):
-                    povezava = Povezava()
-                    povezava.zasedanje = zasedanje
-                    povezava.url = jsonPovezava.get('url')
-                    povezava.naslov = jsonPovezava.get('naslov')
-                    povezava.text = jsonPovezava.get('text')
-                    povezava.save()
+                    zasedanje = Zasedanje()
+                    zasedanje.datum = dateutil.parser.parse(jsonZasedanje.get('datum'), dayfirst=True)
+                    zasedanje.seja = seja
+                    if jsonPovezava.get('zacetek'):
+                        zasedanje.zacetek = self.parse_time(jsonPovezava.get('zacetek'))
+                    if jsonPovezava.get('konec'):
+                        zasedanje.konec = self.parse_time(jsonPovezava.get('konec'))
+                    zasedanje.tip = jsonPovezava.get('tip')
+                    zasedanje.naslov = jsonPovezava.get('naslov')
+                    zasedanje.save()
+
+                    for jsonOdsek in jsonPovezava.get('odseki'):
+                        for jsonZapis in jsonOdsek.get('zapisi'):
+                            zapis = Zapis()
+                            zapis.zasedanje = zasedanje
+                            zapis.govorec = jsonZapis.get('govorec')
+                            zapis.odstavki = jsonZapis.get('odstavki')
+                            zapis.save()
 
         print "Import ok!"
 
