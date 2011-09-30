@@ -38,7 +38,7 @@ class Stranka(models.Model):
 	ime = models.CharField(max_length=64)
 	maticna = models.CharField(max_length=10, blank=True)
 	davcna = models.CharField(max_length=10, blank=True)
-	okrajsava = models.CharField(max_length=8)
+	okrajsava = models.CharField(max_length=16)
 	email = models.EmailField(max_length=64, blank=True)
 	barva = models.CharField(max_length=6)
 	od = models.DateField()
