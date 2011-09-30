@@ -66,10 +66,12 @@ class Importer():
                     zasedanje = Zasedanje()
                     zasedanje.datum = dateutil.parser.parse(jsonZasedanje.get('datum'), dayfirst=True)
                     zasedanje.seja = seja
+                    
                     if jsonPovezava.get('zacetek'):
                         zasedanje.zacetek = self.parse_time(jsonPovezava.get('zacetek'))
                     if jsonPovezava.get('konec'):
                         zasedanje.konec = self.parse_time(jsonPovezava.get('konec'))
+
                     zasedanje.tip = jsonPovezava.get('tip')
                     zasedanje.naslov = jsonPovezava.get('naslov')
                     zasedanje.save()
@@ -79,9 +81,7 @@ class Importer():
                             zapis = Zapis()
                             zapis.zasedanje = zasedanje
                             zapis.govorec = jsonZapis.get('govorec')
-                            zapis.odstavki = jsonZapis.get('odstavki')
+                            zapis.odstavki = ' '.join(jsonZapis.get('odstavki'))
                             zapis.save()
 
         print "Import ok!"
-
-

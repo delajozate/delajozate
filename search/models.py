@@ -12,6 +12,9 @@ class Seja(models.Model):
     mandat = models.IntegerField()
     url = models.URLField()
 
+    def __unicode__(self):
+        return self.naslov
+
 class SejaInfo(models.Model):
     seja = models.ForeignKey(Seja)
     url = models.URLField()
@@ -27,7 +30,16 @@ class Zasedanje(models.Model):
     url = models.URLField(null=True)
     tip = models.CharField(max_length=255, null=True)
 
+    def __unicode__(self):
+        return self.naslov + "(" + self.datum + ")"
+
 class Zapis(models.Model):
     zasedanje = models.ForeignKey(Zasedanje)
     odstavki = models.TextField(null=True)
     govorec = models.CharField(max_length=255, null=True)
+
+    def __unicode__(self):
+        if self.govorec:
+            return self.govorec + ":" + self.odstavki[0:30]
+        else:
+            return self.odstavki[0:30]
