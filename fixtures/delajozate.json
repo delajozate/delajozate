@@ -307,7 +307,7 @@
             "facebook": "", 
             "slug": "alan-bukovnik", 
             "priimek": "Bukovnik", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/alan-bukovnik.jpg"
         }
     }, 
     {
@@ -337,7 +337,7 @@
             "facebook": "", 
             "slug": "aleksander-zorn", 
             "priimek": "Zorn", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/aleksander-zorn.jpg"
         }
     }, 
     {
@@ -472,7 +472,7 @@
             "facebook": "", 
             "slug": "alojzij-potocnik", 
             "priimek": "Poto\u010dnik", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/alojzij-potocnik.jpg"
         }
     }, 
     {
@@ -562,7 +562,7 @@
             "facebook": "", 
             "slug": "andrej-magajna", 
             "priimek": "Magajna", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/andrej-magajna.jpg"
         }
     }, 
     {
@@ -592,7 +592,7 @@
             "facebook": "", 
             "slug": "andreja-crnak-meglic", 
             "priimek": "\u010crnak Megli\u010d", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/andreja-crnak-meglic.jpg"
         }
     }, 
     {
@@ -607,7 +607,7 @@
             "facebook": "", 
             "slug": "andreja-rihter", 
             "priimek": "Rihter", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/andreja-rihter.jpg"
         }
     }, 
     {
@@ -667,7 +667,7 @@
             "facebook": "", 
             "slug": "anton-colaric", 
             "priimek": "Colari\u010d", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/anton-colaric.jpg"
         }
     }, 
     {
@@ -697,7 +697,7 @@
             "facebook": "", 
             "slug": "anton-kampus", 
             "priimek": "Kampu\u0161", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/anton-kampus.jpg"
         }
     }, 
     {
@@ -772,7 +772,7 @@
             "facebook": "", 
             "slug": "anton-urh", 
             "priimek": "Urh", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/anton-urh.jpg"
         }
     }, 
     {
@@ -862,7 +862,7 @@
             "facebook": "", 
             "slug": "bogdan-cepic", 
             "priimek": "\u010cepi\u010d", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/bogdan-cepic.jpg"
         }
     }, 
     {
@@ -1327,7 +1327,7 @@
             "facebook": "", 
             "slug": "darko-menih", 
             "priimek": "Menih", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/darko-menih.jpg"
         }
     }, 
     {
@@ -1372,7 +1372,7 @@
             "facebook": "", 
             "slug": "dejan-levanic", 
             "priimek": "Levani\u010d", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/dejan-levanic.jpg"
         }
     }, 
     {
@@ -1567,7 +1567,7 @@
             "facebook": "", 
             "slug": "franc-bogovic", 
             "priimek": "Bogovi\u010d", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/franc-bogovic.jpg"
         }
     }, 
     {
@@ -1657,7 +1657,7 @@
             "facebook": "", 
             "slug": "franc-jursa", 
             "priimek": "Jur\u0161a", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/franc-jursa.jpg"
         }
     }, 
     {
@@ -1837,7 +1837,7 @@
             "facebook": "", 
             "slug": "franci-kek", 
             "priimek": "Kek", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/franci-kek.jpg"
         }
     }, 
     {
@@ -1867,7 +1867,7 @@
             "facebook": "", 
             "slug": "franco-juri", 
             "priimek": "Juri", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/franco-juri.jpg"
         }
     }, 
     {
@@ -1912,7 +1912,7 @@
             "facebook": "", 
             "slug": "gregor-golobic", 
             "priimek": "Golobi\u010d", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/gregor-golobic.jpg"
         }
     }, 
     {
@@ -1927,7 +1927,7 @@
             "facebook": "", 
             "slug": "gvido-kres", 
             "priimek": "Kres", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/gvido-kres.jpg"
         }
     }, 
     {
@@ -2242,7 +2242,7 @@
             "facebook": "", 
             "slug": "iztok-podkriznik", 
             "priimek": "Podkri\u017enik", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/iztok-podkriznik.jpg"
         }
     }, 
     {
@@ -2392,7 +2392,7 @@
             "facebook": "", 
             "slug": "janez-kikelj", 
             "priimek": "Kikelj", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/janez-kikelj.jpg"
         }
     }, 
     {
@@ -2512,7 +2512,7 @@
             "facebook": "", 
             "slug": "janez-ribic", 
             "priimek": "Ribi\u010d", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/janez-ribic.jpg"
         }
     }, 
     {
@@ -2557,7 +2557,7 @@
             "facebook": "", 
             "slug": "janja-klasinc", 
             "priimek": "Klasinc", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/janja-klasinc.jpg"
         }
     }, 
     {
@@ -2662,7 +2662,7 @@
             "facebook": "", 
             "slug": "josko-godec", 
             "priimek": "Godec", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/josko-godec.jpg"
         }
     }, 
     {
@@ -2992,7 +2992,7 @@
             "facebook": "", 
             "slug": "julijana-bizjak-mlakar", 
             "priimek": "Bizjak Mlakar", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/julijana-bizjak-mlakar.jpg"
         }
     }, 
     {
@@ -3037,7 +3037,7 @@
             "facebook": "", 
             "slug": "laszlo-goncz", 
             "priimek": "G\u00f6ncz", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/laszlo-goncz.jpg"
         }
     }, 
     {
@@ -3202,7 +3202,7 @@
             "facebook": "", 
             "slug": "luka-juri", 
             "priimek": "Juri", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/luka-juri.jpg"
         }
     }, 
     {
@@ -3337,7 +3337,7 @@
             "facebook": "", 
             "slug": "marijan-krizman", 
             "priimek": "Kri\u017eman", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/marijan-krizman.jpg"
         }
     }, 
     {
@@ -3412,7 +3412,7 @@
             "facebook": "", 
             "slug": "marjan-bezjak", 
             "priimek": "Bezjak", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/marjan-bezjak.jpg"
         }
     }, 
     {
@@ -3577,7 +3577,7 @@
             "facebook": "", 
             "slug": "matevz-frangez", 
             "priimek": "Frange\u017e", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/matevz-frangez.jpg"
         }
     }, 
     {
@@ -3652,7 +3652,7 @@
             "facebook": "", 
             "slug": "matjaz-zanoskar", 
             "priimek": "Zano\u0161kar", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/matjaz-zanoskar.jpg"
         }
     }, 
     {
@@ -3667,7 +3667,7 @@
             "facebook": "", 
             "slug": "melita-zupevc", 
             "priimek": "\u017dupevc", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/melita-zupevc.jpg"
         }
     }, 
     {
@@ -3757,7 +3757,7 @@
             "facebook": "", 
             "slug": "milan-cadez", 
             "priimek": "\u010cade\u017e", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/milan-cadez.jpg"
         }
     }, 
     {
@@ -3772,7 +3772,7 @@
             "facebook": "", 
             "slug": "milan-gumzar", 
             "priimek": "Gumzar", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/milan-gumzar.jpg"
         }
     }, 
     {
@@ -3877,7 +3877,7 @@
             "facebook": "", 
             "slug": "miran-gyorek", 
             "priimek": "Gy\u00f6rek", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/miran-gyorek.jpg"
         }
     }, 
     {
@@ -3922,7 +3922,7 @@
             "facebook": "", 
             "slug": "mirko-brulc", 
             "priimek": "Brulc", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/mirko-brulc.jpg"
         }
     }, 
     {
@@ -3982,7 +3982,7 @@
             "facebook": "", 
             "slug": "miroslav-klun", 
             "priimek": "Klun", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/miroslav-klun.jpg"
         }
     }, 
     {
@@ -4222,7 +4222,7 @@
             "facebook": "", 
             "slug": "peter-verlic", 
             "priimek": "Verli\u010d", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/peter-verlic.jpg"
         }
     }, 
     {
@@ -4267,7 +4267,7 @@
             "facebook": "", 
             "slug": "rado-likar", 
             "priimek": "Likar", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/rado-likar.jpg"
         }
     }, 
     {
@@ -4282,7 +4282,7 @@
             "facebook": "", 
             "slug": "radovan-zerjav", 
             "priimek": "\u017derjav", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/radovan-zerjav.jpg"
         }
     }, 
     {
@@ -4312,7 +4312,7 @@
             "facebook": "", 
             "slug": "renata-brunskole", 
             "priimek": "Brunskole", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/renata-brunskole.jpg"
         }
     }, 
     {
@@ -4342,7 +4342,7 @@
             "facebook": "", 
             "slug": "robert-hrovat", 
             "priimek": "Hrovat", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/robert-hrovat.jpg"
         }
     }, 
     {
@@ -4447,7 +4447,7 @@
             "facebook": "", 
             "slug": "sara-viler", 
             "priimek": "Viler", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/sara-viler.jpg"
         }
     }, 
     {
@@ -4507,7 +4507,7 @@
             "facebook": "", 
             "slug": "silva-crnugelj", 
             "priimek": "\u010crnugelj", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/silva-crnugelj.jpg"
         }
     }, 
     {
@@ -4522,7 +4522,7 @@
             "facebook": "", 
             "slug": "silven-majhenic", 
             "priimek": "Majheni\u010d", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/silven-majhenic.jpg"
         }
     }, 
     {
@@ -4732,7 +4732,7 @@
             "facebook": "", 
             "slug": "stefan-tisel", 
             "priimek": "Tisel", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/stefan-tisel.jpg"
         }
     }, 
     {
@@ -4747,7 +4747,7 @@
             "facebook": "", 
             "slug": "tadej-slapnik", 
             "priimek": "Slapnik", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/tadej-slapnik.jpg"
         }
     }, 
     {
@@ -4762,7 +4762,7 @@
             "facebook": "", 
             "slug": "tomaz-tom-mencinger", 
             "priimek": "Mencinger", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/tomaz-tom-mencinger.jpg"
         }
     }, 
     {
@@ -4897,7 +4897,7 @@
             "facebook": "", 
             "slug": "vinko-gorenak", 
             "priimek": "Gorenak", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/vinko-gorenak.jpg"
         }
     }, 
     {
@@ -5077,7 +5077,7 @@
             "facebook": "", 
             "slug": "zvonko-lah", 
             "priimek": "Lah", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/zvonko-lah.jpg"
         }
     }, 
     {
