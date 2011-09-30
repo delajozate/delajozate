@@ -1,6 +1,7 @@
 # coding: utf-8
 from django.db import models
 from django.template.defaultfilters import slugify
+from delajozate.temporal import END_OF_TIME
 
 class Oseba(models.Model):
 	ime = models.CharField(max_length=32)
@@ -14,7 +15,7 @@ class Oseba(models.Model):
 	facebook = models.URLField(blank=True)
 	
 	class Meta:
-		ordering = ('priimek', 'ime')
+		ordering = ('ime', 'priimek')
 		verbose_name_plural = u'Osebe'
 	
 	def __unicode__(self):
@@ -32,18 +33,26 @@ class Oseba(models.Model):
 
 
 class Stranka(models.Model):
+	# kako modelirat kontinuiteto stranke, kadar se preimenuje?
+	#parent_stranka = models.IntegerField(null=True)
 	ime = models.CharField(max_length=64)
+	maticna = models.CharField(max_length=10, blank=True)
+	davcna = models.CharField(max_length=10, blank=True)
 	okrajsava = models.CharField(max_length=8)
-	email = models.EmailField(max_length=64)
+	email = models.EmailField(max_length=64, blank=True)
 	barva = models.CharField(max_length=6)
 	od = models.DateField()
-	do = models.DateField(blank=True, null=True)
+	do = models.DateField(default=END_OF_TIME)
 	spletna_stran = models.URLField(blank=True)
 	twitter = models.CharField(max_length=32, blank=True)
 	facebook = models.URLField(blank=True)
+	opombe = models.TextField(blank=True)
 	
 	class Meta:
 		verbose_name_plural = u'Stranke'
+	
+	def __unicode__(self):
+		return u'%s (%s)%s' % (self.ime, self.okrajsava, self.do != END_OF_TIME and u'\u271d' or u'')
 
 class Skupina(models.Model): # Poslanska
 	ime = models.CharField(max_length=64)
@@ -66,7 +75,7 @@ class ClanStranke(models.Model):
 class Mandat(models.Model):
 	st = models.IntegerField() # Kateri mandat
 	od = models.DateField()
-	do = models.DateField(blank=True)
+	do = models.DateField(blank=True, default=END_OF_TIME)
 	
 	class Meta:
 		verbose_name_plural = u'Mandati'
