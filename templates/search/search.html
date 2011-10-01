@@ -17,9 +17,7 @@
 
             {% for result in page.object_list %}
                 <p>
-                    <b>{{ result.ime_seje }}</b> ({{ result.datum  }}) <br>
-                    {{ result.object.govorec }} : {{ result.object.odstavki }}
-                    <br>
+                    {{ result.text }}
                 </p>
             {% empty %}
                 <p>No results found.</p>

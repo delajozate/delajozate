@@ -31,7 +31,7 @@ class Zasedanje(models.Model):
     tip = models.CharField(max_length=255, null=True)
 
     def __unicode__(self):
-        return self.naslov + "(" + self.datum + ")"
+        return self.naslov + "(" + str(self.datum) + ")"
 
 class Zapis(models.Model):
     zasedanje = models.ForeignKey(Zasedanje)
