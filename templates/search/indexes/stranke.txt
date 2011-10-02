@@ -1,0 +1,6 @@
+{{ object.ime }}
+{{ object.okrajsava }}
+{{ object.maticna }} {{ object.davcna }}
+{{ object.spletna_stran }}
+{{ object.twitter }} {{ object.facebook }}
+{{ object.opombe }}

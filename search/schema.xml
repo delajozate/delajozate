@@ -74,6 +74,7 @@
     <dynamicField name="*_d"  type="sdouble" indexed="true"  stored="true"/>
     <dynamicField name="*_dt" type="date"    indexed="true"  stored="true"/>
     
+    <field name="rojstni_dan" type="date" indexed="true" stored="true" multiValued="false" />
     <field name="ime_zasedanja" type="text" indexed="true" stored="true" multiValued="false" />
     <field name="ime_zasedanja_exact" type="string" indexed="true" stored="true" multiValued="false" />
     <field name="ime_seje" type="text" indexed="true" stored="true" multiValued="false" />

@@ -1,0 +1,5 @@
+{{ object.ime }} {{ object.priimek }}
+{{ object.email }}
+{{ object.rojstni_dan }}
+{{ object.twitter }}
+{{ object.facebook }}
