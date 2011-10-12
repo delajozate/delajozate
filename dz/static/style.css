@@ -23,14 +23,14 @@ nav ol li a {padding:.625em;display:block;}
 
 /* card */
 .card {background:#fff;padding:10px;position:relative;border:1px solid rgba(0,0,0,.1);
-	border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,.3);
+	-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;-moz-box-shadow:0 2px 4px rgba(0,0,0,.3);-webkit-box-shadow:0 2px 4px rgba(0,0,0,.3);box-shadow:0 2px 4px rgba(0,0,0,.3);
 }
 .card h2 {position:absolute;color:#fff;background:rgba(0,0,0,.5);left:0;top:0;margin:11px 11px 0;font-size:1.5em;line-height:1.25em;padding:.125em .25em;}
 .card .stranka {width:30px;height:30px;line-height:30px;text-align:center;border:1px solid rgba(0,0,0,.05);position:absolute;right:-7px;top:-7px;font-size:.625em;text-transform:uppercase;
-	border-radius:20px;
+	-moz-border-radius:20px;-webkit-border-radius:20px;border-radius:20px;
 }
 .card .stranka a {color:#000;text-decoration:none;display:block;width:100%;height:100%;
-	border-radius:20px;
+	-moz-border-radius:20px;-webkit-border-radius:20px;border-radius:20px;
 }
 .card .stranka .sns {background:yellow;}
 .card .stranka .zares {background:orange;}
