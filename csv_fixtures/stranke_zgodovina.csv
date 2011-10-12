@@ -1,0 +1,29 @@
+,"za risanje fork treeja, ce ima vec parentov, zapises idje, locene z vejico",,,,9999-12-31 = se vedno aktualna,,,"prosim nujno vpisujte vire podatkov, da se da preverit"
+id stranke,parent,Ime stranke,Okrajsava,Ustanovljena,Prenehala / preimenovala,"maticna, ce obstaja","davcna, ce obstaja",opombe in viri podatkov,spletna stran
+1,,Združena lista socialnih demokratov,ZLSD,1993-05-29,2005-04-02,,,info o casu iz spl. strani
+2,1,Socialni demokrati,SD,2005-04-02,9999-12-31,5147484000,76534740,,http://www.socialnidemokrati.si/
+3,,Slovenska nacionalna stranka,SNS,1991-03-17,9999-12-31,5485657000,87224348,,http://www.sns.si/
+4,,Nova Slovenija - Krščanska ljudska stranka,NSi,2000-08-04,9999-12-31,1029738000,20601379,info iz pagea,http://www.nsi.si/
+5,22,ZARES – nova politika,Zares,2007-10-06,9999-12-31,1030159000,30475279,info iz pagea,http://www.zares.si/
+6,"13,24",Liberalna demokracija Slovenije,LDS,1994-03-12,9999-12-31,5837090000,91757126,info iz pagea,http://www.lds.si/
+7,,Slovenska ljudska stranka,SLS,1992-06-27,2000-04-15,,,Datum ustanovitve vzet iz slovenske wikipedije.
+8,,Slovenski krščanski demokrati,SKD,1989-11-04,2000-04-15,,,"Ni preverjenega podatka o nastanku, stranka se je zdruzila v SLS+SKD."
+9,"7,8",SLS+SKD Slovenska ljudska stranka,SLS+SKD,2000-04-15,2002-01-31,,,"Datum preimenovanja: ""Preimenovanje v Slovensko ljudsko stranko je bilo sprejeto po realizaciji sklepov Kongresa stranke v Murski soboti, 31. januarja 2002.""  vir: http://www.sls.si/sl/inside.sls?cid=6C216BA4-2AD7-DCFF-69FC-798E78705EB0&linkid=article"
+10,9,Slovenska ljudska stranka,SLS,2002-01-31,9999-12-31,1029711000,92078729,Datum ustanovitve je datum preimenovanja stranke SLS+SKD.,http://www.sls.si/
+11,,DeSUS - Demokratična stranka upokojencev Slovenije,DeSUS,1991-05-30,9999-12-31,5492734000,45515514,Datum ustanovitve vzet s spletne strani stranke.,http://www.desus.si/
+12,,Slovenska nacionalna desnica,SND,1994-04-12,2000-03-16,5768870001,,"1.februarja 1993 je v Državnem zboru ustanovil Samostojno poslansko skupino in jo tudi vodil do konca leta 1993. Junija 1993 je ustanovil politično stranko Slovenska nacionalna desnica (SND), ki jo je vodil do junija 1998",http://sl.wikipedia.org/wiki/Sa%C5%A1o_Lap
+13,25,Zeleni - ekološko socialna stranka,Zeleni - ESS,1993-03-23,1994-03-12,,,Pridruzili so se LDS
+14,26,Stranka slovenskega naroda,SSN,2002-02-28,9999-12-31,,,datum preimenovanja iz ajpes,http://www.ssn.si/
+15,,Socialdemokratska zveza Slovenije,SDZS,1989-02-16,1990-02-24,,,"ustanovljena: wikipedia, preimenovana: prvi kongres SDSS, vir: http://www.cirkulane.sds.si/news/132"
+16,15,Socialdemokratska stranka Slovenije,SDSS,1990-02-24,1996-03-23
+17,27,Slovenska demokratska stranka,SDS,2003-09-13,9999-12-31,5299446000,13843214,preimenovanje: vir: https://secure.wikimedia.org/wikipedia/sl/wiki/3._dr%C5%BEavni_zbor_Republike_Slovenije
+18,,Demokrati,D,,1994-04-06
+19,18,Demokratska stranka,DS,1994-04-06
+20,,Stranka mladih Slovenije,SMS,2000-08-08,2009-07-04,,,datum ustanovitve je datum vpisa v ajpes
+21,20,Stranka mladih - Zeleni Evrope,SMS - Zeleni,2009-07-04,9999-12-31,1029720000,71133470,,http://www.sms.si/
+22,,Aktivna Slovenija,AS,2004-05-08,2008-01-10,1029878000,30179505,datum prenehanja je datum izbrisa iz ajpes
+23,24,Demokratska stranka Slovenije,DS,1994-03-12,9999-12-31,5836778000,87276453,s spletne strani demokrati.si,http://www.demokrati.si/
+24,,Demokratska stranka,DS,1991-10-13,1994-03-12,,,s spletne strani demokrati.si
+25,,Zeleni Slovenije,Zeleni,1989-06-11,9999-12-31,5951763000,15119394,,http://www.zeleni.si/
+26,12,Stranka slovenskih narodnjakov,SSN,2000-03-16,2002-02-28,,,datum preimenovanja iz ajpes
+27,16,Socialno demokratska stranka,SDS,1996-03-23,2003-09-13,,,"kongres, kjer so se preimenovali, iz SDSS v SDS je bil 23. marca, iz Socialno DS v Slovensko DS pa 13.9.2003 vir1: http://dk.fdv.uni-lj.si/diplomska/pdfs/fabjan-bostjan.pdf"
