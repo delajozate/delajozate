@@ -90,6 +90,7 @@ class Poslanec(models.Model):
 	do = models.DateField(blank=True)
 	
 	class Meta:
+		ordering = ('id',)
 		verbose_name_plural = u'Poslanci'
 	
 	def __unicode__(self):

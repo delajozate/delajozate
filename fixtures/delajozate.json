@@ -1,20 +1,20 @@
 [
     {
-        "pk": 23, 
-        "model": "contenttypes.contenttype", 
-        "fields": {
-            "model": "clanodbora", 
-            "name": "clan odbora", 
-            "app_label": "dz"
-        }
-    }, 
-    {
         "pk": 15, 
         "model": "contenttypes.contenttype", 
         "fields": {
             "model": "clanodbora", 
             "name": "clan odbora", 
             "app_label": "poslanci"
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "clanodbora", 
+            "name": "clan odbora", 
+            "app_label": "dz"
         }
     }, 
     {
@@ -117,21 +117,21 @@
         }
     }, 
     {
-        "pk": 8, 
-        "model": "contenttypes.contenttype", 
-        "fields": {
-            "model": "oseba", 
-            "name": "oseba", 
-            "app_label": "poslanci"
-        }
-    }, 
-    {
         "pk": 16, 
         "model": "contenttypes.contenttype", 
         "fields": {
             "model": "oseba", 
             "name": "oseba", 
             "app_label": "dz"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "oseba", 
+            "name": "oseba", 
+            "app_label": "poslanci"
         }
     }, 
     {
@@ -159,15 +159,6 @@
             "model": "poslanec", 
             "name": "poslanec", 
             "app_label": "dz"
-        }
-    }, 
-    {
-        "pk": 28, 
-        "model": "contenttypes.contenttype", 
-        "fields": {
-            "model": "povezava", 
-            "name": "povezava", 
-            "app_label": "search"
         }
     }, 
     {
@@ -252,6 +243,15 @@
         }
     }, 
     {
+        "pk": 30, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "zapis", 
+            "name": "zapis", 
+            "app_label": "search"
+        }
+    }, 
+    {
         "pk": 27, 
         "model": "contenttypes.contenttype", 
         "fields": {
@@ -293,6 +293,24 @@
             "applied": "2011-09-30 10:27:15", 
             "app_name": "dz", 
             "migration": "0003_auto__chg_field_stranka_maticna__chg_field_stranka_davcna__chg_field_s"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "south.migrationhistory", 
+        "fields": {
+            "applied": "2011-10-12 08:53:50", 
+            "app_name": "search", 
+            "migration": "0001_initial"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "south.migrationhistory", 
+        "fields": {
+            "applied": "2011-10-12 08:53:52", 
+            "app_name": "search", 
+            "migration": "0002_auto__del_povezava__add_zapis__add_field_zasedanje_naslov__add_field_z"
         }
     }, 
     {
@@ -3232,7 +3250,7 @@
             "facebook": "", 
             "slug": "majda-sirca-ravnikar", 
             "priimek": "\u0160irca Ravnikar", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/majda-sirca-ravnikar.jpg"
         }
     }, 
     {
@@ -5594,6 +5612,586 @@
         }
     }, 
     {
+        "pk": 1, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 1, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 2, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 3, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 4, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 5, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 6, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 7, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 8, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 9, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 10, 
+            "od": "1993-02-23", 
+            "do": "1994-10-31", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 11, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 12, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 13, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 14, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 15, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 16, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 17, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 18, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 19, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 20, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 21, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 22, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 23, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 24, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 25, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 26, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 27, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 28, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 29, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 30, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 31, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 32, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 33, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 34, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 35, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 36, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 37, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 38, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 39, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 40, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 41, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 41, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 42, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 43, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 44, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 45, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 46, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 46, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 47, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 47, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 48, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 48, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 49, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 49, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 50, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 50, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 51, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 51, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 52, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 52, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 53, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 53, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 54, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 54, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 55, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 55, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 56, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 56, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 57, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 57, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 58, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 58, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
         "pk": 59, 
         "model": "dz.poslanec", 
         "fields": {
@@ -5834,6 +6432,16 @@
         }
     }, 
     {
+        "pk": 83, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 210, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
         "pk": 84, 
         "model": "dz.poslanec", 
         "fields": {
@@ -5988,6 +6596,16 @@
         "model": "dz.poslanec", 
         "fields": {
             "oseba": 99, 
+            "od": "1992-12-23", 
+            "do": "1996-11-27", 
+            "mandat": 1
+        }
+    }, 
+    {
+        "pk": 100, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 224, 
             "od": "1992-12-23", 
             "do": "1996-11-27", 
             "mandat": 1
@@ -7124,26 +7742,6 @@
         }
     }, 
     {
-        "pk": 414, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 1, 
-            "od": "2008-10-15", 
-            "do": "9999-12-31", 
-            "mandat": 5
-        }
-    }, 
-    {
-        "pk": 100, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 224, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
         "pk": 214, 
         "model": "dz.poslanec", 
         "fields": {
@@ -7504,6 +8102,16 @@
         }
     }, 
     {
+        "pk": 250, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 25, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
         "pk": 251, 
         "model": "dz.poslanec", 
         "fields": {
@@ -7528,6 +8136,386 @@
         "model": "dz.poslanec", 
         "fields": {
             "oseba": 126, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 254, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 127, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 255, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 128, 
+            "od": "2000-10-22", 
+            "do": "2004-07-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 256, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 129, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 257, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 194, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 258, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 195, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 259, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 131, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 260, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 132, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 261, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 196, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 262, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 134, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 263, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 33, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 264, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 197, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 265, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 137, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 266, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 198, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 267, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 41, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 268, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 139, 
+            "od": "2004-07-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 269, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 199, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 270, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 200, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 271, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 201, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 272, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 47, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 273, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 202, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 274, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 203, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 275, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 204, 
+            "od": "2003-01-27", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 276, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 143, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 277, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 50, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 278, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 55, 
+            "od": "2000-10-22", 
+            "do": "2004-07-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 279, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 56, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 280, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 206, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 281, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 58, 
+            "od": "2004-07-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 282, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 149, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 283, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 151, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 284, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 61, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 285, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 63, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 286, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 207, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 287, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 208, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 288, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 69, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 289, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 70, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 290, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 75, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 291, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 153, 
             "od": "2000-10-22", 
             "do": "2004-10-22", 
             "mandat": 3
@@ -7618,6 +8606,16 @@
         "model": "dz.poslanec", 
         "fields": {
             "oseba": 213, 
+            "od": "2000-10-22", 
+            "do": "2004-10-22", 
+            "mandat": 3
+        }
+    }, 
+    {
+        "pk": 301, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 317, 
             "od": "2000-10-22", 
             "do": "2004-10-22", 
             "mandat": 3
@@ -8334,6 +9332,426 @@
         }
     }, 
     {
+        "pk": 373, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 254, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 374, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 50, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 375, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 255, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 376, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 256, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 377, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 58, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 378, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 149, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 379, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 151, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 380, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 257, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 381, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 258, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 382, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 259, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 383, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 260, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 384, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 208, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 385, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 69, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 386, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 70, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 387, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 152, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 388, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 261, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 389, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 262, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 390, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 153, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 391, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 263, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 392, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 209, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 393, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 264, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 394, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 157, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 395, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 265, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 396, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 266, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 397, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 211, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 398, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 267, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 399, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 213, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 400, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 317, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 401, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 268, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 402, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 167, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 403, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 269, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 404, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 168, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 405, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 270, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 406, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 220, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 407, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 271, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 408, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 223, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 409, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 172, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 410, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 272, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 411, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 273, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 412, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 274, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 413, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 174, 
+            "od": "2004-10-22", 
+            "do": "2008-10-15", 
+            "mandat": 4
+        }
+    }, 
+    {
+        "pk": 414, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 1, 
+            "od": "2008-10-15", 
+            "do": "9999-12-31", 
+            "mandat": 5
+        }
+    }, 
+    {
         "pk": 415, 
         "model": "dz.poslanec", 
         "fields": {
@@ -8684,596 +10102,6 @@
         }
     }, 
     {
-        "pk": 301, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 317, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 1, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 2, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 3, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 4, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 4, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 5, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 5, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 6, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 6, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 7, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 7, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 8, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 8, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 9, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 9, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 10, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 10, 
-            "od": "1993-02-23", 
-            "do": "1994-10-31", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 11, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 11, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 12, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 12, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 13, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 13, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 14, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 14, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 15, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 15, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 16, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 16, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 17, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 17, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 18, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 18, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 19, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 19, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 20, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 20, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 21, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 21, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 22, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 22, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 23, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 23, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 24, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 24, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 25, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 25, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 26, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 26, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 27, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 27, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 28, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 28, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 29, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 29, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 30, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 30, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 31, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 31, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 32, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 32, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 33, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 33, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 34, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 34, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 35, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 35, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 36, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 36, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 37, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 37, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 38, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 38, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 39, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 39, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 40, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 40, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 41, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 41, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 42, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 42, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 43, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 43, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 44, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 44, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 45, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 45, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 46, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 46, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 47, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 47, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 48, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 48, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 49, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 49, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 50, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 50, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 51, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 51, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 52, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 52, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 53, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 53, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 54, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 54, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 55, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 55, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 56, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 56, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 57, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 57, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
-        "pk": 58, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 58, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
         "pk": 450, 
         "model": "dz.poslanec", 
         "fields": {
@@ -9528,6 +10356,16 @@
         "model": "dz.poslanec", 
         "fields": {
             "oseba": 259, 
+            "od": "2008-10-15", 
+            "do": "9999-12-31", 
+            "mandat": 5
+        }
+    }, 
+    {
+        "pk": 476, 
+        "model": "dz.poslanec", 
+        "fields": {
+            "oseba": 260, 
             "od": "2008-10-15", 
             "do": "9999-12-31", 
             "mandat": 5
@@ -9794,10 +10632,10 @@
         }
     }, 
     {
-        "pk": 476, 
+        "pk": 503, 
         "model": "dz.poslanec", 
         "fields": {
-            "oseba": 260, 
+            "oseba": 277, 
             "od": "2008-10-15", 
             "do": "9999-12-31", 
             "mandat": 5
@@ -9814,830 +10652,10 @@
         }
     }, 
     {
-        "pk": 83, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 210, 
-            "od": "1992-12-23", 
-            "do": "1996-11-27", 
-            "mandat": 1
-        }
-    }, 
-    {
         "pk": 505, 
         "model": "dz.poslanec", 
         "fields": {
             "oseba": 281, 
-            "od": "2008-10-15", 
-            "do": "9999-12-31", 
-            "mandat": 5
-        }
-    }, 
-    {
-        "pk": 279, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 56, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 250, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 25, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 254, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 127, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 255, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 128, 
-            "od": "2000-10-22", 
-            "do": "2004-07-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 256, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 129, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 257, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 194, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 258, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 195, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 259, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 131, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 260, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 132, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 261, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 196, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 262, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 134, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 263, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 33, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 264, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 197, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 265, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 137, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 266, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 198, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 267, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 41, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 268, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 139, 
-            "od": "2004-07-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 269, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 199, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 270, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 200, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 271, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 201, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 272, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 47, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 273, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 202, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 274, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 203, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 275, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 204, 
-            "od": "2003-01-27", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 276, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 143, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 277, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 50, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 278, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 55, 
-            "od": "2000-10-22", 
-            "do": "2004-07-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 280, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 206, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 281, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 58, 
-            "od": "2004-07-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 282, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 149, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 283, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 151, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 284, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 61, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 285, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 63, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 286, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 207, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 287, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 208, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 288, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 69, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 289, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 70, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 290, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 75, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 291, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 153, 
-            "od": "2000-10-22", 
-            "do": "2004-10-22", 
-            "mandat": 3
-        }
-    }, 
-    {
-        "pk": 373, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 254, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 374, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 50, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 375, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 255, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 376, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 256, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 377, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 58, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 378, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 149, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 379, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 151, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 380, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 257, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 381, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 258, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 382, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 259, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 383, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 260, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 384, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 208, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 385, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 69, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 386, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 70, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 387, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 152, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 388, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 261, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 389, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 262, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 390, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 153, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 391, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 263, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 392, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 209, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 393, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 264, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 394, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 157, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 395, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 265, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 396, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 266, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 397, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 211, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 398, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 267, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 399, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 213, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 401, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 268, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 402, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 167, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 403, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 269, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 404, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 168, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 405, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 270, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 406, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 220, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 407, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 271, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 408, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 223, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 409, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 172, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 410, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 272, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 411, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 273, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 412, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 274, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 413, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 174, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 400, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 317, 
-            "od": "2004-10-22", 
-            "do": "2008-10-15", 
-            "mandat": 4
-        }
-    }, 
-    {
-        "pk": 503, 
-        "model": "dz.poslanec", 
-        "fields": {
-            "oseba": 277, 
             "od": "2008-10-15", 
             "do": "9999-12-31", 
             "mandat": 5
