@@ -4,6 +4,8 @@ from django.core.cache import cache
 
 from models import Mandat, Poslanec
 
+from delajozate.temporal import END_OF_TIME
+
 import random, datetime
 
 #LONG_LIVE = 60*60*24 # Cache for a day
@@ -50,7 +52,16 @@ def home(request):
 		k_mandati = Poslanec.objects.filter(oseba=oseba)
 
 		kandidat['st_mandatov'] = len(k_mandati)
-		dolzina_sluzenja = sum([ ((m.do or today) - m.od).days for m in k_mandati ])
+
+		dolzina_sluzenja = 0
+		for m in k_mandati:
+			if m.od != END_OF_TIME:
+				if m.do == END_OF_TIME:
+					dolzina_sluzenja += (today - m.od).days
+				else:
+					dolzina_sluzenja += (m.do - m.od).days
+
+		#dolzina_sluzenja = sum([ ((m.do if m.do == END_OF_TIME else today) - m.od).days for m in k_mandati ])
 		kandidat['dolzina_sluzenja'] = dolzina_sluzenja
 
 		'''
