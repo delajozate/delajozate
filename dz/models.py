@@ -34,7 +34,7 @@ class Oseba(models.Model):
 
 class Stranka(models.Model):
 	# kako modelirat kontinuiteto stranke, kadar se preimenuje?
-	#parent_stranka = models.IntegerField(null=True)
+	nastala_iz = models.ManyToManyField("self", related_name="spremenila_v")
 	ime = models.CharField(max_length=64)
 	maticna = models.CharField(max_length=10, blank=True)
 	davcna = models.CharField(max_length=10, blank=True)
