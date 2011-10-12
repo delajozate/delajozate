@@ -1,4 +1,4 @@
-import os
+import os, datetime
 here = lambda x: os.path.join(os.path.dirname(os.path.abspath(__file__)), x)
 
 # Django settings for delajozate project.
@@ -165,6 +165,8 @@ LOGGING = {
 FIXTURE_DIRS = (
 	here('fixtures/'),
 )
+
+NULL_DATE = datetime.date(9999, 12, 31)
 
 import traceback
 try:

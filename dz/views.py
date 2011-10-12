@@ -3,11 +3,17 @@ from django.template import RequestContext, Context, loader
 from django.core.cache import cache
 
 from models import Mandat, Poslanec
+from settings import NULL_DATE
 
 import random, datetime
 
 #LONG_LIVE = 60*60*24 # Cache for a day
 LONG_LIVE = 5 # 5 seconds cache
+
+def null_date(date):
+	if date == NULL_DATE:
+		return None
+	return date
 
 def home(request):
 	ctx = {}
@@ -50,7 +56,7 @@ def home(request):
 		k_mandati = Poslanec.objects.filter(oseba=oseba)
 
 		kandidat['st_mandatov'] = len(k_mandati)
-		dolzina_sluzenja = sum([ ((m.do or today) - m.od).days for m in k_mandati ])
+		dolzina_sluzenja = sum([ ((null_date(m.do) or today) - m.od).days for m in k_mandati ])
 		kandidat['dolzina_sluzenja'] = dolzina_sluzenja
 
 		'''
