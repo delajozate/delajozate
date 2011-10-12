@@ -53,6 +53,15 @@
         }
     }, 
     {
+        "pk": 6, 
+        "model": "south.migrationhistory", 
+        "fields": {
+            "applied": "2011-10-12 09:31:20", 
+            "app_name": "dz", 
+            "migration": "0004_auto"
+        }
+    }, 
+    {
         "pk": 280, 
         "model": "dz.oseba", 
         "fields": {
@@ -338,21 +347,6 @@
         }
     }, 
     {
-        "pk": 284, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "Andreja", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "andreja-crnak-meglic", 
-            "priimek": "\u010crnak Megli\u010d", 
-            "slika": "/static/img/poslanci/small/andreja-crnak-meglic.jpg"
-        }
-    }, 
-    {
         "pk": 315, 
         "model": "dz.oseba", 
         "fields": {
@@ -365,6 +359,21 @@
             "slug": "andreja-rihter", 
             "priimek": "Rihter", 
             "slika": "/static/img/poslanci/small/andreja-rihter.jpg"
+        }
+    }, 
+    {
+        "pk": 284, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Andreja", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "andreja-crnak-meglic", 
+            "priimek": "\u010crnak Megli\u010d", 
+            "slika": "/static/img/poslanci/small/andreja-crnak-meglic.jpg"
         }
     }, 
     {
@@ -623,21 +632,6 @@
         }
     }, 
     {
-        "pk": 162, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "Bogomir", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "bogomir-spiletic", 
-            "priimek": "\u0160pileti\u010d", 
-            "slika": ""
-        }
-    }, 
-    {
         "pk": 221, 
         "model": "dz.oseba", 
         "fields": {
@@ -665,6 +659,21 @@
             "slug": "bogomir-zamernik", 
             "priimek": "Zamernik", 
             "slika": "/static/img/poslanci/small/bogomir-zamernik.jpg"
+        }
+    }, 
+    {
+        "pk": 162, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Bogomir", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "bogomir-spiletic", 
+            "priimek": "\u0160pileti\u010d", 
+            "slika": ""
         }
     }, 
     {
@@ -1358,36 +1367,6 @@
         }
     }, 
     {
-        "pk": 111, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "Franc", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "franc-cebulj", 
-            "priimek": "\u010cebulj", 
-            "slika": ""
-        }
-    }, 
-    {
-        "pk": 11, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "Franc", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "franc-cernelic", 
-            "priimek": "\u010cerneli\u010d", 
-            "slika": ""
-        }
-    }, 
-    {
         "pk": 125, 
         "model": "dz.oseba", 
         "fields": {
@@ -1523,6 +1502,36 @@
         }
     }, 
     {
+        "pk": 111, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Franc", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "franc-cebulj", 
+            "priimek": "\u010cebulj", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Franc", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "franc-cernelic", 
+            "priimek": "\u010cerneli\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
         "pk": 174, 
         "model": "dz.oseba", 
         "fields": {
@@ -1535,6 +1544,21 @@
             "slug": "franc-znidarsic", 
             "priimek": "\u017dnidar\u0161i\u010d", 
             "slika": "/static/img/poslanci/small/franc-znidarsic.jpg"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Franc (Feri)", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "franc-feri-horvat", 
+            "priimek": "Horvat", 
+            "slika": "/static/img/poslanci/small/franc-feri-horvat.jpg"
         }
     }, 
     {
@@ -1565,21 +1589,6 @@
             "slug": "france-cukjati", 
             "priimek": "Cukjati", 
             "slika": "/static/img/poslanci/small/france-cukjati.jpg"
-        }
-    }, 
-    {
-        "pk": 20, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "Franc (Feri)", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "franc-feri-horvat", 
-            "priimek": "Horvat", 
-            "slika": "/static/img/poslanci/small/franc-feri-horvat.jpg"
         }
     }, 
     {
@@ -2543,6 +2552,21 @@
         }
     }, 
     {
+        "pk": 195, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Jo\u017ee (Jo\u017eef)", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "joze-jozef-kavticnik", 
+            "priimek": "Kavti\u010dnik", 
+            "slika": ""
+        }
+    }, 
+    {
         "pk": 178, 
         "model": "dz.oseba", 
         "fields": {
@@ -2678,6 +2702,21 @@
         }
     }, 
     {
+        "pk": 173, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Jo\u017eef", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "jozef-zimsek", 
+            "priimek": "Zim\u0161ek", 
+            "slika": ""
+        }
+    }, 
+    {
         "pk": 91, 
         "model": "dz.oseba", 
         "fields": {
@@ -2704,36 +2743,6 @@
             "facebook": "", 
             "slug": "jozef-spindler", 
             "priimek": "\u0160pindler", 
-            "slika": ""
-        }
-    }, 
-    {
-        "pk": 173, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "Jo\u017eef", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "jozef-zimsek", 
-            "priimek": "Zim\u0161ek", 
-            "slika": ""
-        }
-    }, 
-    {
-        "pk": 195, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "Jo\u017ee (Jo\u017eef)", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "joze-jozef-kavticnik", 
-            "priimek": "Kavti\u010dnik", 
             "slika": ""
         }
     }, 
@@ -2780,21 +2789,6 @@
             "slug": "kristijan-janc", 
             "priimek": "Janc", 
             "slika": "/static/img/poslanci/small/kristijan-janc.jpg"
-        }
-    }, 
-    {
-        "pk": 289, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "L\u00e1szl\u00f3", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "laszlo-goncz", 
-            "priimek": "G\u00f6ncz", 
-            "slika": "/static/img/poslanci/small/laszlo-goncz.jpg"
         }
     }, 
     {
@@ -2963,6 +2957,21 @@
         }
     }, 
     {
+        "pk": 289, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "L\u00e1szl\u00f3", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "laszlo-goncz", 
+            "priimek": "G\u00f6ncz", 
+            "slika": "/static/img/poslanci/small/laszlo-goncz.jpg"
+        }
+    }, 
+    {
         "pk": 208, 
         "model": "dz.oseba", 
         "fields": {
@@ -2978,21 +2987,6 @@
         }
     }, 
     {
-        "pk": 317, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "Majda", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "majda-sirca-ravnikar", 
-            "priimek": "\u0160irca Ravnikar", 
-            "slika": "/static/img/poslanci/small/majda-sirca-ravnikar.jpg"
-        }
-    }, 
-    {
         "pk": 225, 
         "model": "dz.oseba", 
         "fields": {
@@ -3005,6 +2999,21 @@
             "slug": "majda-zupan", 
             "priimek": "Zupan", 
             "slika": "/static/img/poslanci/small/majda-zupan.jpg"
+        }
+    }, 
+    {
+        "pk": 317, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Majda", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "majda-sirca-ravnikar", 
+            "priimek": "\u0160irca Ravnikar", 
+            "slika": "/static/img/poslanci/small/majda-sirca-ravnikar.jpg"
         }
     }, 
     {
@@ -3203,21 +3212,6 @@
         }
     }, 
     {
-        "pk": 89, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "Marjan", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "marjan-setinc", 
-            "priimek": "\u0160etinc", 
-            "slika": ""
-        }
-    }, 
-    {
         "pk": 86, 
         "model": "dz.oseba", 
         "fields": {
@@ -3229,6 +3223,21 @@
             "facebook": "", 
             "slug": "marjan-stanic", 
             "priimek": "Stani\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 89, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Marjan", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "marjan-setinc", 
+            "priimek": "\u0160etinc", 
             "slika": ""
         }
     }, 
@@ -3383,21 +3392,6 @@
         }
     }, 
     {
-        "pk": 217, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "Matja\u017e", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "matjaz-svagan", 
-            "priimek": "\u0160vagan", 
-            "slika": "/static/img/poslanci/small/matjaz-svagan.jpg"
-        }
-    }, 
-    {
         "pk": 322, 
         "model": "dz.oseba", 
         "fields": {
@@ -3410,6 +3404,21 @@
             "slug": "matjaz-zanoskar", 
             "priimek": "Zano\u0161kar", 
             "slika": "/static/img/poslanci/small/matjaz-zanoskar.jpg"
+        }
+    }, 
+    {
+        "pk": 217, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Matja\u017e", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "matjaz-svagan", 
+            "priimek": "\u0160vagan", 
+            "slika": "/static/img/poslanci/small/matjaz-svagan.jpg"
         }
     }, 
     {
@@ -3503,21 +3512,6 @@
         }
     }, 
     {
-        "pk": 326, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "Milan", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "milan-cadez", 
-            "priimek": "\u010cade\u017e", 
-            "slika": "/static/img/poslanci/small/milan-cadez.jpg"
-        }
-    }, 
-    {
         "pk": 291, 
         "model": "dz.oseba", 
         "fields": {
@@ -3575,6 +3569,21 @@
             "slug": "milan-zver", 
             "priimek": "Zver", 
             "slika": ""
+        }
+    }, 
+    {
+        "pk": 326, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Milan", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "milan-cadez", 
+            "priimek": "\u010cade\u017e", 
+            "slika": "/static/img/poslanci/small/milan-cadez.jpg"
         }
     }, 
     {
@@ -3908,21 +3917,6 @@
         }
     }, 
     {
-        "pk": 140, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "Peter", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "peter-lesnik", 
-            "priimek": "Le\u0161nik", 
-            "slika": ""
-        }
-    }, 
-    {
         "pk": 200, 
         "model": "dz.oseba", 
         "fields": {
@@ -3934,6 +3928,21 @@
             "facebook": "", 
             "slug": "peter-levic", 
             "priimek": "Levi\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 140, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Peter", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "peter-lesnik", 
+            "priimek": "Le\u0161nik", 
             "slika": ""
         }
     }, 
@@ -4433,66 +4442,6 @@
         }
     }, 
     {
-        "pk": 133, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "\u0160tefan", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "stefan-klinc", 
-            "priimek": "Klinc", 
-            "slika": ""
-        }
-    }, 
-    {
-        "pk": 31, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "\u0160tefan", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "stefan-kociper", 
-            "priimek": "Kociper", 
-            "slika": ""
-        }
-    }, 
-    {
-        "pk": 48, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "\u0160tefan", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "stefan-matus", 
-            "priimek": "Matu\u0161", 
-            "slika": ""
-        }
-    }, 
-    {
-        "pk": 318, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "\u0160tefan", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "stefan-tisel", 
-            "priimek": "Tisel", 
-            "slika": "/static/img/poslanci/small/stefan-tisel.jpg"
-        }
-    }, 
-    {
         "pk": 316, 
         "model": "dz.oseba", 
         "fields": {
@@ -4673,21 +4622,6 @@
         }
     }, 
     {
-        "pk": 112, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "Vladimir", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "vladimir-celigoj", 
-            "priimek": "\u010celigoj", 
-            "slika": ""
-        }
-    }, 
-    {
         "pk": 96, 
         "model": "dz.oseba", 
         "fields": {
@@ -4703,6 +4637,21 @@
         }
     }, 
     {
+        "pk": 112, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Vladimir", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "vladimir-celigoj", 
+            "priimek": "\u010celigoj", 
+            "slika": ""
+        }
+    }, 
+    {
         "pk": 182, 
         "model": "dz.oseba", 
         "fields": {
@@ -4714,21 +4663,6 @@
             "facebook": "", 
             "slug": "vojko-celigoj", 
             "priimek": "\u010celigoj", 
-            "slika": ""
-        }
-    }, 
-    {
-        "pk": 72, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "\u017darko", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "zarko-pregelj", 
-            "priimek": "Pregelj", 
             "slika": ""
         }
     }, 
@@ -4808,21 +4742,6 @@
         }
     }, 
     {
-        "pk": 229, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": null, 
-            "ime": "Zvonko", 
-            "twitter": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "slug": "zvonko-cernac", 
-            "priimek": "\u010cerna\u010d", 
-            "slika": "/static/img/poslanci/small/zvonko-cernac.jpg"
-        }
-    }, 
-    {
         "pk": 304, 
         "model": "dz.oseba", 
         "fields": {
@@ -4838,111 +4757,93 @@
         }
     }, 
     {
-        "pk": 5, 
-        "model": "dz.stranka", 
+        "pk": 229, 
+        "model": "dz.oseba", 
         "fields": {
-            "do": "9999-12-31", 
-            "ime": "ZARES \u2013 nova politika", 
+            "rojstni_dan": null, 
+            "ime": "Zvonko", 
             "twitter": "", 
-            "od": "2007-10-06", 
-            "barva": "ee9000", 
-            "maticna": "1030159000", 
-            "davcna": "30475279", 
-            "spletna_stran": "http://www.zares.si/", 
-            "facebook": "", 
-            "opombe": "Datum ustanovitve vzet s strani stranke.", 
             "email": "", 
-            "okrajsava": "Zares"
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "dz.stranka", 
-        "fields": {
-            "do": "9999-12-31", 
-            "ime": "Socialni demokrati", 
-            "twitter": "", 
-            "od": "2005-04-02", 
-            "barva": "ff0000", 
-            "maticna": "5147484000", 
-            "davcna": "76534740", 
-            "spletna_stran": "http://www.socialnidemokrati.si/", 
-            "facebook": "", 
-            "opombe": "", 
-            "email": "", 
-            "okrajsava": "SD"
-        }
-    }, 
-    {
-        "pk": 6, 
-        "model": "dz.stranka", 
-        "fields": {
-            "do": "9999-12-31", 
-            "ime": "Liberalna demokracija Slovenije", 
-            "twitter": "", 
-            "od": "1994-03-12", 
-            "barva": "0061a2", 
-            "maticna": "5837090000", 
-            "davcna": "91757126", 
-            "spletna_stran": "http://www.lds.si/", 
-            "facebook": "", 
-            "opombe": "Datum ustanovitve vzet s spletne strani stranke.", 
-            "email": "", 
-            "okrajsava": "LDS"
-        }
-    }, 
-    {
-        "pk": 10, 
-        "model": "dz.stranka", 
-        "fields": {
-            "do": "9999-12-31", 
-            "ime": "Slovenska ljudska stranka", 
-            "twitter": "", 
-            "od": "2002-01-31", 
-            "barva": "009247", 
-            "maticna": "1029711000", 
-            "davcna": "92078729", 
-            "spletna_stran": "http://www.sls.si/", 
-            "facebook": "", 
-            "opombe": "Datum ustanovitve je datum preimenovanja stranke SLS+SKD.", 
-            "email": "", 
-            "okrajsava": "SLS"
-        }
-    }, 
-    {
-        "pk": 7, 
-        "model": "dz.stranka", 
-        "fields": {
-            "do": "2000-04-15", 
-            "ime": "Slovenska ljudska stranka", 
-            "twitter": "", 
-            "od": "1992-06-27", 
-            "barva": "009247", 
-            "maticna": "", 
-            "davcna": "", 
             "spletna_stran": "", 
             "facebook": "", 
-            "opombe": "Datum ustanovitve vzet iz slovenske wikipedije.", 
-            "email": "", 
-            "okrajsava": "SLS"
+            "slug": "zvonko-cernac", 
+            "priimek": "\u010cerna\u010d", 
+            "slika": "/static/img/poslanci/small/zvonko-cernac.jpg"
         }
     }, 
     {
-        "pk": 9, 
-        "model": "dz.stranka", 
+        "pk": 133, 
+        "model": "dz.oseba", 
         "fields": {
-            "do": "2002-01-31", 
-            "ime": "SLS+SKD Slovenska ljudska stranka", 
+            "rojstni_dan": null, 
+            "ime": "\u0160tefan", 
             "twitter": "", 
-            "od": "2000-04-15", 
-            "barva": "a25800", 
-            "maticna": "", 
-            "davcna": "", 
+            "email": "", 
             "spletna_stran": "", 
             "facebook": "", 
-            "opombe": "Datum preimenovanja: \"Preimenovanje v Slovensko ljudsko stranko je bilo sprejeto po realizaciji sklepov Kongresa stranke v Murski soboti, 31. januarja 2002.\" \r\nvir: http://www.sls.si/sl/inside.sls?cid=6C216BA4-2AD7-DCFF-69FC-798E78705EB0&linkid=article", 
+            "slug": "stefan-klinc", 
+            "priimek": "Klinc", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "\u0160tefan", 
+            "twitter": "", 
             "email": "", 
-            "okrajsava": "SLS+SKD"
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "stefan-kociper", 
+            "priimek": "Kociper", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 48, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "\u0160tefan", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "stefan-matus", 
+            "priimek": "Matu\u0161", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 318, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "\u0160tefan", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "stefan-tisel", 
+            "priimek": "Tisel", 
+            "slika": "/static/img/poslanci/small/stefan-tisel.jpg"
+        }
+    }, 
+    {
+        "pk": 72, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "\u017darko", 
+            "twitter": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "slug": "zarko-pregelj", 
+            "priimek": "Pregelj", 
+            "slika": ""
         }
     }, 
     {
@@ -4953,32 +4854,36 @@
             "ime": "Zdru\u017eena lista socialnih demokratov", 
             "twitter": "", 
             "od": "1993-05-29", 
-            "barva": "ff0000", 
-            "maticna": "", 
-            "davcna": "", 
-            "spletna_stran": "", 
+            "barva": null, 
+            "maticna": null, 
+            "davcna": null, 
+            "spletna_stran": null, 
             "facebook": "", 
-            "opombe": "info o casu iz spl. strani socialnidemokrati.si", 
-            "email": "", 
+            "nastala_iz": [], 
+            "opombe": "info o casu iz spl. strani", 
+            "email": null, 
             "okrajsava": "ZLSD"
         }
     }, 
     {
-        "pk": 4, 
+        "pk": 2, 
         "model": "dz.stranka", 
         "fields": {
             "do": "9999-12-31", 
-            "ime": "Nova Slovenija - Kr\u0161\u010danska ljudska stranka", 
+            "ime": "Socialni demokrati", 
             "twitter": "", 
-            "od": "2000-08-04", 
-            "barva": "1fb1e6", 
-            "maticna": "1029738000", 
-            "davcna": "20601379", 
-            "spletna_stran": "", 
+            "od": "2005-04-02", 
+            "barva": null, 
+            "maticna": "5147484000", 
+            "davcna": "76534740", 
+            "spletna_stran": "http://www.socialnidemokrati.si/", 
             "facebook": "", 
-            "opombe": "info iz pagea", 
-            "email": "", 
-            "okrajsava": "NSi"
+            "nastala_iz": [
+                1
+            ], 
+            "opombe": null, 
+            "email": null, 
+            "okrajsava": "SD"
         }
     }, 
     {
@@ -4989,32 +4894,96 @@
             "ime": "Slovenska nacionalna stranka", 
             "twitter": "", 
             "od": "1991-03-17", 
-            "barva": "ffff00", 
+            "barva": null, 
             "maticna": "5485657000", 
             "davcna": "87224348", 
             "spletna_stran": "http://www.sns.si/", 
             "facebook": "", 
-            "opombe": "info iz spletne strani", 
-            "email": "", 
+            "nastala_iz": [], 
+            "opombe": null, 
+            "email": null, 
             "okrajsava": "SNS"
         }
     }, 
     {
-        "pk": 11, 
+        "pk": 4, 
         "model": "dz.stranka", 
         "fields": {
             "do": "9999-12-31", 
-            "ime": "DeSUS - Demokrati\u010dna stranka upokojencev Slovenije", 
+            "ime": "Nova Slovenija - Kr\u0161\u010danska ljudska stranka", 
             "twitter": "", 
-            "od": "1991-05-30", 
-            "barva": "c5eccd", 
-            "maticna": "5492734000", 
-            "davcna": "45515514", 
-            "spletna_stran": "http://www.desus.si/", 
+            "od": "2000-08-04", 
+            "barva": null, 
+            "maticna": "1029738000", 
+            "davcna": "20601379", 
+            "spletna_stran": "http://www.nsi.si/", 
             "facebook": "", 
-            "opombe": "Datum ustanovitve vzet s spletne strani stranke.", 
-            "email": "", 
-            "okrajsava": "DeSUS"
+            "nastala_iz": [], 
+            "opombe": "info iz pagea", 
+            "email": null, 
+            "okrajsava": "NSi"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "dz.stranka", 
+        "fields": {
+            "do": "9999-12-31", 
+            "ime": "ZARES \u2013 nova politika", 
+            "twitter": "", 
+            "od": "2007-10-06", 
+            "barva": null, 
+            "maticna": "1030159000", 
+            "davcna": "30475279", 
+            "spletna_stran": "http://www.zares.si/", 
+            "facebook": "", 
+            "nastala_iz": [
+                22
+            ], 
+            "opombe": "info iz pagea", 
+            "email": null, 
+            "okrajsava": "Zares"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "dz.stranka", 
+        "fields": {
+            "do": "9999-12-31", 
+            "ime": "Liberalna demokracija Slovenije", 
+            "twitter": "", 
+            "od": "1994-03-12", 
+            "barva": null, 
+            "maticna": "5837090000", 
+            "davcna": "91757126", 
+            "spletna_stran": "http://www.lds.si/", 
+            "facebook": "", 
+            "nastala_iz": [
+                13, 
+                24
+            ], 
+            "opombe": "info iz pagea", 
+            "email": null, 
+            "okrajsava": "LDS"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "dz.stranka", 
+        "fields": {
+            "do": "2000-04-15", 
+            "ime": "Slovenska ljudska stranka", 
+            "twitter": "", 
+            "od": "1992-06-27", 
+            "barva": null, 
+            "maticna": null, 
+            "davcna": null, 
+            "spletna_stran": null, 
+            "facebook": "", 
+            "nastala_iz": [], 
+            "opombe": "Datum ustanovitve vzet iz slovenske wikipedije.", 
+            "email": null, 
+            "okrajsava": "SLS"
         }
     }, 
     {
@@ -5025,32 +4994,96 @@
             "ime": "Slovenski kr\u0161\u010danski demokrati", 
             "twitter": "", 
             "od": "1989-11-04", 
-            "barva": "ffffff", 
-            "maticna": "", 
-            "davcna": "", 
-            "spletna_stran": "", 
+            "barva": null, 
+            "maticna": null, 
+            "davcna": null, 
+            "spletna_stran": null, 
             "facebook": "", 
-            "opombe": "Ni preverjenega podatka o nastanku, stranka se je zdruzila v SLS+SKD.\r\n", 
-            "email": "", 
+            "nastala_iz": [], 
+            "opombe": "Ni preverjenega podatka o nastanku, stranka se je zdruzila v SLS+SKD.", 
+            "email": null, 
             "okrajsava": "SKD"
         }
     }, 
     {
-        "pk": 26, 
+        "pk": 9, 
         "model": "dz.stranka", 
         "fields": {
-            "do": "2002-02-28", 
-            "ime": "Stranka slovenskih narodnjakov", 
+            "do": "2002-01-31", 
+            "ime": "SLS+SKD Slovenska ljudska stranka", 
             "twitter": "", 
-            "od": "2000-03-16", 
-            "barva": "ffffff", 
-            "maticna": "", 
-            "davcna": "", 
-            "spletna_stran": "", 
+            "od": "2000-04-15", 
+            "barva": null, 
+            "maticna": null, 
+            "davcna": null, 
+            "spletna_stran": null, 
             "facebook": "", 
-            "opombe": "SSN, podatki o preimenovanju vzeti iz Ajpes.", 
-            "email": "", 
-            "okrajsava": "SSN"
+            "nastala_iz": [
+                7, 
+                8
+            ], 
+            "opombe": "Datum preimenovanja: \"Preimenovanje v Slovensko ljudsko stranko je bilo sprejeto po realizaciji sklepov Kongresa stranke v Murski soboti, 31. januarja 2002.\"  vir: http://www.sls.si/sl/inside.sls?cid=6C216BA4-2AD7-DCFF-69FC-798E78705EB0&linkid=article", 
+            "email": null, 
+            "okrajsava": "SLS+SKD"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "dz.stranka", 
+        "fields": {
+            "do": "9999-12-31", 
+            "ime": "Slovenska ljudska stranka", 
+            "twitter": "", 
+            "od": "2002-01-31", 
+            "barva": null, 
+            "maticna": "1029711000", 
+            "davcna": "92078729", 
+            "spletna_stran": "http://www.sls.si/", 
+            "facebook": "", 
+            "nastala_iz": [
+                9
+            ], 
+            "opombe": "Datum ustanovitve je datum preimenovanja stranke SLS+SKD.", 
+            "email": null, 
+            "okrajsava": "SLS"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "dz.stranka", 
+        "fields": {
+            "do": "9999-12-31", 
+            "ime": "DeSUS - Demokrati\u010dna stranka upokojencev Slovenije", 
+            "twitter": "", 
+            "od": "1991-05-30", 
+            "barva": null, 
+            "maticna": "5492734000", 
+            "davcna": "45515514", 
+            "spletna_stran": "http://www.desus.si/", 
+            "facebook": "", 
+            "nastala_iz": [], 
+            "opombe": "Datum ustanovitve vzet s spletne strani stranke.", 
+            "email": null, 
+            "okrajsava": "DeSUS"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "dz.stranka", 
+        "fields": {
+            "do": "2000-03-16", 
+            "ime": "Slovenska nacionalna desnica", 
+            "twitter": "", 
+            "od": "1994-04-12", 
+            "barva": null, 
+            "maticna": "5768870001", 
+            "davcna": null, 
+            "spletna_stran": "http://sl.wikipedia.org/wiki/Sa%C5%A1o_Lap", 
+            "facebook": "", 
+            "nastala_iz": [], 
+            "opombe": "1.februarja 1993 je v Dr\u017eavnem zboru ustanovil Samostojno poslansko skupino in jo tudi vodil do konca leta 1993. Junija 1993 je ustanovil politi\u010dno stranko Slovenska nacionalna desnica (SND), ki jo je vodil do junija 1998", 
+            "email": null, 
+            "okrajsava": "SND"
         }
     }, 
     {
@@ -5061,32 +5094,17 @@
             "ime": "Zeleni - ekolo\u0161ko socialna stranka", 
             "twitter": "", 
             "od": "1993-03-23", 
-            "barva": "8ec641", 
-            "maticna": "", 
-            "davcna": "", 
-            "spletna_stran": "", 
+            "barva": null, 
+            "maticna": null, 
+            "davcna": null, 
+            "spletna_stran": null, 
             "facebook": "", 
-            "opombe": "Pridruzili so se LDS. Podatki od-do bi rabili \u0161e kako verifikaicjo.", 
-            "email": "", 
-            "okrajsava": "ESS"
-        }
-    }, 
-    {
-        "pk": 12, 
-        "model": "dz.stranka", 
-        "fields": {
-            "do": "2000-03-16", 
-            "ime": "Slovenska nacionalna desnica", 
-            "twitter": "", 
-            "od": "1900-01-01", 
-            "barva": "ffffff", 
-            "maticna": "", 
-            "davcna": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "opombe": "Sedanja SSN. Datum preimenovanja je vzet iz Ajpes.", 
-            "email": "", 
-            "okrajsava": "SND"
+            "nastala_iz": [
+                25
+            ], 
+            "opombe": "Pridruzili so se LDS", 
+            "email": null, 
+            "okrajsava": "Zeleni - ESS"
         }
     }, 
     {
@@ -5097,13 +5115,16 @@
             "ime": "Stranka slovenskega naroda", 
             "twitter": "", 
             "od": "2002-02-28", 
-            "barva": "ffffff", 
-            "maticna": "5768870000", 
-            "davcna": "13073842", 
+            "barva": null, 
+            "maticna": null, 
+            "davcna": null, 
             "spletna_stran": "http://www.ssn.si/", 
             "facebook": "", 
+            "nastala_iz": [
+                26
+            ], 
             "opombe": "datum preimenovanja iz ajpes", 
-            "email": "", 
+            "email": null, 
             "okrajsava": "SSN"
         }
     }, 
@@ -5111,17 +5132,18 @@
         "pk": 15, 
         "model": "dz.stranka", 
         "fields": {
-            "do": "9999-12-31", 
+            "do": "1990-02-24", 
             "ime": "Socialdemokratska zveza Slovenije", 
             "twitter": "", 
             "od": "1989-02-16", 
-            "barva": "ffffff", 
-            "maticna": "", 
-            "davcna": "", 
-            "spletna_stran": "", 
+            "barva": null, 
+            "maticna": null, 
+            "davcna": null, 
+            "spletna_stran": null, 
             "facebook": "", 
-            "opombe": "ustanovljena: wikipedia", 
-            "email": "", 
+            "nastala_iz": [], 
+            "opombe": "ustanovljena: wikipedia, preimenovana: prvi kongres SDSS, vir: http://www.cirkulane.sds.si/news/132", 
+            "email": null, 
             "okrajsava": "SDZS"
         }
     }, 
@@ -5129,17 +5151,20 @@
         "pk": 16, 
         "model": "dz.stranka", 
         "fields": {
-            "do": "9999-12-31", 
+            "do": "1996-03-23", 
             "ime": "Socialdemokratska stranka Slovenije", 
             "twitter": "", 
-            "od": "1900-01-01", 
-            "barva": "ffffff", 
-            "maticna": "", 
-            "davcna": "", 
-            "spletna_stran": "", 
+            "od": "1990-02-24", 
+            "barva": null, 
+            "maticna": null, 
+            "davcna": null, 
+            "spletna_stran": null, 
             "facebook": "", 
-            "opombe": "", 
-            "email": "", 
+            "nastala_iz": [
+                15
+            ], 
+            "opombe": null, 
+            "email": null, 
             "okrajsava": "SDSS"
         }
     }, 
@@ -5150,32 +5175,57 @@
             "do": "9999-12-31", 
             "ime": "Slovenska demokratska stranka", 
             "twitter": "", 
-            "od": "1900-01-01", 
-            "barva": "ffffff", 
+            "od": "2003-09-13", 
+            "barva": null, 
             "maticna": "5299446000", 
             "davcna": "13843214", 
-            "spletna_stran": "http://www.sds.si/", 
+            "spletna_stran": null, 
             "facebook": "", 
-            "opombe": "", 
-            "email": "", 
+            "nastala_iz": [
+                27
+            ], 
+            "opombe": "preimenovanje: vir: https://secure.wikimedia.org/wikipedia/sl/wiki/3._dr%C5%BEavni_zbor_Republike_Slovenije", 
+            "email": null, 
             "okrajsava": "SDS"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "dz.stranka", 
+        "fields": {
+            "do": "1994-04-06", 
+            "ime": "Demokrati", 
+            "twitter": "", 
+            "od": null, 
+            "barva": null, 
+            "maticna": null, 
+            "davcna": null, 
+            "spletna_stran": null, 
+            "facebook": "", 
+            "nastala_iz": [], 
+            "opombe": null, 
+            "email": null, 
+            "okrajsava": "D"
         }
     }, 
     {
         "pk": 19, 
         "model": "dz.stranka", 
         "fields": {
-            "do": "9999-12-31", 
+            "do": null, 
             "ime": "Demokratska stranka", 
             "twitter": "", 
             "od": "1994-04-06", 
-            "barva": "ffffff", 
-            "maticna": "", 
-            "davcna": "", 
-            "spletna_stran": "", 
+            "barva": null, 
+            "maticna": null, 
+            "davcna": null, 
+            "spletna_stran": null, 
             "facebook": "", 
-            "opombe": "", 
-            "email": "", 
+            "nastala_iz": [
+                18
+            ], 
+            "opombe": null, 
+            "email": null, 
             "okrajsava": "DS"
         }
     }, 
@@ -5187,14 +5237,36 @@
             "ime": "Stranka mladih Slovenije", 
             "twitter": "", 
             "od": "2000-08-08", 
-            "barva": "ffffff", 
-            "maticna": "", 
-            "davcna": "", 
-            "spletna_stran": "", 
+            "barva": null, 
+            "maticna": null, 
+            "davcna": null, 
+            "spletna_stran": null, 
             "facebook": "", 
+            "nastala_iz": [], 
             "opombe": "datum ustanovitve je datum vpisa v ajpes", 
-            "email": "", 
+            "email": null, 
             "okrajsava": "SMS"
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "dz.stranka", 
+        "fields": {
+            "do": "9999-12-31", 
+            "ime": "Stranka mladih - Zeleni Evrope", 
+            "twitter": "", 
+            "od": "2009-07-04", 
+            "barva": null, 
+            "maticna": "1029720000", 
+            "davcna": "71133470", 
+            "spletna_stran": "http://www.sms.si/", 
+            "facebook": "", 
+            "nastala_iz": [
+                20
+            ], 
+            "opombe": null, 
+            "email": null, 
+            "okrajsava": "SMS - Zeleni"
         }
     }, 
     {
@@ -5205,13 +5277,14 @@
             "ime": "Aktivna Slovenija", 
             "twitter": "", 
             "od": "2004-05-08", 
-            "barva": "ffffff", 
+            "barva": null, 
             "maticna": "1029878000", 
             "davcna": "30179505", 
-            "spletna_stran": "", 
+            "spletna_stran": null, 
             "facebook": "", 
+            "nastala_iz": [], 
             "opombe": "datum prenehanja je datum izbrisa iz ajpes", 
-            "email": "", 
+            "email": null, 
             "okrajsava": "AS"
         }
     }, 
@@ -5223,13 +5296,16 @@
             "ime": "Demokratska stranka Slovenije", 
             "twitter": "", 
             "od": "1994-03-12", 
-            "barva": "ffffff", 
+            "barva": null, 
             "maticna": "5836778000", 
             "davcna": "87276453", 
             "spletna_stran": "http://www.demokrati.si/", 
             "facebook": "", 
+            "nastala_iz": [
+                24
+            ], 
             "opombe": "s spletne strani demokrati.si", 
-            "email": "", 
+            "email": null, 
             "okrajsava": "DS"
         }
     }, 
@@ -5241,13 +5317,14 @@
             "ime": "Demokratska stranka", 
             "twitter": "", 
             "od": "1991-10-13", 
-            "barva": "ffffff", 
-            "maticna": "", 
-            "davcna": "", 
-            "spletna_stran": "", 
+            "barva": null, 
+            "maticna": null, 
+            "davcna": null, 
+            "spletna_stran": null, 
             "facebook": "", 
+            "nastala_iz": [], 
             "opombe": "s spletne strani demokrati.si", 
-            "email": "", 
+            "email": null, 
             "okrajsava": "DS"
         }
     }, 
@@ -5259,59 +5336,57 @@
             "ime": "Zeleni Slovenije", 
             "twitter": "", 
             "od": "1989-06-11", 
-            "barva": "ffffff", 
+            "barva": null, 
             "maticna": "5951763000", 
             "davcna": "15119394", 
             "spletna_stran": "http://www.zeleni.si/", 
             "facebook": "", 
-            "opombe": "", 
-            "email": "", 
+            "nastala_iz": [], 
+            "opombe": null, 
+            "email": null, 
             "okrajsava": "Zeleni"
         }
     }, 
     {
-        "pk": 18, 
+        "pk": 26, 
         "model": "dz.stranka", 
         "fields": {
-            "do": "1994-04-06", 
-            "ime": "Demokrati", 
+            "do": "2002-02-28", 
+            "ime": "Stranka slovenskih narodnjakov", 
             "twitter": "", 
-            "od": "1900-01-01", 
-            "barva": "ffffff", 
-            "maticna": "", 
-            "davcna": "", 
-            "spletna_stran": "", 
+            "od": "2000-03-16", 
+            "barva": null, 
+            "maticna": null, 
+            "davcna": null, 
+            "spletna_stran": null, 
             "facebook": "", 
-            "opombe": "", 
-            "email": "", 
-            "okrajsava": "Demokrati"
+            "nastala_iz": [
+                12
+            ], 
+            "opombe": "datum preimenovanja iz ajpes", 
+            "email": null, 
+            "okrajsava": "SSN"
         }
     }, 
     {
-        "pk": 21, 
+        "pk": 27, 
         "model": "dz.stranka", 
         "fields": {
-            "do": "9999-12-31", 
-            "ime": "Stranka mladih - Zeleni Evrope", 
+            "do": "2003-09-13", 
+            "ime": "Socialno demokratska stranka", 
             "twitter": "", 
-            "od": "2009-07-04", 
-            "barva": "ffffff", 
-            "maticna": "1029720000", 
-            "davcna": "71133470", 
-            "spletna_stran": "http://www.sms.si/", 
+            "od": "1996-03-23", 
+            "barva": null, 
+            "maticna": null, 
+            "davcna": null, 
+            "spletna_stran": null, 
             "facebook": "", 
-            "opombe": "", 
-            "email": "", 
-            "okrajsava": "SMS - Zeleni"
-        }
-    }, 
-    {
-        "pk": 5, 
-        "model": "dz.mandat", 
-        "fields": {
-            "do": "9999-12-31", 
-            "od": "2008-10-15", 
-            "st": 5
+            "nastala_iz": [
+                16
+            ], 
+            "opombe": "kongres, kjer so se preimenovali, iz SDSS v SDS je bil 23. marca, iz Socialno DS v Slovensko DS pa 13.9.2003 vir1: http://dk.fdv.uni-lj.si/diplomska/pdfs/fabjan-bostjan.pdf", 
+            "email": null, 
+            "okrajsava": "SDS"
         }
     }, 
     {
@@ -5348,6 +5423,15 @@
             "do": "2008-10-15", 
             "od": "2004-10-22", 
             "st": 4
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "dz.mandat", 
+        "fields": {
+            "do": "9999-12-31", 
+            "od": "2008-10-15", 
+            "st": 5
         }
     }, 
     {
