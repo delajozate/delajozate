@@ -7,4 +7,5 @@ delajozate.pid
 *.swp
 .hgignore
 static/
+.virtualenv
 
