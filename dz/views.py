@@ -3,7 +3,7 @@ from django.template import RequestContext, Context, loader
 from django.core.cache import cache
 
 from models import Mandat, Poslanec
-from settings import NULL_DATE
+from temporal import END_OF_TIME
 
 import random, datetime
 
@@ -11,7 +11,7 @@ import random, datetime
 LONG_LIVE = 5 # 5 seconds cache
 
 def null_date(date):
-	if date == NULL_DATE:
+	if date == END_OF_TIME:
 		return None
 	return date
 

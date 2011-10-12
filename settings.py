@@ -166,8 +166,6 @@ FIXTURE_DIRS = (
 	here('fixtures/'),
 )
 
-NULL_DATE = datetime.date(9999, 12, 31)
-
 import traceback
 try:
     from localsettings import *
