@@ -4854,14 +4854,14 @@
             "ime": "Zdru\u017eena lista socialnih demokratov", 
             "twitter": "", 
             "od": "1993-05-29", 
-            "barva": null, 
-            "maticna": null, 
-            "davcna": null, 
-            "spletna_stran": null, 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
+            "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [], 
             "opombe": "info o casu iz spl. strani", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "ZLSD"
         }
     }, 
@@ -4873,7 +4873,7 @@
             "ime": "Socialni demokrati", 
             "twitter": "", 
             "od": "2005-04-02", 
-            "barva": null, 
+            "barva": "", 
             "maticna": "5147484000", 
             "davcna": "76534740", 
             "spletna_stran": "http://www.socialnidemokrati.si/", 
@@ -4881,8 +4881,8 @@
             "nastala_iz": [
                 1
             ], 
-            "opombe": null, 
-            "email": null, 
+            "opombe": "", 
+            "email": "", 
             "okrajsava": "SD"
         }
     }, 
@@ -4894,14 +4894,14 @@
             "ime": "Slovenska nacionalna stranka", 
             "twitter": "", 
             "od": "1991-03-17", 
-            "barva": null, 
+            "barva": "", 
             "maticna": "5485657000", 
             "davcna": "87224348", 
             "spletna_stran": "http://www.sns.si/", 
             "facebook": "", 
             "nastala_iz": [], 
-            "opombe": null, 
-            "email": null, 
+            "opombe": "", 
+            "email": "", 
             "okrajsava": "SNS"
         }
     }, 
@@ -4913,14 +4913,14 @@
             "ime": "Nova Slovenija - Kr\u0161\u010danska ljudska stranka", 
             "twitter": "", 
             "od": "2000-08-04", 
-            "barva": null, 
+            "barva": "", 
             "maticna": "1029738000", 
             "davcna": "20601379", 
             "spletna_stran": "http://www.nsi.si/", 
             "facebook": "", 
             "nastala_iz": [], 
             "opombe": "info iz pagea", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "NSi"
         }
     }, 
@@ -4932,7 +4932,7 @@
             "ime": "ZARES \u2013 nova politika", 
             "twitter": "", 
             "od": "2007-10-06", 
-            "barva": null, 
+            "barva": "", 
             "maticna": "1030159000", 
             "davcna": "30475279", 
             "spletna_stran": "http://www.zares.si/", 
@@ -4941,7 +4941,7 @@
                 22
             ], 
             "opombe": "info iz pagea", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "Zares"
         }
     }, 
@@ -4953,7 +4953,7 @@
             "ime": "Liberalna demokracija Slovenije", 
             "twitter": "", 
             "od": "1994-03-12", 
-            "barva": null, 
+            "barva": "", 
             "maticna": "5837090000", 
             "davcna": "91757126", 
             "spletna_stran": "http://www.lds.si/", 
@@ -4963,7 +4963,7 @@
                 24
             ], 
             "opombe": "info iz pagea", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "LDS"
         }
     }, 
@@ -4975,14 +4975,14 @@
             "ime": "Slovenska ljudska stranka", 
             "twitter": "", 
             "od": "1992-06-27", 
-            "barva": null, 
-            "maticna": null, 
-            "davcna": null, 
-            "spletna_stran": null, 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
+            "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [], 
             "opombe": "Datum ustanovitve vzet iz slovenske wikipedije.", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "SLS"
         }
     }, 
@@ -4994,14 +4994,14 @@
             "ime": "Slovenski kr\u0161\u010danski demokrati", 
             "twitter": "", 
             "od": "1989-11-04", 
-            "barva": null, 
-            "maticna": null, 
-            "davcna": null, 
-            "spletna_stran": null, 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
+            "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [], 
             "opombe": "Ni preverjenega podatka o nastanku, stranka se je zdruzila v SLS+SKD.", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "SKD"
         }
     }, 
@@ -5013,17 +5013,17 @@
             "ime": "SLS+SKD Slovenska ljudska stranka", 
             "twitter": "", 
             "od": "2000-04-15", 
-            "barva": null, 
-            "maticna": null, 
-            "davcna": null, 
-            "spletna_stran": null, 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
+            "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [
                 7, 
                 8
             ], 
             "opombe": "Datum preimenovanja: \"Preimenovanje v Slovensko ljudsko stranko je bilo sprejeto po realizaciji sklepov Kongresa stranke v Murski soboti, 31. januarja 2002.\"  vir: http://www.sls.si/sl/inside.sls?cid=6C216BA4-2AD7-DCFF-69FC-798E78705EB0&linkid=article", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "SLS+SKD"
         }
     }, 
@@ -5035,7 +5035,7 @@
             "ime": "Slovenska ljudska stranka", 
             "twitter": "", 
             "od": "2002-01-31", 
-            "barva": null, 
+            "barva": "", 
             "maticna": "1029711000", 
             "davcna": "92078729", 
             "spletna_stran": "http://www.sls.si/", 
@@ -5044,7 +5044,7 @@
                 9
             ], 
             "opombe": "Datum ustanovitve je datum preimenovanja stranke SLS+SKD.", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "SLS"
         }
     }, 
@@ -5056,14 +5056,14 @@
             "ime": "DeSUS - Demokrati\u010dna stranka upokojencev Slovenije", 
             "twitter": "", 
             "od": "1991-05-30", 
-            "barva": null, 
+            "barva": "", 
             "maticna": "5492734000", 
             "davcna": "45515514", 
             "spletna_stran": "http://www.desus.si/", 
             "facebook": "", 
             "nastala_iz": [], 
             "opombe": "Datum ustanovitve vzet s spletne strani stranke.", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "DeSUS"
         }
     }, 
@@ -5075,14 +5075,14 @@
             "ime": "Slovenska nacionalna desnica", 
             "twitter": "", 
             "od": "1994-04-12", 
-            "barva": null, 
+            "barva": "", 
             "maticna": "5768870001", 
-            "davcna": null, 
+            "davcna": "", 
             "spletna_stran": "http://sl.wikipedia.org/wiki/Sa%C5%A1o_Lap", 
             "facebook": "", 
             "nastala_iz": [], 
             "opombe": "1.februarja 1993 je v Dr\u017eavnem zboru ustanovil Samostojno poslansko skupino in jo tudi vodil do konca leta 1993. Junija 1993 je ustanovil politi\u010dno stranko Slovenska nacionalna desnica (SND), ki jo je vodil do junija 1998", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "SND"
         }
     }, 
@@ -5094,16 +5094,16 @@
             "ime": "Zeleni - ekolo\u0161ko socialna stranka", 
             "twitter": "", 
             "od": "1993-03-23", 
-            "barva": null, 
-            "maticna": null, 
-            "davcna": null, 
-            "spletna_stran": null, 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
+            "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [
                 25
             ], 
             "opombe": "Pridruzili so se LDS", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "Zeleni - ESS"
         }
     }, 
@@ -5115,16 +5115,16 @@
             "ime": "Stranka slovenskega naroda", 
             "twitter": "", 
             "od": "2002-02-28", 
-            "barva": null, 
-            "maticna": null, 
-            "davcna": null, 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
             "spletna_stran": "http://www.ssn.si/", 
             "facebook": "", 
             "nastala_iz": [
                 26
             ], 
             "opombe": "datum preimenovanja iz ajpes", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "SSN"
         }
     }, 
@@ -5136,14 +5136,14 @@
             "ime": "Socialdemokratska zveza Slovenije", 
             "twitter": "", 
             "od": "1989-02-16", 
-            "barva": null, 
-            "maticna": null, 
-            "davcna": null, 
-            "spletna_stran": null, 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
+            "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [], 
             "opombe": "ustanovljena: wikipedia, preimenovana: prvi kongres SDSS, vir: http://www.cirkulane.sds.si/news/132", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "SDZS"
         }
     }, 
@@ -5155,16 +5155,16 @@
             "ime": "Socialdemokratska stranka Slovenije", 
             "twitter": "", 
             "od": "1990-02-24", 
-            "barva": null, 
-            "maticna": null, 
-            "davcna": null, 
-            "spletna_stran": null, 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
+            "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [
                 15
             ], 
-            "opombe": null, 
-            "email": null, 
+            "opombe": "", 
+            "email": "", 
             "okrajsava": "SDSS"
         }
     }, 
@@ -5176,16 +5176,16 @@
             "ime": "Slovenska demokratska stranka", 
             "twitter": "", 
             "od": "2003-09-13", 
-            "barva": null, 
+            "barva": "", 
             "maticna": "5299446000", 
             "davcna": "13843214", 
-            "spletna_stran": null, 
+            "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [
                 27
             ], 
             "opombe": "preimenovanje: vir: https://secure.wikimedia.org/wikipedia/sl/wiki/3._dr%C5%BEavni_zbor_Republike_Slovenije", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "SDS"
         }
     }, 
@@ -5197,14 +5197,14 @@
             "ime": "Demokrati", 
             "twitter": "", 
             "od": null, 
-            "barva": null, 
-            "maticna": null, 
-            "davcna": null, 
-            "spletna_stran": null, 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
+            "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [], 
-            "opombe": null, 
-            "email": null, 
+            "opombe": "", 
+            "email": "", 
             "okrajsava": "D"
         }
     }, 
@@ -5216,16 +5216,16 @@
             "ime": "Demokratska stranka", 
             "twitter": "", 
             "od": "1994-04-06", 
-            "barva": null, 
-            "maticna": null, 
-            "davcna": null, 
-            "spletna_stran": null, 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
+            "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [
                 18
             ], 
-            "opombe": null, 
-            "email": null, 
+            "opombe": "", 
+            "email": "", 
             "okrajsava": "DS"
         }
     }, 
@@ -5237,14 +5237,14 @@
             "ime": "Stranka mladih Slovenije", 
             "twitter": "", 
             "od": "2000-08-08", 
-            "barva": null, 
-            "maticna": null, 
-            "davcna": null, 
-            "spletna_stran": null, 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
+            "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [], 
             "opombe": "datum ustanovitve je datum vpisa v ajpes", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "SMS"
         }
     }, 
@@ -5256,7 +5256,7 @@
             "ime": "Stranka mladih - Zeleni Evrope", 
             "twitter": "", 
             "od": "2009-07-04", 
-            "barva": null, 
+            "barva": "", 
             "maticna": "1029720000", 
             "davcna": "71133470", 
             "spletna_stran": "http://www.sms.si/", 
@@ -5264,8 +5264,8 @@
             "nastala_iz": [
                 20
             ], 
-            "opombe": null, 
-            "email": null, 
+            "opombe": "", 
+            "email": "", 
             "okrajsava": "SMS - Zeleni"
         }
     }, 
@@ -5277,14 +5277,14 @@
             "ime": "Aktivna Slovenija", 
             "twitter": "", 
             "od": "2004-05-08", 
-            "barva": null, 
+            "barva": "", 
             "maticna": "1029878000", 
             "davcna": "30179505", 
-            "spletna_stran": null, 
+            "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [], 
             "opombe": "datum prenehanja je datum izbrisa iz ajpes", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "AS"
         }
     }, 
@@ -5296,7 +5296,7 @@
             "ime": "Demokratska stranka Slovenije", 
             "twitter": "", 
             "od": "1994-03-12", 
-            "barva": null, 
+            "barva": "", 
             "maticna": "5836778000", 
             "davcna": "87276453", 
             "spletna_stran": "http://www.demokrati.si/", 
@@ -5305,7 +5305,7 @@
                 24
             ], 
             "opombe": "s spletne strani demokrati.si", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "DS"
         }
     }, 
@@ -5317,14 +5317,14 @@
             "ime": "Demokratska stranka", 
             "twitter": "", 
             "od": "1991-10-13", 
-            "barva": null, 
-            "maticna": null, 
-            "davcna": null, 
-            "spletna_stran": null, 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
+            "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [], 
             "opombe": "s spletne strani demokrati.si", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "DS"
         }
     }, 
@@ -5336,14 +5336,14 @@
             "ime": "Zeleni Slovenije", 
             "twitter": "", 
             "od": "1989-06-11", 
-            "barva": null, 
+            "barva": "", 
             "maticna": "5951763000", 
             "davcna": "15119394", 
             "spletna_stran": "http://www.zeleni.si/", 
             "facebook": "", 
             "nastala_iz": [], 
-            "opombe": null, 
-            "email": null, 
+            "opombe": "", 
+            "email": "", 
             "okrajsava": "Zeleni"
         }
     }, 
@@ -5355,16 +5355,16 @@
             "ime": "Stranka slovenskih narodnjakov", 
             "twitter": "", 
             "od": "2000-03-16", 
-            "barva": null, 
-            "maticna": null, 
-            "davcna": null, 
-            "spletna_stran": null, 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
+            "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [
                 12
             ], 
             "opombe": "datum preimenovanja iz ajpes", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "SSN"
         }
     }, 
@@ -5376,16 +5376,16 @@
             "ime": "Socialno demokratska stranka", 
             "twitter": "", 
             "od": "1996-03-23", 
-            "barva": null, 
-            "maticna": null, 
-            "davcna": null, 
-            "spletna_stran": null, 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
+            "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [
                 16
             ], 
             "opombe": "kongres, kjer so se preimenovali, iz SDSS v SDS je bil 23. marca, iz Socialno DS v Slovensko DS pa 13.9.2003 vir1: http://dk.fdv.uni-lj.si/diplomska/pdfs/fabjan-bostjan.pdf", 
-            "email": null, 
+            "email": "", 
             "okrajsava": "SDS"
         }
     }, 
