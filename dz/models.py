@@ -34,13 +34,13 @@ class Oseba(models.Model):
 
 class Stranka(models.Model):
 	# kako modelirat kontinuiteto stranke, kadar se preimenuje?
-	nastala_iz = models.ManyToManyField("self", related_name="spremenila_v")
+	nastala_iz = models.ManyToManyField("self", related_name="spremenila_v", symmetrical=False)
 	ime = models.CharField(max_length=64)
 	maticna = models.CharField(max_length=10, blank=True)
 	davcna = models.CharField(max_length=10, blank=True)
 	okrajsava = models.CharField(max_length=16)
 	email = models.EmailField(max_length=64, blank=True)
-	barva = models.CharField(max_length=6)
+	barva = models.CharField(max_length=6, blank=True)
 	od = models.DateField()
 	do = models.DateField(default=END_OF_TIME)
 	spletna_stran = models.URLField(blank=True)
