@@ -44,6 +44,8 @@ nav ol li a {padding:.625em;display:block;}
 /* badges */
 .card .badges {border-left:1px solid #999;overflow:hidden;margin:0 0 .625em;}
 .card .badges li {border-right:1px solid #999;float:left;font-size:.625em;width:25%;padding:0 .3em;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
 }
 .card .badges li span {font-size:2em;display:block;}
