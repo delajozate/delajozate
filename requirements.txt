@@ -3,4 +3,4 @@ python-memcached
 South==0.7.3
 django-haystack
 pysolr
-python-dateutil
+python-dateutil==1.5
