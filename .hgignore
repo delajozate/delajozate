@@ -1,3 +1,5 @@
+^static
+
 syntax: glob
 
 *.pyc
@@ -6,6 +8,5 @@ delajozate.pid
 *~
 *.swp
 .hgignore
-static/
 .virtualenv
 
