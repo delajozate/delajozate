@@ -107,6 +107,9 @@ class Odbor(models.Model):
 	
 	class Meta:
 		verbose_name_plural = u'Odbori'
+	
+	def __unicode__(self):
+		return '%s (%s)' % (self.ime, self.mandat)
 
 
 class ClanOdbora(models.Model):
