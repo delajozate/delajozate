@@ -64,6 +64,7 @@ class Skupina(models.Model): # Poslanska
 
 class ClanStranke(models.Model):
 	oseba = models.ForeignKey(Oseba)
+	stranka = models.ForeignKey(Stranka)
 	od = models.DateField()
 	do = models.DateField(blank=True)
 	
@@ -98,8 +99,9 @@ class Poslanec(models.Model):
 
 
 class Odbor(models.Model):
-	ime = models.CharField(max_length=64)
+	ime = models.CharField(max_length=500)
 	mandat = models.ForeignKey(Mandat)
+	url = models.URLField(blank=True, default="")
 	od = models.DateField()
 	do = models.DateField(blank=True)
 	
