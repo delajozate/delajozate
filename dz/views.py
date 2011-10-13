@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.template import RequestContext, Context, loader
 from django.core.cache import cache
 
-from models import Mandat, Poslanec
+from models import Mandat, Poslanec, ClanOdbora
 from temporal import END_OF_TIME
 
 import random, datetime
@@ -63,12 +63,20 @@ def home(request):
 		# ... stranko v kateri je
 
 		# ... stevilo strank v katerih je bil
+		'''
 
-		# ... stevilo odborov
+		# ... stevilo odborov v zadnjem mandatu
+		odbori = set([])
+		pos_mandati = Poslanec.objects.filter(oseba=oseba, mandat=mandat) # e.g.: poslanec->minister->poslanec
+		for pos_mandat in pos_mandati:
+			for clanstvo in ClanOdbora.objects.filter(poslanec=pos_mandat, mandat=mandat):
+				odbori.add(clanstvo.odbor.pk)
+		kandidat['odbori'] = len(odbori)
 
-		# ... stevilo komisij
+		'''
+		# ... stevilo komisij v zadnjem mandatu
 
-		# ... stevilo delegacij
+		# ... stevilo delegacij v zadnjem mandatu
 		'''
 		izbrani.append(kandidat)
 
