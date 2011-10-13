@@ -15572,5 +15572,185 @@
             "od": "2008-10-15", 
             "odbor": 17
         }
+    }, 
+    {
+        "pk": 397, 
+        "model": "dz.clanodbora", 
+        "fields": {
+            "mandat": 5, 
+            "poslanec": 414, 
+            "do": "9999-12-31", 
+            "funkcija": "", 
+            "od": "2008-10-15", 
+            "odbor": 11
+        }
+    }, 
+    {
+        "pk": 398, 
+        "model": "dz.clanodbora", 
+        "fields": {
+            "mandat": 5, 
+            "poslanec": 414, 
+            "do": "9999-12-31", 
+            "funkcija": "", 
+            "od": "2008-10-15", 
+            "odbor": 24
+        }
+    }, 
+    {
+        "pk": 399, 
+        "model": "dz.clanodbora", 
+        "fields": {
+            "mandat": 5, 
+            "poslanec": 414, 
+            "do": "9999-12-31", 
+            "funkcija": "", 
+            "od": "2008-10-15", 
+            "odbor": 9
+        }
+    }, 
+    {
+        "pk": 400, 
+        "model": "dz.clanodbora", 
+        "fields": {
+            "mandat": 5, 
+            "poslanec": 414, 
+            "do": "9999-12-31", 
+            "funkcija": "", 
+            "od": "2008-10-15", 
+            "odbor": 8
+        }
+    }, 
+    {
+        "pk": 401, 
+        "model": "dz.clanodbora", 
+        "fields": {
+            "mandat": 5, 
+            "poslanec": 414, 
+            "do": "9999-12-31", 
+            "funkcija": "", 
+            "od": "2008-10-15", 
+            "odbor": 16
+        }
+    }, 
+    {
+        "pk": 402, 
+        "model": "dz.clanodbora", 
+        "fields": {
+            "mandat": 5, 
+            "poslanec": 414, 
+            "do": "9999-12-31", 
+            "funkcija": "", 
+            "od": "2008-10-15", 
+            "odbor": 10
+        }
+    }, 
+    {
+        "pk": 403, 
+        "model": "dz.clanodbora", 
+        "fields": {
+            "mandat": 5, 
+            "poslanec": 415, 
+            "do": "9999-12-31", 
+            "funkcija": "", 
+            "od": "2008-10-15", 
+            "odbor": 2
+        }
+    }, 
+    {
+        "pk": 404, 
+        "model": "dz.clanodbora", 
+        "fields": {
+            "mandat": 5, 
+            "poslanec": 415, 
+            "do": "9999-12-31", 
+            "funkcija": "", 
+            "od": "2008-10-15", 
+            "odbor": 25
+        }
+    }, 
+    {
+        "pk": 405, 
+        "model": "dz.clanodbora", 
+        "fields": {
+            "mandat": 5, 
+            "poslanec": 415, 
+            "do": "9999-12-31", 
+            "funkcija": "", 
+            "od": "2008-10-15", 
+            "odbor": 13
+        }
+    }, 
+    {
+        "pk": 406, 
+        "model": "dz.clanodbora", 
+        "fields": {
+            "mandat": 5, 
+            "poslanec": 415, 
+            "do": "9999-12-31", 
+            "funkcija": "", 
+            "od": "2008-10-15", 
+            "odbor": 10
+        }
+    }, 
+    {
+        "pk": 407, 
+        "model": "dz.clanodbora", 
+        "fields": {
+            "mandat": 5, 
+            "poslanec": 416, 
+            "do": "9999-12-31", 
+            "funkcija": "", 
+            "od": "2008-10-15", 
+            "odbor": 21
+        }
+    }, 
+    {
+        "pk": 408, 
+        "model": "dz.clanodbora", 
+        "fields": {
+            "mandat": 5, 
+            "poslanec": 416, 
+            "do": "9999-12-31", 
+            "funkcija": "", 
+            "od": "2008-10-15", 
+            "odbor": 9
+        }
+    }, 
+    {
+        "pk": 409, 
+        "model": "dz.clanodbora", 
+        "fields": {
+            "mandat": 5, 
+            "poslanec": 416, 
+            "do": "9999-12-31", 
+            "funkcija": "", 
+            "od": "2008-10-15", 
+            "odbor": 4
+        }
+    }, 
+    {
+        "pk": 410, 
+        "model": "dz.clanodbora", 
+        "fields": {
+            "mandat": 5, 
+            "poslanec": 416, 
+            "do": "9999-12-31", 
+            "funkcija": "", 
+            "od": "2008-10-15", 
+            "odbor": 15
+        }
+    }, 
+    {
+        "pk": 411, 
+        "model": "dz.clanodbora", 
+        "fields": {
+            "mandat": 5, 
+            "poslanec": 476, 
+            "do": "9999-12-31", 
+            "funkcija": "", 
+            "od": "2008-10-15", 
+            "odbor": 27
+        }
     }
 ]
