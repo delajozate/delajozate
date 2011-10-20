@@ -1,7 +1,8 @@
 html, body {background:#f0ede6;margin:0;padding:0;}
 body {font-size:100%;line-height:1.25em;font-family:"PT Sans", sans-serif;}
 
-.site {position:relative;width:960px;margin:1em auto 3em;padding:0 10px;background:#fff;color:#333;}
+.site {position:relative;width:960px;margin:0 auto 3em;padding:0;background:#fff;color:#333;}
+.site > section {clear:both;overflow:hidden;}
 
 header, footer {display:block;clear:both;}
 ol, ul, li {list-style:none;margin:0;padding:0;}
@@ -16,6 +17,10 @@ nav a {color:#fff;text-decoration:none;}
 nav ol {list-style:none;margin:0;padding:0;}
 nav ol li {float:left;margin:0;padding:0;}
 nav ol li a {padding:.625em;display:block;}
+
+footer {background:#000;color:#fff;}
+footer p {padding:.625em;}
+footer a {color:#fff;}
 
 .random {margin:1.25em 0 2.5em;}
 

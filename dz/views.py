@@ -39,7 +39,7 @@ def home(request):
 	st_poslancev = len(poslanci)
 	picked = set([])
 	izbrani = []
-	while len(picked) < 4:
+	while len(picked) < 8:
 		picked.add(poslanci[random.randint(0, st_poslancev-1)])
 
 	# Za vsakega kandidata poberi...

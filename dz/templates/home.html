@@ -1,4 +1,4 @@
-<!doctype html>
+{% load dz_extras %}<!doctype html>
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -13,8 +13,8 @@
 			</header>
 			<nav class="top">
 				<ol>
-					<li><a href="/poslanci/">Poslanci</a></li>
-					<!--li><a href="/stranke/">Stranke</a></li>
+					<!--li><a href="/poslanci/">Poslanci</a></li>
+					<li><a href="/stranke/">Stranke</a></li>
 					<li><a href="/delovna-telesa/">Delovna telesa</a></li>
 					<li><a href="/skupine/">Skupine</a></li-->
 				</ol>
@@ -25,7 +25,7 @@
 					<li>
 						<div class="card">
 							<h2> {{ poslanec.ime }}</h2>
-							<div class="stranka"><a class="sns" href="/stranke/sns/">SNS</a></div>
+							<!--div class="stranka"><a class="sns" href="/stranke/sns/">SNS</a></div-->
 							<div class="img">
 								<img src="{{ poslanec.slika|default:"/static/img/unknown.png"}}" alt="" title="{{ poslanec.ime }}, vir:{% if poslanec.slika %}dz-rs.si{% else %}http://www.flickr.com/photos/marypaulose/295058238/sizes/z/in/photostream/{% endif %}" />
 							</div>
@@ -36,25 +36,25 @@
 								<dd>{{ poslanec.st_mandatov }}</dd>
 							</dl>
 							<ol class="badges">
-								<li class="odbori"><span>{{ poslanec.odbori }}</span> odbori</li>
-								<li class="komisije"><span>6</span> komisij</li>
-								<li class="delegacije"><span>3</span> deleg.</li>
-								<li class="skupine"><span>21</span> skupin</li>
+								<li class="odbori"><span>{{ poslanec.odbori }}</span> odbor{{ poslanec.odbori|slopluralize:",a,i,ov" }}</li>
+								<li class="komisije"><span>&nbsp;</span> komisij{{ poslanec.komisije|slopluralize:"a,i,e," }}</li>
+								<li class="delegacije"><span>&nbsp;</span> deleg.</li>
+								<li class="skupine"><span>&nbsp;</span> skupin{{ poslanec.skupine|slopluralize:"a,i,e," }}</li>
 							</ol>
 						</div>
 					</li>
 					{% endfor %}
 				</ol>
 			</section>
-			<section class="seje">
+			<!--section class="seje">
 				<h2>Seje</h2>
 				<p>Žal se nam še ni uspelo prebiti čez podatke.</p>
-			</section>
+			</section-->
 			<footer>
 				<nav>
 					<ol>
-						<li><span><a href="/poslanci/">Poslanci</a></span></li>
-						<!--li><span><a href="/stranke/">Stranke</a></span></li>
+						<!--li><span><a href="/poslanci/">Poslanci</a></span></li>
+						<li><span><a href="/stranke/">Stranke</a></span></li>
 						<li>
 							<span><a href="/delovna-telesa/">Delovna telesa</a></span>
 							<ol>
@@ -66,7 +66,7 @@
 						<li><a href="/skupine/">Skupine</a></li-->
 					</ol>
 				</nav>
-				<p>Started at Open Data Hackday 2011 at <a href="http://www.kiberpipa.org">Kiberpipa</a>.</p>
+				<p>Started at Open Data Hackday 2011 at <a href="http://www.kiberpipa.org">Kiberpipa</a>. Data from <a href="http://www.dz-rs.si">www.dz-rs.si</a>.</p>
 			</footer>
 		</div>
 	</body>
