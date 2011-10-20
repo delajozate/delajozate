@@ -24,6 +24,7 @@ footer a {color:#fff;}
 
 .random {margin:1.25em 0 2.5em;}
 
+.cards {padding-top:.5em;}
 .cards > li {width:25%;float:left;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;padding:0 1em 1em;}
 
 /* card */
