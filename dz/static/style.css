@@ -45,6 +45,7 @@ footer a {color:#fff;}
 .card .img {border:1px solid #999;height:240px;overflow:hidden;}
 .card .img img {max-width:100%;width:100%;display:block;}
 /* stats */
+.card dl {margin:.625em 0;}
 .card dt {float:left;}
 .card dd {border-bottom:1px dotted #666;padding:0;margin:0;text-align:right;}
 /* badges */
