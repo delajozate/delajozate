@@ -7,7 +7,7 @@ class PoslanecAdmin(admin.ModelAdmin):
 	list_filter = ('mandat',)
 
 class StrankaAdmin(admin.ModelAdmin):
-	list_display = ('ime', 'okrajsava', 'od', 'do', 'podatki_preverjeni')
+	list_display = ('ime', 'okrajsava', 'twitter', 'od', 'do', 'podatki_preverjeni')
 
 class OdborAdmin(admin.ModelAdmin):
 	list_display = ('ime', 'mandat', 'od', 'do', 'podatki_preverjeni')
