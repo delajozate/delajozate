@@ -34,7 +34,7 @@ class Oseba(models.Model):
 
 class Stranka(models.Model):
 	# kako modelirat kontinuiteto stranke, kadar se preimenuje?
-	nastala_iz = models.ManyToManyField("self", related_name="spremenila_v", symmetrical=False)
+	nastala_iz = models.ManyToManyField("self", related_name="spremenila_v", symmetrical=False, blank=True)
 	ime = models.CharField(max_length=64)
 	maticna = models.CharField(max_length=10, blank=True)
 	davcna = models.CharField(max_length=10, blank=True)
@@ -46,6 +46,7 @@ class Stranka(models.Model):
 	spletna_stran = models.URLField(blank=True)
 	twitter = models.CharField(max_length=32, blank=True)
 	facebook = models.URLField(blank=True)
+	podatki_preverjeni = models.BooleanField(default=False)
 	opombe = models.TextField(blank=True)
 	
 	class Meta:
@@ -67,6 +68,8 @@ class ClanStranke(models.Model):
 	stranka = models.ForeignKey(Stranka)
 	od = models.DateField()
 	do = models.DateField(blank=True)
+	podatki_preverjeni = models.BooleanField(default=False)
+	opombe = models.TextField(blank=True)
 	
 	class Meta:
 		verbose_name = u'Član stranke'
@@ -89,6 +92,8 @@ class Poslanec(models.Model):
 	mandat = models.ForeignKey(Mandat)
 	od = models.DateField()
 	do = models.DateField(blank=True)
+	podatki_preverjeni = models.BooleanField(default=False)
+	opombe = models.TextField(blank=True)
 	
 	class Meta:
 		ordering = ('id',)
@@ -104,6 +109,8 @@ class Odbor(models.Model):
 	url = models.URLField(blank=True, default="")
 	od = models.DateField()
 	do = models.DateField(blank=True)
+	podatki_preverjeni = models.BooleanField(default=False)
+	opombe = models.TextField(blank=True)
 	
 	class Meta:
 		verbose_name_plural = u'Odbori'
@@ -119,6 +126,8 @@ class ClanOdbora(models.Model):
 	funkcija = models.CharField(max_length=32)
 	od = models.DateField()
 	do = models.DateField(blank=True)
+	podatki_preverjeni = models.BooleanField(default=False)
+	opombe = models.TextField(blank=True)
 	
 	class Meta:
 		verbose_name = u'Član odbora'

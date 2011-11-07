@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+# XXX FIXME needs fixing
+# I'm not guaranteeing all the IDs are the same after the stranke cleanup.
+# by Zejn, 7. nov. 2011
+
 import sys
 sys.path.append("..")
 
