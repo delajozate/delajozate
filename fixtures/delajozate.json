@@ -369,7 +369,7 @@
             "email": "", 
             "spletna_stran": "", 
             "facebook": "", 
-            "dan_smrti": null, 
+            "dan_smrti": "2008-02-23", 
             "podatki_preverjeni": true, 
             "slug": "janez-drnovsek", 
             "priimek": "Drnov\u0161ek", 
@@ -621,7 +621,7 @@
             "email": "", 
             "spletna_stran": "", 
             "facebook": "", 
-            "dan_smrti": null, 
+            "dan_smrti": "2011-09-26", 
             "podatki_preverjeni": true, 
             "slug": "janez-jug", 
             "priimek": "Jug", 
@@ -3213,7 +3213,7 @@
             "email": "", 
             "spletna_stran": "", 
             "facebook": "", 
-            "dan_smrti": null, 
+            "dan_smrti": "2011-08-16", 
             "podatki_preverjeni": true, 
             "slug": "andrej-bajuk", 
             "priimek": "Bajuk", 
@@ -5845,6 +5845,24 @@
             "podatki_preverjeni": true, 
             "slug": "dragutin-mate", 
             "priimek": "Mate", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 328, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1951-02-28", 
+            "ime": "Aleksander", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": "2009-07-06", 
+            "podatki_preverjeni": true, 
+            "slug": "aleksander-ravnikar", 
+            "priimek": "Ravnikar", 
             "slika": ""
         }
     }, 
