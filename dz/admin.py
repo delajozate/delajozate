@@ -15,11 +15,18 @@ class OdborAdmin(admin.ModelAdmin):
 class ClanOdboraAdmin(admin.ModelAdmin):
 	list_display = ('poslanec', 'odbor', 'od', 'do', 'podatki_preverjeni')
 
-admin.site.register(Oseba)
+class OsebaAdmin(admin.ModelAdmin):
+	list_display = ('ime', 'priimek', 'rojstni_dan', 'podatki_preverjeni', 'twitter', 'spletna_stran', 'slika')
+	search_fields = ('ime', 'priimek')
+
+class MandatAdmin(admin.ModelAdmin):
+	list_display = ('st', 'od', 'do')
+
+admin.site.register(Oseba, OsebaAdmin)
 admin.site.register(Stranka, StrankaAdmin)
 admin.site.register(Skupina)
 admin.site.register(ClanStranke)
-admin.site.register(Mandat)
+admin.site.register(Mandat, MandatAdmin)
 admin.site.register(Poslanec, PoslanecAdmin)
 admin.site.register(Odbor, OdborAdmin)
 admin.site.register(ClanOdbora, ClanOdboraAdmin)

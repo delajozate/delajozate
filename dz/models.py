@@ -9,10 +9,13 @@ class Oseba(models.Model):
 	slug = models.SlugField(max_length=96)
 	email = models.EmailField(max_length=64, blank=True)
 	rojstni_dan = models.DateField(blank=True, null=True)
+	dan_smrti = models.DateField(blank=True, null=True)
 	slika = models.CharField(max_length=200, blank=True)
 	spletna_stran = models.URLField(blank=True)
 	twitter = models.CharField(max_length=32, blank=True)
 	facebook = models.URLField(blank=True)
+	podatki_preverjeni = models.BooleanField(default=False)
+	opombe = models.TextField(blank=True)
 	
 	class Meta:
 		ordering = ('ime', 'priimek')
