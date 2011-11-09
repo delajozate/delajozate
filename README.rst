@@ -8,4 +8,5 @@ INSTALL
 * vim localsettings.py
 * ./manage.py syncdb
 * ./manage.py migrate
+* ./manage.py loaddata fixtures/delajozate.json
 
