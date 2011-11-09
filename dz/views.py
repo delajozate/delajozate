@@ -3,7 +3,7 @@ from django.template import RequestContext, Context, loader
 from django.core.cache import cache
 from django.shortcuts import render_to_response
 
-from models import Mandat, Poslanec, ClanOdbora, Stranka
+from models import Mandat, Funkcija, ClanOdbora, Stranka
 from temporal import END_OF_TIME
 
 import datetime
@@ -35,7 +35,7 @@ def home(request):
 	if not poslanci:
 		if not mandat:
 			mandat = Mandat.objects.filter(st=mandat_st)[0]
-		poslanci = Poslanec.objects.filter(mandat=mandat)
+		poslanci = Funkcija.objects.filter(mandat=mandat)
 		cache.set('dz-poslanci', poslanci)
 
 	# Izberi 4 nakljucne
@@ -56,7 +56,7 @@ def home(request):
 		kandidat['slika'] = oseba.slika
 
 		# ... mandate v katerih je bil (=> izracunaj stevilo in obdobje v dneh)
-		k_mandati = Poslanec.objects.filter(oseba=oseba)
+		k_mandati = Funkcija.objects.filter(oseba=oseba)
 
 		kandidat['st_mandatov'] = len(k_mandati)
 		dolzina_sluzenja = sum([ ((null_date(m.do) or today) - m.od).days for m in k_mandati ])
@@ -70,7 +70,7 @@ def home(request):
 
 		# ... stevilo odborov v zadnjem mandatu
 		odbori = set([])
-		pos_mandati = Poslanec.objects.filter(oseba=oseba, mandat=mandat) # e.g.: poslanec->minister->poslanec
+		pos_mandati = Funkcija.objects.filter(oseba=oseba, mandat=mandat) # e.g.: poslanec->minister->poslanec
 		for pos_mandat in pos_mandati:
 			for clanstvo in ClanOdbora.objects.filter(poslanec=pos_mandat, mandat=mandat):
 				odbori.add(clanstvo.odbor.pk)

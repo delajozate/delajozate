@@ -90,7 +90,7 @@ class Mandat(models.Model):
 	def __unicode__(self):
 		return unicode(self.st)
 
-class Poslanec(models.Model):
+class Funkcija(models.Model):
 	oseba = models.ForeignKey(Oseba)
 	mandat = models.ForeignKey(Mandat)
 	od = models.DateField()
@@ -100,7 +100,7 @@ class Poslanec(models.Model):
 	
 	class Meta:
 		ordering = ('id',)
-		verbose_name_plural = u'Poslanci'
+		verbose_name_plural = u'Funkcije'
 	
 	def __unicode__(self):
 		return u'%s (%s)' % (self.oseba, self.mandat)
@@ -124,7 +124,7 @@ class Odbor(models.Model):
 
 class ClanOdbora(models.Model):
 	odbor = models.ForeignKey(Odbor)
-	poslanec = models.ForeignKey(Poslanec)
+	poslanec = models.ForeignKey(Funkcija)
 	mandat = models.ForeignKey(Mandat)
 	funkcija = models.CharField(max_length=32)
 	od = models.DateField()

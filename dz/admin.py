@@ -1,8 +1,8 @@
 from django.contrib import admin
 from delajozate.dz.models import Oseba, Stranka, Skupina, ClanStranke, \
-	Mandat, Poslanec, Odbor, ClanOdbora
+	Mandat, Funkcija, Odbor, ClanOdbora
 
-class PoslanecAdmin(admin.ModelAdmin):
+class FunkcijaAdmin(admin.ModelAdmin):
 	list_display = ('oseba', 'mandat', 'od', 'do', 'podatki_preverjeni')
 	list_filter = ('mandat',)
 
@@ -27,7 +27,7 @@ admin.site.register(Stranka, StrankaAdmin)
 admin.site.register(Skupina)
 admin.site.register(ClanStranke)
 admin.site.register(Mandat, MandatAdmin)
-admin.site.register(Poslanec, PoslanecAdmin)
+admin.site.register(Funkcija, FunkcijaAdmin)
 admin.site.register(Odbor, OdborAdmin)
 admin.site.register(ClanOdbora, ClanOdboraAdmin)
 
