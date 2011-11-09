@@ -1,11 +1,14 @@
 from django.http import HttpResponse
 from django.template import RequestContext, Context, loader
 from django.core.cache import cache
+from django.shortcuts import render_to_response
 
-from models import Mandat, Poslanec, ClanOdbora
+from models import Mandat, Poslanec, ClanOdbora, Stranka
 from temporal import END_OF_TIME
 
-import random, datetime
+import datetime
+import json
+import random
 
 #LONG_LIVE = 60*60*24 # Cache for a day
 LONG_LIVE = 5 # 5 seconds cache
@@ -84,6 +87,23 @@ def home(request):
 
 	return HttpResponse(template.render(Context(ctx)))
 
+def stranke_json(request):
+	"json strank za d3.js vizualizacijo"
+	stranke = []
+	for s in Stranka.objects.all():
+		s_dict = {
+			'id': s.id,
+			'od': (s.od.year, s.od.month, s.od.day),
+			'do': (s.do.year, s.do.month, s.do.day),
+			'ime': s.ime,
+			'okrajsava': s.okrajsava,
+			'barva': s.barva,
+			'nastala_iz': [i.id for i in s.nastala_iz.all()],
+			'spremenila_v': [v.id for v in s.spremenila_v.all()],
+			}
+		stranke.append(s_dict)
+	
+	return HttpResponse(json.dumps({'items': stranke}, indent=3), mimetype='application/json')
 
 def poslanec(request, slug):
 	# Poberi poslanca s tem slugom
