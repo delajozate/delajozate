@@ -5867,6 +5867,1752 @@
         }
     }, 
     {
+        "pk": 329, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1961-10-22", 
+            "ime": "Ale\u0161", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "ales-zalar", 
+            "priimek": "Zalar", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 330, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Alojz", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "alojz-janko", 
+            "priimek": "Janko", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 331, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1958-06-02", 
+            "ime": "Alojzij", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "alojzij-krapez", 
+            "priimek": "Krape\u017e", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 332, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1932-04-23", 
+            "ime": "Alojzij", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "alojzij-marincek", 
+            "priimek": "Marin\u010dek", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 333, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Ana", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "ana-osterman", 
+            "priimek": "Osterman", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 334, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1942-11-23", 
+            "ime": "Andrej", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "andrej-capuder", 
+            "priimek": "Capuder", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 335, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Andrej", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "andrej-ocvirk", 
+            "priimek": "Ocvirk", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 336, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1938-08-04", 
+            "ime": "Andrej", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "andrej-umek", 
+            "priimek": "Umek", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 337, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1958-06-12", 
+            "ime": "Andrej", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "andrej-ster", 
+            "priimek": "\u0160ter", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 338, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1956-01-07", 
+            "ime": "Anton", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "anton-grizold", 
+            "priimek": "Grizold", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 339, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1953-12-01", 
+            "ime": "Barbara", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "barbara-brezigar", 
+            "priimek": "Brezigar", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 340, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1936-02-10", 
+            "ime": "Boris", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "boris-frlec", 
+            "priimek": "Frlec", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 341, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1944-01-11", 
+            "ime": "Borut", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "borut-miklavcic", 
+            "priimek": "Miklav\u010di\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 342, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1950-04-28", 
+            "ime": "Bo\u0161tjan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "bostjan-kovacic", 
+            "priimek": "Kova\u010di\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 343, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1940-06-26", 
+            "ime": "Bo\u0161tjan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "bostjan-zeks", 
+            "priimek": "\u017dek\u0161", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 344, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1939-01-03", 
+            "ime": "Bo\u017eidar", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "bozidar-voljc", 
+            "priimek": "Volj\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 345, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Bo\u017eo", 
+            "twitter": "", 
+            "opombe": "rojen 1950", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "bozo-grafenauer", 
+            "priimek": "Grafenauer", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 346, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1949-09-22", 
+            "ime": "Ciril", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "ciril-smrkolj", 
+            "priimek": "Smrkolj", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 347, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1965-12-07", 
+            "ime": "Darja", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "darja-radic", 
+            "priimek": "Radi\u0107", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 348, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Davorin", 
+            "twitter": "", 
+            "opombe": "rojen 1949", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "davorin-valentincic", 
+            "priimek": "Valentin\u010di\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 349, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1967-10-16", 
+            "ime": "Dejan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "dejan-zidan", 
+            "priimek": "\u017didan", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 350, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1957-06-13", 
+            "ime": "Dorijan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "dorijan-marusic", 
+            "priimek": "Maru\u0161i\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 351, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1958-05-04", 
+            "ime": "Du\u0161a", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "dusa-trobec-bucan", 
+            "priimek": "Trobec Bu\u010dan", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 352, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1947-08-03", 
+            "ime": "Du\u0161an", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "dusan-keber", 
+            "priimek": "Keber", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 353, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1953-11-01", 
+            "ime": "Du\u0161an", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "dusan-mramor", 
+            "priimek": "Mramor", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 354, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1953-11-29", 
+            "ime": "Du\u0161an", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "dusan-sesok", 
+            "priimek": "\u0160e\u0161ok", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 355, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1934-12-04", 
+            "ime": "Franc", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "franc-godesa", 
+            "priimek": "Gode\u0161a", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 356, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1954-12-04", 
+            "ime": "Franc", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "franc-krizanic", 
+            "priimek": "Kri\u017eani\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 357, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1960-02-04", 
+            "ime": "Franci", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "franci-demsar", 
+            "priimek": "Dem\u0161ar", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 358, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1969-12-04", 
+            "ime": "Gregor", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "gregor-virant", 
+            "priimek": "Virant", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 359, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1965-03-05", 
+            "ime": "Henrik", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "henrik-gjerkes", 
+            "priimek": "Gjerke\u0161", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 360, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1961-12-03", 
+            "ime": "Igor", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "igor-luksic", 
+            "priimek": "Luk\u0161i\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 361, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1965-01-19", 
+            "ime": "Igor", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "igor-umek", 
+            "priimek": "Umek", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 362, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Ingo", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "ingo-pas", 
+            "priimek": "Pa\u0161", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 363, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1956-01-06", 
+            "ime": "Ivan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "ivan-bizjak", 
+            "priimek": "Bizjak", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 364, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1950-09-04", 
+            "ime": "Ivan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "ivan-svetlik", 
+            "priimek": "Svetlik", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 365, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1962-01-12", 
+            "ime": "Ivan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "ivan-zagar", 
+            "priimek": "\u017dagar", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 366, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1943-03-03", 
+            "ime": "Ivo", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "ivo-vajgl", 
+            "priimek": "Vajgl", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 367, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1963-08-21", 
+            "ime": "Iztok", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "iztok-jarc", 
+            "priimek": "Jarc", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 368, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1954-02-22", 
+            "ime": "Janez", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "janez-bozic", 
+            "priimek": "Bo\u017ei\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 369, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1943-09-23", 
+            "ime": "Janez", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "janez-dular", 
+            "priimek": "Dular", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 370, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1958-03-22", 
+            "ime": "Janez", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "janez-potocnik", 
+            "priimek": "Poto\u010dnik", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 371, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1950-10-29", 
+            "ime": "Janez", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "janez-sirse", 
+            "priimek": "Sir\u0161e", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 372, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1945-02-23", 
+            "ime": "Janko", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "janko-dezelak", 
+            "priimek": "De\u017eelak", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 373, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1929-08-21", 
+            "ime": "Janko", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "janko-kusar", 
+            "priimek": "Ku\u0161ar", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 374, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1942-12-30", 
+            "ime": "Janko", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "janko-prunk", 
+            "priimek": "Prunk", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 375, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1953-01-18", 
+            "ime": "Janko", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "janko-razgorsek", 
+            "priimek": "Razgor\u0161ek", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 376, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1941-03-05", 
+            "ime": "Jo\u017ee", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "joze-mencinger", 
+            "priimek": "Mencinger", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 377, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Jo\u017eef Jakob", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "jozef-jakob-osterc", 
+            "priimek": "Osterc", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 378, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1938-02-28", 
+            "ime": "Jo\u017eef", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "jozef-jeraj", 
+            "priimek": "Jeraj", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 379, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1942-03-19", 
+            "ime": "Jo\u017eefa", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "jozefa-puhar", 
+            "priimek": "Puhar", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 380, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1943-03-16", 
+            "ime": "Jure", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "jure-zupan", 
+            "priimek": "Zupan", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 381, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1960-06-21", 
+            "ime": "Karl", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "karl-erjavec", 
+            "priimek": "Erjavec", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 382, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1973-01-28", 
+            "ime": "Katarina", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "katarina-kresal", 
+            "priimek": "Kresal", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 383, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Katja", 
+            "twitter": "", 
+            "opombe": "rojena 1929, umrla 8. ali 9. avgusta 2008", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "katja-boh", 
+            "priimek": "Boh", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 384, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1960-06-16", 
+            "ime": "Ljubica", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "ljubica-jelusic", 
+            "priimek": "Jelu\u0161i\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 385, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1938-05-19", 
+            "ime": "Lovro", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "lovro-sturm", 
+            "priimek": "\u0160turm", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 386, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Maks", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "maks-bastl", 
+            "priimek": "Bastl", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 387, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Maks", 
+            "twitter": "", 
+            "opombe": "rojen 1951", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "maks-tajnikar", 
+            "priimek": "Tajnikar", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 388, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Marija", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "marija-lukancic", 
+            "priimek": "Lukan\u010di\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 389, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1930-10-05", 
+            "ime": "Marjan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "marjan-jereb", 
+            "priimek": "Jereb", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 390, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1927-02-08", 
+            "ime": "Marjan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "marjan-krajnc", 
+            "priimek": "Krajnc", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 391, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1944-09-12", 
+            "ime": "Marjan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "marjan-senjur", 
+            "priimek": "Senjur", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 392, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1956-10-02", 
+            "ime": "Marjeta", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "marjeta-cotman", 
+            "priimek": "Cotman", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 393, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1940-04-12", 
+            "ime": "Marko", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "marko-kranjec", 
+            "priimek": "Kranjec", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 394, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Metka", 
+            "twitter": "", 
+            "opombe": "roj. 1951", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "metka-zupancic", 
+            "priimek": "Zupan\u010di\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 395, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1941-11-04", 
+            "ime": "Miha", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "miha-jazbinsek", 
+            "priimek": "Jazbin\u0161ek", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 396, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Miha", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "miha-kozinc", 
+            "priimek": "Kozinc", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 397, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1941-08-10", 
+            "ime": "Miha", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "miha-tomsic", 
+            "priimek": "Tom\u0161i\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 398, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1946-08-30", 
+            "ime": "Milan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "milan-pogacnik", 
+            "priimek": "Poga\u010dnik", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 399, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1958-09-11", 
+            "ime": "Mirko", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "mirko-bandelj", 
+            "priimek": "Bandelj", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 400, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Mitja", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "mitja-malesic", 
+            "priimek": "Male\u0161i\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 401, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1970-02-22", 
+            "ime": "Patrick", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "patrick-vlacic", 
+            "priimek": "Vla\u010di\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 402, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1951-06-30", 
+            "ime": "Pavel", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "pavel-zgaga", 
+            "priimek": "Zgaga", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 403, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1940-01-14", 
+            "ime": "Peter", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "peter-jambrek", 
+            "priimek": "Jambrek", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 404, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1939-05-28", 
+            "ime": "Peter", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "peter-vencelj", 
+            "priimek": "Vencelj", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 405, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1951-03-24", 
+            "ime": "Rajko", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "rajko-pirnat", 
+            "priimek": "Pirnat", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 406, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1952-12-20", 
+            "ime": "Rina", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "rina-klinar", 
+            "priimek": "Klinar", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 407, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1950-04-09", 
+            "ime": "Roko", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "roko-zarnic", 
+            "priimek": "\u017darni\u0107", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 408, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1935-05-14", 
+            "ime": "Rudi", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "rudi-seligo", 
+            "priimek": "\u0160eligo", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 409, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1962-03-05", 
+            "ime": "Samuel", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "samuel-zbogar", 
+            "priimek": "\u017dbogar", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 410, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1939-10-13", 
+            "ime": "Sergij", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "sergij-pelhan", 
+            "priimek": "Pelhan", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 411, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Stane", 
+            "twitter": "", 
+            "opombe": "rojen 1926", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": "2005-05-24", 
+            "podatki_preverjeni": false, 
+            "slug": "stane-stanic", 
+            "priimek": "Stani\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 412, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1944-07-09", 
+            "ime": "Tea", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "tea-petrin", 
+            "priimek": "Petrin", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 413, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Tit", 
+            "twitter": "", 
+            "opombe": "rojen 1938", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "tit-turnsek", 
+            "priimek": "Turn\u0161ek", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 414, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1932-05-19", 
+            "ime": "Toma\u017e", 
+            "twitter": "", 
+            "opombe": "http://www.dnevnik.si/novice/kronika/1042424980", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": "2011-02-16", 
+            "podatki_preverjeni": true, 
+            "slug": "tomaz-marusic", 
+            "priimek": "Maru\u0161i\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 415, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1941-12-24", 
+            "ime": "Tone", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "tone-jerovsek", 
+            "priimek": "Jerov\u0161ek", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 416, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1951-03-23", 
+            "ime": "Vasko", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "vasko-simoniti", 
+            "priimek": "Simoniti", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 417, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": null, 
+            "ime": "Viktor", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": false, 
+            "slug": "viktor-brezar", 
+            "priimek": "Brezar", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 418, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1943-05-06", 
+            "ime": "Viktor", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "viktor-zakelj", 
+            "priimek": "\u017dakelj", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 419, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1960-06-21", 
+            "ime": "Vlado", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "vlado-dimovski", 
+            "priimek": "Dimovski", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 420, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1941-09-17", 
+            "ime": "Zdenka", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "zdenka-cerar", 
+            "priimek": "Cerar", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 421, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1954-04-17", 
+            "ime": "Zdenka", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "zdenka-kovac", 
+            "priimek": "Kova\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 422, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1959-07-23", 
+            "ime": "Zlata", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "zlata-plostajner", 
+            "priimek": "Plo\u0161tajner", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 423, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1955-05-14", 
+            "ime": "Zofija", 
+            "twitter": "zofijamazej", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "http://www.zofijamazejkukovic.net/", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "zofija-mazej-kukovic", 
+            "priimek": "Mazej Kukovi\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 424, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1959-05-17", 
+            "ime": "Zvonko", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "zvonko-ivanusic", 
+            "priimek": "Ivanu\u0161i\u010d", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 425, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1962-02-04", 
+            "ime": "\u017diga", 
+            "twitter": "zzturk", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "http://blog.zturk.com/", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "ziga-turk", 
+            "priimek": "Turk", 
+            "slika": ""
+        }
+    }, 
+    {
         "pk": 1, 
         "model": "dz.stranka", 
         "fields": {
