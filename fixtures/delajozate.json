@@ -5483,7 +5483,7 @@
         "pk": 306, 
         "model": "dz.oseba", 
         "fields": {
-            "rojstni_dan": "1951-04-21", 
+            "rojstni_dan": "1959-04-21", 
             "ime": "Rado", 
             "twitter": "", 
             "opombe": "", 
@@ -7636,6 +7636,42 @@
             "podatki_preverjeni": true, 
             "slug": "tomaz-stebe", 
             "priimek": "\u0160tebe", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 427, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1974-05-09", 
+            "ime": "Vito", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "vito-rozej", 
+            "priimek": "Ro\u017eej", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 428, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1968-04-16", 
+            "ime": "Damijan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "slug": "damijan-perne", 
+            "priimek": "Perne", 
             "slika": ""
         }
     }, 
@@ -13525,9 +13561,9 @@
             "do": "9999-12-31", 
             "opombe": "", 
             "mandat": 5, 
-            "od": "2008-10-15", 
+            "od": "2008-12-16", 
             "oseba": 1, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13539,7 +13575,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 177, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13551,7 +13587,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 3, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13563,7 +13599,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 106, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13575,7 +13611,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 275, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13585,9 +13621,9 @@
             "do": "9999-12-31", 
             "opombe": "", 
             "mandat": 5, 
-            "od": "2008-10-15", 
+            "od": "2009-07-15", 
             "oseba": 276, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13599,7 +13635,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 278, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13611,7 +13647,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 279, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13623,7 +13659,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 280, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13635,7 +13671,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 181, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13647,7 +13683,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 283, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13659,7 +13695,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 229, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13671,7 +13707,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 284, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13681,9 +13717,9 @@
             "do": "9999-12-31", 
             "opombe": "", 
             "mandat": 5, 
-            "od": "2008-10-15", 
+            "od": "2008-12-16", 
             "oseba": 285, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13695,7 +13731,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 286, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13707,7 +13743,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 232, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13719,7 +13755,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 189, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13731,7 +13767,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 287, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13743,19 +13779,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 288, 
-            "podatki_preverjeni": false
-        }
-    }, 
-    {
-        "pk": 433, 
-        "model": "dz.funkcija", 
-        "fields": {
-            "do": "9999-12-31", 
-            "opombe": "", 
-            "mandat": 5, 
-            "od": "2011-06-02", 
-            "oseba": 288, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13767,7 +13791,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 289, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13779,7 +13803,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 290, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13791,7 +13815,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 233, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13803,7 +13827,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 234, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13815,7 +13839,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 291, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13827,7 +13851,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 292, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13839,7 +13863,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 236, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13851,7 +13875,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 293, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13863,7 +13887,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 240, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13875,7 +13899,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 25, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13887,7 +13911,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 26, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13899,7 +13923,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 243, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13911,7 +13935,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 27, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13923,7 +13947,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 126, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13935,7 +13959,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 294, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13947,7 +13971,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 295, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13959,7 +13983,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 296, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13971,7 +13995,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 297, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13983,7 +14007,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 298, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13993,9 +14017,9 @@
             "do": "9999-12-31", 
             "opombe": "", 
             "mandat": 5, 
-            "od": "2008-10-15", 
+            "od": "2010-09-20", 
             "oseba": 299, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14007,7 +14031,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 300, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14019,7 +14043,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 244, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14029,9 +14053,9 @@
             "do": "9999-12-31", 
             "opombe": "", 
             "mandat": 5, 
-            "od": "2008-10-15", 
+            "od": "2008-12-16", 
             "oseba": 301, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14043,7 +14067,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 134, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14055,7 +14079,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 302, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14067,7 +14091,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 248, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14077,9 +14101,9 @@
             "do": "9999-12-31", 
             "opombe": "", 
             "mandat": 5, 
-            "od": "2008-10-15", 
+            "od": "2008-11-21", 
             "oseba": 303, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14091,7 +14115,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 250, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14103,7 +14127,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 304, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14115,7 +14139,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 139, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14127,7 +14151,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 305, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14139,7 +14163,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 306, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14149,9 +14173,9 @@
             "do": "9999-12-31", 
             "opombe": "", 
             "mandat": 5, 
-            "od": "2008-10-15", 
+            "od": "2008-12-16", 
             "oseba": 307, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14163,7 +14187,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 308, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14175,7 +14199,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 253, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14187,7 +14211,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 309, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14199,7 +14223,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 310, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14211,7 +14235,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 58, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14223,7 +14247,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 151, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14235,7 +14259,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 258, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14247,7 +14271,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 311, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14259,7 +14283,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 259, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14269,9 +14293,9 @@
             "do": "9999-12-31", 
             "opombe": "", 
             "mandat": 5, 
-            "od": "2008-10-15", 
+            "od": "2008-12-16", 
             "oseba": 260, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14281,9 +14305,9 @@
             "do": "9999-12-31", 
             "opombe": "", 
             "mandat": 5, 
-            "od": "2008-10-15", 
+            "od": "2009-12-16", 
             "oseba": 313, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14295,7 +14319,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 208, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14307,7 +14331,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 69, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14319,7 +14343,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 152, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14331,7 +14355,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 153, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14343,7 +14367,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 263, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14355,7 +14379,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 314, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14367,7 +14391,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 315, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14379,7 +14403,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 265, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14389,9 +14413,9 @@
             "do": "9999-12-31", 
             "opombe": "", 
             "mandat": 5, 
-            "od": "2008-10-15", 
+            "od": "2009-07-15", 
             "oseba": 316, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14403,7 +14427,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 317, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14413,9 +14437,9 @@
             "do": "9999-12-31", 
             "opombe": "", 
             "mandat": 5, 
-            "od": "2011-06-27", 
+            "od": "2011-07-11", 
             "oseba": 317, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14427,7 +14451,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 218, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14439,7 +14463,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 318, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14451,7 +14475,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 167, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14463,7 +14487,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 319, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14475,7 +14499,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 168, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14487,7 +14511,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 320, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14497,9 +14521,9 @@
             "do": "9999-12-31", 
             "opombe": "", 
             "mandat": 5, 
-            "od": "2008-10-15", 
+            "od": "2011-03-30", 
             "oseba": 321, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14511,7 +14535,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 220, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14523,7 +14547,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 322, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14535,7 +14559,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 272, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14547,7 +14571,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 323, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14559,7 +14583,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 324, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14571,7 +14595,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 174, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14583,7 +14607,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 325, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14595,7 +14619,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 277, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14607,7 +14631,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 326, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14619,7 +14643,7 @@
             "mandat": 5, 
             "od": "2008-10-15", 
             "oseba": 281, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14715,6 +14739,174 @@
             "mandat": 4, 
             "od": "2007-10-22", 
             "oseba": 225, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 516, 
+        "model": "dz.funkcija", 
+        "fields": {
+            "do": "2008-11-07", 
+            "opombe": "", 
+            "mandat": 5, 
+            "od": "2008-10-15", 
+            "oseba": 55, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 518, 
+        "model": "dz.funkcija", 
+        "fields": {
+            "do": "2011-06-22", 
+            "opombe": "", 
+            "mandat": 5, 
+            "od": "2008-12-16", 
+            "oseba": 223, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 519, 
+        "model": "dz.funkcija", 
+        "fields": {
+            "do": "2011-07-11", 
+            "opombe": "", 
+            "mandat": 5, 
+            "od": "2008-12-16", 
+            "oseba": 427, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 520, 
+        "model": "dz.funkcija", 
+        "fields": {
+            "do": "2009-07-15", 
+            "opombe": "", 
+            "mandat": 5, 
+            "od": "2008-10-15", 
+            "oseba": 366, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 521, 
+        "model": "dz.funkcija", 
+        "fields": {
+            "do": "2009-12-14", 
+            "opombe": "", 
+            "mandat": 5, 
+            "od": "2008-10-15", 
+            "oseba": 428, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 522, 
+        "model": "dz.funkcija", 
+        "fields": {
+            "do": "2011-03-23", 
+            "opombe": "", 
+            "mandat": 5, 
+            "od": "2008-10-15", 
+            "oseba": 262, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 523, 
+        "model": "dz.funkcija", 
+        "fields": {
+            "do": "9999-12-31", 
+            "opombe": "", 
+            "mandat": 5, 
+            "od": "2011-06-22", 
+            "oseba": 288, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 524, 
+        "model": "dz.funkcija", 
+        "fields": {
+            "do": "2008-11-21", 
+            "opombe": "", 
+            "mandat": 5, 
+            "od": "2008-10-15", 
+            "oseba": 382, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 525, 
+        "model": "dz.funkcija", 
+        "fields": {
+            "do": "2008-11-21", 
+            "opombe": "", 
+            "mandat": 5, 
+            "od": "2008-10-15", 
+            "oseba": 401, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 526, 
+        "model": "dz.funkcija", 
+        "fields": {
+            "do": "2008-11-21", 
+            "opombe": "", 
+            "mandat": 5, 
+            "od": "2008-10-15", 
+            "oseba": 360, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 527, 
+        "model": "dz.funkcija", 
+        "fields": {
+            "do": "2009-07-08", 
+            "opombe": "", 
+            "mandat": 5, 
+            "od": "2008-10-15", 
+            "oseba": 328, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 528, 
+        "model": "dz.funkcija", 
+        "fields": {
+            "do": "2008-11-21", 
+            "opombe": "", 
+            "mandat": 5, 
+            "od": "2008-10-15", 
+            "oseba": 356, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 530, 
+        "model": "dz.funkcija", 
+        "fields": {
+            "do": "2008-11-21", 
+            "opombe": "", 
+            "mandat": 5, 
+            "od": "2008-10-15", 
+            "oseba": 251, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 531, 
+        "model": "dz.funkcija", 
+        "fields": {
+            "do": "2010-09-07", 
+            "opombe": "", 
+            "mandat": 5, 
+            "od": "2008-10-15", 
+            "oseba": 209, 
             "podatki_preverjeni": true
         }
     }, 
