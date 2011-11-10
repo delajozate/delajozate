@@ -4,7 +4,7 @@ from delajozate.dz.models import Oseba, Stranka, Skupina, ClanStranke, \
 
 class FunkcijaAdmin(admin.ModelAdmin):
 	list_display = ('oseba', 'mandat', 'od', 'do', 'podatki_preverjeni')
-	list_filter = ('mandat',)
+	list_filter = ('mandat', 'podatki_preverjeni')
 
 class StrankaAdmin(admin.ModelAdmin):
 	list_display = ('ime', 'okrajsava', 'twitter', 'od', 'do', 'podatki_preverjeni')
