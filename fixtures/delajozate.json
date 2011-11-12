@@ -1577,7 +1577,7 @@
         "pk": 82, 
         "model": "dz.oseba", 
         "fields": {
-            "rojstni_dan": "1947-04-07", 
+            "rojstni_dan": "1946-04-07", 
             "ime": "Dimitrij", 
             "twitter": "DimitrijRupel", 
             "opombe": "", 
@@ -2045,7 +2045,7 @@
         "pk": 110, 
         "model": "dz.oseba", 
         "fields": {
-            "rojstni_dan": "1951-01-01", 
+            "rojstni_dan": "1951-06-01", 
             "ime": "Janez", 
             "twitter": "", 
             "opombe": "", 
@@ -2106,7 +2106,7 @@
             "email": "", 
             "spletna_stran": "", 
             "facebook": "", 
-            "dan_smrti": null, 
+            "dan_smrti": "2002-03-06", 
             "podatki_preverjeni": true, 
             "slug": "anton-delak", 
             "priimek": "Delak", 
@@ -3352,24 +3352,6 @@
             "podatki_preverjeni": true, 
             "slug": "lucija-cok", 
             "priimek": "\u010cok", 
-            "slika": ""
-        }
-    }, 
-    {
-        "pk": 184, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": "1954-12-29", 
-            "ime": "Silva", 
-            "twitter": "", 
-            "opombe": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "dan_smrti": null, 
-            "podatki_preverjeni": true, 
-            "slug": "silva-cernugelj", 
-            "priimek": "\u010cernugelj", 
             "slika": ""
         }
     }, 
@@ -11194,12 +11176,12 @@
         "pk": 217, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2000-12-19", 
             "opombe": "", 
             "mandat": 3, 
             "od": "2000-10-22", 
             "oseba": 5, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11221,9 +11203,9 @@
             "do": "2004-10-22", 
             "opombe": "", 
             "mandat": 3, 
-            "od": "2000-10-22", 
+            "od": "2000-12-19", 
             "oseba": 105, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11236,18 +11218,6 @@
             "od": "2000-10-22", 
             "oseba": 106, 
             "podatki_preverjeni": true
-        }
-    }, 
-    {
-        "pk": 221, 
-        "model": "dz.funkcija", 
-        "fields": {
-            "do": "2003-01-27", 
-            "opombe": "", 
-            "mandat": 3, 
-            "od": "2000-10-22", 
-            "oseba": 8, 
-            "podatki_preverjeni": false
         }
     }, 
     {
@@ -11266,12 +11236,12 @@
         "pk": 223, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2004-07-06", 
             "opombe": "", 
             "mandat": 3, 
             "od": "2000-10-22", 
             "oseba": 179, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11293,9 +11263,9 @@
             "do": "2004-10-22", 
             "opombe": "", 
             "mandat": 3, 
-            "od": "2000-10-22", 
+            "od": "2002-06-11", 
             "oseba": 180, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11350,12 +11320,12 @@
         "pk": 230, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2002-12-20", 
+            "do": "2000-12-19", 
             "opombe": "", 
             "mandat": 3, 
             "od": "2000-10-22", 
             "oseba": 183, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11366,7 +11336,7 @@
             "opombe": "", 
             "mandat": 3, 
             "od": "2000-10-22", 
-            "oseba": 184, 
+            "oseba": 285, 
             "podatki_preverjeni": true
         }
     }, 
@@ -11374,12 +11344,12 @@
         "pk": 232, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2002-03-06", 
             "opombe": "", 
             "mandat": 3, 
             "od": "2000-10-22", 
             "oseba": 113, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11398,12 +11368,12 @@
         "pk": 234, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2000-11-30", 
             "opombe": "", 
             "mandat": 3, 
             "od": "2000-10-22", 
             "oseba": 14, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11449,33 +11419,33 @@
             "do": "2004-10-22", 
             "opombe": "", 
             "mandat": 3, 
-            "od": "2000-10-22", 
+            "od": "2004-07-15", 
             "oseba": 187, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 239, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2002-12-27", 
             "opombe": "", 
             "mandat": 3, 
             "od": "2000-10-22", 
             "oseba": 117, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 240, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2001-03-27", 
             "opombe": "", 
             "mandat": 3, 
             "od": "2000-10-22", 
             "oseba": 188, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11485,21 +11455,21 @@
             "do": "2004-10-22", 
             "opombe": "", 
             "mandat": 3, 
-            "od": "2000-10-22", 
+            "od": "2000-12-19", 
             "oseba": 118, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 242, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2002-05-15", 
             "opombe": "", 
             "mandat": 3, 
             "od": "2000-10-22", 
             "oseba": 119, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11521,9 +11491,9 @@
             "do": "2004-10-22", 
             "opombe": "", 
             "mandat": 3, 
-            "od": "2000-10-22", 
+            "od": "2004-07-15", 
             "oseba": 190, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11569,9 +11539,9 @@
             "do": "2004-10-22", 
             "opombe": "", 
             "mandat": 3, 
-            "od": "2000-10-22", 
+            "od": "2000-12-19", 
             "oseba": 124, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11650,12 +11620,12 @@
         "pk": 255, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2004-07-22", 
+            "do": "2004-07-06", 
             "opombe": "", 
             "mandat": 3, 
             "od": "2000-10-22", 
             "oseba": 128, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11725,9 +11695,9 @@
             "do": "2004-10-22", 
             "opombe": "", 
             "mandat": 3, 
-            "od": "2000-10-22", 
+            "od": "2002-12-27", 
             "oseba": 196, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11746,12 +11716,12 @@
         "pk": 263, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2000-12-19", 
             "opombe": "", 
             "mandat": 3, 
             "od": "2000-10-22", 
             "oseba": 33, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11811,7 +11781,7 @@
             "mandat": 3, 
             "od": "2004-07-22", 
             "oseba": 139, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11821,9 +11791,9 @@
             "do": "2004-10-22", 
             "opombe": "", 
             "mandat": 3, 
-            "od": "2000-10-22", 
+            "od": "2002-03-14", 
             "oseba": 199, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11878,7 +11848,7 @@
         "pk": 274, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2004-10-07", 
             "opombe": "", 
             "mandat": 3, 
             "od": "2000-10-22", 
@@ -11895,19 +11865,19 @@
             "mandat": 3, 
             "od": "2003-01-27", 
             "oseba": 204, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 276, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2004-07-06", 
             "opombe": "", 
             "mandat": 3, 
-            "od": "2000-10-22", 
+            "od": "2000-12-19", 
             "oseba": 143, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11926,12 +11896,12 @@
         "pk": 278, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2004-07-22", 
+            "do": "2004-07-06", 
             "opombe": "", 
             "mandat": 3, 
             "od": "2000-10-22", 
             "oseba": 55, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11967,7 +11937,7 @@
             "mandat": 3, 
             "od": "2004-07-22", 
             "oseba": 58, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11998,12 +11968,12 @@
         "pk": 284, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2004-07-06", 
             "opombe": "", 
             "mandat": 3, 
             "od": "2000-10-22", 
             "oseba": 61, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12106,12 +12076,12 @@
         "pk": 293, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2001-04-11", 
+            "do": "2000-12-19", 
             "opombe": "", 
             "mandat": 3, 
             "od": "2000-10-22", 
             "oseba": 209, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12130,12 +12100,12 @@
         "pk": 295, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2000-11-30", 
+            "do": "2000-12-19", 
             "opombe": "", 
             "mandat": 3, 
-            "od": "2000-10-27", 
+            "od": "2000-10-22", 
             "oseba": 82, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12147,7 +12117,7 @@
             "mandat": 3, 
             "od": "2004-07-06", 
             "oseba": 82, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12159,7 +12129,7 @@
             "mandat": 3, 
             "od": "2000-10-22", 
             "oseba": 210, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12183,7 +12153,7 @@
             "mandat": 3, 
             "od": "2001-04-11", 
             "oseba": 212, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12217,9 +12187,9 @@
             "do": "2004-10-22", 
             "opombe": "", 
             "mandat": 3, 
-            "od": "2000-10-22", 
+            "od": "2000-12-19", 
             "oseba": 91, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12250,12 +12220,12 @@
         "pk": 305, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2000-05-02", 
             "opombe": "", 
             "mandat": 3, 
-            "od": "2000-10-22", 
+            "od": "2000-11-30", 
             "oseba": 216, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12397,9 +12367,9 @@
             "do": "2004-10-22", 
             "opombe": "", 
             "mandat": 3, 
-            "od": "2000-10-22", 
+            "od": "2001-05-22", 
             "oseba": 224, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
