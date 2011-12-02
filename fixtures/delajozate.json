@@ -155,7 +155,7 @@
         "pk": 2, 
         "model": "dz.oseba", 
         "fields": {
-            "rojstni_dan": "1947-04-30", 
+            "rojstni_dan": "1947-04-03", 
             "ime": "Franc", 
             "twitter": "", 
             "opombe": "", 
@@ -4014,7 +4014,7 @@
             "email": "", 
             "spletna_stran": "", 
             "facebook": "", 
-            "dan_smrti": null, 
+            "dan_smrti": "2011-12-02", 
             "podatki_preverjeni": true, 
             "slug": "jasa-zlobec-lukic", 
             "priimek": "Zlobec Luki\u010d", 
@@ -8668,12 +8668,12 @@
         "pk": 8, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "1996-11-27", 
+            "do": "1993-01-25", 
             "opombe": "", 
             "mandat": 1, 
             "od": "1992-12-23", 
             "oseba": 8, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -8697,7 +8697,7 @@
             "mandat": 1, 
             "od": "1993-02-23", 
             "oseba": 10, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -8740,12 +8740,12 @@
         "pk": 14, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "1996-11-27", 
+            "do": "1993-01-12", 
             "opombe": "", 
             "mandat": 1, 
             "od": "1992-12-23", 
             "oseba": 14, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -8827,7 +8827,7 @@
             "do": "1996-11-27", 
             "opombe": "", 
             "mandat": 1, 
-            "od": "1992-12-23", 
+            "od": "1993-02-23", 
             "oseba": 21, 
             "podatki_preverjeni": true
         }
@@ -8872,12 +8872,12 @@
         "pk": 25, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "1996-11-27", 
+            "do": "1993-01-25", 
             "opombe": "", 
             "mandat": 1, 
             "od": "1992-12-23", 
             "oseba": 25, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -8935,7 +8935,7 @@
             "do": "1996-11-27", 
             "opombe": "", 
             "mandat": 1, 
-            "od": "1992-12-23", 
+            "od": "1993-02-23", 
             "oseba": 30, 
             "podatki_preverjeni": true
         }
@@ -9016,12 +9016,12 @@
         "pk": 37, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "1996-11-27", 
+            "do": "1993-01-25", 
             "opombe": "", 
             "mandat": 1, 
             "od": "1992-12-23", 
             "oseba": 37, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -9172,7 +9172,7 @@
         "pk": 50, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "1996-11-27", 
+            "do": "1993-02-23", 
             "opombe": "", 
             "mandat": 1, 
             "od": "1992-12-23", 
@@ -9304,7 +9304,7 @@
         "pk": 61, 
         "model": "dz.funkcija", 
         "fields": {
-            "do": "1996-11-27", 
+            "do": "1993-01-25", 
             "opombe": "", 
             "mandat": 1, 
             "od": "1992-12-23", 
@@ -9643,7 +9643,7 @@
             "do": "1996-11-27", 
             "opombe": "", 
             "mandat": 1, 
-            "od": "1992-12-23", 
+            "od": "1993-02-23", 
             "oseba": 89, 
             "podatki_preverjeni": true
         }
@@ -10665,7 +10665,7 @@
             "mandat": 2, 
             "od": "1996-11-27", 
             "oseba": 61, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
