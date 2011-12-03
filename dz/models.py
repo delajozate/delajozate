@@ -68,7 +68,7 @@ class Skupina(models.Model): # Poslanska
 
 class ClanStranke(models.Model):
 	oseba = models.ForeignKey(Oseba)
-	stranka = models.ForeignKey(Stranka)
+	stranka = models.ForeignKey(Stranka, null=True)
 	od = models.DateField()
 	do = models.DateField(blank=True)
 	podatki_preverjeni = models.BooleanField(default=False)
