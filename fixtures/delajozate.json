@@ -8509,6 +8509,46 @@
         }
     }, 
     {
+        "pk": 44, 
+        "model": "dz.stranka", 
+        "fields": {
+            "do": "9999-12-31", 
+            "ime": "Narodnostne skupnosti", 
+            "twitter": "", 
+            "od": "1992-12-23", 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
+            "opombe": "Za poslanske skupine narodnih skupnosti.", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "nastala_iz": [], 
+            "podatki_preverjeni": false, 
+            "email": "", 
+            "okrajsava": "NS"
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "dz.stranka", 
+        "fields": {
+            "do": "9999-12-31", 
+            "ime": "Nepovezani poslanci", 
+            "twitter": "", 
+            "od": "1992-12-23", 
+            "barva": "", 
+            "maticna": "", 
+            "davcna": "", 
+            "opombe": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "nastala_iz": [], 
+            "podatki_preverjeni": false, 
+            "email": "", 
+            "okrajsava": "NP"
+        }
+    }, 
+    {
         "pk": 10, 
         "model": "dz.clanstranke", 
         "fields": {
@@ -14722,6 +14762,1410 @@
             "od": "2004-10-22", 
             "oseba": 174, 
             "podatki_preverjeni": false
+        }
+    }, 
+    {
+        "pk": 570, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2010-09-07", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 209, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 571, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 281, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 572, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 139, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 573, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 305, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 574, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 250, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 575, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 240, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 576, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 311, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 577, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2011-09-29", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2009-07-15", 
+            "oseba": 276, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 578, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": null, 
+            "opombe": "", 
+            "od": "2011-09-29", 
+            "oseba": 276, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 579, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 44, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 289, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 580, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 6, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 189, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 581, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-11-21", 
+            "oseba": 303, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 582, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 259, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 583, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 325, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 584, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 326, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 585, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 6, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 291, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 586, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 69, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 587, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 6, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 27, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 588, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 272, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 589, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 3, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 292, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 590, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 278, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 591, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 258, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 592, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-12-16", 
+            "oseba": 301, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 593, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 295, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 594, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 232, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 595, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 10, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 314, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 596, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 168, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 597, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 243, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 598, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 323, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 599, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2009-12-16", 
+            "oseba": 313, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 600, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 220, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 601, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2010-10-27", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-12-16", 
+            "oseba": 307, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 602, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2010-11-08", 
+            "stranka": null, 
+            "opombe": "", 
+            "od": "2010-10-27", 
+            "oseba": 307, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 603, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 45, 
+            "opombe": "", 
+            "od": "2010-11-08", 
+            "oseba": 307, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 604, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 315, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 605, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 6, 
+            "opombe": "", 
+            "od": "2008-12-16", 
+            "oseba": 1, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 606, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 297, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 607, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 11, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 319, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 608, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 3, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 177, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 609, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 134, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 610, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 6, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 265, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 611, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-11-07", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 55, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 612, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 253, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 613, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 234, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 614, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 58, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 615, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 320, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 616, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 279, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 617, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 293, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 618, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 151, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 619, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 106, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 620, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 3, 
+            "opombe": "", 
+            "od": "2011-03-30", 
+            "oseba": 321, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 621, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 3, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 308, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 622, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 44, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 3, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 623, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 306, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 624, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 248, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 625, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-11-24", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 153, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 626, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2009-09-29", 
+            "stranka": null, 
+            "opombe": "", 
+            "od": "2008-11-24", 
+            "oseba": 153, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 627, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 10, 
+            "opombe": "", 
+            "od": "2009-09-29", 
+            "oseba": 153, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 628, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 11, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 296, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 629, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2009-12-01", 
+            "stranka": 11, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 174, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 630, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2010-11-08", 
+            "stranka": null, 
+            "opombe": "", 
+            "od": "2009-12-01", 
+            "oseba": 174, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 631, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 45, 
+            "opombe": "", 
+            "od": "2010-11-08", 
+            "oseba": 174, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 632, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 10, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 277, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 633, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 181, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 634, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 10, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 302, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 635, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 10, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 152, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 636, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2010-09-20", 
+            "oseba": 299, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 637, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 25, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 638, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 300, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 639, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 11, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 287, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 640, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 218, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 641, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 298, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 642, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-11-21", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 288, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 643, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2011-06-22", 
+            "oseba": 288, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 644, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 280, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 645, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2011-07-05", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2008-12-16", 
+            "oseba": 260, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 646, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 45, 
+            "opombe": "", 
+            "od": "2011-07-05", 
+            "oseba": 260, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 647, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 290, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 648, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 275, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 649, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 286, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 650, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 236, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 651, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 11, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 322, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 652, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-11-21", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 251, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 653, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 318, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 654, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 294, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 655, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 11, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 244, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 656, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2009-12-01", 
+            "stranka": 11, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 263, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 657, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2010-11-08", 
+            "stranka": null, 
+            "opombe": "", 
+            "od": "2009-12-01", 
+            "oseba": 263, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 658, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 45, 
+            "opombe": "", 
+            "od": "2010-11-08", 
+            "oseba": 263, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 659, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2011-07-05", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 167, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 660, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 45, 
+            "opombe": "", 
+            "od": "2011-07-05", 
+            "oseba": 167, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 661, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 10, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 324, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 662, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 3, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 26, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 663, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 229, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 664, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 304, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 665, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2011-03-17", 
+            "stranka": 3, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 262, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 666, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2009-07-15", 
+            "oseba": 316, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 667, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 284, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 668, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 283, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 669, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2011-04-22", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2008-12-16", 
+            "oseba": 223, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 670, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2011-06-22", 
+            "stranka": null, 
+            "opombe": "", 
+            "od": "2011-04-22", 
+            "oseba": 223, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 671, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 310, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 672, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 233, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 673, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 126, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 674, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 208, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 675, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-11-21", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 317, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 676, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2011-07-11", 
+            "oseba": 317, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 677, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-12-16", 
+            "oseba": 285, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 678, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "9999-12-31", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 309, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 679, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2009-07-06", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 328, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 680, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-11-21", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 356, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 681, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-11-21", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 360, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 682, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2009-07-15", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 366, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 683, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-11-21", 
+            "stranka": 6, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 382, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 684, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-11-21", 
+            "stranka": 2, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 401, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 685, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2011-07-11", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2008-12-16", 
+            "oseba": 427, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 686, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2009-12-14", 
+            "stranka": 5, 
+            "opombe": "", 
+            "od": "2008-10-15", 
+            "oseba": 428, 
+            "podatki_preverjeni": true
         }
     }, 
     {
