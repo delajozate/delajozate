@@ -6146,24 +6146,6 @@
         }
     }, 
     {
-        "pk": 346, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": "1949-09-22", 
-            "ime": "Ciril", 
-            "twitter": "", 
-            "opombe": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "dan_smrti": null, 
-            "podatki_preverjeni": true, 
-            "slug": "ciril-smrkolj", 
-            "priimek": "Smrkolj", 
-            "slika": ""
-        }
-    }, 
-    {
         "pk": 347, 
         "model": "dz.oseba", 
         "fields": {
