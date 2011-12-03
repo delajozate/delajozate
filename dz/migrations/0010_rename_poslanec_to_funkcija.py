@@ -9,7 +9,6 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
         db.rename_table('dz_poslanec', 'dz_funkcija')
 
-
     def backwards(self, orm):
         db.rename_table('dz_funkcija', 'dz_poslanec')
 
@@ -25,7 +24,7 @@ class Migration(SchemaMigration):
             'odbor': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['dz.Odbor']"}),
             'opombe': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             'podatki_preverjeni': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'poslanec': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['dz.Poslanec']"})
+            'poslanec': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['dz.Funkcija']"})
         },
         'dz.clanstranke': {
             'Meta': {'object_name': 'ClanStranke'},
@@ -36,6 +35,16 @@ class Migration(SchemaMigration):
             'oseba': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['dz.Oseba']"}),
             'podatki_preverjeni': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'stranka': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['dz.Stranka']"})
+        },
+        'dz.funkcija': {
+            'Meta': {'ordering': "('id',)", 'object_name': 'Funkcija'},
+            'do': ('django.db.models.fields.DateField', [], {'blank': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'mandat': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['dz.Mandat']"}),
+            'od': ('django.db.models.fields.DateField', [], {}),
+            'opombe': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
+            'oseba': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['dz.Oseba']"}),
+            'podatki_preverjeni': ('django.db.models.fields.BooleanField', [], {'default': 'False'})
         },
         'dz.mandat': {
             'Meta': {'object_name': 'Mandat'},
@@ -70,16 +79,6 @@ class Migration(SchemaMigration):
             'slug': ('django.db.models.fields.SlugField', [], {'max_length': '96', 'db_index': 'True'}),
             'spletna_stran': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
             'twitter': ('django.db.models.fields.CharField', [], {'max_length': '32', 'blank': 'True'})
-        },
-        'dz.poslanec': {
-            'Meta': {'ordering': "('id',)", 'object_name': 'Poslanec'},
-            'do': ('django.db.models.fields.DateField', [], {'blank': 'True'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'mandat': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['dz.Mandat']"}),
-            'od': ('django.db.models.fields.DateField', [], {}),
-            'opombe': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
-            'oseba': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['dz.Oseba']"}),
-            'podatki_preverjeni': ('django.db.models.fields.BooleanField', [], {'default': 'False'})
         },
         'dz.skupina': {
             'Meta': {'object_name': 'Skupina'},
