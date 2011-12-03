@@ -65,10 +65,9 @@ class Skupina(models.Model): # Poslanska
 	class Meta:
 		verbose_name_plural = u'Skupine'
 
-
 class ClanStranke(models.Model):
 	oseba = models.ForeignKey(Oseba)
-	stranka = models.ForeignKey(Stranka, null=True)
+	stranka = models.ForeignKey(Stranka, null=True, blank=True)
 	od = models.DateField()
 	do = models.DateField(blank=True)
 	podatki_preverjeni = models.BooleanField(default=False)
@@ -77,7 +76,6 @@ class ClanStranke(models.Model):
 	class Meta:
 		verbose_name = u'Član stranke'
 		verbose_name_plural = u'Člani strank'
-
 
 class Mandat(models.Model):
 	st = models.IntegerField() # Kateri mandat
@@ -104,7 +102,6 @@ class Funkcija(models.Model):
 	
 	def __unicode__(self):
 		return u'%s (%s)' % (self.oseba, self.mandat)
-
 
 class Odbor(models.Model):
 	ime = models.CharField(max_length=500)

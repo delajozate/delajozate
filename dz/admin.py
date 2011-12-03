@@ -20,7 +20,8 @@ class OsebaAdmin(admin.ModelAdmin):
 	search_fields = ('ime', 'priimek')
 
 class ClanStrankeAdmin(admin.ModelAdmin):
-	list_display = ('oseba', 'stranka', 'od', 'do')
+	list_display = ('oseba', 'stranka', 'od', 'do', 'podatki_preverjeni')
+	list_filter = ('podatki_preverjeni',)
 
 class MandatAdmin(admin.ModelAdmin):
 	list_display = ('st', 'od', 'do')
