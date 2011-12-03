@@ -2276,24 +2276,6 @@
         }
     }, 
     {
-        "pk": 123, 
-        "model": "dz.oseba", 
-        "fields": {
-            "rojstni_dan": "1949-02-13", 
-            "ime": "Jo\u017eef", 
-            "twitter": "", 
-            "opombe": "", 
-            "email": "", 
-            "spletna_stran": "", 
-            "facebook": "", 
-            "dan_smrti": null, 
-            "podatki_preverjeni": true, 
-            "slug": "jozef-jagodnik", 
-            "priimek": "Jagodnik", 
-            "slika": ""
-        }
-    }, 
-    {
         "pk": 124, 
         "model": "dz.oseba", 
         "fields": {
@@ -10172,7 +10154,7 @@
             "opombe": "", 
             "mandat": 2, 
             "od": "1999-01-22", 
-            "oseba": 123, 
+            "oseba": 22, 
             "podatki_preverjeni": true
         }
     }, 
