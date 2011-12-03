@@ -7,10 +7,15 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        db.rename_table('dz_poslanec', 'dz_funkcija')
+        
+        # Changing field 'ClanStranke.stranka'
+        db.alter_column('dz_clanstranke', 'stranka_id', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['dz.Stranka'], null=True))
+
 
     def backwards(self, orm):
-        db.rename_table('dz_funkcija', 'dz_poslanec')
+        
+        # Changing field 'ClanStranke.stranka'
+        db.alter_column('dz_clanstranke', 'stranka_id', self.gf('django.db.models.fields.related.ForeignKey')(default=None, to=orm['dz.Stranka']))
 
 
     models = {
@@ -34,7 +39,7 @@ class Migration(SchemaMigration):
             'opombe': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             'oseba': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['dz.Oseba']"}),
             'podatki_preverjeni': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'stranka': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['dz.Stranka']"})
+            'stranka': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['dz.Stranka']", 'null': 'True'})
         },
         'dz.funkcija': {
             'Meta': {'ordering': "('id',)", 'object_name': 'Funkcija'},
