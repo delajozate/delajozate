@@ -10285,7 +10285,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 1, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10297,19 +10297,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 102, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 156, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 103, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10319,9 +10319,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 103, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10329,11 +10329,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2000-10-22", 
-            "stranka": null, 
+            "stranka": 44, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 3, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10345,19 +10345,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 5, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 160, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 104, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10367,9 +10367,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 104, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10381,7 +10381,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 105, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10393,19 +10393,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 106, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 164, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
+            "do": "2000-04-15", 
             "stranka": 8, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 107, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10415,21 +10415,21 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 107, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 166, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 108, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10439,21 +10439,21 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 108, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 168, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 109, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10463,9 +10463,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 109, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10477,19 +10477,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 110, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 171, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
+            "do": "2000-04-15", 
             "stranka": 8, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 10, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10499,9 +10499,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 10, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10513,7 +10513,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 111, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10525,7 +10525,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 112, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10537,19 +10537,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 113, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 176, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
+            "do": "2000-04-15", 
             "stranka": 8, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 114, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10559,9 +10559,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 114, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10573,7 +10573,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 13, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10581,11 +10581,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2000-10-22", 
-            "stranka": null, 
+            "stranka": 45, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 13, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10597,7 +10597,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 115, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10609,7 +10609,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 14, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10621,19 +10621,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 15, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 183, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 116, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10643,9 +10643,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 116, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10657,7 +10657,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 117, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10669,7 +10669,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 118, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10681,19 +10681,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 119, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 188, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 120, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10703,21 +10703,21 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 120, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 190, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
+            "do": "2000-04-15", 
             "stranka": 8, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 19, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10727,9 +10727,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 19, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10741,19 +10741,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 20, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 193, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 121, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10763,21 +10763,21 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 121, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 195, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
+            "do": "2000-04-15", 
             "stranka": 8, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 122, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10787,9 +10787,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 122, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10801,7 +10801,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 21, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10813,7 +10813,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 22, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10825,7 +10825,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 124, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10837,7 +10837,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 23, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10849,7 +10849,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 25, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10861,7 +10861,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 125, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10873,7 +10873,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 26, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10885,7 +10885,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 27, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10897,7 +10897,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 126, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10909,7 +10909,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 127, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10921,19 +10921,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 128, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 208, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 129, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10943,9 +10943,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 129, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10957,7 +10957,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 130, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10969,7 +10969,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 131, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10981,7 +10981,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 132, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -10991,9 +10991,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 133, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11005,7 +11005,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 134, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11017,7 +11017,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 33, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11029,7 +11029,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 135, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11041,19 +11041,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 136, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 218, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 137, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11063,9 +11063,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 137, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11077,7 +11077,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 138, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11089,7 +11089,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 39, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11101,7 +11101,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 41, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11113,7 +11113,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 139, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11125,7 +11125,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 43, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11137,7 +11137,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 140, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11149,7 +11149,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 141, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11161,19 +11161,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 142, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 228, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
+            "do": "2000-04-15", 
             "stranka": 8, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 47, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11183,9 +11183,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 47, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11197,7 +11197,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 143, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11209,7 +11209,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 144, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11221,19 +11221,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 50, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 233, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
+            "do": "2000-04-15", 
             "stranka": 8, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 51, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11243,21 +11243,21 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 51, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 235, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 145, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11267,21 +11267,21 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 145, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 237, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 146, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11291,9 +11291,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 146, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11305,7 +11305,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 147, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11313,11 +11313,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2000-10-22", 
-            "stranka": null, 
+            "stranka": 45, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 147, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11329,7 +11329,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 55, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11341,7 +11341,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 148, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11353,7 +11353,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 149, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11363,9 +11363,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 150, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11377,19 +11377,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 151, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 246, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
+            "do": "2000-04-15", 
             "stranka": 8, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 61, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11399,9 +11399,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 61, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11413,19 +11413,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 62, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 249, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 63, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11435,21 +11435,21 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 63, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 251, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 64, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11459,21 +11459,21 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 64, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 253, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 67, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11483,9 +11483,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 67, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11497,7 +11497,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 69, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11505,23 +11505,23 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2000-10-22", 
-            "stranka": null, 
+            "stranka": 44, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 70, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 257, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 152, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11531,21 +11531,21 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 152, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 259, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
+            "do": "1997-01-08", 
             "stranka": 8, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 75, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11553,11 +11553,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2000-10-22", 
-            "stranka": null, 
+            "stranka": 6, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "1997-01-08", 
             "oseba": 75, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11569,7 +11569,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 153, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11581,19 +11581,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 154, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 263, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
+            "do": "2000-04-15", 
             "stranka": 8, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 79, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11603,9 +11603,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 79, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11617,19 +11617,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 80, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 266, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 155, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11639,9 +11639,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 155, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11653,7 +11653,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 156, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11665,19 +11665,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 157, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 270, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
+            "do": "2000-04-15", 
             "stranka": 8, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 158, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11687,21 +11687,21 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 158, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 272, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
+            "do": "2000-04-15", 
             "stranka": 8, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 85, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11711,21 +11711,21 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 85, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 274, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 159, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11735,9 +11735,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 159, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11749,7 +11749,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 160, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11761,7 +11761,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 212, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11773,7 +11773,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 91, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11785,7 +11785,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 162, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11797,7 +11797,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 163, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11809,7 +11809,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 164, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11821,19 +11821,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 94, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 283, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 165, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11843,9 +11843,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 165, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11857,19 +11857,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 166, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 286, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 167, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11879,9 +11879,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 167, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11893,19 +11893,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 168, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 289, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 169, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11915,9 +11915,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 169, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11929,19 +11929,19 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 170, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 292, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2000-10-22", 
-            "stranka": 10, 
+            "do": "2000-04-15", 
+            "stranka": 7, 
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 99, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11951,9 +11951,9 @@
             "do": "2000-10-22", 
             "stranka": 9, 
             "opombe": "", 
-            "od": "1996-11-27", 
+            "od": "2000-04-15", 
             "oseba": 99, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11965,7 +11965,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 171, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11977,7 +11977,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 172, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -11989,7 +11989,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 173, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12001,7 +12001,7 @@
             "opombe": "", 
             "od": "1996-11-27", 
             "oseba": 174, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12013,7 +12013,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 1, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12025,7 +12025,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 175, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12037,7 +12037,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 102, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12049,7 +12049,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 176, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12061,7 +12061,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 177, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12069,11 +12069,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": null, 
+            "stranka": 44, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 3, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12085,7 +12085,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 5, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12097,7 +12097,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 178, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12109,7 +12109,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 105, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12121,7 +12121,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 106, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12133,7 +12133,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 8, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12143,21 +12143,21 @@
             "do": "2004-10-22", 
             "stranka": 10, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2002-01-31", 
             "oseba": 107, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 310, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2002-01-31", 
             "stranka": 9, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 107, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12165,11 +12165,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 179, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12179,21 +12179,21 @@
             "do": "2004-10-22", 
             "stranka": 10, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2002-01-31", 
             "oseba": 108, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 313, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2002-01-31", 
             "stranka": 9, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 108, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12205,7 +12205,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 180, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12213,11 +12213,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 110, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12225,35 +12225,35 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 181, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 317, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
-            "stranka": 27, 
+            "do": "2001-12-11", 
+            "stranka": 17, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 111, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 318, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
-            "stranka": null, 
+            "do": "2003-02-04", 
+            "stranka": 45, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2001-12-11", 
             "oseba": 111, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12263,9 +12263,9 @@
             "do": "2004-10-22", 
             "stranka": 10, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2003-02-04", 
             "oseba": 111, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12277,7 +12277,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 182, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12289,7 +12289,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 183, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12301,7 +12301,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 285, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12313,19 +12313,19 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 113, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 324, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2004-08-31", 
             "stranka": 20, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 185, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12333,11 +12333,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": null, 
+            "stranka": 45, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2004-08-31", 
             "oseba": 185, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12349,7 +12349,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 14, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12361,7 +12361,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 186, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12373,7 +12373,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 15, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12383,21 +12383,21 @@
             "do": "2004-10-22", 
             "stranka": 10, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2002-01-31", 
             "oseba": 116, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 330, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2002-01-31", 
             "stranka": 9, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 116, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12409,7 +12409,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 187, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12421,7 +12421,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 117, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12433,7 +12433,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 188, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12445,7 +12445,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 118, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12457,7 +12457,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 119, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12469,7 +12469,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 189, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12477,11 +12477,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 190, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12493,7 +12493,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 191, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12505,7 +12505,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 192, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12517,7 +12517,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 20, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12529,7 +12529,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 124, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12541,7 +12541,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 23, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12549,11 +12549,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 25, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12565,7 +12565,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 26, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12577,7 +12577,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 27, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12585,11 +12585,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 126, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12601,7 +12601,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 127, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12613,7 +12613,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 128, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12623,21 +12623,21 @@
             "do": "2004-10-22", 
             "stranka": 10, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2002-01-31", 
             "oseba": 129, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 350, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2002-01-31", 
             "stranka": 9, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 129, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12649,7 +12649,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 194, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12661,7 +12661,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 195, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12673,7 +12673,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 131, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12681,11 +12681,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 132, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12697,7 +12697,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 196, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12709,7 +12709,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 134, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12721,7 +12721,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 33, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12733,7 +12733,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 197, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12743,21 +12743,21 @@
             "do": "2004-10-22", 
             "stranka": 10, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2002-01-31", 
             "oseba": 137, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 360, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2002-01-31", 
             "stranka": 9, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 137, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12769,7 +12769,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 198, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12781,7 +12781,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 41, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12793,7 +12793,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 139, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12805,19 +12805,19 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 199, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 365, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2004-08-31", 
             "stranka": 20, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 200, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12825,11 +12825,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": null, 
+            "stranka": 45, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2004-08-31", 
             "oseba": 200, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12841,7 +12841,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 201, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12851,21 +12851,21 @@
             "do": "2004-10-22", 
             "stranka": 10, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2002-01-31", 
             "oseba": 47, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 369, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2002-01-31", 
             "stranka": 9, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 47, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12877,7 +12877,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 202, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12889,7 +12889,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 203, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12901,7 +12901,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 204, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12913,7 +12913,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 143, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12925,7 +12925,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 50, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12937,7 +12937,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 55, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12949,7 +12949,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 148, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12961,7 +12961,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 206, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12973,7 +12973,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 58, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12985,7 +12985,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 149, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -12993,11 +12993,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 151, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13009,7 +13009,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 61, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13019,21 +13019,21 @@
             "do": "2004-10-22", 
             "stranka": 10, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2002-01-31", 
             "oseba": 63, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 383, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2002-01-31", 
             "stranka": 9, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 63, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13045,7 +13045,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 207, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13057,7 +13057,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 208, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13069,7 +13069,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 69, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13077,11 +13077,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": null, 
+            "stranka": 44, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 70, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13093,7 +13093,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 75, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13101,11 +13101,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 153, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13115,21 +13115,21 @@
             "do": "2004-10-22", 
             "stranka": 10, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2002-01-31", 
             "oseba": 155, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 391, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2002-01-31", 
             "stranka": 9, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 155, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13141,7 +13141,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 209, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13149,35 +13149,35 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 157, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 394, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2004-07-07", 
             "stranka": 6, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 82, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 395, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
-            "stranka": null, 
+            "do": "2004-07-06", 
+            "stranka": 45, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2004-07-07", 
             "oseba": 82, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13185,11 +13185,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2004-07-06", 
             "oseba": 82, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13201,7 +13201,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 210, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13213,7 +13213,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 211, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13225,7 +13225,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 212, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13233,11 +13233,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 213, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13249,7 +13249,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 317, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13261,7 +13261,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 91, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13273,19 +13273,19 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 163, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 404, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2004-05-08", 
             "stranka": 20, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 215, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13293,11 +13293,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": null, 
+            "stranka": 45, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2004-05-08", 
             "oseba": 215, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13309,7 +13309,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 216, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13321,7 +13321,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 217, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13329,11 +13329,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 218, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13345,7 +13345,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 164, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13357,7 +13357,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 219, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13367,21 +13367,21 @@
             "do": "2004-10-22", 
             "stranka": 10, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2002-01-31", 
             "oseba": 167, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 412, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2002-01-31", 
             "stranka": 9, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 167, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13393,7 +13393,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 168, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13401,23 +13401,23 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 220, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 415, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2004-10-22", 
+            "do": "2004-08-31", 
             "stranka": 20, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 221, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13425,11 +13425,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
-            "od": "2000-10-22", 
+            "od": "2004-08-31", 
             "oseba": 221, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13441,7 +13441,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 222, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13453,7 +13453,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 223, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13461,11 +13461,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2004-10-22", 
-            "stranka": 27, 
+            "stranka": 17, 
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 172, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13477,7 +13477,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 224, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13489,7 +13489,7 @@
             "opombe": "", 
             "od": "2000-10-22", 
             "oseba": 225, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13501,7 +13501,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 1, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13513,7 +13513,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 103, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13525,7 +13525,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 176, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13537,7 +13537,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 177, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13545,11 +13545,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2008-10-15", 
-            "stranka": null, 
+            "stranka": 44, 
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 3, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13559,9 +13559,9 @@
             "do": "2008-10-15", 
             "stranka": 2, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2005-04-02", 
             "oseba": 106, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13573,7 +13573,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 108, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13585,7 +13585,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 226, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13597,7 +13597,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 227, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13609,19 +13609,19 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 181, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 432, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2008-10-15", 
+            "do": "2007-03-20", 
             "stranka": 6, 
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 228, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13631,9 +13631,9 @@
             "do": "2008-10-15", 
             "stranka": 2, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2007-03-20", 
             "oseba": 228, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13645,7 +13645,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 229, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13657,7 +13657,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 13, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13669,7 +13669,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 186, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13681,7 +13681,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 230, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13693,7 +13693,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 15, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13705,19 +13705,19 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 231, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 440, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2008-10-15", 
+            "do": "2007-03-30", 
             "stranka": 6, 
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 117, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13727,21 +13727,21 @@
             "do": "2008-10-15", 
             "stranka": null, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2007-03-30", 
             "oseba": 117, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 442, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2008-10-15", 
+            "do": "2007-02-22", 
             "stranka": 6, 
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 232, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13749,11 +13749,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2008-10-15", 
-            "stranka": null, 
+            "stranka": 45, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2007-02-26", 
             "oseba": 232, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13765,7 +13765,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 189, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13777,7 +13777,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 233, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13789,7 +13789,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 234, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13801,7 +13801,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 235, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13811,9 +13811,9 @@
             "do": "2008-10-15", 
             "stranka": 2, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2005-04-02", 
             "oseba": 236, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13825,7 +13825,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 237, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13835,9 +13835,9 @@
             "do": "2008-10-15", 
             "stranka": 2, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2005-04-02", 
             "oseba": 20, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13849,7 +13849,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 238, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13861,7 +13861,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 239, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13873,7 +13873,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 240, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13885,7 +13885,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 241, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13897,7 +13897,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 25, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13909,7 +13909,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 125, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13921,7 +13921,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 242, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13933,7 +13933,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 26, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13945,7 +13945,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 243, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13957,7 +13957,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 27, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13969,7 +13969,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 126, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13979,9 +13979,9 @@
             "do": "2008-10-15", 
             "stranka": 2, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2005-04-02", 
             "oseba": 127, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -13993,7 +13993,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 129, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14005,7 +14005,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 244, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14017,7 +14017,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 245, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14027,9 +14027,9 @@
             "do": "2008-10-15", 
             "stranka": 2, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2005-04-02", 
             "oseba": 134, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14041,7 +14041,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 246, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14053,7 +14053,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 247, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14065,7 +14065,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 137, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14077,7 +14077,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 248, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14089,7 +14089,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 249, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14099,33 +14099,33 @@
             "do": "2008-10-15", 
             "stranka": 2, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2005-04-02", 
             "oseba": 250, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 473, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2008-10-15", 
+            "do": "2007-01-25", 
             "stranka": 6, 
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 251, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 474, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2008-10-15", 
+            "do": "2007-02-26", 
             "stranka": null, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2007-01-25", 
             "oseba": 251, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14133,11 +14133,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2008-10-15", 
-            "stranka": null, 
+            "stranka": 45, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2007-02-26", 
             "oseba": 251, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14149,7 +14149,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 252, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14161,19 +14161,19 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 142, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 478, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2008-10-15", 
+            "do": "2007-03-20", 
             "stranka": 6, 
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 139, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14183,9 +14183,9 @@
             "do": "2008-10-15", 
             "stranka": 2, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2007-03-20", 
             "oseba": 139, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14197,7 +14197,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 253, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14209,7 +14209,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 254, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14221,7 +14221,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 50, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14233,19 +14233,19 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 255, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 484, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2008-10-15", 
+            "do": "2007-03-20", 
             "stranka": 6, 
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 256, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14255,9 +14255,9 @@
             "do": "2008-10-15", 
             "stranka": 2, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2007-03-20", 
             "oseba": 256, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14267,9 +14267,9 @@
             "do": "2008-10-15", 
             "stranka": 2, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2005-04-02", 
             "oseba": 58, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14281,7 +14281,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 149, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14293,7 +14293,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 151, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14305,7 +14305,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 257, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14317,7 +14317,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 258, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14329,31 +14329,31 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 259, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 492, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2008-10-15", 
+            "do": "2007-02-22", 
             "stranka": 6, 
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 260, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 493, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2008-10-15", 
+            "do": "2007-02-26", 
             "stranka": null, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2007-02-22", 
             "oseba": 260, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14363,9 +14363,9 @@
             "do": "2008-10-15", 
             "stranka": 2, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2005-04-02", 
             "oseba": 208, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14375,9 +14375,9 @@
             "do": "2008-10-15", 
             "stranka": 2, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2005-04-02", 
             "oseba": 69, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14385,11 +14385,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2008-10-15", 
-            "stranka": null, 
+            "stranka": 44, 
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 70, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14401,7 +14401,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 152, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14413,7 +14413,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 261, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14425,7 +14425,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 262, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14437,7 +14437,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 153, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14449,19 +14449,19 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 263, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 502, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2008-10-15", 
+            "do": "2007-03-20", 
             "stranka": 6, 
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 209, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14471,9 +14471,9 @@
             "do": "2008-10-15", 
             "stranka": 2, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2007-03-20", 
             "oseba": 209, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14485,7 +14485,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 264, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14497,7 +14497,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 157, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14509,7 +14509,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 265, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14521,7 +14521,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 266, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14533,7 +14533,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 211, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14545,7 +14545,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 267, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14557,19 +14557,19 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 213, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 511, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2008-10-15", 
+            "do": "2007-03-02", 
             "stranka": 6, 
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 317, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14577,11 +14577,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2008-10-15", 
-            "stranka": null, 
+            "stranka": 45, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2007-03-02", 
             "oseba": 317, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14593,19 +14593,19 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 268, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 514, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2008-10-15", 
+            "do": "2007-03-28", 
             "stranka": 6, 
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 167, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14615,9 +14615,9 @@
             "do": "2008-10-15", 
             "stranka": null, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2007-03-28", 
             "oseba": 167, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14629,7 +14629,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 269, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14639,9 +14639,9 @@
             "do": "2008-10-15", 
             "stranka": 2, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2005-04-02", 
             "oseba": 168, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14653,7 +14653,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 270, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14665,7 +14665,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 220, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14677,19 +14677,19 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 271, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
         "pk": 521, 
         "model": "dz.clanstranke", 
         "fields": {
-            "do": "2008-10-15", 
+            "do": "2007-03-02", 
             "stranka": 6, 
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 223, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14697,11 +14697,11 @@
         "model": "dz.clanstranke", 
         "fields": {
             "do": "2008-10-15", 
-            "stranka": null, 
+            "stranka": 45, 
             "opombe": "", 
-            "od": "2004-10-22", 
+            "od": "2007-03-02", 
             "oseba": 223, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14713,7 +14713,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 172, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14725,7 +14725,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 272, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14737,7 +14737,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 273, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14749,7 +14749,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 274, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -14761,7 +14761,7 @@
             "opombe": "", 
             "od": "2004-10-22", 
             "oseba": 174, 
-            "podatki_preverjeni": false
+            "podatki_preverjeni": true
         }
     }, 
     {
@@ -16165,6 +16165,282 @@
             "opombe": "", 
             "od": "2008-10-15", 
             "oseba": 428, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 707, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2007-02-26", 
+            "stranka": null, 
+            "opombe": "", 
+            "od": "2007-02-22", 
+            "oseba": 232, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 708, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2005-04-02", 
+            "stranka": 1, 
+            "opombe": "", 
+            "od": "2004-10-22", 
+            "oseba": 236, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 709, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2005-04-02", 
+            "stranka": 1, 
+            "opombe": "", 
+            "od": "2004-10-22", 
+            "oseba": 20, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 710, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2005-04-02", 
+            "stranka": 1, 
+            "opombe": "", 
+            "od": "2004-10-22", 
+            "oseba": 127, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 711, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2005-04-02", 
+            "stranka": 1, 
+            "opombe": "", 
+            "od": "2004-10-22", 
+            "oseba": 134, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 712, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2005-04-02", 
+            "stranka": 1, 
+            "opombe": "", 
+            "od": "2004-10-22", 
+            "oseba": 250, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 713, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2005-04-02", 
+            "stranka": 1, 
+            "opombe": "", 
+            "od": "2004-10-22", 
+            "oseba": 58, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 714, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-10-15", 
+            "stranka": 45, 
+            "opombe": "", 
+            "od": "2007-02-26", 
+            "oseba": 260, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 715, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2005-04-02", 
+            "stranka": 1, 
+            "opombe": "", 
+            "od": "2004-10-22", 
+            "oseba": 208, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 716, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2005-04-02", 
+            "stranka": 1, 
+            "opombe": "", 
+            "od": "2004-10-22", 
+            "oseba": 69, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 717, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2005-04-02", 
+            "stranka": 1, 
+            "opombe": "", 
+            "od": "2004-10-22", 
+            "oseba": 168, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 718, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2007-02-22", 
+            "stranka": 6, 
+            "opombe": "", 
+            "od": "2004-10-22", 
+            "oseba": 164, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 719, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2007-02-26", 
+            "stranka": null, 
+            "opombe": "", 
+            "od": "2007-02-22", 
+            "oseba": 164, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 720, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-10-15", 
+            "stranka": 45, 
+            "opombe": "", 
+            "od": "2007-02-26", 
+            "oseba": 164, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 721, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-10-15", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2004-10-22", 
+            "oseba": 218, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 722, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-10-15", 
+            "stranka": 6, 
+            "opombe": "", 
+            "od": "2004-10-22", 
+            "oseba": 217, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 723, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-10-15", 
+            "stranka": 6, 
+            "opombe": "", 
+            "od": "2004-10-22", 
+            "oseba": 91, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 724, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-10-15", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2004-10-22", 
+            "oseba": 293, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 725, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-10-15", 
+            "stranka": 17, 
+            "opombe": "", 
+            "od": "2004-12-10", 
+            "oseba": 426, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 726, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2008-10-15", 
+            "stranka": 4, 
+            "opombe": "", 
+            "od": "2007-10-22", 
+            "oseba": 225, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 727, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2005-04-02", 
+            "stranka": 1, 
+            "opombe": "", 
+            "od": "2004-10-22", 
+            "oseba": 106, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 1016, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2000-04-15", 
+            "stranka": 7, 
+            "opombe": "", 
+            "od": "1996-11-27", 
+            "oseba": 133, 
+            "podatki_preverjeni": true
+        }
+    }, 
+    {
+        "pk": 1017, 
+        "model": "dz.clanstranke", 
+        "fields": {
+            "do": "2000-04-15", 
+            "stranka": 7, 
+            "opombe": "", 
+            "od": "1996-11-27", 
+            "oseba": 150, 
             "podatki_preverjeni": true
         }
     }, 
