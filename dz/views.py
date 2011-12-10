@@ -63,7 +63,8 @@ def home(request):
 		kandidat['dolzina_sluzenja'] = dolzina_sluzenja
 		
 		poslanske_skupine = list(ClanStranke.objects.filter(oseba=oseba).order_by('-do'))
-		kandidat['stranka'] = poslanske_skupine[0]
+		if poslanske_skupine:
+			kandidat['stranka'] = poslanske_skupine[0]
 		kandidat['stevilo_strank'] = len(poslanske_skupine)
 		
 		'''
