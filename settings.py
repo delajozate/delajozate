@@ -162,6 +162,8 @@ FIXTURE_DIRS = (
 	here('fixtures/'),
 )
 
+SOLR_URL = "http://localhost:8983/solr/"
+
 import traceback
 try:
     from localsettings import *
