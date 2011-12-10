@@ -3,7 +3,7 @@ from django.template import RequestContext, Context, loader
 from django.core.cache import cache
 from django.shortcuts import render_to_response
 
-from models import Mandat, Funkcija, ClanOdbora, Stranka
+from models import Mandat, Funkcija, ClanOdbora, ClanStranke, Stranka
 from temporal import END_OF_TIME
 
 import datetime
@@ -20,7 +20,7 @@ def null_date(date):
 
 def home(request):
 	ctx = {}
-	template = loader.get_template('home.html')
+	
 	today = datetime.date.today()
 
 	mandat = None
@@ -61,7 +61,11 @@ def home(request):
 		kandidat['st_mandatov'] = len(k_mandati)
 		dolzina_sluzenja = sum([ ((null_date(m.do) or today) - m.od).days for m in k_mandati ])
 		kandidat['dolzina_sluzenja'] = dolzina_sluzenja
-
+		
+		poslanske_skupine = list(ClanStranke.objects.filter(oseba=oseba).order_by('-do'))
+		kandidat['stranka'] = poslanske_skupine[0]
+		kandidat['stevilo_strank'] = len(poslanske_skupine)
+		
 		'''
 		# ... stranko v kateri je
 
@@ -84,8 +88,7 @@ def home(request):
 		izbrani.append(kandidat)
 
 	ctx['izbrani'] = izbrani
-
-	return HttpResponse(template.render(Context(ctx)))
+	return render_to_response('home.html', Context(ctx))
 
 def d_squared(tracks, nodepairs):
 	#for a,b in nodepairs:

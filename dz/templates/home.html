@@ -25,7 +25,11 @@
 					<li>
 						<div class="card">
 							<h2> {{ poslanec.ime }}</h2>
-							<!--div class="stranka"><a class="sns" href="/stranke/sns/">SNS</a></div-->
+							<div class="stranka"><a class="strankatag {{ poslanec.stranka.stranka.okrajsava|lower }}"
+								style="background-color: #{{ poslanec.stranka.stranka.barva }};"
+								href="/stranke/{{ poslanec.stranka.stranka.id }}/"
+								title="{{ poslanec.stranka.stranka.ime }}">{{ poslanec.stranka.stranka.okrajsava }}
+							</a></div>
 							<div class="img">
 								<img src="{{ poslanec.slika|default:"/static/img/unknown.png"}}" alt="" title="{{ poslanec.ime }}, vir:{% if poslanec.slika %}dz-rs.si{% else %}http://www.flickr.com/photos/marypaulose/295058238/sizes/z/in/photostream/{% endif %}" />
 							</div>
