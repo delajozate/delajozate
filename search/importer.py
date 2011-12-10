@@ -5,7 +5,6 @@ import time
 from search.models import Seja, SejaInfo, Zasedanje, Zapis
 
 class Importer():
-
     def __init__(self, file_directory):
         """
         file_directory - search path for files to import
@@ -33,11 +32,11 @@ class Importer():
             seja.delete()
 
         for file in files:
-            try:
-                fileData = open(os.path.join(self.file_directory, file), 'r').read()
-            except:
-                print "Error opening %s, skipping..." % file
-                continue
+        #            try:
+            fileData = open(os.path.join(self.file_directory, file), 'r').read()
+            #            except:
+            #                print "Error opening %s (reason: %s), skipping..." % (file, e)
+            #                continue
 
             print file, "..."
 
@@ -66,7 +65,7 @@ class Importer():
                     zasedanje = Zasedanje()
                     zasedanje.datum = dateutil.parser.parse(jsonZasedanje.get('datum'), dayfirst=True)
                     zasedanje.seja = seja
-                    
+
                     if jsonPovezava.get('zacetek'):
                         zasedanje.zacetek = self.parse_time(jsonPovezava.get('zacetek'))
                     if jsonPovezava.get('konec'):
@@ -84,4 +83,4 @@ class Importer():
                             zapis.odstavki = ' '.join(jsonZapis.get('odstavki'))
                             zapis.save()
 
-        print "Import ok!"
+    print "Import ok!"
