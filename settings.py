@@ -118,10 +118,6 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
-HAYSTACK_SITECONF = 'delajozate.search_site'
-HAYSTACK_SEARCH_ENGINE = 'solr'
-HAYSTACK_SOLR_URL = 'http://localhost:8983/solr/'
-
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -134,9 +130,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'south',
-    'dz',
-    'haystack',
-    'search'
+    'dz'
 )
 
 # A sample logging configuration. The only tangible logging
