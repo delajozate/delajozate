@@ -25,38 +25,40 @@
     <fieldType name="text" class="solr.TextField" positionIncrementGap="100">
       <analyzer type="index">
         <charFilter class="solr.HTMLStripCharFilterFactory"/>
-        <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-FoldToASCII.txt"/>
-        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+        <tokenizer class="solr.StandardTokenizerFactory"/>
         <filter class="solr.ClassicFilterFactory" />
-        <filter class="solr.WordDelimiterFilterFactory" catenateAll="1" stemEnglishPosessive="0"/>
+        <filter class="solr.StopFilterFactory" words="stopwords.txt" ignoreCase="true"/>
         <filter class="solr.LowerCaseFilterFactory"/>
         <filter class="si.virag.solr.RdrLemmatizerFactory" dictionary="/home/jernej/workspace/apache-solr-3.5.0/cores/lem-me-sl.bin" />
         <filter class="solr.ShingleFilterFactory" maxShingleSize="3" outputUnigrams="true"/>
-        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
       </analyzer>
       <analyzer type="query">
         <charFilter class="solr.HTMLStripCharFilterFactory"/>
-        <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-FoldToASCII.txt"/>
-        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
-        <filter class="solr.WordDelimiterFilterFactory" catenateAll="1" stemEnglishPosessive="0"/>
-        <filter class="solr.ClassicFilterFactory" />
+        <tokenizer class="solr.StandardTokenizerFactory"/>
         <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.StopFilterFactory" words="stopwords.txt" ignoreCase="true"/>
         <filter class="si.virag.solr.RdrLemmatizerFactory" dictionary="/home/jernej/workspace/apache-solr-3.5.0/cores/lem-me-sl.bin" />
-        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
       </analyzer>
     </fieldType>
-
   </types>
 
-  <fields>   
-    <!-- general -->
+  <fields>
     <field name="id" type="string" indexed="true" stored="true" multiValued="false" required="true" />
-    <field name="seja_id" type="int" indexed="false" stored="true" multiValued="true" required="true" />
-    <field name="zasedanje_id" type="int" indexed="false" stored="true" multiValued="true" required="true" />
-    <field name="datum_zapisa" type="date" indexed="true" stored="true" multiValued="false" required="true" />
-    <field name="govorec" type="text" indexed="true" stored="false" required="true" />
-    <field name="govorec_exact" type="string" indexed="true" stored="true" multiValued="true" required="true" />
-    <field name="besedilo" type="text" indexed="true" stored="true" multiValued="false" required="true" />
+    <!-- Tip vpisa v indeks -->
+    <field name="tip" type="string" indexed="true" stored="true" multiValued="false" required="true" />
+    <!-- idji "parent" vsebin ce obstajajo -->
+    <field name="seja_id" type="int" indexed="false" stored="true" multiValued="false" required="false" />
+    <field name="zasedanje_id" type="int" indexed="false" stored="true" multiValued="false" required="false" />
+    <!-- Datum zapisa/rojstva -->
+    <field name="datum" type="date" indexed="true" stored="true" multiValued="false" required="false" />
+    <!-- Ime govorca -->
+    <field name="govorec" type="string" indexed="true" stored="true" required="false" />
+    <field name="govorec_idx" type="text" indexed="true" stored="true" required="false" />
+    <!-- Ime vpisa -->
+    <field name="ime" type="string" indexed="true" stored="true" required="true" />
+    <field name="ime_idx" type="text" indexed="true" stored="true" required="false" />
+    <!-- Samo besedilo -->
+    <field name="besedilo" type="text" indexed="true" stored="true" multiValued="false" />
   </fields>
 
   <!-- field to use to determine and enforce document uniqueness. -->
@@ -64,6 +66,10 @@
 
   <!-- field for the QueryParser to use when an explicit fieldname is absent -->
   <defaultSearchField>besedilo</defaultSearchField>
+
+  <!-- skopiraj govorca in ime v njihove indeksirane verzije -->
+  <copyField source="govorec" dest="govorec_idx" />
+  <copyField source="ime" dest="ime_idx" />
 
   <!-- SolrQueryParser configuration: defaultOperator="AND|OR" -->
   <solrQueryParser defaultOperator="AND" />
