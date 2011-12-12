@@ -29,64 +29,62 @@ class Importer():
         else:
             return None
 
-    def do_import(self):
-#        files = os.listdir(self.file_directory)
-#
-#        Seja.objects.all().delete()
-#        Zasedanje.objects.all().delete()
-#        Zapis.objects.all().delete()
-#
-#        for file in files:
-#            print file, "..."
-#            counter = 0
-#            for fileData in open(os.path.join(self.file_directory, file), 'r'):
-#                counter = counter + 1
-#                print counter, ".."
-#                # Parse JSON data and create models
-#                jsonData = json.loads(fileData.replace("\\\\", "\\"))
-#
-#                seja = Seja()
-#                seja.mandat = int(jsonData.get('mandat'))
-#                seja.naslov = jsonData.get('naslov')
-#                seja.seja = jsonData.get('seja')
-#                seja.url = jsonData.get('url')
-#                seja.save()
-#
-#                # jsonSeja objects
-#                for jsonSeja in jsonData.get('seja_info'):
-#                    sejaInfo = SejaInfo()
-#                    sejaInfo.seja = seja
-#                    sejaInfo.url = jsonSeja.get('url')
-#                    sejaInfo.naslov = jsonSeja.get('naslov')
-#                    sejaInfo.datum = dateutil.parser.parse(jsonSeja.get('datum'), dayfirst=True)
-#                    sejaInfo.save()
-#
-#                # Zasedanja
-#                for jsonZasedanje in jsonData.get('zasedanja'):
-#                    for jsonPovezava in jsonZasedanje.get('povezave'):
-#                        zasedanje = Zasedanje()
-#                        zasedanje.datum = dateutil.parser.parse(jsonZasedanje.get('datum'), dayfirst=True)
-#                        zasedanje.seja = seja
-#
-#                        if jsonPovezava.get('zacetek'):
-#                            zasedanje.zacetek = self.parse_time(jsonPovezava.get('zacetek'))
-#                        if jsonPovezava.get('konec'):
-#                            zasedanje.konec = self.parse_time(jsonPovezava.get('konec'))
-#
-#                        zasedanje.tip = jsonPovezava.get('tip')
-#                        zasedanje.naslov = jsonPovezava.get('naslov')
-#                        zasedanje.save()
-#
-#                        for jsonOdsek in jsonPovezava.get('odseki'):
-#                            for jsonZapis in jsonOdsek.get('zapisi'):
-#                                zapis = Zapis()
-#                                zapis.zasedanje = zasedanje
-#                                zapis.govorec = jsonZapis.get('govorec')
-#                                zapis.odstavki = ' '.join(jsonZapis.get('odstavki'))
-#                                zapis.save()
-#
+    def do_database_import(self, file_directory):
+            files = os.listdir(file_directory)
+            Seja.objects.all().delete()
+            Zasedanje.objects.all().delete()
+            Zapis.objects.all().delete()
 
-        print "Database insert OK, importing dataset into Solr...."
+            for file in files:
+                print file, "..."
+                counter = 0
+                for fileData in open(os.path.join(self.file_directory, file), 'r'):
+                    counter = counter + 1
+                    print counter, ".."
+                    # Parse JSON data and create models
+                    jsonData = json.loads(fileData.replace("\\\\", "\\"))
+
+                    seja = Seja()
+                    seja.mandat = int(jsonData.get('mandat'))
+                    seja.naslov = jsonData.get('naslov')
+                    seja.seja = jsonData.get('seja')
+                    seja.url = jsonData.get('url')
+                    seja.save()
+
+                    # jsonSeja objects
+                    for jsonSeja in jsonData.get('seja_info'):
+                        sejaInfo = SejaInfo()
+                        sejaInfo.seja = seja
+                        sejaInfo.url = jsonSeja.get('url')
+                        sejaInfo.naslov = jsonSeja.get('naslov')
+                        sejaInfo.datum = dateutil.parser.parse(jsonSeja.get('datum'), dayfirst=True)
+                        sejaInfo.save()
+
+                    # Zasedanja
+                    for jsonZasedanje in jsonData.get('zasedanja'):
+                        for jsonPovezava in jsonZasedanje.get('povezave'):
+                            zasedanje = Zasedanje()
+                            zasedanje.datum = dateutil.parser.parse(jsonZasedanje.get('datum'), dayfirst=True)
+                            zasedanje.seja = seja
+
+                            if jsonPovezava.get('zacetek'):
+                                zasedanje.zacetek = self.parse_time(jsonPovezava.get('zacetek'))
+                            if jsonPovezava.get('konec'):
+                                zasedanje.konec = self.parse_time(jsonPovezava.get('konec'))
+
+                            zasedanje.tip = jsonPovezava.get('tip')
+                            zasedanje.naslov = jsonPovezava.get('naslov')
+                            zasedanje.save()
+
+                            for jsonOdsek in jsonPovezava.get('odseki'):
+                                for jsonZapis in jsonOdsek.get('zapisi'):
+                                    zapis = Zapis()
+                                    zapis.zasedanje = zasedanje
+                                    zapis.govorec = jsonZapis.get('govorec')
+                                    zapis.odstavki = ' '.join(jsonZapis.get('odstavki'))
+                                    zapis.save()
+
+    def do_solr_import(self):
         # Shrani zapise v Solr
         solr = sunburnt.SolrInterface(settings.SOLR_URL)
         solr.delete_all()       # Clear Solr index
@@ -96,18 +94,26 @@ class Importer():
         counter = 0
 
         for oseba in Oseba.objects.all():
+            stranke = []
+            for clan in oseba.clanstranke_set.all():
+                if clan.stranka:
+                    stranke.append((clan.stranka.ime, clan.stranka.okrajsava))
             dict = { "id" : "OS%d" % oseba.pk,
                      "tip":"oseba",
                      "ime" : "%s %s" % (oseba.ime, oseba.priimek),
-                     "besedilo" : "%s %s %s" % (oseba.ime, oseba.priimek, oseba.email) }
+                     "besedilo" : "%s %s %s %s" % (oseba.ime, oseba.priimek, oseba.email, " ".join([ime + " " + okrajsava for ime, okrajsava in stranke])) }
             solr.add(dict)
 
         print "Osebe imported, starting Stranke..."
         for stranka in Stranka.objects.all():
+            imena_clanov = []
+            for clan in stranka.clanstranke_set.all():
+                imena_clanov.append("%s %s" % (clan.oseba.ime, clan.oseba.priimek))
+
             dict = { "id" : "ST%d" % stranka.pk,
                      "tip" : "stranka",
-                     "ime" : stranka.ime,
-                     "besedilo" : "%s %s %s %s" % (stranka.ime, stranka.okrajsava, stranka.email, stranka.maticna)}
+                     "ime" : "%s (%s)" % (stranka.ime, stranka.okrajsava),
+                     "besedilo" : "%s %s %s %s %s" % (stranka.ime, stranka.okrajsava, stranka.email, stranka.maticna, " ".join(imena_clanov))}
             solr.add(dict)
 
         print "Stranked imported, starting Zapisi..."
@@ -152,3 +158,7 @@ class Importer():
         solr.commit()
         print "Data commited to Solr."
 
+    def do_import(self):
+#        self.do_database_import(self.file_directory)
+        print "Database insert OK, importing dataset into Solr...."
+        self.do_solr_import()
