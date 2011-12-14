@@ -5,6 +5,7 @@ import dateutil.parser
 import time
 import settings
 import sunburnt
+from django.db import transaction, connection
 from magnetogrami.models import Seja, SejaInfo, Zasedanje, Zapis
 from dz.models import Oseba, Stranka
 
@@ -43,46 +44,65 @@ class Importer():
                     print counter, ".."
                     # Parse JSON data and create models
                     jsonData = json.loads(fileData.replace("\\\\", "\\"))
+                    with transaction.commit_on_success():
+                        seja = Seja()
+                        seja.mandat = int(jsonData.get('mandat'))
+                        seja.naslov = jsonData.get('naslov')
+                        seja.seja = jsonData.get('seja')
+                        seja.url = jsonData.get('url')
+                        seja.save()
 
-                    seja = Seja()
-                    seja.mandat = int(jsonData.get('mandat'))
-                    seja.naslov = jsonData.get('naslov')
-                    seja.seja = jsonData.get('seja')
-                    seja.url = jsonData.get('url')
-                    seja.save()
+                        # jsonSeja objects
+                        for jsonSeja in jsonData.get('seja_info'):
+                            sejaInfo = SejaInfo()
+                            sejaInfo.seja = seja
+                            sejaInfo.url = jsonSeja.get('url')
+                            sejaInfo.naslov = jsonSeja.get('naslov')
+                            sejaInfo.datum = dateutil.parser.parse(jsonSeja.get('datum'), dayfirst=True)
+                            sejaInfo.save()
 
-                    # jsonSeja objects
-                    for jsonSeja in jsonData.get('seja_info'):
-                        sejaInfo = SejaInfo()
-                        sejaInfo.seja = seja
-                        sejaInfo.url = jsonSeja.get('url')
-                        sejaInfo.naslov = jsonSeja.get('naslov')
-                        sejaInfo.datum = dateutil.parser.parse(jsonSeja.get('datum'), dayfirst=True)
-                        sejaInfo.save()
+                        # Zasedanja
+                        for jsonZasedanje in jsonData.get('zasedanja'):
+                            for jsonPovezava in jsonZasedanje.get('povezave'):
+                                zasedanje = Zasedanje()
+                                zasedanje.datum = dateutil.parser.parse(jsonZasedanje.get('datum'), dayfirst=True)
+                                zasedanje.seja = seja
 
-                    # Zasedanja
-                    for jsonZasedanje in jsonData.get('zasedanja'):
-                        for jsonPovezava in jsonZasedanje.get('povezave'):
-                            zasedanje = Zasedanje()
-                            zasedanje.datum = dateutil.parser.parse(jsonZasedanje.get('datum'), dayfirst=True)
-                            zasedanje.seja = seja
+                                if jsonPovezava.get('zacetek'):
+                                    zasedanje.zacetek = self.parse_time(jsonPovezava.get('zacetek'))
+                                if jsonPovezava.get('konec'):
+                                    zasedanje.konec = self.parse_time(jsonPovezava.get('konec'))
 
-                            if jsonPovezava.get('zacetek'):
-                                zasedanje.zacetek = self.parse_time(jsonPovezava.get('zacetek'))
-                            if jsonPovezava.get('konec'):
-                                zasedanje.konec = self.parse_time(jsonPovezava.get('konec'))
-
-                            zasedanje.tip = jsonPovezava.get('tip')
-                            zasedanje.naslov = jsonPovezava.get('naslov')
-                            zasedanje.save()
-
-                            for jsonOdsek in jsonPovezava.get('odseki'):
-                                for jsonZapis in jsonOdsek.get('zapisi'):
-                                    zapis = Zapis()
-                                    zapis.zasedanje = zasedanje
-                                    zapis.govorec = jsonZapis.get('govorec')
-                                    zapis.odstavki = ' '.join(jsonZapis.get('odstavki'))
-                                    zapis.save()
+                                zasedanje.tip = jsonPovezava.get('tip')
+                                zasedanje.naslov = jsonPovezava.get('naslov')
+                                zasedanje.save()
+                                
+                                cursor = connection.cursor()
+                                count = 0
+                                keys = ['seq', 'zasedanje_id', 'govorec', 'odstavki']
+                                
+                                values = []
+                                for jsonOdsek in jsonPovezava.get('odseki'):
+                                    for jsonZapis in jsonOdsek.get('zapisi'):
+                                        zapis = Zapis()
+                                        values.extend([
+                                            count,
+                                            zasedanje.id,
+                                            jsonZapis.get('govorec'),
+                                            '\n'.join(jsonZapis.get('odstavki'))
+                                            ])
+                                        count += 1
+                                
+                                params = values
+                                onerowtempl = '(' + ', '.join(['%s']*len(keys)) + ')'
+                                all_rows_template = ', '.join([onerowtempl]*(len(params)/len(keys)))
+                                sql = '''INSERT INTO %s (%s) VALUES %s''' % (
+                                    Zapis._meta.db_table,
+                                    ', '.join(keys),
+                                    all_rows_template)
+                                #print params
+                                cursor.execute(sql, params)
+                                
 
     def do_solr_import(self):
         # Shrani zapise v Solr

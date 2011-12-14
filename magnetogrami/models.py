@@ -30,6 +30,7 @@ class Zasedanje(models.Model):
 
 class Zapis(models.Model):
     zasedanje = models.ForeignKey(Zasedanje)
+    seq = models.IntegerField()
     odstavki = models.TextField(null=True)
     govorec = models.CharField(max_length=255, null=True)
 
