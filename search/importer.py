@@ -100,8 +100,8 @@ class Importer():
                                     Zapis._meta.db_table,
                                     ', '.join(keys),
                                     all_rows_template)
-                                #print params
-                                cursor.execute(sql, params)
+                                if params:
+                                    cursor.execute(sql, params)
                                 
 
     def do_solr_import(self):
