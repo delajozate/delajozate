@@ -1,5 +1,4 @@
 from django.core.management.base import BaseCommand, CommandError
-from optparse import make_option
 from search.importer import Importer
 
 class Command(BaseCommand):
@@ -10,5 +9,5 @@ class Command(BaseCommand):
             data_path = args[0]
         except IndexError:
             raise CommandError("Invalid parameters given: missing data path.")
-        importer = Importer(data_path)
+        importer = Importer()
         importer.do_database_import(data_path)

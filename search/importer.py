@@ -10,11 +10,6 @@ from magnetogrami.models import Seja, SejaInfo, Zasedanje, Zapis
 from dz.models import Oseba, Stranka
 
 class Importer():
-    def __init__(self, file_directory):
-        """
-        file_directory - search path for files to import
-        """
-        self.file_directory = file_directory
 
     def parse_time(self, time_string):
         try:
@@ -177,8 +172,3 @@ class Importer():
 
         solr.commit()
         print "Data commited to Solr."
-
-    def do_import(self):
-#        self.do_database_import(self.file_directory)
-        print "Database insert OK, importing dataset into Solr...."
-        self.do_solr_import()
