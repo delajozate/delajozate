@@ -12,13 +12,11 @@ def seja(request, mdt, mandat, slug, datum_zasedanja=None):
     
     if datum_zasedanja is None:
         try:
-            zasedanje = Zasedanje.objects.filter(seja=seja).order_by('-datum')[0]
+            zasedanje = Zasedanje.objects.filter(seja=seja).order_by('datum')[0]
         except IndexError:
             zasedanje = None
     else:
         zasedanje = get_object_or_404(Zasedanje, seja=seja, datum=datum_zasedanja)
-    
-    print seja
     
     context = {
         'seja': seja,

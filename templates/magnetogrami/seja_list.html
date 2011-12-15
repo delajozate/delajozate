@@ -18,9 +18,8 @@ h1, h2, h3 { padding: 5px; }
 
 {% block content %}
 
-<h1>{{ seja.naslov }}</h1>
-
-
+{% for seja in object_list %}
+<h2>{{ seja.naslov }}</h2>
 
 <h3>Zasedanja</h3>
 <div class="zasedanja-list">
@@ -31,20 +30,7 @@ h1, h2, h3 { padding: 5px; }
 </ul>
 </div>
 
-<h2>Magnetogram</h2>
-{% for zapis in zasedanje.zapis_set.all %}
-<div class="govorec">
-{% if zapis.govorec_oseba %}
-    {{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}
-    <br />{% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
-{% else %}
-    {{ zapis.govorec|default_if_none:"&nbsp;" }}
-{% endif %}
-</div>
-<div class="receno">
-    <div class="zapis-link" id="zapis-{{ zapis.id }}"><a href="#zapis-{{ zapis.id }}">#</a></div>
-    {{ zapis.odstavki|linebreaksbr }}
-</div>
 {% endfor %}
+
 
 {% endblock %}

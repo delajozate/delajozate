@@ -9,6 +9,10 @@ class Seja(models.Model):
     mandat = models.IntegerField()
     url = models.URLField()
 
+    class Meta:
+        #ordering = ('datum_zacetka',) # XXX FIXME
+        pass
+
     def __unicode__(self):
         return self.naslov
 
