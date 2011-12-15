@@ -1,11 +1,14 @@
-import json
-import os
 import datetime
 import dateutil.parser
-import time
-import settings
+import json
+import os
+import re
 import sunburnt
+import time
+
 from django.db import transaction, connection
+
+import settings
 from magnetogrami.models import Seja, SejaInfo, Zasedanje, Zapis
 from dz.models import Oseba, Stranka
 
@@ -30,11 +33,13 @@ class Importer():
             Seja.objects.all().delete()
             Zasedanje.objects.all().delete()
             Zapis.objects.all().delete()
+            govorci_fn = os.path.join(os.path.dirname(__file__), 'govorci.json')
+            govorci_map = json.load(open(govorci_fn))
 
-            for file in files:
+            for file in sorted(files):
                 print file, "..."
                 counter = 0
-                for fileData in open(os.path.join(self.file_directory, file), 'r'):
+                for fileData in open(os.path.join(file_directory, file), 'r'):
                     counter = counter + 1
                     print counter, ".."
                     # Parse JSON data and create models
@@ -42,7 +47,15 @@ class Importer():
                     with transaction.commit_on_success():
                         seja = Seja()
                         seja.mandat = int(jsonData.get('mandat'))
-                        seja.naslov = jsonData.get('naslov')
+                        naslov_seje = jsonData.get('naslov')
+                        if naslov_seje.startswith('0.  seja'):
+                            continue # foo data
+                        seja.naslov = naslov_seje
+                        match = re.search('(\d+)\.\s*(redna|izredna)', naslov_seje, re.I)
+                        if not match:
+                            print naslov_seje
+                        seja_slug = ('%s-%s' % match.groups()).lower()
+                        seja.slug = seja_slug
                         seja.seja = jsonData.get('seja')
                         seja.url = jsonData.get('url')
                         seja.save()
@@ -74,16 +87,20 @@ class Importer():
                                 
                                 cursor = connection.cursor()
                                 count = 0
-                                keys = ['seq', 'zasedanje_id', 'govorec', 'odstavki']
+                                keys = ['seq', 'zasedanje_id', 'govorec', 'govorec_oseba_id', 'odstavki']
                                 
                                 values = []
                                 for jsonOdsek in jsonPovezava.get('odseki'):
                                     for jsonZapis in jsonOdsek.get('zapisi'):
-                                        zapis = Zapis()
+                                        govorec = jsonZapis.get('govorec')
+                                        if govorec is not None:
+                                            govorec = govorec.strip()
+                                        oseba_id = govorci_map.get(govorec, None)
                                         values.extend([
                                             count,
                                             zasedanje.id,
-                                            jsonZapis.get('govorec'),
+                                            govorec,
+                                            oseba_id,
                                             '\n'.join(jsonZapis.get('odstavki'))
                                             ])
                                         count += 1
@@ -97,7 +114,7 @@ class Importer():
                                     all_rows_template)
                                 if params:
                                     cursor.execute(sql, params)
-                                
+        
 
     def do_solr_import(self):
         # Shrani zapise v Solr

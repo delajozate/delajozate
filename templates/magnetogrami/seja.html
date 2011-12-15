@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style type="text/css">
+
+.govorec { width: 27%; float: left; clear: left;}
+.receno { width: 60%; float: left; margin-bottom: 10px; text-align: justify;}
+.govorec-slika { width: 100px; }
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<h1>{{ seja.naslov }}</h1>
+
+
+
+<h3>Zasedanja</h3>
+{% for z in seja.zasedanje_set.all %}
+<ul>
+    <li><a href="{% url delajozate.magnetogrami.views.seja "dz" seja.mandat seja.slug z.datum %}">{{ z.datum }}</a></li>
+</ul>
+{% endfor %}
+
+
+{% for zapis in zasedanje.zapis_set.all %}
+<div class="govorec">
+{% if zapis.govorec_oseba %}
+    {{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}
+    <br />{% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
+{% else %}
+    {{ zapis.govorec|default_if_none:"&nbsp;" }}
+{% endif %}
+</div>
+<div class="receno">
+    {{ zapis.odstavki|linebreaksbr }}
+</div>
+{% endfor %}
+
+{% endblock %}

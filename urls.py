@@ -8,8 +8,10 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'delajozate.views.home', name='home'),
     # url(r'^delajozate/', include('delajozate.foo.urls')),
-    url(r'^search/', include('search.urls')),
-    url(r'^hs/', include('haystack.urls')),
+    url(r'^seje/(?P<mdt>[^/]+)/(?P<mandat>\d+)-mandat/(?P<slug>[^/]+)/$', 
+        'delajozate.magnetogrami.views.seja', name="magnetogrami_seja"),
+    url(r'^seje/(?P<mdt>[^/]+)/(?P<mandat>\d+)-mandat/(?P<slug>[^/]+)/(?P<datum_zasedanja>\d{4}-\d{2}-\d{2})/$',
+        'delajozate.magnetogrami.views.seja', name="magnetogrami_zasedanje"),
     url(r'^', include('dz.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
