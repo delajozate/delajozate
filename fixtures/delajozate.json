@@ -9,141 +9,6 @@
     }, 
     {
         "pk": 1, 
-        "model": "south.migrationhistory", 
-        "fields": {
-            "applied": "2011-09-28 21:02:47", 
-            "app_name": "dz", 
-            "migration": "0001_initial"
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "south.migrationhistory", 
-        "fields": {
-            "applied": "2011-09-28 21:06:29", 
-            "app_name": "dz", 
-            "migration": "0002_auto__add_field_stranka_maticna__add_field_stranka_davcna__add_field_s"
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "south.migrationhistory", 
-        "fields": {
-            "applied": "2011-09-30 10:27:15", 
-            "app_name": "dz", 
-            "migration": "0003_auto__chg_field_stranka_maticna__chg_field_stranka_davcna__chg_field_s"
-        }
-    }, 
-    {
-        "pk": 4, 
-        "model": "south.migrationhistory", 
-        "fields": {
-            "applied": "2011-10-12 08:53:50", 
-            "app_name": "search", 
-            "migration": "0001_initial"
-        }
-    }, 
-    {
-        "pk": 5, 
-        "model": "south.migrationhistory", 
-        "fields": {
-            "applied": "2011-10-12 08:53:52", 
-            "app_name": "search", 
-            "migration": "0002_auto__del_povezava__add_zapis__add_field_zasedanje_naslov__add_field_z"
-        }
-    }, 
-    {
-        "pk": 6, 
-        "model": "south.migrationhistory", 
-        "fields": {
-            "applied": "2011-10-12 09:31:20", 
-            "app_name": "dz", 
-            "migration": "0004_auto"
-        }
-    }, 
-    {
-        "pk": 7, 
-        "model": "south.migrationhistory", 
-        "fields": {
-            "applied": "2011-10-13 12:52:15", 
-            "app_name": "search", 
-            "migration": "0001_initial"
-        }
-    }, 
-    {
-        "pk": 8, 
-        "model": "south.migrationhistory", 
-        "fields": {
-            "applied": "2011-10-13 12:52:15", 
-            "app_name": "search", 
-            "migration": "0002_auto__del_povezava__add_zapis__add_field_zasedanje_naslov__add_field_z"
-        }
-    }, 
-    {
-        "pk": 9, 
-        "model": "south.migrationhistory", 
-        "fields": {
-            "applied": "2011-11-06 21:34:02", 
-            "app_name": "dz", 
-            "migration": "0005_auto__chg_field_stranka_do__chg_field_stranka_od"
-        }
-    }, 
-    {
-        "pk": 10, 
-        "model": "south.migrationhistory", 
-        "fields": {
-            "applied": "2011-11-06 21:34:30", 
-            "app_name": "dz", 
-            "migration": "0006_auto__add_field_odbor_url__chg_field_odbor_ime__add_field_clanstranke_"
-        }
-    }, 
-    {
-        "pk": 12, 
-        "model": "south.migrationhistory", 
-        "fields": {
-            "applied": "2011-11-06 21:37:59", 
-            "app_name": "dz", 
-            "migration": "0007_auto__add_field_odbor_podatki_preverjeni__add_field_odbor_opombe__add_"
-        }
-    }, 
-    {
-        "pk": 13, 
-        "model": "south.migrationhistory", 
-        "fields": {
-            "applied": "2011-11-07 21:00:11", 
-            "app_name": "dz", 
-            "migration": "0008_auto__add_field_oseba_podatki_preverjeni__add_field_oseba_opombe"
-        }
-    }, 
-    {
-        "pk": 14, 
-        "model": "south.migrationhistory", 
-        "fields": {
-            "applied": "2011-11-08 15:24:05", 
-            "app_name": "dz", 
-            "migration": "0009_auto__add_field_oseba_dan_smrti"
-        }
-    }, 
-    {
-        "pk": 16, 
-        "model": "south.migrationhistory", 
-        "fields": {
-            "applied": "2011-12-03 13:54:07", 
-            "app_name": "dz", 
-            "migration": "0010_rename_poslanec_to_funkcija"
-        }
-    }, 
-    {
-        "pk": 17, 
-        "model": "south.migrationhistory", 
-        "fields": {
-            "applied": "2011-12-03 13:54:08", 
-            "app_name": "dz", 
-            "migration": "0011_auto__chg_field_clanstranke_stranka"
-        }
-    }, 
-    {
-        "pk": 1, 
         "model": "dz.oseba", 
         "fields": {
             "rojstni_dan": "1956-06-04", 
@@ -155,6 +20,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "anton-anderlic", 
             "priimek": "Anderli\u010d", 
             "slika": "/static/img/poslanci/small/anton-anderlic.jpg"
@@ -173,6 +39,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "franc-avbersek", 
             "priimek": "Avber\u0161ek", 
             "slika": ""
@@ -191,6 +58,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "roberto-battelli", 
             "priimek": "Battelli", 
             "slika": "/static/img/poslanci/small/roberto-battelli.jpg"
@@ -209,6 +77,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "dusan-bavdek", 
             "priimek": "Bavdek", 
             "slika": ""
@@ -227,6 +96,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "igor-bavcar", 
             "priimek": "Bav\u010dar", 
             "slika": ""
@@ -245,6 +115,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "gabrijel-berlic", 
             "priimek": "Berli\u010d", 
             "slika": ""
@@ -263,6 +134,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ljerka-bizilj", 
             "priimek": "Bizilj", 
             "slika": ""
@@ -281,6 +153,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "rado-bohinc", 
             "priimek": "Bohinc", 
             "slika": ""
@@ -299,6 +172,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "france-bucar", 
             "priimek": "Bu\u010dar", 
             "slika": ""
@@ -317,6 +191,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "vida-cadonic-spelic", 
             "priimek": "\u010cadoni\u010d \u0160peli\u010d", 
             "slika": ""
@@ -335,6 +210,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "franc-cernelic", 
             "priimek": "\u010cerneli\u010d", 
             "slika": ""
@@ -353,6 +229,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "dragan-cernetic", 
             "priimek": "\u010cerneti\u010d", 
             "slika": ""
@@ -371,6 +248,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "polonca-dobrajc", 
             "priimek": "Dobrajc", 
             "slika": "/static/img/poslanci/small/polonca-dobrajc.jpg"
@@ -389,6 +267,7 @@
             "facebook": "", 
             "dan_smrti": "2008-02-23", 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-drnovsek", 
             "priimek": "Drnov\u0161ek", 
             "slika": ""
@@ -407,6 +286,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "geza-dzuban", 
             "priimek": "D\u017euban", 
             "slika": "/static/img/poslanci/small/geza-dzuban.jpg"
@@ -425,6 +305,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "brane-erzen", 
             "priimek": "Er\u017een", 
             "slika": ""
@@ -443,6 +324,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "stane-frim", 
             "priimek": "Frim", 
             "slika": ""
@@ -461,6 +343,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "miroslav-gerzina", 
             "priimek": "Ger\u017eina", 
             "slika": ""
@@ -479,6 +362,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "benjamin-henigman", 
             "priimek": "Henigman", 
             "slika": ""
@@ -497,6 +381,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "franc-feri-horvat", 
             "priimek": "Horvat", 
             "slika": "/static/img/poslanci/small/franc-feri-horvat.jpg"
@@ -515,6 +400,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ivo-hvalica", 
             "priimek": "Hvalica", 
             "slika": ""
@@ -533,6 +419,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "joze-jagodnik", 
             "priimek": "Jagodnik", 
             "slika": ""
@@ -551,6 +438,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "branko-janc", 
             "priimek": "Janc", 
             "slika": ""
@@ -569,6 +457,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-jancar", 
             "priimek": "Jan\u010dar", 
             "slika": ""
@@ -587,6 +476,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "janez-jansa", 
             "priimek": "Jan\u0161a", 
             "slika": "/static/img/poslanci/small/janez-jansa.jpg"
@@ -605,6 +495,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "zmago-jelincic-plemeniti", 
             "priimek": "Jelin\u010di\u010d Plemeniti", 
             "slika": "/static/img/poslanci/small/zmago-jelincic-plemeniti.jpg"
@@ -623,6 +514,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "miran-jeric", 
             "priimek": "Jeri\u010d", 
             "slika": "/static/img/poslanci/small/miran-jeric.jpg"
@@ -641,6 +533,7 @@
             "facebook": "", 
             "dan_smrti": "2011-09-26", 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-jug", 
             "priimek": "Jug", 
             "slika": ""
@@ -659,6 +552,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "metka-karner-lukac", 
             "priimek": "Karner Luka\u010d", 
             "slika": ""
@@ -677,6 +571,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-kocijancic", 
             "priimek": "Kocijan\u010di\u010d", 
             "slika": ""
@@ -695,6 +590,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "stefan-kociper", 
             "priimek": "Kociper", 
             "slika": ""
@@ -713,6 +609,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jozef-kocuvan", 
             "priimek": "Kocuvan", 
             "slika": ""
@@ -731,6 +628,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-kopac", 
             "priimek": "Kopa\u010d", 
             "slika": ""
@@ -749,6 +647,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jozef-kopse", 
             "priimek": "Kop\u0161e", 
             "slika": ""
@@ -767,6 +666,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "bojan-korosec", 
             "priimek": "Koro\u0161ec", 
             "slika": ""
@@ -785,6 +685,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "mateja-kozuh-novak", 
             "priimek": "Ko\u017euh Novak", 
             "slika": ""
@@ -803,6 +704,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "davorin-kracun", 
             "priimek": "Kra\u010dun", 
             "slika": ""
@@ -821,6 +723,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "lev-kreft", 
             "priimek": "Kreft", 
             "slika": ""
@@ -839,6 +742,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "rafael-kuznik", 
             "priimek": "Ku\u017enik", 
             "slika": ""
@@ -857,6 +761,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "saso-lap", 
             "priimek": "Lap", 
             "slika": ""
@@ -875,6 +780,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "maksimiljan-lavrinc", 
             "priimek": "Lavrinc", 
             "slika": ""
@@ -893,6 +799,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "andrej-lenarcic", 
             "priimek": "Lenar\u010di\u010d", 
             "slika": ""
@@ -911,6 +818,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "joze-lenic", 
             "priimek": "Leni\u010d", 
             "slika": ""
@@ -929,6 +837,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "franc-lipoglavsek", 
             "priimek": "Lipoglav\u0161ek", 
             "slika": ""
@@ -947,6 +856,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "mihaela-logar", 
             "priimek": "Logar", 
             "slika": ""
@@ -965,6 +875,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "zoran-madon", 
             "priimek": "Madon", 
             "slika": ""
@@ -983,6 +894,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jurij-malovrh", 
             "priimek": "Malovrh", 
             "slika": ""
@@ -1001,6 +913,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "stefan-matus", 
             "priimek": "Matu\u0161", 
             "slika": ""
@@ -1019,6 +932,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "alojz-metelko", 
             "priimek": "Metelko", 
             "slika": ""
@@ -1037,6 +951,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "rudolf-moge", 
             "priimek": "Moge", 
             "slika": "/static/img/poslanci/small/rudolf-moge.jpg"
@@ -1055,6 +970,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "miroslav-mozetic", 
             "priimek": "Mozeti\u010d", 
             "slika": ""
@@ -1073,6 +989,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "irena-oman", 
             "priimek": "Oman", 
             "slika": ""
@@ -1091,6 +1008,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ivan-oman", 
             "priimek": "Oman", 
             "slika": ""
@@ -1109,6 +1027,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "igor-omerza", 
             "priimek": "Omerza", 
             "slika": ""
@@ -1127,6 +1046,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "borut-pahor", 
             "priimek": "Pahor", 
             "slika": ""
@@ -1145,6 +1065,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "milos-pavlica", 
             "priimek": "Pavlica", 
             "slika": ""
@@ -1163,6 +1084,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "breda-pecan", 
             "priimek": "Pe\u010dan", 
             "slika": "/static/img/poslanci/small/breda-pecan.jpg"
@@ -1181,6 +1103,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "anton-persak", 
             "priimek": "Per\u0161ak", 
             "slika": ""
@@ -1199,6 +1122,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "matjaz-peskar", 
             "priimek": "Peskar", 
             "slika": ""
@@ -1217,6 +1141,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "alojz-peterle", 
             "priimek": "Peterle", 
             "slika": ""
@@ -1235,6 +1160,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "peter-petrovic", 
             "priimek": "Petrovi\u010d", 
             "slika": ""
@@ -1253,6 +1179,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-podobnik", 
             "priimek": "Podobnik", 
             "slika": ""
@@ -1271,6 +1198,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "marjan-podobnik", 
             "priimek": "Podobnik", 
             "slika": ""
@@ -1289,6 +1217,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ignac-polajnar", 
             "priimek": "Polajnar", 
             "slika": ""
@@ -1307,6 +1236,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "marijan-poljsak", 
             "priimek": "Polj\u0161ak", 
             "slika": ""
@@ -1325,6 +1255,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "franc-potocnik", 
             "priimek": "Poto\u010dnik", 
             "slika": ""
@@ -1343,6 +1274,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "vika-potocnik", 
             "priimek": "Poto\u010dnik", 
             "slika": ""
@@ -1361,6 +1293,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "miran-potrc", 
             "priimek": "Potr\u010d", 
             "slika": "/static/img/poslanci/small/miran-potrc.jpg"
@@ -1379,6 +1312,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "maria-pozsonec", 
             "priimek": "Pozsonec", 
             "slika": "/static/img/poslanci/small/maria-pozsonec.jpg"
@@ -1397,6 +1331,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janko-predan", 
             "priimek": "Predan", 
             "slika": ""
@@ -1415,6 +1350,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "zarko-pregelj", 
             "priimek": "Pregelj", 
             "slika": ""
@@ -1433,6 +1369,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jana-primozic", 
             "priimek": "Primo\u017ei\u010d", 
             "slika": ""
@@ -1451,6 +1388,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "joze-protner", 
             "priimek": "Protner", 
             "slika": ""
@@ -1469,6 +1407,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ciril-pucko", 
             "priimek": "Pucko", 
             "slika": ""
@@ -1487,6 +1426,7 @@
             "facebook": "", 
             "dan_smrti": "2003-01-12", 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "joze-pucnik", 
             "priimek": "Pu\u010dnik", 
             "slika": ""
@@ -1505,6 +1445,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "vitodrag-pukl", 
             "priimek": "Pukl", 
             "slika": ""
@@ -1523,6 +1464,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jozef-rajsp", 
             "priimek": "Raj\u0161p", 
             "slika": ""
@@ -1541,6 +1483,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "izidor-rejc", 
             "priimek": "Rejc", 
             "slika": ""
@@ -1559,6 +1502,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ciril-ribicic", 
             "priimek": "Ribi\u010di\u010d", 
             "slika": ""
@@ -1577,6 +1521,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "herman-rigelnik", 
             "priimek": "Rigelnik", 
             "slika": ""
@@ -1595,6 +1540,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "dimitrij-rupel", 
             "priimek": "Rupel", 
             "slika": ""
@@ -1613,6 +1559,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ivan-sisinger", 
             "priimek": "Sisinger", 
             "slika": ""
@@ -1631,6 +1578,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "nada-skuk", 
             "priimek": "Skuk", 
             "slika": ""
@@ -1649,6 +1597,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "marjan-stanic", 
             "priimek": "Stani\u010d", 
             "slika": ""
@@ -1667,6 +1616,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "maks-susek", 
             "priimek": "Su\u0161ek", 
             "slika": ""
@@ -1685,6 +1635,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "leo-seserko", 
             "priimek": "\u0160e\u0161erko", 
             "slika": ""
@@ -1703,6 +1654,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "marjan-setinc", 
             "priimek": "\u0160etinc", 
             "slika": ""
@@ -1721,6 +1673,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "drago-siftar", 
             "priimek": "\u0160iftar", 
             "slika": ""
@@ -1739,6 +1692,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "jozef-skolc", 
             "priimek": "\u0160kol\u010d", 
             "slika": "/static/img/poslanci/small/jozef-skolc.jpg"
@@ -1757,6 +1711,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jadranka-sturm-kocjan", 
             "priimek": "\u0160turm Kocjan", 
             "slika": ""
@@ -1775,6 +1730,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "peter-tancig", 
             "priimek": "Tancig", 
             "slika": ""
@@ -1793,6 +1749,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "zoran-thaler", 
             "priimek": "Thaler", 
             "slika": ""
@@ -1811,6 +1768,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ludvik-toplak", 
             "priimek": "Toplak", 
             "slika": ""
@@ -1829,6 +1787,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "vladimir-topler", 
             "priimek": "Topler", 
             "slika": ""
@@ -1847,6 +1806,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ivan-verzolak", 
             "priimek": "Verzolak", 
             "slika": ""
@@ -1865,6 +1825,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-vindis", 
             "priimek": "Vindi\u0161", 
             "slika": ""
@@ -1883,6 +1844,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "franc-zagozen", 
             "priimek": "Zago\u017een", 
             "slika": ""
@@ -1901,6 +1863,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-zupanec", 
             "priimek": "Zupanec", 
             "slika": ""
@@ -1919,6 +1882,7 @@
             "facebook": "", 
             "dan_smrti": "2008-11-30", 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "joze-avsic", 
             "priimek": "Av\u0161i\u010d", 
             "slika": ""
@@ -1937,6 +1901,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "josip-bajc", 
             "priimek": "Bajc", 
             "slika": "/static/img/poslanci/small/josip-bajc.jpg"
@@ -1955,6 +1920,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "anton-bergauer", 
             "priimek": "Bergauer", 
             "slika": ""
@@ -1973,6 +1939,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "richard-beuermann", 
             "priimek": "Beuermann", 
             "slika": ""
@@ -1991,6 +1958,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "samo-bevk", 
             "priimek": "Bevk", 
             "slika": "/static/img/poslanci/small/samo-bevk.jpg"
@@ -2009,6 +1977,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ivan-bozic", 
             "priimek": "Bo\u017ei\u010d", 
             "slika": ""
@@ -2027,6 +1996,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "stanislav-brencic", 
             "priimek": "Bren\u010di\u010d", 
             "slika": "/static/img/poslanci/small/stanislav-brencic.jpg"
@@ -2045,6 +2015,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "franc-but", 
             "priimek": "But", 
             "slika": ""
@@ -2063,6 +2034,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-cimperman", 
             "priimek": "Cimperman", 
             "slika": ""
@@ -2081,6 +2053,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "franc-cebulj", 
             "priimek": "\u010cebulj", 
             "slika": ""
@@ -2099,6 +2072,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "vladimir-celigoj", 
             "priimek": "\u010celigoj", 
             "slika": ""
@@ -2117,6 +2091,7 @@
             "facebook": "", 
             "dan_smrti": "2002-03-06", 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "anton-delak", 
             "priimek": "Delak", 
             "slika": ""
@@ -2135,6 +2110,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "vincencij-demsar", 
             "priimek": "Dem\u0161ar", 
             "slika": ""
@@ -2153,6 +2129,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "metod-dragonja", 
             "priimek": "Dragonja", 
             "slika": ""
@@ -2171,6 +2148,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "andrej-fabjan", 
             "priimek": "Fabjan", 
             "slika": "/static/img/poslanci/small/andrej-fabjan.jpg"
@@ -2189,6 +2167,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "slavko-gaber", 
             "priimek": "Gaber", 
             "slika": "/static/img/poslanci/small/slavko-gaber.jpg"
@@ -2207,6 +2186,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "mario-gasparini", 
             "priimek": "Gasparini", 
             "slika": ""
@@ -2225,6 +2205,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "andrej-gerencer", 
             "priimek": "Geren\u010der", 
             "slika": ""
@@ -2243,6 +2224,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "leon-gostisa", 
             "priimek": "Gosti\u0161a", 
             "slika": ""
@@ -2261,6 +2243,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "peter-hrastelj", 
             "priimek": "Hrastelj", 
             "slika": ""
@@ -2279,6 +2262,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "helena-hren-vencelj", 
             "priimek": "Hren Vencelj", 
             "slika": ""
@@ -2297,6 +2281,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "roman-jakic", 
             "priimek": "Jaki\u010d", 
             "slika": ""
@@ -2315,6 +2300,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "franc-jazbec", 
             "priimek": "Jazbec", 
             "slika": "/static/img/poslanci/small/franc-jazbec.jpg"
@@ -2333,6 +2319,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "jozef-jerovsek", 
             "priimek": "Jerov\u0161ek", 
             "slika": "/static/img/poslanci/small/jozef-jerovsek.jpg"
@@ -2351,6 +2338,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "aurelio-juri", 
             "priimek": "Juri", 
             "slika": "/static/img/poslanci/small/aurelio-juri.jpg"
@@ -2369,6 +2357,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jelko-kacin", 
             "priimek": "Kacin", 
             "slika": ""
@@ -2387,6 +2376,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "franc-kangler", 
             "priimek": "Kangler", 
             "slika": ""
@@ -2405,6 +2395,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "mirko-kaplja", 
             "priimek": "Kaplja", 
             "slika": ""
@@ -2423,6 +2414,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ivan-kebric", 
             "priimek": "Kebri\u010d", 
             "slika": ""
@@ -2441,6 +2433,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "branko-kelemina", 
             "priimek": "Kelemina", 
             "slika": ""
@@ -2459,6 +2452,7 @@
             "facebook": "", 
             "dan_smrti": "2009-08-30", 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "stefan-klinc", 
             "priimek": "Klinc", 
             "slika": ""
@@ -2477,6 +2471,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "bojan-kontic", 
             "priimek": "Konti\u010d", 
             "slika": "/static/img/poslanci/small/bojan-kontic.jpg"
@@ -2495,6 +2490,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jozef-kosir", 
             "priimek": "Ko\u0161ir", 
             "slika": ""
@@ -2513,6 +2509,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "alojz-kovse", 
             "priimek": "Kov\u0161e", 
             "slika": ""
@@ -2531,6 +2528,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "janez-kramberger", 
             "priimek": "Kramberger", 
             "slika": "/static/img/poslanci/small/janez-kramberger.jpg"
@@ -2549,6 +2547,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "majda-ana-kregelj-zbacnik", 
             "priimek": "Kregelj Zba\u010dnik", 
             "slika": ""
@@ -2567,6 +2566,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "darja-lavtizar-bebler", 
             "priimek": "Lavti\u017ear Bebler", 
             "slika": "/static/img/poslanci/small/darja-lavtizar-bebler.jpg"
@@ -2585,6 +2585,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "peter-lesnik", 
             "priimek": "Le\u0161nik", 
             "slika": ""
@@ -2603,6 +2604,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "zoran-lesnik", 
             "priimek": "Le\u0161nik", 
             "slika": ""
@@ -2621,6 +2623,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "miroslav-luci", 
             "priimek": "Luci", 
             "slika": ""
@@ -2639,6 +2642,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "aleksander-merlo", 
             "priimek": "Merlo", 
             "slika": ""
@@ -2657,6 +2661,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-mezan", 
             "priimek": "Me\u017ean", 
             "slika": ""
@@ -2675,6 +2680,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "joze-mozgan", 
             "priimek": "Mo\u017egan", 
             "slika": ""
@@ -2693,6 +2699,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "darinka-mravljak", 
             "priimek": "Mravljak", 
             "slika": ""
@@ -2711,6 +2718,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "eda-okretic-salmic", 
             "priimek": "Okreti\u010d Salmi\u010d", 
             "slika": ""
@@ -2729,6 +2737,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "anton-partljic", 
             "priimek": "Partlji\u010d", 
             "slika": ""
@@ -2747,6 +2756,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "saso-pece", 
             "priimek": "Pe\u010de", 
             "slika": "/static/img/poslanci/small/saso-pece.jpg"
@@ -2765,6 +2775,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-per", 
             "priimek": "Per", 
             "slika": ""
@@ -2783,6 +2794,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "rudolf-petan", 
             "priimek": "Petan", 
             "slika": "/static/img/poslanci/small/rudolf-petan.jpg"
@@ -2801,6 +2813,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "jakob-presecnik", 
             "priimek": "Prese\u010dnik", 
             "slika": "/static/img/poslanci/small/jakob-presecnik.jpg"
@@ -2819,6 +2832,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "franc-puksic", 
             "priimek": "Puk\u0161i\u010d", 
             "slika": "/static/img/poslanci/small/franc-puksic.jpg"
@@ -2837,6 +2851,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ciril-metod-pungartnik", 
             "priimek": "Pungartnik", 
             "slika": ""
@@ -2855,6 +2870,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "franci-rokavec", 
             "priimek": "Rokavec", 
             "slika": ""
@@ -2873,6 +2889,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "nikolaj-rozic", 
             "priimek": "Ro\u017ei\u010d", 
             "slika": ""
@@ -2891,6 +2908,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "pavel-rupar", 
             "priimek": "Rupar", 
             "slika": ""
@@ -2909,6 +2927,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "marijan-schiffrer", 
             "priimek": "Schiffrer", 
             "slika": ""
@@ -2927,6 +2946,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ciril-smrkolj", 
             "priimek": "Smrkolj", 
             "slika": ""
@@ -2945,6 +2965,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "boris-sovic", 
             "priimek": "Sovi\u010d", 
             "slika": ""
@@ -2963,6 +2984,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "bogomir-spiletic", 
             "priimek": "\u0160pileti\u010d", 
             "slika": ""
@@ -2981,6 +3003,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jozef-spindler", 
             "priimek": "\u0160pindler", 
             "slika": ""
@@ -2999,6 +3022,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "davorin-tercon", 
             "priimek": "Ter\u010don", 
             "slika": "/static/img/poslanci/small/davorin-tercon.jpg"
@@ -3017,6 +3041,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "branko-tomazic", 
             "priimek": "Toma\u017ei\u010d", 
             "slika": ""
@@ -3035,6 +3060,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "herman-tomazic", 
             "priimek": "Toma\u017ei\u010d", 
             "slika": ""
@@ -3053,6 +3079,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "vili-trofenik", 
             "priimek": "Trofenik", 
             "slika": "/static/img/poslanci/small/vili-trofenik.jpg"
@@ -3071,6 +3098,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "janko-veber", 
             "priimek": "Veber", 
             "slika": "/static/img/poslanci/small/janko-veber.jpg"
@@ -3089,6 +3117,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "alojz-vesenjak", 
             "priimek": "Vesenjak", 
             "slika": ""
@@ -3107,6 +3136,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "irena-virant", 
             "priimek": "Virant", 
             "slika": ""
@@ -3125,6 +3155,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "joze-zagozen", 
             "priimek": "Zago\u017een", 
             "slika": ""
@@ -3143,6 +3174,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "bogomir-zamernik", 
             "priimek": "Zamernik", 
             "slika": "/static/img/poslanci/small/bogomir-zamernik.jpg"
@@ -3161,6 +3193,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jozef-zimsek", 
             "priimek": "Zim\u0161ek", 
             "slika": ""
@@ -3179,6 +3212,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "franc-znidarsic", 
             "priimek": "\u017dnidar\u0161i\u010d", 
             "slika": "/static/img/poslanci/small/franc-znidarsic.jpg"
@@ -3197,6 +3231,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "sonja-areh-lavric", 
             "priimek": "Areh Lavri\u010d", 
             "slika": ""
@@ -3215,6 +3250,7 @@
             "facebook": "", 
             "dan_smrti": "2011-08-16", 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "andrej-bajuk", 
             "priimek": "Bajuk", 
             "slika": ""
@@ -3233,6 +3269,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "bogdan-barovic", 
             "priimek": "Barovi\u010d", 
             "slika": "/static/img/poslanci/small/bogdan-barovic.jpg"
@@ -3251,6 +3288,7 @@
             "facebook": "", 
             "dan_smrti": "2011-11-14", 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jozef-bernik", 
             "priimek": "Bernik", 
             "slika": ""
@@ -3269,6 +3307,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "mihael-brejc", 
             "priimek": "Brejc", 
             "slika": ""
@@ -3287,6 +3326,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "anton-butolen", 
             "priimek": "Butolen", 
             "slika": ""
@@ -3305,6 +3345,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "france-cukjati", 
             "priimek": "Cukjati", 
             "slika": "/static/img/poslanci/small/france-cukjati.jpg"
@@ -3323,6 +3364,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "vojko-celigoj", 
             "priimek": "\u010celigoj", 
             "slika": ""
@@ -3341,6 +3383,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "lucija-cok", 
             "priimek": "\u010cok", 
             "slika": ""
@@ -3359,6 +3402,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "marko-diaci", 
             "priimek": "Diaci", 
             "slika": ""
@@ -3377,6 +3421,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "janez-drobnic", 
             "priimek": "Drobni\u010d", 
             "slika": "/static/img/poslanci/small/janez-drobnic.jpg"
@@ -3395,6 +3440,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "matjaz-falkner", 
             "priimek": "Falkner", 
             "slika": ""
@@ -3413,6 +3459,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "mitja-gaspari", 
             "priimek": "Gaspari", 
             "slika": ""
@@ -3431,6 +3478,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "ljubo-germic", 
             "priimek": "Germi\u010d", 
             "slika": "/static/img/poslanci/small/ljubo-germic.jpg"
@@ -3449,6 +3497,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "sinisa-germovsek", 
             "priimek": "Germov\u0161ek", 
             "slika": ""
@@ -3467,6 +3516,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "zoran-gracner", 
             "priimek": "Gra\u010dner", 
             "slika": ""
@@ -3485,6 +3535,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "leopold-groselj", 
             "priimek": "Gro\u0161elj", 
             "slika": ""
@@ -3503,6 +3554,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "blaz-kavcic", 
             "priimek": "Kav\u010di\u010d", 
             "slika": ""
@@ -3521,6 +3573,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "joze-jozef-kavticnik", 
             "priimek": "Kavti\u010dnik", 
             "slika": ""
@@ -3539,6 +3592,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-komljanec", 
             "priimek": "Komljanec", 
             "slika": ""
@@ -3557,6 +3611,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "milan-kopusar", 
             "priimek": "Kopu\u0161ar", 
             "slika": ""
@@ -3575,6 +3630,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "leopold-leo-kremzar", 
             "priimek": "Krem\u017ear", 
             "slika": ""
@@ -3593,6 +3649,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "franc-lenko", 
             "priimek": "Lenko", 
             "slika": ""
@@ -3611,6 +3668,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "peter-levic", 
             "priimek": "Levi\u010d", 
             "slika": ""
@@ -3629,6 +3687,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "lidija-majnik", 
             "priimek": "Majnik", 
             "slika": ""
@@ -3647,6 +3706,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ivan-mamic", 
             "priimek": "Mami\u0107", 
             "slika": ""
@@ -3665,6 +3725,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "dorijan-marsic", 
             "priimek": "Mar\u0161i\u010d", 
             "slika": ""
@@ -3683,6 +3744,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jerica-mrzel", 
             "priimek": "Mrzel", 
             "slika": ""
@@ -3701,6 +3763,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "irma-pavlinic-krebs", 
             "priimek": "Pavlini\u010d Krebs", 
             "slika": ""
@@ -3719,6 +3782,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "valentin-pohorec", 
             "priimek": "Pohorec", 
             "slika": ""
@@ -3737,6 +3801,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "majda-potrata", 
             "priimek": "Potrata", 
             "slika": "/static/img/poslanci/small/majda-potrata.jpg"
@@ -3755,6 +3820,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "anton-rop", 
             "priimek": "Rop", 
             "slika": "/static/img/poslanci/small/anton-rop.jpg"
@@ -3773,6 +3839,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "danica-simsic", 
             "priimek": "Sim\u0161i\u010d", 
             "slika": ""
@@ -3791,6 +3858,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "alojz-sok", 
             "priimek": "Sok", 
             "slika": "/static/img/poslanci/small/alojz-sok.jpg"
@@ -3809,6 +3877,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "stanislava-stopar", 
             "priimek": "Stopar", 
             "slika": ""
@@ -3827,6 +3896,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "franc-susnik", 
             "priimek": "Su\u0161nik", 
             "slika": "/static/img/poslanci/small/franc-susnik.jpg"
@@ -3845,6 +3915,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "igor-stemberger", 
             "priimek": "\u0160temberger", 
             "slika": ""
@@ -3863,6 +3934,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "borut-suklje", 
             "priimek": "\u0160uklje", 
             "slika": ""
@@ -3881,6 +3953,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "matjaz-svagan", 
             "priimek": "\u0160vagan", 
             "slika": "/static/img/poslanci/small/matjaz-svagan.jpg"
@@ -3899,6 +3972,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "joze-tanko", 
             "priimek": "Tanko", 
             "slika": "/static/img/poslanci/small/joze-tanko.jpg"
@@ -3917,6 +3991,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "marija-ana-tisovic", 
             "priimek": "Tisovic", 
             "slika": ""
@@ -3935,6 +4010,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "andrej-vizjak", 
             "priimek": "Vizjak", 
             "slika": "/static/img/poslanci/small/andrej-vizjak.jpg"
@@ -3953,6 +4029,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "bogomir-vnucec", 
             "priimek": "Vnu\u010dec", 
             "slika": ""
@@ -3971,6 +4048,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "dusan-vucko", 
             "priimek": "Vu\u010dko", 
             "slika": ""
@@ -3989,6 +4067,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "cveta-zalokar-orazem", 
             "priimek": "Zalokar Ora\u017eem", 
             "slika": "/static/img/poslanci/small/cveta-zalokar-orazem.jpg"
@@ -4007,6 +4086,7 @@
             "facebook": "", 
             "dan_smrti": "2011-12-02", 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jasa-zlobec-lukic", 
             "priimek": "Zlobec Luki\u010d", 
             "slika": ""
@@ -4025,6 +4105,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "majda-zupan", 
             "priimek": "Zupan", 
             "slika": "/static/img/poslanci/small/majda-zupan.jpg"
@@ -4043,6 +4124,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "andrej-brucan", 
             "priimek": "Bru\u010dan", 
             "slika": "/static/img/poslanci/small/andrej-brucan.jpg"
@@ -4061,6 +4143,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "franc-capuder", 
             "priimek": "Capuder", 
             "slika": ""
@@ -4079,6 +4162,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "milan-m-cvikl", 
             "priimek": "Cvikl", 
             "slika": "/static/img/poslanci/small/milan-m-cvikl.jpg"
@@ -4097,6 +4181,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "zvonko-cernac", 
             "priimek": "\u010cerna\u010d", 
             "slika": "/static/img/poslanci/small/zvonko-cernac.jpg"
@@ -4115,6 +4200,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "marjan-drofenik", 
             "priimek": "Drofenik", 
             "slika": "/static/img/poslanci/small/marjan-drofenik.jpg"
@@ -4133,6 +4219,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jozef-ficko", 
             "priimek": "Ficko", 
             "slika": ""
@@ -4151,6 +4238,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "pavel-gantar", 
             "priimek": "Gantar", 
             "slika": "/static/img/poslanci/small/pavel-gantar.jpg"
@@ -4169,6 +4257,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "ivan-grill", 
             "priimek": "Grill", 
             "slika": "/static/img/poslanci/small/ivan-grill.jpg"
@@ -4187,6 +4276,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "branko-grims", 
             "priimek": "Grims", 
             "slika": "/static/img/poslanci/small/branko-grims.jpg"
@@ -4205,6 +4295,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "ales-gulic", 
             "priimek": "Guli\u010d", 
             "slika": "/static/img/poslanci/small/ales-gulic.jpg"
@@ -4223,6 +4314,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "matjaz-han", 
             "priimek": "Han", 
             "slika": "/static/img/poslanci/small/matjaz-han.jpg"
@@ -4241,6 +4333,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "bojan-homan", 
             "priimek": "Homan", 
             "slika": "/static/img/poslanci/small/bojan-homan.jpg"
@@ -4259,6 +4352,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "jozef-horvat", 
             "priimek": "Horvat", 
             "slika": "/static/img/poslanci/small/jozef-horvat.jpg"
@@ -4277,6 +4371,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "srecko-hvauc", 
             "priimek": "Hvauc", 
             "slika": "/static/img/poslanci/small/srecko-hvauc.jpg"
@@ -4295,6 +4390,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "eva-irgl", 
             "priimek": "Irgl", 
             "slika": "/static/img/poslanci/small/eva-irgl.jpg"
@@ -4313,6 +4409,7 @@
             "facebook": "", 
             "dan_smrti": "2008-07-03", 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "kristijan-janc", 
             "priimek": "Janc", 
             "slika": "/static/img/poslanci/small/kristijan-janc.jpg"
@@ -4331,6 +4428,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "ivan-jelen", 
             "priimek": "Jelen", 
             "slika": "/static/img/poslanci/small/ivan-jelen.jpg"
@@ -4349,6 +4447,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "alenka-jeraj", 
             "priimek": "Jeraj", 
             "slika": "/static/img/poslanci/small/alenka-jeraj.jpg"
@@ -4367,6 +4466,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "vasja-klavora", 
             "priimek": "Klavora", 
             "slika": "/static/img/poslanci/small/vasja-klavora.jpg"
@@ -4385,6 +4485,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "anton-kokalj", 
             "priimek": "Kokalj", 
             "slika": "/static/img/poslanci/small/anton-kokalj.jpg"
@@ -4403,6 +4504,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "drago-koren", 
             "priimek": "Koren", 
             "slika": "/static/img/poslanci/small/drago-koren.jpg"
@@ -4421,6 +4523,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "dimitrij-kovacic", 
             "priimek": "Kova\u010di\u010d", 
             "slika": "/static/img/poslanci/small/dimitrij-kovacic.jpg"
@@ -4439,6 +4542,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "danijel-krivec", 
             "priimek": "Krivec", 
             "slika": "/static/img/poslanci/small/danijel-krivec.jpg"
@@ -4457,6 +4561,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "mojca-kucler-dolinar", 
             "priimek": "Kucler Dolinar", 
             "slika": "/static/img/poslanci/small/mojca-kucler-dolinar.jpg"
@@ -4475,6 +4580,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "dusan-kumer", 
             "priimek": "Kumer", 
             "slika": "/static/img/poslanci/small/dusan-kumer.jpg"
@@ -4493,6 +4599,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "matej-lahovnik", 
             "priimek": "Lahovnik", 
             "slika": "/static/img/poslanci/small/matej-lahovnik.jpg"
@@ -4511,6 +4618,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "mitja-ljubeljsek", 
             "priimek": "Ljubelj\u0161ek", 
             "slika": "/static/img/poslanci/small/mitja-ljubeljsek.jpg"
@@ -4529,6 +4637,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "branko-marinic", 
             "priimek": "Marini\u010d", 
             "slika": "/static/img/poslanci/small/branko-marinic.jpg"
@@ -4547,6 +4656,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "martin-mikolic", 
             "priimek": "Mikoli\u010d", 
             "slika": "/static/img/poslanci/small/martin-mikolic.jpg"
@@ -4565,6 +4675,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "stane-pajk", 
             "priimek": "Pajk", 
             "slika": "/static/img/poslanci/small/stane-pajk.jpg"
@@ -4583,6 +4694,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "marko-pavliha", 
             "priimek": "Pavliha", 
             "slika": "/static/img/poslanci/small/marko-pavliha.jpg"
@@ -4601,6 +4713,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "milan-petek", 
             "priimek": "Petek", 
             "slika": "/static/img/poslanci/small/milan-petek.jpg"
@@ -4619,6 +4732,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "miro-petek", 
             "priimek": "Petek", 
             "slika": "/static/img/poslanci/small/miro-petek.jpg"
@@ -4637,6 +4751,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "marijan-pojbic", 
             "priimek": "Pojbi\u010d", 
             "slika": "/static/img/poslanci/small/marijan-pojbic.jpg"
@@ -4655,6 +4770,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "alojz-posedel", 
             "priimek": "Posedel", 
             "slika": "/static/img/poslanci/small/alojz-posedel.jpg"
@@ -4673,6 +4789,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "mihael-prevc", 
             "priimek": "Prevc", 
             "slika": "/static/img/poslanci/small/mihael-prevc.jpg"
@@ -4691,6 +4808,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "srecko-prijatelj", 
             "priimek": "Prijatelj", 
             "slika": "/static/img/poslanci/small/srecko-prijatelj.jpg"
@@ -4709,6 +4827,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "vili-rezman", 
             "priimek": "Rezman", 
             "slika": "/static/img/poslanci/small/vili-rezman.jpg"
@@ -4727,6 +4846,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "bojan-rugelj", 
             "priimek": "Rugelj", 
             "slika": "/static/img/poslanci/small/bojan-rugelj.jpg"
@@ -4745,6 +4865,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "borut-sajovic", 
             "priimek": "Sajovic", 
             "slika": "/static/img/poslanci/small/borut-sajovic.jpg"
@@ -4763,6 +4884,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "mitja-slavinec", 
             "priimek": "Slavinec", 
             "slika": "/static/img/poslanci/small/mitja-slavinec.jpg"
@@ -4781,6 +4903,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "bojan-starman", 
             "priimek": "Starman", 
             "slika": "/static/img/poslanci/small/bojan-starman.jpg"
@@ -4799,6 +4922,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "ciril-testen", 
             "priimek": "Testen", 
             "slika": "/static/img/poslanci/small/ciril-testen.jpg"
@@ -4817,6 +4941,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "marjetka-uhan", 
             "priimek": "Uhan", 
             "slika": "/static/img/poslanci/small/marjetka-uhan.jpg"
@@ -4835,6 +4960,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "rudi-versnik", 
             "priimek": "Ver\u0161nik", 
             "slika": "/static/img/poslanci/small/rudi-versnik.jpg"
@@ -4853,6 +4979,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "bostjan-zagorac", 
             "priimek": "Zagorac", 
             "slika": "/static/img/poslanci/small/bostjan-zagorac.jpg"
@@ -4871,6 +4998,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "milenko-ziherl", 
             "priimek": "Ziherl", 
             "slika": "/static/img/poslanci/small/milenko-ziherl.jpg"
@@ -4889,6 +5017,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "milan-zver", 
             "priimek": "Zver", 
             "slika": ""
@@ -4907,6 +5036,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "barbara-zgajner-tavs", 
             "priimek": "\u017dgajner Tav\u0161", 
             "slika": "/static/img/poslanci/small/barbara-zgajner-tavs.jpg"
@@ -4925,6 +5055,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "marjan-bezjak", 
             "priimek": "Bezjak", 
             "slika": "/static/img/poslanci/small/marjan-bezjak.jpg"
@@ -4943,6 +5074,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "julijana-bizjak-mlakar", 
             "priimek": "Bizjak Mlakar", 
             "slika": "/static/img/poslanci/small/julijana-bizjak-mlakar.jpg"
@@ -4961,6 +5093,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "franc-bogovic", 
             "priimek": "Bogovi\u010d", 
             "slika": "/static/img/poslanci/small/franc-bogovic.jpg"
@@ -4979,6 +5112,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "mirko-brulc", 
             "priimek": "Brulc", 
             "slika": "/static/img/poslanci/small/mirko-brulc.jpg"
@@ -4997,6 +5131,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "renata-brunskole", 
             "priimek": "Brunskole", 
             "slika": "/static/img/poslanci/small/renata-brunskole.jpg"
@@ -5015,6 +5150,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "alan-bukovnik", 
             "priimek": "Bukovnik", 
             "slika": "/static/img/poslanci/small/alan-bukovnik.jpg"
@@ -5033,6 +5169,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "anton-colaric", 
             "priimek": "Colari\u010d", 
             "slika": "/static/img/poslanci/small/anton-colaric.jpg"
@@ -5051,6 +5188,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "bogdan-cepic", 
             "priimek": "\u010cepi\u010d", 
             "slika": "/static/img/poslanci/small/bogdan-cepic.jpg"
@@ -5069,6 +5207,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "andreja-crnak-meglic", 
             "priimek": "\u010crnak Megli\u010d", 
             "slika": "/static/img/poslanci/small/andreja-crnak-meglic.jpg"
@@ -5087,6 +5226,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "silva-crnugelj", 
             "priimek": "\u010crnugelj", 
             "slika": "/static/img/poslanci/small/silva-crnugelj.jpg"
@@ -5105,6 +5245,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "matevz-frangez", 
             "priimek": "Frange\u017e", 
             "slika": "/static/img/poslanci/small/matevz-frangez.jpg"
@@ -5123,6 +5264,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "josko-godec", 
             "priimek": "Godec", 
             "slika": "/static/img/poslanci/small/josko-godec.jpg"
@@ -5141,6 +5283,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "gregor-golobic", 
             "priimek": "Golobi\u010d", 
             "slika": "/static/img/poslanci/small/gregor-golobic.jpg"
@@ -5159,6 +5302,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "laszlo-goncz", 
             "priimek": "G\u00f6ncz", 
             "slika": "/static/img/poslanci/small/laszlo-goncz.jpg"
@@ -5177,6 +5321,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "vinko-gorenak", 
             "priimek": "Gorenak", 
             "slika": "/static/img/poslanci/small/vinko-gorenak.jpg"
@@ -5195,6 +5340,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "milan-gumzar", 
             "priimek": "Gumzar", 
             "slika": "/static/img/poslanci/small/milan-gumzar.jpg"
@@ -5213,6 +5359,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "miran-gyorek", 
             "priimek": "Gy\u00f6rek", 
             "slika": "/static/img/poslanci/small/miran-gyorek.jpg"
@@ -5231,6 +5378,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "robert-hrovat", 
             "priimek": "Hrovat", 
             "slika": "/static/img/poslanci/small/robert-hrovat.jpg"
@@ -5249,6 +5397,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "luka-juri", 
             "priimek": "Juri", 
             "slika": "/static/img/poslanci/small/luka-juri.jpg"
@@ -5267,6 +5416,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "franco-juri", 
             "priimek": "Juri", 
             "slika": "/static/img/poslanci/small/franco-juri.jpg"
@@ -5285,6 +5435,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "franc-jursa", 
             "priimek": "Jur\u0161a", 
             "slika": "/static/img/poslanci/small/franc-jursa.jpg"
@@ -5303,6 +5454,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "anton-kampus", 
             "priimek": "Kampu\u0161", 
             "slika": "/static/img/poslanci/small/anton-kampus.jpg"
@@ -5321,6 +5473,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "franci-kek", 
             "priimek": "Kek", 
             "slika": "/static/img/poslanci/small/franci-kek.jpg"
@@ -5339,6 +5492,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "janez-kikelj", 
             "priimek": "Kikelj", 
             "slika": "/static/img/poslanci/small/janez-kikelj.jpg"
@@ -5357,6 +5511,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "janja-klasinc", 
             "priimek": "Klasinc", 
             "slika": "/static/img/poslanci/small/janja-klasinc.jpg"
@@ -5375,6 +5530,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "miroslav-klun", 
             "priimek": "Klun", 
             "slika": "/static/img/poslanci/small/miroslav-klun.jpg"
@@ -5393,6 +5549,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "gvido-kres", 
             "priimek": "Kres", 
             "slika": "/static/img/poslanci/small/gvido-kres.jpg"
@@ -5411,6 +5568,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "marijan-krizman", 
             "priimek": "Kri\u017eman", 
             "slika": "/static/img/poslanci/small/marijan-krizman.jpg"
@@ -5429,6 +5587,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "zvonko-lah", 
             "priimek": "Lah", 
             "slika": "/static/img/poslanci/small/zvonko-lah.jpg"
@@ -5447,6 +5606,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "dejan-levanic", 
             "priimek": "Levani\u010d", 
             "slika": "/static/img/poslanci/small/dejan-levanic.jpg"
@@ -5465,6 +5625,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "rado-likar", 
             "priimek": "Likar", 
             "slika": "/static/img/poslanci/small/rado-likar.jpg"
@@ -5483,6 +5644,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "andrej-magajna", 
             "priimek": "Magajna", 
             "slika": "/static/img/poslanci/small/andrej-magajna.jpg"
@@ -5501,6 +5663,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "silven-majhenic", 
             "priimek": "Majheni\u010d", 
             "slika": "/static/img/poslanci/small/silven-majhenic.jpg"
@@ -5519,6 +5682,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "tomaz-tom-mencinger", 
             "priimek": "Mencinger", 
             "slika": "/static/img/poslanci/small/tomaz-tom-mencinger.jpg"
@@ -5537,6 +5701,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "darko-menih", 
             "priimek": "Menih", 
             "slika": "/static/img/poslanci/small/darko-menih.jpg"
@@ -5555,6 +5720,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "iztok-podkriznik", 
             "priimek": "Podkri\u017enik", 
             "slika": "/static/img/poslanci/small/iztok-podkriznik.jpg"
@@ -5573,6 +5739,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "alojzij-potocnik", 
             "priimek": "Poto\u010dnik", 
             "slika": "/static/img/poslanci/small/alojzij-potocnik.jpg"
@@ -5591,6 +5758,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "janez-ribic", 
             "priimek": "Ribi\u010d", 
             "slika": "/static/img/poslanci/small/janez-ribic.jpg"
@@ -5609,6 +5777,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "andreja-rihter", 
             "priimek": "Rihter", 
             "slika": "/static/img/poslanci/small/andreja-rihter.jpg"
@@ -5627,6 +5796,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "tadej-slapnik", 
             "priimek": "Slapnik", 
             "slika": "/static/img/poslanci/small/tadej-slapnik.jpg"
@@ -5645,6 +5815,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "majda-sirca-ravnikar", 
             "priimek": "\u0160irca Ravnikar", 
             "slika": "/static/img/poslanci/small/majda-sirca-ravnikar.jpg"
@@ -5663,6 +5834,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "stefan-tisel", 
             "priimek": "Tisel", 
             "slika": "/static/img/poslanci/small/stefan-tisel.jpg"
@@ -5681,6 +5853,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "anton-urh", 
             "priimek": "Urh", 
             "slika": "/static/img/poslanci/small/anton-urh.jpg"
@@ -5699,6 +5872,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "peter-verlic", 
             "priimek": "Verli\u010d", 
             "slika": "/static/img/poslanci/small/peter-verlic.jpg"
@@ -5717,6 +5891,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "sara-viler", 
             "priimek": "Viler", 
             "slika": "/static/img/poslanci/small/sara-viler.jpg"
@@ -5735,6 +5910,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "matjaz-zanoskar", 
             "priimek": "Zano\u0161kar", 
             "slika": "/static/img/poslanci/small/matjaz-zanoskar.jpg"
@@ -5753,6 +5929,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "aleksander-zorn", 
             "priimek": "Zorn", 
             "slika": "/static/img/poslanci/small/aleksander-zorn.jpg"
@@ -5771,6 +5948,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "radovan-zerjav", 
             "priimek": "\u017derjav", 
             "slika": "/static/img/poslanci/small/radovan-zerjav.jpg"
@@ -5789,6 +5967,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "melita-zupevc", 
             "priimek": "\u017dupevc", 
             "slika": "/static/img/poslanci/small/melita-zupevc.jpg"
@@ -5807,6 +5986,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "www.dz-rs.si", 
             "slug": "milan-cadez", 
             "priimek": "\u010cade\u017e", 
             "slika": "/static/img/poslanci/small/milan-cadez.jpg"
@@ -5825,6 +6005,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "dragutin-mate", 
             "priimek": "Mate", 
             "slika": ""
@@ -5843,6 +6024,7 @@
             "facebook": "", 
             "dan_smrti": "2009-07-06", 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "aleksander-ravnikar", 
             "priimek": "Ravnikar", 
             "slika": ""
@@ -5861,6 +6043,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ales-zalar", 
             "priimek": "Zalar", 
             "slika": ""
@@ -5879,6 +6062,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "alojz-janko", 
             "priimek": "Janko", 
             "slika": ""
@@ -5897,6 +6081,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "alojzij-krapez", 
             "priimek": "Krape\u017e", 
             "slika": ""
@@ -5915,6 +6100,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "alojzij-marincek", 
             "priimek": "Marin\u010dek", 
             "slika": ""
@@ -5933,6 +6119,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "ana-osterman", 
             "priimek": "Osterman", 
             "slika": ""
@@ -5951,6 +6138,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "andrej-capuder", 
             "priimek": "Capuder", 
             "slika": ""
@@ -5969,6 +6157,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "andrej-ocvirk", 
             "priimek": "Ocvirk", 
             "slika": ""
@@ -5987,6 +6176,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "andrej-umek", 
             "priimek": "Umek", 
             "slika": ""
@@ -6005,6 +6195,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "andrej-ster", 
             "priimek": "\u0160ter", 
             "slika": ""
@@ -6023,6 +6214,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "anton-grizold", 
             "priimek": "Grizold", 
             "slika": ""
@@ -6041,6 +6233,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "barbara-brezigar", 
             "priimek": "Brezigar", 
             "slika": ""
@@ -6059,6 +6252,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "boris-frlec", 
             "priimek": "Frlec", 
             "slika": ""
@@ -6077,6 +6271,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "borut-miklavcic", 
             "priimek": "Miklav\u010di\u010d", 
             "slika": ""
@@ -6095,6 +6290,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "bostjan-kovacic", 
             "priimek": "Kova\u010di\u010d", 
             "slika": ""
@@ -6113,6 +6309,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "bostjan-zeks", 
             "priimek": "\u017dek\u0161", 
             "slika": ""
@@ -6131,6 +6328,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "bozidar-voljc", 
             "priimek": "Volj\u010d", 
             "slika": ""
@@ -6149,6 +6347,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "bozo-grafenauer", 
             "priimek": "Grafenauer", 
             "slika": ""
@@ -6167,6 +6366,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "darja-radic", 
             "priimek": "Radi\u0107", 
             "slika": ""
@@ -6185,6 +6385,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "davorin-valentincic", 
             "priimek": "Valentin\u010di\u010d", 
             "slika": ""
@@ -6203,6 +6404,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "dejan-zidan", 
             "priimek": "\u017didan", 
             "slika": ""
@@ -6221,6 +6423,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "dorijan-marusic", 
             "priimek": "Maru\u0161i\u010d", 
             "slika": ""
@@ -6239,6 +6442,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "dusa-trobec-bucan", 
             "priimek": "Trobec Bu\u010dan", 
             "slika": ""
@@ -6257,6 +6461,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "dusan-keber", 
             "priimek": "Keber", 
             "slika": ""
@@ -6275,6 +6480,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "dusan-mramor", 
             "priimek": "Mramor", 
             "slika": ""
@@ -6293,6 +6499,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "dusan-sesok", 
             "priimek": "\u0160e\u0161ok", 
             "slika": ""
@@ -6311,6 +6518,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "franc-godesa", 
             "priimek": "Gode\u0161a", 
             "slika": ""
@@ -6329,6 +6537,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "franc-krizanic", 
             "priimek": "Kri\u017eani\u010d", 
             "slika": ""
@@ -6347,6 +6556,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "franci-demsar", 
             "priimek": "Dem\u0161ar", 
             "slika": ""
@@ -6365,6 +6575,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "gregor-virant", 
             "priimek": "Virant", 
             "slika": ""
@@ -6383,6 +6594,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "henrik-gjerkes", 
             "priimek": "Gjerke\u0161", 
             "slika": ""
@@ -6401,6 +6613,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "igor-luksic", 
             "priimek": "Luk\u0161i\u010d", 
             "slika": ""
@@ -6419,6 +6632,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "igor-umek", 
             "priimek": "Umek", 
             "slika": ""
@@ -6437,6 +6651,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "ingo-pas", 
             "priimek": "Pa\u0161", 
             "slika": ""
@@ -6455,6 +6670,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ivan-bizjak", 
             "priimek": "Bizjak", 
             "slika": ""
@@ -6473,6 +6689,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ivan-svetlik", 
             "priimek": "Svetlik", 
             "slika": ""
@@ -6491,6 +6708,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ivan-zagar", 
             "priimek": "\u017dagar", 
             "slika": ""
@@ -6509,6 +6727,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ivo-vajgl", 
             "priimek": "Vajgl", 
             "slika": ""
@@ -6527,6 +6746,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "iztok-jarc", 
             "priimek": "Jarc", 
             "slika": ""
@@ -6545,6 +6765,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-bozic", 
             "priimek": "Bo\u017ei\u010d", 
             "slika": ""
@@ -6563,6 +6784,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-dular", 
             "priimek": "Dular", 
             "slika": ""
@@ -6581,6 +6803,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-potocnik", 
             "priimek": "Poto\u010dnik", 
             "slika": ""
@@ -6599,6 +6822,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janez-sirse", 
             "priimek": "Sir\u0161e", 
             "slika": ""
@@ -6617,6 +6841,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janko-dezelak", 
             "priimek": "De\u017eelak", 
             "slika": ""
@@ -6635,6 +6860,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janko-kusar", 
             "priimek": "Ku\u0161ar", 
             "slika": ""
@@ -6653,6 +6879,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janko-prunk", 
             "priimek": "Prunk", 
             "slika": ""
@@ -6671,6 +6898,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "janko-razgorsek", 
             "priimek": "Razgor\u0161ek", 
             "slika": ""
@@ -6689,6 +6917,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "joze-mencinger", 
             "priimek": "Mencinger", 
             "slika": ""
@@ -6707,6 +6936,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "jozef-jakob-osterc", 
             "priimek": "Osterc", 
             "slika": ""
@@ -6725,6 +6955,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jozef-jeraj", 
             "priimek": "Jeraj", 
             "slika": ""
@@ -6743,6 +6974,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jozefa-puhar", 
             "priimek": "Puhar", 
             "slika": ""
@@ -6761,6 +6993,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "jure-zupan", 
             "priimek": "Zupan", 
             "slika": ""
@@ -6779,6 +7012,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "karl-erjavec", 
             "priimek": "Erjavec", 
             "slika": ""
@@ -6797,6 +7031,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "katarina-kresal", 
             "priimek": "Kresal", 
             "slika": ""
@@ -6815,6 +7050,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "katja-boh", 
             "priimek": "Boh", 
             "slika": ""
@@ -6833,6 +7069,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ljubica-jelusic", 
             "priimek": "Jelu\u0161i\u010d", 
             "slika": ""
@@ -6851,6 +7088,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "lovro-sturm", 
             "priimek": "\u0160turm", 
             "slika": ""
@@ -6869,6 +7107,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "maks-bastl", 
             "priimek": "Bastl", 
             "slika": ""
@@ -6887,6 +7126,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "maks-tajnikar", 
             "priimek": "Tajnikar", 
             "slika": ""
@@ -6905,6 +7145,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "marija-lukancic", 
             "priimek": "Lukan\u010di\u010d", 
             "slika": ""
@@ -6923,6 +7164,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "marjan-jereb", 
             "priimek": "Jereb", 
             "slika": ""
@@ -6941,6 +7183,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "marjan-krajnc", 
             "priimek": "Krajnc", 
             "slika": ""
@@ -6959,6 +7202,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "marjan-senjur", 
             "priimek": "Senjur", 
             "slika": ""
@@ -6977,6 +7221,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "marjeta-cotman", 
             "priimek": "Cotman", 
             "slika": ""
@@ -6995,6 +7240,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "marko-kranjec", 
             "priimek": "Kranjec", 
             "slika": ""
@@ -7013,6 +7259,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "metka-zupancic", 
             "priimek": "Zupan\u010di\u010d", 
             "slika": ""
@@ -7031,6 +7278,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "miha-jazbinsek", 
             "priimek": "Jazbin\u0161ek", 
             "slika": ""
@@ -7049,6 +7297,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "miha-kozinc", 
             "priimek": "Kozinc", 
             "slika": ""
@@ -7067,6 +7316,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "miha-tomsic", 
             "priimek": "Tom\u0161i\u010d", 
             "slika": ""
@@ -7085,6 +7335,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "milan-pogacnik", 
             "priimek": "Poga\u010dnik", 
             "slika": ""
@@ -7103,6 +7354,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "mirko-bandelj", 
             "priimek": "Bandelj", 
             "slika": ""
@@ -7121,6 +7373,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "mitja-malesic", 
             "priimek": "Male\u0161i\u010d", 
             "slika": ""
@@ -7139,6 +7392,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "patrick-vlacic", 
             "priimek": "Vla\u010di\u010d", 
             "slika": ""
@@ -7157,6 +7411,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "pavel-zgaga", 
             "priimek": "Zgaga", 
             "slika": ""
@@ -7175,6 +7430,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "peter-jambrek", 
             "priimek": "Jambrek", 
             "slika": ""
@@ -7193,6 +7449,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "peter-vencelj", 
             "priimek": "Vencelj", 
             "slika": ""
@@ -7211,6 +7468,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "rajko-pirnat", 
             "priimek": "Pirnat", 
             "slika": ""
@@ -7229,6 +7487,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "rina-klinar", 
             "priimek": "Klinar", 
             "slika": ""
@@ -7247,6 +7506,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "roko-zarnic", 
             "priimek": "\u017darni\u0107", 
             "slika": ""
@@ -7265,6 +7525,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "rudi-seligo", 
             "priimek": "\u0160eligo", 
             "slika": ""
@@ -7283,6 +7544,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "samuel-zbogar", 
             "priimek": "\u017dbogar", 
             "slika": ""
@@ -7301,6 +7563,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "sergij-pelhan", 
             "priimek": "Pelhan", 
             "slika": ""
@@ -7319,6 +7582,7 @@
             "facebook": "", 
             "dan_smrti": "2005-05-24", 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "stane-stanic", 
             "priimek": "Stani\u010d", 
             "slika": ""
@@ -7337,6 +7601,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "tea-petrin", 
             "priimek": "Petrin", 
             "slika": ""
@@ -7355,6 +7620,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "tit-turnsek", 
             "priimek": "Turn\u0161ek", 
             "slika": ""
@@ -7373,6 +7639,7 @@
             "facebook": "", 
             "dan_smrti": "2011-02-16", 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "tomaz-marusic", 
             "priimek": "Maru\u0161i\u010d", 
             "slika": ""
@@ -7391,6 +7658,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "tone-jerovsek", 
             "priimek": "Jerov\u0161ek", 
             "slika": ""
@@ -7409,6 +7677,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "vasko-simoniti", 
             "priimek": "Simoniti", 
             "slika": ""
@@ -7427,6 +7696,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": false, 
+            "vir_slike": "", 
             "slug": "viktor-brezar", 
             "priimek": "Brezar", 
             "slika": ""
@@ -7445,6 +7715,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "viktor-zakelj", 
             "priimek": "\u017dakelj", 
             "slika": ""
@@ -7463,6 +7734,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "vlado-dimovski", 
             "priimek": "Dimovski", 
             "slika": ""
@@ -7481,6 +7753,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "zdenka-cerar", 
             "priimek": "Cerar", 
             "slika": ""
@@ -7499,6 +7772,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "zdenka-kovac", 
             "priimek": "Kova\u010d", 
             "slika": ""
@@ -7517,6 +7791,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "zlata-plostajner", 
             "priimek": "Plo\u0161tajner", 
             "slika": ""
@@ -7535,6 +7810,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "zofija-mazej-kukovic", 
             "priimek": "Mazej Kukovi\u010d", 
             "slika": ""
@@ -7553,6 +7829,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "zvonko-ivanusic", 
             "priimek": "Ivanu\u0161i\u010d", 
             "slika": ""
@@ -7571,6 +7848,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "ziga-turk", 
             "priimek": "Turk", 
             "slika": ""
@@ -7589,6 +7867,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "tomaz-stebe", 
             "priimek": "\u0160tebe", 
             "slika": ""
@@ -7607,6 +7886,7 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "vito-rozej", 
             "priimek": "Ro\u017eej", 
             "slika": ""
@@ -7625,8 +7905,47 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
+            "vir_slike": "", 
             "slug": "damijan-perne", 
             "priimek": "Perne", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 429, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1954-10-15", 
+            "ime": "Helena", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "", 
+            "slug": "helena-kamnar", 
+            "priimek": "Kamnar", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 430, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1961-07-18", 
+            "ime": "Bojan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "", 
+            "slug": "bojan-suvorov", 
+            "priimek": "Suvorov", 
             "slika": ""
         }
     }, 
