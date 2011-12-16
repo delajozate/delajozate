@@ -1,26 +1,35 @@
 {% extends "base.html" %}
 
 {% block head %}
-<style type="text/css">
+<script type="text/javascript">
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    }
+  }
+}
 
-.govorec { padding: 5px; font-size: 1.1em; font-weight: 500; width: 27%; float: left; clear: left;}
-.receno { width: 60%; float: left; margin-bottom: 10px; text-align: justify;}
-.govorec-slika { width: 100px; }
-.zapis-link { float: right; position: relative; right: -30px; }
-.zapis-link a { text-decoration: none; }
-.zapis-link :hover { text-decoration: underline; }
-h1, h2, h3 { padding: 5px; }
-.zasedanja-list { padding-left: 20px; }
+function updateHighlight() {
+    if (document.location.hash) {
+        var div = document.querySelector(document.location.hash);
+        div.style.backgroundColor = '#ffffcc';
+    }
+}
 
-</style>
+addLoadEvent(updateHighlight);
+</script>
 {% endblock %}
 
 
 {% block content %}
-
 <h1>{{ seja.naslov }}</h1>
-
-
 
 <h3>Zasedanja</h3>
 <div class="zasedanja-list">
@@ -32,18 +41,20 @@ h1, h2, h3 { padding: 5px; }
 </div>
 
 <h2>Magnetogram</h2>
-{% for zapis in zasedanje.zapis_set.all %}
+{% for zapis in zapisi %}
 <div class="govorec">
+{% ifchanged zapis.govorec %}
 {% if zapis.govorec_oseba %}
     {{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}
     <br />{% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
 {% else %}
     {{ zapis.govorec|default_if_none:"&nbsp;" }}
 {% endif %}
+{% endifchanged %}
 </div>
-<div class="receno">
-    <div class="zapis-link" id="zapis-{{ zapis.id }}"><a href="#zapis-{{ zapis.id }}">#</a></div>
-    {{ zapis.odstavki|linebreaksbr }}
+<div>
+    <div class="zapis-link" ><a href="#p{{ zapis.seq }}">#</a></div>
+    <div class="receno" id="p{{ zapis.seq }}">{{ zapis.odstavki|linebreaksbr }}</div>
 </div>
 {% endfor %}
 

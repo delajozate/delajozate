@@ -54,3 +54,14 @@ footer a {color:#fff;}
 	box-sizing:border-box;
 }
 .card .badges li span {font-size:2em;display:block;}
+
+/* seja */
+.govorec { padding: 5px; font-size: 1.1em; font-weight: 500; width: 27%; float: left; clear: left;}
+.receno { width: 60%; padding: 10px; float: left; text-align: justify;}
+.govorec-slika { width: 100px; }
+.zapis-link { float: right; position: relative; right: -30px; }
+.zapis-link a { text-decoration: none; }
+.zapis-link :hover { text-decoration: underline; }
+h1, h2, h3 { padding: 5px; }
+.zasedanja-list { padding-left: 20px; }
+

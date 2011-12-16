@@ -100,14 +100,15 @@ class Importer():
                                         if govorec is not None:
                                             govorec = govorec.strip()
                                         oseba_id = govorci_map.get(govorec, None)
-                                        values.extend([
-                                            count,
-                                            zasedanje.id,
-                                            govorec,
-                                            oseba_id,
-                                            '\n'.join(jsonZapis.get('odstavki'))
-                                            ])
-                                        count += 1
+                                        for ods in jsonZapis.get('odstavki'):
+                                            values.extend([
+                                                count,
+                                                zasedanje.id,
+                                                govorec,
+                                                oseba_id,
+                                                ods,
+                                                ])
+                                            count += 1
                                 
                                 params = values
                                 onerowtempl = '(' + ', '.join(['%s']*len(keys)) + ')'
