@@ -1,4 +1,5 @@
 from django.db import models
+
 from delajozate.dz.models import Oseba
 
 class Seja(models.Model):
@@ -15,6 +16,9 @@ class Seja(models.Model):
 
     def __unicode__(self):
         return self.naslov
+
+    def magnetogrami(self):
+        return self.zasedanje_set.filter(models.Q(tip='magnetogram') | models.Q(tip='dobesednizapis'))
 
 class SejaInfo(models.Model):
     seja = models.ForeignKey(Seja)

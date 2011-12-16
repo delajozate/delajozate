@@ -23,12 +23,12 @@ h1, h2, h3 { padding: 5px; }
 <h1>{{ seja.mandat }}. mandat</h1>
 {% endifchanged %}
 
-{% if seja.zasedanje_set.all %}
+{% if seja.magnetogrami %}
 <h2>{{ seja.naslov }}</h2>
 <h3>Zasedanja</h3>
 <div class="zasedanja-list">
 <ul>
-{% for z in seja.zasedanje_set.all %}
+{% for z in seja.magnetogrami %}
     <li><a href="{% url delajozate.magnetogrami.views.seja "dz" seja.mandat seja.slug z.datum %}">{{ z.datum }}</a></li>
 {% endfor %}
 </ul>

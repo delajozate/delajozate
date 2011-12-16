@@ -3,6 +3,7 @@ import re
 
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
+from django.db.models import Q
 
 from delajozate.magnetogrami.models import Seja, SejaInfo, Zasedanje, Zapis
 
@@ -12,11 +13,13 @@ def seja(request, mdt, mandat, slug, datum_zasedanja=None):
     
     if datum_zasedanja is None:
         try:
-            zasedanje = Zasedanje.objects.filter(seja=seja).order_by('datum')[0]
+            zasedanje = Zasedanje.objects.filter(
+                Q(seja=seja, tip='dobesednizapis') | 
+                Q(seja=seja, tip='magnetogram')).order_by('datum')[0]
         except IndexError:
             zasedanje = None
     else:
-        zasedanje = get_object_or_404(Zasedanje, seja=seja, datum=datum_zasedanja)
+        zasedanje = Zasedanje.objects.filter(seja=seja, datum=datum_zasedanja).get(Q(tip='dobesednizapis')|Q(tip='magnetogram'))
     
     context = {
         'seja': seja,

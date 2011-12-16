@@ -57,7 +57,7 @@ class Importer():
                         seja_slug = ('%s-%s' % match.groups()).lower()
                         seja.slug = seja_slug
                         try:
-                            seja.datum_zacetka = dateutil.parser.parse(jsonSeja.get('datum_zacetka'), dayfirst=True)
+                            seja.datum_zacetka = dateutil.parser.parse(jsonData.get('datum_zacetka'), dayfirst=True)
                         except:
                             seja.datum_zacetka = None
                         seja.seja = jsonData.get('seja')
