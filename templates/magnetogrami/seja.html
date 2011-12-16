@@ -42,19 +42,22 @@ addLoadEvent(updateHighlight);
 
 <h2>Magnetogram</h2>
 {% for zapis in zapisi %}
-<div class="govorec">
 {% ifchanged zapis.govorec %}
+<div class="govorec">
 {% if zapis.govorec_oseba %}
     {{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}
     <br />{% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
 {% else %}
     {{ zapis.govorec|default_if_none:"&nbsp;" }}
 {% endif %}
-{% endifchanged %}
 </div>
-<div>
-    <div class="zapis-link" ><a href="#p{{ zapis.seq }}">#</a></div>
-    <div class="receno" id="p{{ zapis.seq }}">{{ zapis.odstavki|linebreaksbr }}</div>
+{% endifchanged %}
+
+<div class="receno" id="p{{ zapis.seq }}">
+    <div class="zapis-link" >
+        <a href="#p{{ zapis.seq }}">#</a>
+    </div>
+    {{ zapis.odstavki|linebreaksbr }}
 </div>
 {% endfor %}
 
