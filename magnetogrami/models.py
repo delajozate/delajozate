@@ -5,13 +5,13 @@ class Seja(models.Model):
     naslov = models.CharField(max_length=255)
     seja = models.CharField(max_length=255) # TODO: check validity
     slug = models.CharField(max_length=100, db_index=True)
+    datum_zacetka = models.DateField(null=True)
     status = models.CharField(max_length=128)
     mandat = models.IntegerField()
     url = models.URLField()
 
     class Meta:
-        #ordering = ('datum_zacetka',) # XXX FIXME
-        pass
+        ordering = ('-mandat', '-datum_zacetka',)
 
     def __unicode__(self):
         return self.naslov

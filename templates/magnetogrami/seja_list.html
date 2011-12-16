@@ -19,8 +19,12 @@ h1, h2, h3 { padding: 5px; }
 {% block content %}
 
 {% for seja in object_list %}
-<h2>{{ seja.naslov }}</h2>
+{% ifchanged seja.mandat %}
+<h1>{{ seja.mandat }}. mandat</h1>
+{% endifchanged %}
 
+{% if seja.zasedanje_set.all %}
+<h2>{{ seja.naslov }}</h2>
 <h3>Zasedanja</h3>
 <div class="zasedanja-list">
 <ul>
@@ -29,6 +33,7 @@ h1, h2, h3 { padding: 5px; }
 {% endfor %}
 </ul>
 </div>
+{% endif %}
 
 {% endfor %}
 

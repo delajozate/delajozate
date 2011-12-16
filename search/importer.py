@@ -56,6 +56,10 @@ class Importer():
                             print naslov_seje
                         seja_slug = ('%s-%s' % match.groups()).lower()
                         seja.slug = seja_slug
+                        try:
+                            seja.datum_zacetka = dateutil.parser.parse(jsonSeja.get('datum_zacetka'), dayfirst=True)
+                        except:
+                            seja.datum_zacetka = None
                         seja.seja = jsonData.get('seja')
                         seja.url = jsonData.get('url')
                         seja.save()
@@ -114,7 +118,13 @@ class Importer():
                                     all_rows_template)
                                 if params:
                                     cursor.execute(sql, params)
-        
+                        if seja.datum_zacetka is None:
+                            # use as an alternative
+                            try:
+                                seja.datum_zacetka = Zasedanje.objects.filter(seja=seja).order_by('-datum')[0].datum
+                            except:
+                                pass
+                        seja.save()
 
     def do_solr_import(self):
         # Shrani zapise v Solr

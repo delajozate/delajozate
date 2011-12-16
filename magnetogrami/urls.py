@@ -3,7 +3,7 @@ from django.conf.urls.defaults import patterns, include, url
 from delajozate.magnetogrami.models import Seja
 
 seja_list = {
-    'queryset': Seja.objects.all(),
+    'queryset': Seja.objects.all().order_by('-mandat', '-datum_zacetka'),
     }
 
 urlpatterns = patterns('',
