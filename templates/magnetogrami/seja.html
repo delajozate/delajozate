@@ -43,6 +43,7 @@ addLoadEvent(updateHighlight);
 <h2>Magnetogram</h2>
 {% for zapis in zapisi %}
 {% ifchanged zapis.govorec %}
+<div class="break"></div>
 <div class="govorec">
 {% if zapis.govorec_oseba %}
     {{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}

@@ -57,7 +57,8 @@ footer a {color:#fff;}
 
 /* seja */
 .govorec { padding: 5px; font-size: 1.1em; font-weight: 500; width: 27%; float: left; clear: left;}
-.receno { width: 60%; padding: 10px; float: left; text-align: justify;}
+.receno { width: 60%; padding: 10px; margin-left: 28%; text-align: justify;}
+.break { width: 100%; clear: left; }
 .govorec-slika { width: 100px; }
 .zapis-link { float: right; position: relative; right: -30px; }
 .zapis-link a { text-decoration: none; }
