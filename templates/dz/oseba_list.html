@@ -1,53 +1,37 @@
 {% extends "base.html" %}
 {% load dz_extras %}
 
-{% block head %}
-<style type="text/css">
-
-.govorec { padding: 5px; font-size: 1.1em; font-weight: 500; width: 27%; float: left; clear: left;}
-.receno { width: 60%; float: left; margin-bottom: 10px; text-align: justify;}
-.govorec-slika { width: 100px; }
-.zapis-link { float: right; position: relative; right: -30px; }
-.zapis-link a { text-decoration: none; }
-.zapis-link :hover { text-decoration: underline; }
-h1, h2, h3 { padding: 5px; }
-.zasedanja-list { padding-left: 20px; }
-
-</style>
-{% endblock %}
-
-
 {% block content %}
 		<div class="site">
 				<ol class="cards">
-					{% for poslanec in object_list %}
-					{% if poslanec.funkcije %}
+					{% for f in object_list %}
+					{% ifchanged f.oseba %}
 					<li>
 						<div class="card">
-							<h2> {{ poslanec.ime }} {{ poslanec.priimek }}</h2>
-							<div class="stranka"><a class="strankatag {{ poslanec.poslanska_skupina.stranka.okrajsava|lower }}"
-								style="background-color: #{{ poslanec.poslanska_skupina.stranka.barva }};"
-								href="/stranke/{{ poslanec.poslanska_skupina.stranka.id }}/"
-								title="{{ poslanec.poslanska_skupina.stranka.ime }}">{{ poslanec.poslanska_skupina.stranka.okrajsava }}
+							<h2> {{ f.oseba.ime }} {{ f.oseba.priimek }}</h2>
+							<div class="stranka"><a class="strankatag {{ f.stranka.okrajsava|lower }}"
+								style="background-color: #{{ f.stranka.barva }};"
+								href="/stranke/{{ f.stranka.id }}/"
+								title="{{ f.stranka.ime }}">{{ f.stranka.okrajsava }}
 							</a></div>
 							<div class="img">
-								<img src="{{ poslanec.slika_or_default }}" alt="" title="{{ poslanec.ime }} {{ poslanec.priimek }}, vir:{{ poslanec.vir_slike }}" />
+								<img src="{{ f.oseba.slika_or_default }}" alt="" title="{{ f.oseba.ime }} {{ f.oseba.priimek }}, vir:{{ f.oseba.vir_slike }}" />
 							</div>
 							<dl>
 								<dt>Obdobje</dt>
-								<dd>{{ poslanec.poslanskih_dni }} dni</dd>
+								<dd>{{ f.oseba.dni }} dni</dd>
 								<dt>Mandatov</dt>
-								<dd>{{ poslanec.st_mandatov }}</dd>
+								<dd>{{ f.oseba.st_mandatov }}</dd>
 							</dl>
 							<ol class="badges">
-								<li class="odbori"><span>?</span> odbor{{ poslanec.st_odborov|slopluralize:",a,i,ov" }}</li>
-								<li class="komisije"><span>?</span> komisij{{ poslanec.komisije|slopluralize:"a,i,e," }}</li>
+								<li class="odbori"><span>?</span> odbor{{ f.oseba.st_odborov|slopluralize:",a,i,ov" }}</li>
+								<li class="komisije"><span>?</span> komisij{{ f.oseba.komisije|slopluralize:"a,i,e," }}</li>
 								<li class="delegacije"><span>?</span> deleg.</li>
-								<li class="skupine"><span>?</span> skupin{{ poslanec.skupine|slopluralize:"a,i,e," }}</li>
+								<li class="skupine"><span>?</span> skupin{{ f.oseba.skupine|slopluralize:"a,i,e," }}</li>
 							</ol>
 						</div>
 					</li>
-					{% endif %}
+					{% endifchanged %}
 					{% endfor %}
 				</ol>
 		</div>

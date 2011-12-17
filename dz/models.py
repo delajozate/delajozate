@@ -31,33 +31,6 @@ class Oseba(models.Model):
 	def __unicode__(self):
 		return u'%s %s' % (self.ime, self.priimek)
 	
-	def _update_dynamic_fields(self):
-		today = datetime.date.today()
-		self._funkcije = list(self.funkcija_set.all())
-		self._poslanskih_dni = sum([ ((null_date(m.do) or today) - m.od).days for m in self._funkcije])
-		self._st_mandatov = len(self._funkcije)
-		self._st_odborov = 0
-		try:
-			#self._poslanska_skupina = self.clanstranke_set.all()[0]
-			self._poslanska_skupina = ClanStranke.objects.filter(oseba=self).select_related('oseba', 'stranka').latest('do')
-		except IndexError:
-			pass
-	
-	def _make_attr(attrname):
-		def _get_attr(self):
-			try:
-				return getattr(self, '_%s' % attrname)
-			except AttributeError:
-				self._update_dynamic_fields()
-			return getattr(self, '_%s' % attrname)
-		return _get_attr
-	
-	funkcije = _make_attr('funkcije')
-	st_mandatov = _make_attr('st_mandatov')
-	st_odborov = _make_attr('st_odborov')
-	poslanskih_dni = _make_attr('poslanskih_dni')
-	poslanska_skupina = _make_attr('poslanska_skupina')
-	
 	def slika_or_default(self):
 		if self.slika:
 			return self.slika

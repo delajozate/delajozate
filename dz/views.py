@@ -91,6 +91,30 @@ def home(request):
 	ctx['izbrani'] = izbrani
 	return render_to_response('home.html', Context(ctx))
 
+def poslanci_list(request):
+	clanstvo = list(ClanStranke.objects.all().select_related('oseba', 'stranka').order_by('oseba__priimek', 'oseba__ime'))
+	
+	funkcije = Funkcija.objects.all().select_related('oseba', 'stranka')
+	
+	# stevilo dni
+	today = datetime.date.today()
+	dni_dict = {}
+	mandatov = {}
+	for f in funkcije:
+		dni = dni_dict.setdefault(f.oseba.pk, 0)
+		dni_dict[f.oseba.pk] = dni + ((null_date(f.do) or today) - f.od).days
+		mandat = mandatov.setdefault(f.oseba.pk, set())
+		mandat.add(f.mandat)
+	
+	for i in clanstvo:
+		i.oseba.dni = dni_dict[i.oseba.pk]
+		i.oseba.st_mandatov = len(mandatov[i.oseba.pk])
+	
+	context = {
+		'object_list': clanstvo,
+		}
+	return render_to_response('dz/oseba_list.html', RequestContext(request, context))
+
 def d_squared(tracks, nodepairs):
 	#for a,b in nodepairs:
 		#(tracks[a]-tracks[b])**2
