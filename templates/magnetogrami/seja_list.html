@@ -18,22 +18,33 @@ h1, h2, h3 { padding: 5px; }
 
 {% block content %}
 
-{% for seja in object_list %}
-{% ifchanged seja.mandat %}
-<h1>{{ seja.mandat }}. mandat</h1>
+{% for z in object_list %}
+{% ifchanged z.seja.mandat %}
+<h1>{{ z.seja.mandat }}. mandat</h1>
 {% endifchanged %}
 
-{% if seja.magnetogrami %}
-<h2>{{ seja.naslov }}</h2>
-<h3>Zasedanja</h3>
-<div class="zasedanja-list">
-<ul>
-{% for z in seja.magnetogrami %}
-    <li><a href="{% url delajozate.magnetogrami.views.seja "dz" seja.mandat seja.slug z.datum %}">{{ z.datum }}</a></li>
-{% endfor %}
+{% ifchanged z.seja %}
+{% if not forloop.first %}
 </ul>
 </div>
 {% endif %}
+<h2>{{ z.seja.naslov }}</h2>
+<h3>Zasedanja</h3>
+<div class="zasedanja-list">
+<ul>
+{% endifchanged %}
+
+<li>
+	<a href="{% url delajozate.magnetogrami.views.seja "dz" z.seja.mandat z.seja.slug z.datum %}">
+		{{ z.datum }}
+	</a>
+</li>
+
+{% ifchanged z.seja %}{% if forloop.last %}
+</ul>
+</div>
+{% endif %}{% endifchanged %}
+
 
 {% endfor %}
 

@@ -33,12 +33,13 @@ class Oseba(models.Model):
 	
 	def _update_dynamic_fields(self):
 		today = datetime.date.today()
-		funkcije = self.funkcija_set.all()
-		self._poslanskih_dni = sum([ ((null_date(m.do) or today) - m.od).days for m in funkcije])
-		self._st_mandatov = len(funkcije)
+		self._funkcije = list(self.funkcija_set.all())
+		self._poslanskih_dni = sum([ ((null_date(m.do) or today) - m.od).days for m in self._funkcije])
+		self._st_mandatov = len(self._funkcije)
 		self._st_odborov = 0
 		try:
-			self._poslanska_skupina = self.clanstranke_set.all()[0]
+			#self._poslanska_skupina = self.clanstranke_set.all()[0]
+			self._poslanska_skupina = ClanStranke.objects.filter(oseba=self).select_related('oseba', 'stranka').latest('do')
 		except IndexError:
 			pass
 	
@@ -51,6 +52,7 @@ class Oseba(models.Model):
 			return getattr(self, '_%s' % attrname)
 		return _get_attr
 	
+	funkcije = _make_attr('funkcije')
 	st_mandatov = _make_attr('st_mandatov')
 	st_odborov = _make_attr('st_odborov')
 	poslanskih_dni = _make_attr('poslanskih_dni')

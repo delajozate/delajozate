@@ -18,7 +18,7 @@ class Seja(models.Model):
         return self.naslov
 
     def magnetogrami(self):
-        return self.zasedanje_set.filter(models.Q(tip='magnetogram') | models.Q(tip='dobesednizapis'))
+        return Zasedanje.objects.filter(seja=self).filter(models.Q(tip='magnetogram') | models.Q(tip='dobesednizapis')).select_related('seja')
 
 class SejaInfo(models.Model):
     seja = models.ForeignKey(Seja)

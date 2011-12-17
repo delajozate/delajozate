@@ -21,7 +21,7 @@ h1, h2, h3 { padding: 5px; }
 		<div class="site">
 				<ol class="cards">
 					{% for poslanec in object_list %}
-					{% if poslanec.funkcija_set.all %}
+					{% if poslanec.funkcije %}
 					<li>
 						<div class="card">
 							<h2> {{ poslanec.ime }} {{ poslanec.priimek }}</h2>
@@ -31,7 +31,7 @@ h1, h2, h3 { padding: 5px; }
 								title="{{ poslanec.poslanska_skupina.stranka.ime }}">{{ poslanec.poslanska_skupina.stranka.okrajsava }}
 							</a></div>
 							<div class="img">
-								<img src="{{ poslanec.slika|default:"/static/img/unknown.png"}}" alt="" title="{{ poslanec.ime }}, vir:{% if poslanec.slika %}dz-rs.si{% else %}http://www.flickr.com/photos/marypaulose/295058238/sizes/z/in/photostream/{% endif %}" />
+								<img src="{{ poslanec.slika_or_default }}" alt="" title="{{ poslanec.ime }} {{ poslanec.priimek }}, vir:{{ poslanec.vir_slike }}" />
 							</div>
 							<dl>
 								<dt>Obdobje</dt>

@@ -8,7 +8,17 @@ from django.db.models import Q
 
 from delajozate.magnetogrami.models import Seja, SejaInfo, Zasedanje, Zapis
 
-@cache_page(60*15)
+def seja_list(request):
+	
+	zasedanja = Zasedanje.objects.filter(Q(tip='magnetogram') | Q(tip='dobesednizapis')).select_related('seja').order_by('-datum')
+	
+	context = {
+		'object_list': zasedanja,
+		}
+	return render_to_response('magnetogrami/seja_list.html', RequestContext(request, context))
+	
+
+#@cache_page(60*15)
 def seja(request, mdt, mandat, slug, datum_zasedanja=None):
     assert mdt == 'dz' # for now
     seja = Seja.objects.get(mandat=mandat, slug=slug)
