@@ -54,6 +54,7 @@
     <!-- Ime govorca -->
     <field name="govorec" type="string" indexed="true" stored="true" required="false" />
     <field name="govorec_idx" type="text" indexed="true" stored="true" required="false" />
+    <field name="govorec_oseba_id" type="int" indexed="true" stored="true" required="false" />
     <!-- Ime vpisa -->
     <field name="ime" type="string" indexed="true" stored="true" required="true" />
     <field name="ime_idx" type="text" indexed="true" stored="true" required="false" />

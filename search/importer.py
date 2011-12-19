@@ -84,11 +84,11 @@ class Importer():
                                 zasedanje.tip = jsonPovezava.get('tip')
                                 zasedanje.naslov = jsonPovezava.get('naslov')
                                 zasedanje.save()
-                                
+
                                 cursor = connection.cursor()
                                 count = 0
                                 keys = ['seq', 'zasedanje_id', 'govorec', 'govorec_oseba_id', 'odstavki']
-                                
+
                                 values = []
                                 for jsonOdsek in jsonPovezava.get('odseki'):
                                     for jsonZapis in jsonOdsek.get('zapisi'):
@@ -104,7 +104,7 @@ class Importer():
                                             '\n'.join(jsonZapis.get('odstavki'))
                                             ])
                                         count += 1
-                                
+
                                 params = values
                                 onerowtempl = '(' + ', '.join(['%s']*len(keys)) + ')'
                                 all_rows_template = ', '.join([onerowtempl]*(len(params)/len(keys)))
@@ -114,7 +114,7 @@ class Importer():
                                     all_rows_template)
                                 if params:
                                     cursor.execute(sql, params)
-        
+
 
     def do_solr_import(self):
         # Shrani zapise v Solr
@@ -160,9 +160,10 @@ class Importer():
                      "govorec":zapis.govorec,
                      "ime": zapis.zasedanje.seja.naslov,
                      "besedilo" : zapis.odstavki }
+
+            if zapis.govorec_oseba:
+                dict["govorec_oseba_id"] = zapis.govorec_oseba.pk
             solr.add(dict)
-
-
             if not zasedanja.has_key(zasedanje_id):
                 zasedanja[zasedanje_id] = []
             zasedanja[zasedanje_id].append("%s: %s" % (zapis.govorec, zapis.odstavki))
