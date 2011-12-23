@@ -8912,10 +8912,10 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
-            "vir_slike": "www.iss-lib.com", 
+            "vir_slike": " ", 
             "slug": "igor-jakomin", 
             "priimek": "Jakomin", 
-            "slika": "/static/img/poslanci/small/igor-jakomin.jpg"
+            "slika": " "
         }
     }, 
     {
@@ -9064,10 +9064,10 @@
             "facebook": "", 
             "dan_smrti": null, 
             "podatki_preverjeni": true, 
-            "vir_slike": "", 
+            "vir_slike": "wikimedia.org", 
             "slug": "danilo-turk", 
             "priimek": "T\u00fcrk", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/danilo-turk.jpg"
         }
     }, 
     {
@@ -9433,8 +9433,8 @@
             "spletna_stran": "", 
             "facebook": "", 
             "nastala_iz": [
-                15, 
-                43
+                43, 
+                15
             ], 
             "podatki_preverjeni": true, 
             "email": "", 
