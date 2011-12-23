@@ -60,7 +60,7 @@ def home(request):
 
 		kandidat['st_mandatov'] = len(k_mandati)
 		dolzina_sluzenja = sum([ ((null_date(m.do) or today) - m.od).days for m in k_mandati ])
-		kandidat['dolzina_sluzenja'] = dolzina_sluzenja
+		kandidat['poslanskih_dni'] = dolzina_sluzenja
 		
 		poslanske_skupine = list(ClanStranke.objects.filter(oseba=oseba).order_by('-do'))
 		if poslanske_skupine:
