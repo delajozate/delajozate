@@ -49,14 +49,14 @@ addLoadEvent(updateHighlight);
     {{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}
     <br />{% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
 {% else %}
-    {{ zapis.govorec|default_if_none:"&nbsp;" }}
+    {{ zapis.govorec|default_if_none:"&nbsp;"|title }}
 {% endif %}
 </div>
 {% endifchanged %}
 
 <div class="receno" id="p{{ zapis.seq }}">
     <div class="zapis-link" >
-        <a href="#p{{ zapis.seq }}">#</a>
+        <a href="{% url magnetogrami_citat mdt="dz" mandat=seja.mandat slug=seja.slug datum_zasedanja=zapis.zasedanje.datum odstavek=zapis.seq %}">#</a>
     </div>
     {{ zapis.odstavki|linebreaksbr }}
 </div>

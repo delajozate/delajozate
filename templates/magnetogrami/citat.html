@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style type="text/css">
+.citirano { background-color: #ffffcc; }
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+<h1>{{ seja.naslov }}</h1>
+
+<h2>Citat magnetograma</h2>
+{% for zapis in zapisi %}
+{% ifchanged zapis.govorec %}
+<div class="break"></div>
+<div class="govorec">
+{% if zapis.govorec_oseba %}
+    {{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}
+    <br />{% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
+{% else %}
+    {{ zapis.govorec|default_if_none:"&nbsp;"|title }}
+{% endif %}
+</div>
+{% endifchanged %}
+
+<div class="receno{% if zapis.seq == citirano %} citirano{% endif %}" id="p{{ zapis.seq }}">
+    <div class="zapis-link" >
+        <a href="{% url delajozate.magnetogrami.views.citat mdt="dz" mandat=seja.mandat slug=seja.slug datum_zasedanja=zapis.zasedanje.datum odstavek=zapis.seq %}">#</a>
+    </div>
+    {{ zapis.odstavki|linebreaksbr }}
+</div>
+{% endfor %}
+
+{% endblock %}

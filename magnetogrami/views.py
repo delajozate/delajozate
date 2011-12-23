@@ -16,7 +16,7 @@ def seja_list(request):
 		}
 	return render_to_response('magnetogrami/seja_list.html', RequestContext(request, context))
 
-def seja(request, mdt, mandat, slug, datum_zasedanja=None):
+def _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja=None):
 	assert mdt == 'dz' # for now
 	seja = Seja.objects.get(mandat=mandat, slug=slug)
 	
@@ -32,7 +32,12 @@ def seja(request, mdt, mandat, slug, datum_zasedanja=None):
 		zasedanje = Zasedanje.objects.filter(seja=seja, datum=datum_zasedanja).filter(Q(tip='dobesednizapis')|Q(tip='magnetogram')).select_related('zapis')
 	
 	if zasedanje is not None:
-		zapisi = Zapis.objects.filter(zasedanje=zasedanje).select_related('govorec_oseba')
+		zapisi = Zapis.objects.filter(zasedanje=zasedanje).select_related('govorec_oseba', 'zasedanje')
+	
+	return seja, zasedanje, zapisi
+
+def seja(request, mdt, mandat, slug, datum_zasedanja=None):
+	seja, zasedanje, zapisi = _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja)
 	
 	context = {
 		'seja': seja,
@@ -40,3 +45,22 @@ def seja(request, mdt, mandat, slug, datum_zasedanja=None):
 		'zapisi': zapisi,
 		}
 	return render_to_response("magnetogrami/seja.html", RequestContext(request, context))
+
+def citat(request, mdt, mandat, slug, datum_zasedanja, odstavek):
+	seja, zasedanje, zapisi = _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja)
+	
+	odstavek = int(odstavek)
+	zapisi = zapisi.filter(seq__gte=max(0, odstavek-2), seq__lte=odstavek+2)
+	
+	context = {
+		'seja': seja,
+		'zasedanje': zasedanje,
+		'zapisi': zapisi,
+		'citirano': odstavek,
+		}
+	return render_to_response("magnetogrami/citat.html", RequestContext(request, context))
+
+
+
+
+
