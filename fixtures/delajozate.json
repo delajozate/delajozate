@@ -3269,10 +3269,10 @@
             "facebook": "", 
             "dan_smrti": "2011-08-16", 
             "podatki_preverjeni": true, 
-            "vir_slike": "", 
+            "vir_slike": "www.eu2008.si", 
             "slug": "andrej-bajuk", 
             "priimek": "Bajuk", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/andrej-bajuk.jpg"
         }
     }, 
     {
@@ -8821,6 +8821,272 @@
             "slug": "zoran-jankovic", 
             "priimek": "Jankovi\u0107", 
             "slika": "/static/img/poslanci/small/zoran-jankovic.jpg"
+        }
+    }, 
+    {
+        "pk": 475, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1971-03-23", 
+            "ime": "Bo\u0161tjan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "www.vlada.si", 
+            "slug": "bostjan-skrlec", 
+            "priimek": "\u0160krlec", 
+            "slika": "/static/img/poslanci/small/bostjan-skrlec.jpg"
+        }
+    }, 
+    {
+        "pk": 476, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1965-11-07", 
+            "ime": "Mateja", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "www.vlada.si", 
+            "slug": "mateja-vranicar", 
+            "priimek": "Vrani\u010dar", 
+            "slika": "/static/img/poslanci/small/mateja-vranicar.jpg"
+        }
+    }, 
+    {
+        "pk": 477, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1955-02-13", 
+            "ime": "Zdenka", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "www.varuh-rs.si", 
+            "slug": "zdenka-cebasek-travnik", 
+            "priimek": "\u010ceba\u0161ek Travnik", 
+            "slika": "/static/img/poslanci/small/zdenka-cebasek-travnik.jpg"
+        }
+    }, 
+    {
+        "pk": 478, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1974-04-04", 
+            "ime": "Anja", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "www.vlada.si", 
+            "slug": "anja-kopac-mrak", 
+            "priimek": "Kopa\u010d Mrak", 
+            "slika": "/static/img/poslanci/small/anja-kopac-mrak.jpg"
+        }
+    }, 
+    {
+        "pk": 479, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1970-02-10", 
+            "ime": "Igor", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "www.iss-lib.com", 
+            "slug": "igor-jakomin", 
+            "priimek": "Jakomin", 
+            "slika": "/static/img/poslanci/small/igor-jakomin.jpg"
+        }
+    }, 
+    {
+        "pk": 480, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1961-09-10", 
+            "ime": "Damjan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "www.vlada.si", 
+            "slug": "damjan-lah", 
+            "priimek": "Lah", 
+            "slika": "/static/img/poslanci/small/damjan-lah.jpg"
+        }
+    }, 
+    {
+        "pk": 481, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1964-09-27", 
+            "ime": "Stojan", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "", 
+            "slug": "stojan-pelko", 
+            "priimek": "Pelko", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 482, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1955-03-06", 
+            "ime": "Zoran", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "wikimedia.org", 
+            "slug": "zoran-kus", 
+            "priimek": "Kus", 
+            "slika": "/static/img/poslanci/small/zoran-kus.jpg"
+        }
+    }, 
+    {
+        "pk": 483, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1955-11-21", 
+            "ime": "Alenka", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "www.mss.gov.si", 
+            "slug": "alenka-kovsca", 
+            "priimek": "Kov\u0161ca", 
+            "slika": "/static/img/poslanci/small/alenka-kovsca.jpg"
+        }
+    }, 
+    {
+        "pk": 484, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1954-12-11", 
+            "ime": "Sonja", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "", 
+            "slug": "sonja-bukovec", 
+            "priimek": "Bukovec", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 485, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1969-10-13", 
+            "ime": "Branko", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "celje.zares.si", 
+            "slug": "branko-lobnikar", 
+            "priimek": "Lobnikar", 
+            "slika": "/static/img/poslanci/small/branko-lobnikar.jpg"
+        }
+    }, 
+    {
+        "pk": 486, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1970-07-26", 
+            "ime": "Drago", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "www.ds-rs.si", 
+            "slug": "drago-zura", 
+            "priimek": "\u017dura", 
+            "slika": "/static/img/poslanci/small/drago-zura.jpg"
+        }
+    }, 
+    {
+        "pk": 487, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1952-02-19", 
+            "ime": "Danilo", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "", 
+            "slug": "danilo-turk", 
+            "priimek": "T\u00fcrk", 
+            "slika": ""
+        }
+    }, 
+    {
+        "pk": 488, 
+        "model": "dz.oseba", 
+        "fields": {
+            "rojstni_dan": "1951-10-31", 
+            "ime": "Meta", 
+            "twitter": "", 
+            "opombe": "", 
+            "email": "", 
+            "spletna_stran": "", 
+            "facebook": "", 
+            "dan_smrti": null, 
+            "podatki_preverjeni": true, 
+            "vir_slike": "", 
+            "slug": "meta-vesel-valentincic", 
+            "priimek": "Vesel Valentin\u010di\u010d", 
+            "slika": ""
         }
     }, 
     {
