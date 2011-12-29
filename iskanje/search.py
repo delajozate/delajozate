@@ -7,10 +7,16 @@ re_id_strip = re.compile(r'[^\d]+')
 
 def query_for_id(query, type=None, rows=15):
 	if type:
-		results = solr.query(query).filter(tip=type).paginate(rows=rows).field_limit(fields=["ime", "id"]).execute()
+		query_results = solr.query(query).filter(tip=type).paginate(rows=rows).field_limit(fields=["ime", "id"]).execute()
 	else:
-		results = solr.query(query).paginate(rows=rows).field_limit(fields=["ime", "id"]).execute()
-	return [{"ime": doc.get("ime", ""), "id": re_id_strip.sub('', doc.get("id", ""))} for doc in results.result.docs]
+		query_results = solr.query(query).paginate(rows=rows).field_limit(fields=["ime", "id"]).execute()
+
+	results = { "documents" : {}}
+
+	for doc in query_results.result.docs:
+		doc_id = int(re_id_strip.sub('', doc["id"]))
+		results["documents"][doc_id] = doc
+	return results
 
 
 def query_texts(query, type, highlight=False, facet=False, rows=15):
@@ -31,11 +37,11 @@ def query_texts(query, type, highlight=False, facet=False, rows=15):
 
 	results = { "documents" : {} }
 	for document in query_results.result.docs:
-		results["documents"][re_id_strip.sub('', document["id"])] = document
+		results["documents"][int(re_id_strip.sub('', document["id"]))] = document
 
 	if highlight:
 		for id in query_results.highlighting:
-			results["documents"][re_id_strip.sub('', id)].update({ "highlight": query_results.highlighting[id] })
+			results["documents"][int(re_id_strip.sub('', id))].update({ "highlight": query_results.highlighting[id] })
 
 	if facet:
 		results["facets"] = query_results.facet_counts.facet_fields
