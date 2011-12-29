@@ -4,9 +4,11 @@ from django.conf import settings
 from django.core.serializers import serialize
 from django.db import models
 
-import django, south, dz, search
+import django, south, dz
 
 # Make sure to use the correct order so dependencies are not broken
+import magnetogrami
+
 MODELS = (
 	django.contrib.auth.models.Group,
 	django.contrib.auth.models.User,
@@ -18,10 +20,10 @@ MODELS = (
 	dz.models.Poslanec, # Oseba, Mandat
 	dz.models.Odbor, # Mandat
 	dz.models.ClanOdbora, # Odbor, Poslanec, Mandat
-	search.models.Seja, 
-	search.models.SejaInfo, # Seja
-	search.models.Zasedanje, # Seja
-	search.models.Zapis, # Zasedanje
+	magnetogrami.models.Seja,
+	magnetogrami.models.SejaInfo, # Seja
+	magnetogrami.models.Zasedanje, # Seja
+	magnetogrami.models.Zapis, # Zasedanje
 )
 
 IGNORE_MODELS = (
