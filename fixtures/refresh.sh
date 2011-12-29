@@ -5,4 +5,18 @@ if [ ! -e manage.py ]; then
 	exit 1
 fi
 
-python manage.py dumpdata --indent=4 --exclude auth --exclude sessions --exclude admin --exclude contenttypes > fixtures/delajozate.json
+echo -n "Did you patch Django's dumpdata? y/n "
+read django_patched
+
+if [ "$django_patched" != "y" ]
+then
+	echo ""
+	echo " Please add .order_by('pk') to Django's dumpdata script"
+	echo " in django/core/management/commands/dumpdata.py,"
+	echo " lines 108 and 110 (Django 1.3)"
+	echo " This is needed to ensure stable sort and readable diff."
+	exit 1
+fi
+
+
+python manage.py dumpdata --indent=4 --exclude south --exclude auth --exclude sessions --exclude admin --exclude contenttypes --exclude magnetogrami > fixtures/delajozate.json

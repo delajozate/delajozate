@@ -1,5 +1,5 @@
 html, body {background:#f0ede6;margin:0;padding:0;}
-body {font-size:100%;line-height:1.25em;font-family:"PT Sans", sans-serif;}
+body {font-size:100%;line-height:1.25em;font-family:"Ubuntu", sans-serif;}
 
 .site {position:relative;width:960px;margin:0 auto 3em;padding:0;background:#fff;color:#333;}
 .site > section {clear:both;overflow:hidden;}
@@ -25,7 +25,7 @@ footer a {color:#fff;}
 .random {margin:1.25em 0 2.5em;}
 
 .cards {padding-top:.5em;}
-.cards > li {width:25%;float:left;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;padding:0 1em 1em;}
+.cards > li {width:25%; height: 400px; float:left;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;padding:0 1em 1em;}
 
 /* card */
 .card {background:#fff;padding:10px;position:relative;border:1px solid rgba(0,0,0,.1);
@@ -54,3 +54,15 @@ footer a {color:#fff;}
 	box-sizing:border-box;
 }
 .card .badges li span {font-size:2em;display:block;}
+
+/* seja */
+.govorec { padding: 5px; font-size: 1.1em; font-weight: 500; width: 27%; float: left; clear: left;}
+.receno { width: 60%; padding: 10px; margin-left: 28%; text-align: justify;}
+.break { width: 100%; clear: left; }
+.govorec-slika { width: 100px; }
+.zapis-link { float: right; position: relative; right: -30px; }
+.zapis-link a { text-decoration: none; }
+.zapis-link :hover { text-decoration: underline; }
+h1, h2, h3 { padding: 5px; }
+.zasedanja-list { padding-left: 20px; }
+

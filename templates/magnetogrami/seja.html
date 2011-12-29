@@ -1,39 +1,63 @@
 {% extends "base.html" %}
 
 {% block head %}
-<style type="text/css">
+<script type="text/javascript">
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    }
+  }
+}
 
-.govorec { width: 27%; float: left; clear: left;}
-.receno { width: 60%; float: left; margin-bottom: 10px; text-align: justify;}
-.govorec-slika { width: 100px; }
-</style>
+function updateHighlight() {
+    if (document.location.hash) {
+        var div = document.querySelector(document.location.hash);
+        div.style.backgroundColor = '#ffffcc';
+    }
+}
+
+addLoadEvent(updateHighlight);
+</script>
 {% endblock %}
 
 
 {% block content %}
-
 <h1>{{ seja.naslov }}</h1>
 
-
-
 <h3>Zasedanja</h3>
-{% for z in seja.zasedanje_set.all %}
+<div class="zasedanja-list">
 <ul>
+{% for z in seja.magnetogrami %}
     <li><a href="{% url delajozate.magnetogrami.views.seja "dz" seja.mandat seja.slug z.datum %}">{{ z.datum }}</a></li>
-</ul>
 {% endfor %}
+</ul>
+</div>
 
-
-{% for zapis in zasedanje.zapis_set.all %}
+<h2>Magnetogram</h2>
+{% for zapis in zapisi %}
+{% ifchanged zapis.govorec %}
+<div class="break"></div>
 <div class="govorec">
 {% if zapis.govorec_oseba %}
     {{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}
     <br />{% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
 {% else %}
-    {{ zapis.govorec|default_if_none:"&nbsp;" }}
+    {{ zapis.govorec|default_if_none:"&nbsp;"|title }}
 {% endif %}
 </div>
-<div class="receno">
+{% endifchanged %}
+
+<div class="receno" id="p{{ zapis.seq }}">
+    <div class="zapis-link" >
+        <a href="{% url magnetogrami_citat mdt="dz" mandat=seja.mandat slug=seja.slug datum_zasedanja=zapis.zasedanje.datum odstavek=zapis.seq %}">#</a>
+    </div>
     {{ zapis.odstavki|linebreaksbr }}
 </div>
 {% endfor %}

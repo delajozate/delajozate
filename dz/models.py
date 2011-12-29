@@ -2,6 +2,12 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from delajozate.temporal import END_OF_TIME
+import datetime
+
+def null_date(date):
+	if date == END_OF_TIME:
+		return None
+	return date
 
 class Oseba(models.Model):
 	ime = models.CharField(max_length=32)
@@ -11,6 +17,7 @@ class Oseba(models.Model):
 	rojstni_dan = models.DateField(blank=True, null=True)
 	dan_smrti = models.DateField(blank=True, null=True)
 	slika = models.CharField(max_length=200, blank=True)
+	vir_slike = models.CharField(max_length=200, blank=True)
 	spletna_stran = models.URLField(blank=True)
 	twitter = models.CharField(max_length=32, blank=True)
 	facebook = models.URLField(blank=True)
@@ -24,6 +31,16 @@ class Oseba(models.Model):
 	def __unicode__(self):
 		return u'%s %s' % (self.ime, self.priimek)
 	
+	def slika_or_default(self):
+		if self.slika:
+			return self.slika
+		return '/static/img/unknown.png'
+	
+	def slika_vir(self):
+		if self.slika:
+			return self.vir_slike
+		return 'http://www.flickr.com/photos/marypaulose/295058238/sizes/z/in/photostream/'
+	
 	def save(self, *args, **kwargs):
 		if not self.slug:
 			self.slug = slug = slugify("%s %s" % (self.ime, self.priimek))
@@ -31,9 +48,7 @@ class Oseba(models.Model):
 			while Oseba.objects.filter(slug=self.slug).count():
 				self.slug = "%s-%d" % (slug, count)
 				count += 1
-				
 		super(Oseba, self).save(*args, **kwargs)
-
 
 class Stranka(models.Model):
 	# kako modelirat kontinuiteto stranke, kadar se preimenuje?
@@ -76,6 +91,7 @@ class ClanStranke(models.Model):
 	class Meta:
 		verbose_name = u'Član stranke'
 		verbose_name_plural = u'Člani strank'
+		ordering = ('-do',)
 
 class Mandat(models.Model):
 	st = models.IntegerField() # Kateri mandat

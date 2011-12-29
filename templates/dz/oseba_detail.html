@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+{% for oseba in object_list %}
+{% if oseba.funkcija_set.all %}
+
+<div class="govorec">
+<img class="govorec-slika" src="{{ oseba.slika_or_default }}">
+{{ oseba.ime }} {{ oseba.priimek }}
+
+</div>
+
+{% endif %}
+{% endfor %}
+
+
+{% endblock %}

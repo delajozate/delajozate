@@ -9,4 +9,6 @@ delajozate.pid
 *.swp
 .hgignore
 .virtualenv
-
+lib/*
+bin/*
+.idea/*

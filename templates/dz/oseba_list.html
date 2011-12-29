@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load dz_extras %}
+
+{% block content %}
+		<div class="site">
+				<ol class="cards">
+					{% for f in object_list %}
+					{% ifchanged f.oseba %}
+					<li>
+						<div class="card">
+							<h2> {{ f.oseba.ime }} {{ f.oseba.priimek }}</h2>
+							<div class="stranka"><a class="strankatag {{ f.stranka.okrajsava|lower }}"
+								style="background-color: #{{ f.stranka.barva }};"
+								href="/stranke/{{ f.stranka.id }}/"
+								title="{{ f.stranka.ime }}">{{ f.stranka.okrajsava }}
+							</a></div>
+							<div class="img">
+								<img src="{{ f.oseba.slika_or_default }}" alt="" title="{{ f.oseba.ime }} {{ f.oseba.priimek }}, vir:{{ f.oseba.vir_slike }}" />
+							</div>
+							<dl>
+								<dt>Obdobje</dt>
+								<dd>{{ f.oseba.dni }} dni</dd>
+								<dt>Mandatov</dt>
+								<dd>{{ f.oseba.st_mandatov }}</dd>
+							</dl>
+							<ol class="badges">
+								<li class="odbori"><span>?</span> odbor{{ f.oseba.st_odborov|slopluralize:",a,i,ov" }}</li>
+								<li class="komisije"><span>?</span> komisij{{ f.oseba.komisije|slopluralize:"a,i,e," }}</li>
+								<li class="delegacije"><span>?</span> deleg.</li>
+								<li class="skupine"><span>?</span> skupin{{ f.oseba.skupine|slopluralize:"a,i,e," }}</li>
+							</ol>
+						</div>
+					</li>
+					{% endifchanged %}
+					{% endfor %}
+				</ol>
+		</div>
+
+{% endblock %}
