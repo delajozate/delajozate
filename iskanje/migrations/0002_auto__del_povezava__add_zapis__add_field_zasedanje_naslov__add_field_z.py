@@ -14,7 +14,7 @@ class Migration(SchemaMigration):
         # Adding model 'Zapis'
         db.create_table('search_zapis', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('zasedanje', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['search.Zasedanje'])),
+            ('zasedanje', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['iskanje.Zasedanje'])),
             ('odstavki', self.gf('django.db.models.fields.TextField')(null=True)),
             ('govorec', self.gf('django.db.models.fields.CharField')(max_length=255, null=True)),
         ))
@@ -43,7 +43,7 @@ class Migration(SchemaMigration):
         
         # Adding model 'Povezava'
         db.create_table('search_povezava', (
-            ('zasedanje', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['search.Zasedanje'])),
+            ('zasedanje', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['iskanje.Zasedanje'])),
             ('url', self.gf('django.db.models.fields.URLField')(max_length=200)),
             ('text', self.gf('django.db.models.fields.TextField')()),
             ('tip', self.gf('django.db.models.fields.CharField')(max_length=255)),

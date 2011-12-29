@@ -22,7 +22,7 @@ class Migration(SchemaMigration):
         # Adding model 'SejaInfo'
         db.create_table('search_sejainfo', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('seja', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['search.Seja'])),
+            ('seja', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['iskanje.Seja'])),
             ('url', self.gf('django.db.models.fields.URLField')(max_length=200)),
             ('naslov', self.gf('django.db.models.fields.CharField')(max_length=255)),
             ('datum', self.gf('django.db.models.fields.DateField')()),
@@ -32,7 +32,7 @@ class Migration(SchemaMigration):
         # Adding model 'Zasedanje'
         db.create_table('search_zasedanje', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('seja', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['search.Seja'])),
+            ('seja', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['iskanje.Seja'])),
             ('datum', self.gf('django.db.models.fields.DateField')()),
         ))
         db.send_create_signal('search', ['Zasedanje'])
@@ -40,7 +40,7 @@ class Migration(SchemaMigration):
         # Adding model 'Povezava'
         db.create_table('search_povezava', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('zasedanje', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['search.Zasedanje'])),
+            ('zasedanje', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['iskanje.Zasedanje'])),
             ('url', self.gf('django.db.models.fields.URLField')(max_length=200)),
             ('text', self.gf('django.db.models.fields.TextField')()),
             ('naslov', self.gf('django.db.models.fields.CharField')(max_length=255)),

@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from search.importer import Importer
+from iskanje.importer import Importer
 
 class Command(BaseCommand):
     args = "data_path"

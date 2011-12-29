@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <form action="/iskanje/" method="POST">
+    {% csrf_token %}
+        <label>Išči: <input type="text" name="query"/></label>
+        <input type="submit" title="Najdi" />
+    </form>
+
+{% endblock %}

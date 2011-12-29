@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'delajozate.views.home', name='home'),
     # url(r'^delajozate/', include('delajozate.foo.urls')),
     url(r'^seje/', include('magnetogrami.urls')),
+	url(r'^iskanje/', include('iskanje.urls')),
     url(r'^', include('dz.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

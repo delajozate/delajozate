@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from search.importer import Importer
+from iskanje.importer import Importer
 
 class Command(BaseCommand):
     help = "Imports data into solr index"

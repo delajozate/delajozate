@@ -133,7 +133,7 @@ INSTALLED_APPS = (
     'south',
     'dz',
     'magnetogrami',
-    'search'
+    'iskanje'
 )
 
 # A sample logging configuration. The only tangible logging
