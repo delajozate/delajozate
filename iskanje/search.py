@@ -30,7 +30,7 @@ def query_texts(query, type, highlight=False, facet=False, rows=15):
 		if facet:
 			query = query.facet_by("seja_id").facet_by("zasedanje_id").facet_by("govorec").facet_by("datum")
 	elif type == "zasedanje":
-		query = query.field_limit(["id", "seja_id", "datum"])
+		query = query.field_limit(["id", "seja_id", "ime", "datum"])
 		if facet:
 			query = query.facet_by("datum").facet_by("seja_id")
 	query_results = query.execute()

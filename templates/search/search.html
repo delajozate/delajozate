@@ -7,5 +7,14 @@
         <label>Išči: <input type="text" name="query"/></label>
         <input type="submit" title="Najdi" />
     </form>
+    <p><strong>Osebe:</strong> {% for id,oseba in osebe.items %}{{  oseba.ime }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    <p><strong>Stranke:</strong> {% for id,stranka in stranke.items %}{{ stranka.ime }}{% if not forloop.last %}, {% endif %}{% endfor %} </p>
+    <p><strong>Zasedanja:</strong> {%  for id,zasedanje in zasedanja.items %}{{ zasedanje.ime }}{% if not forloop.last %}, {% endif %} {% endfor %}</p>
 
+    <p><strong>Zapisi:</strong></p>
+    {% for id,zapis in zapisi.items %}
+        <p><strong>{{ zapis.govorec }}</strong></p>
+        <p>{%  for highlight in zapis.highlight.besedilo  %} {{ highlight|safe }} {% endfor %}</p>
+    {% endfor %}
+    
 {% endblock %}
