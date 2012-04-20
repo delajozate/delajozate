@@ -3,7 +3,7 @@ from delajozate.dz.models import Oseba, Stranka, Skupina, ClanStranke, \
 	Mandat, Funkcija, Odbor, ClanOdbora
 
 class FunkcijaAdmin(admin.ModelAdmin):
-	list_display = ('oseba', 'mandat', 'od', 'do', 'podatki_preverjeni')
+	list_display = ('oseba', 'mandat', 'funkcija', 'od', 'do', 'podatki_preverjeni')
 	list_filter = ('mandat', 'podatki_preverjeni')
 
 class StrankaAdmin(admin.ModelAdmin):
@@ -20,6 +20,7 @@ class OsebaAdmin(admin.ModelAdmin):
 	search_fields = ('ime', 'priimek')
 
 class ClanStrankeAdmin(admin.ModelAdmin):
+	search_fields = ('oseba__ime', 'oseba__priimek', 'stranka__ime')
 	list_display = ('oseba', 'stranka', 'od', 'do', 'podatki_preverjeni')
 	list_filter = ('podatki_preverjeni',)
 

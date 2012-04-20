@@ -4,6 +4,10 @@ from django.template.defaultfilters import slugify
 from delajozate.temporal import END_OF_TIME
 import datetime
 
+FUNKCIJE = (
+	('poslanec', 'Poslanec/ka'),
+)
+
 def null_date(date):
 	if date == END_OF_TIME:
 		return None
@@ -106,6 +110,8 @@ class Mandat(models.Model):
 
 class Funkcija(models.Model):
 	oseba = models.ForeignKey(Oseba)
+	funkcija = models.CharField(max_length=64, default='poslanec',
+								choices=FUNKCIJE)
 	mandat = models.ForeignKey(Mandat)
 	od = models.DateField()
 	do = models.DateField(blank=True)
