@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load dz_extras %}
+
+{% block content %}
+			<section class="random">
+				<ol class="cards">{% for poslanec in poslanci %}
+					{% include "sub_poslanec_card.html" %}{% endfor %}
+					<!--li>
+						<div class="card">
+							<h2>{{ poslanec.oseba.ime_priimek }}</h2>{% with poslanec.stranka as stranka %}
+							<div class="stranka"><a class="strankatag {{ stranka.okrajsava|lower }}"
+								style="background-color: #{{ stranka.barva }};"
+								href="/stranke/{{ stranka.id }}/"
+								title="{{ stranka.ime }}">{{ stranka.okrajsava }}
+							</a></div>{% endwith %}
+							<div class="img">
+								<img src="{{ poslanec.oseba.slika_or_default }}" alt="" title="{{ poslanec.oseba.ime_priimek }}, vir:{{ poslanec.oseba.slika_vir }}" />
+							</div>
+							<dl>
+								<dt>Obdobje</dt>
+								<dd>{{ poslanec.oseba.dni }} dni</dd>
+								<dt>Mandatov</dt>
+								<dd>{{ poslanec.oseba.st_mandatov }}</dd>
+							</dl>
+							<ol class="badges">
+								<li class="odbori"><span>?</span> odbor{{ poslanec.oseba.st_odborov|slopluralize:",a,i,ov" }}</li>
+								<li class="komisije"><span>?</span> komisij{{ poslanec.oseba.komisije|slopluralize:"a,i,e," }}</li>
+								<li class="delegacije"><span>?</span> deleg.</li>
+								<li class="skupine"><span>?</span> skupin{{ poslanec.oseba.skupine|slopluralize:"a,i,e," }}</li>
+							</ol>
+						</div>
+					</li-->
+				</ol>
+			</section>{% endblock %}

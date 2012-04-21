@@ -19,7 +19,9 @@ nav ol li {float:left;margin:0;padding:0;}
 nav ol li a {padding:.625em;display:block;}
 
 footer {background:#000;color:#fff;}
-footer p {padding:.625em;}
+footer nav {background:#ccc;padding:0;}
+footer nav a {line-height:1.25;}
+footer p {padding:.625em;margin:0;}
 footer a {color:#fff;}
 
 .random {margin:1.25em 0 2.5em;}
@@ -31,12 +33,12 @@ footer a {color:#fff;}
 .card {background:#fff;padding:10px;position:relative;border:1px solid rgba(0,0,0,.1);
 	-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;-moz-box-shadow:0 2px 4px rgba(0,0,0,.3);-webkit-box-shadow:0 2px 4px rgba(0,0,0,.3);box-shadow:0 2px 4px rgba(0,0,0,.3);
 }
-.card h2 {position:absolute;color:#fff;background:rgba(0,0,0,.5);left:0;top:0;margin:11px 11px 0;font-size:1.5em;line-height:1.25em;padding:.125em .25em;}
-.card .stranka {width:30px;height:30px;line-height:30px;text-align:center;border:1px solid rgba(0,0,0,.05);position:absolute;right:-7px;top:-7px;font-size:.625em;text-transform:uppercase;
-	-moz-border-radius:20px;-webkit-border-radius:20px;border-radius:20px;
+.card h2 {position:absolute;color:#fff;background:rgba(0,0,0,.5);left:0;right:0;top:0;margin:11px 11px 0;font-size:1.5em;line-height:1.25em;padding:.125em .25em;}
+.card .stranka {width:40px;height:30px;line-height:12px;text-align:center;border:1px solid rgba(0,0,0,.05);position:absolute;right:-12px;top:-7px;font-size:.625em;text-transform:uppercase;display:table;
+	-moz-border-radius:50%;-webkit-border-radius:50%;border-radius:50%;
 }
-.card .stranka a {color:#000;text-decoration:none;display:block;width:100%;height:100%;
-	-moz-border-radius:20px;-webkit-border-radius:20px;border-radius:20px;
+.card .stranka a {color:#000;text-decoration:none;width:100%;height:100%;text-shadow:1px 1px 0 rgba(255,255,255,.5);display:table-cell;vertical-align:middle;
+	-moz-border-radius:50%;-webkit-border-radius:50%;border-radius:50%;
 }
 .card .stranka .strankatag { background: #d8d8d8; };
 /* img */

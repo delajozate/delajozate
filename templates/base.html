@@ -1,33 +1,49 @@
 {% load dz_extras %}<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>{% block title %}Delajo zate!{% endblock %}</title>
-        <link rel="stylesheet" href="/static/style.css" />
-        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|Arvo:700' rel="stylesheet" type="text/css" />
-        <link href="http://fonts.googleapis.com/css?family=Ubuntu:400,500,700&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
-{% block head %}{% endblock %}
-    </head>
-    <body>
-        <div class="site">
-            <header>
-                <h1><span>Delajo <strong>zate!</strong><span></h1>
-            </header>
-            <nav class="top">
-                <ol>
-                    <li><a href="/poslanci/">Poslanci</a></li>
-                    <!--<li><a href="/stranke/">Stranke</a></li>
-                    <li><a href="/delovna-telesa/">Delovna telesa</a></li>
-                    <li><a href="/skupine/">Skupine</a></li-->
-                    <li><a href="/seje/">Seje</a></li>
-                </ol>
-            </nav>
-{% block content %}
-
-{% endblock %}
-            <footer>
-                <p>Projekt se je začel v 2011 v okviru Open Data delavnice v <a href="http://www.kiberpipa.org">Kiberpipi</a>. Podatki s spletne strani <a href="http://www.dz-rs.si">Državnega zbora</a>.</p>
-            </footer>
-        </div>
-    </body>
+	<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>{% block title %}Delajo zate!{% endblock %}</title>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|Arvo:700' rel="stylesheet" type="text/css"/>
+		<link href="http://fonts.googleapis.com/css?family=Ubuntu:400,500,700&subset=latin,latin-ext" rel="stylesheet" type="text/css"/>
+		<link rel="stylesheet" href="/static/style.css"/>
+		{% block head %}{% endblock %}
+	</head>
+	<body>
+		<div class="site">
+			<header>
+				<h1><span>Delajo <strong>zate!</strong></span></h1>
+			</header>
+			<nav class="top">
+				<ol>
+					<!--li><a href="/poslanci/">Poslanci</a></li-->
+					<li><a href="/stranke/">Stranke</a></li>
+					<!--li><a href="/delovna-telesa/">Delovna telesa</a></li-->
+					<!--li><a href="/skupine/">Skupine</a></li-->
+					<li><a href="/seje/">Seje</a></li>
+				</ol>
+			</nav>
+			{% block content %}{% endblock %}
+			<footer>
+				<nav>
+					<ol>
+						<!--li><span><a href="/poslanci/">Poslanci</a></span></li-->
+						<li><span><a href="/stranke/">Stranke</a></span></li>
+						<!--li>
+							<span><a href="/delovna-telesa/">Delovna telesa</a></span>
+							<ol>
+								<li><span><a href="/odbori/">Odbori</a></span></li>
+								<li><span><a href="/komisije/">Komisije</a></span></li>
+							</ol>
+						</li-->
+						<!--li><a href="/skupine/">Skupine</a></li-->
+						<li><a href="/seje/">Seje</a></li>
+					</ol>
+				</nav>
+				<p>
+					Projekt se je začel v 2011 v okviru Open Data delavnice v <a href="http://www.kiberpipa.org">Kiberpipi</a>. 
+					Podatki s spletne strani <a href="http://www.dz-rs.si">Državnega zbora</a>.
+				</p>
+			</footer>
+		</div>
+	</body>
 </html>

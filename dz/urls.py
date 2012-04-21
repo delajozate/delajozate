@@ -6,12 +6,16 @@ from delajozate.dz.models import Oseba
 # admin.autodiscover()
 
 urlpatterns = patterns('dz.views',
+	#url(r'^stranke/', 'stranke_list', name='stranke_list'),
+	url(r'^stranke/(?P<stranka_id>\d+)/', 'stranka', name='stranka'),
 	url(r'^stranke/json/', 'stranke_json', name='stranke_json'),
-    url(r'^poslanci/(?P<slug>[A-Za-z0-9-_]{96})/$', 'poslanec', name='poslanec'),
-    url(r'^poslanci/$', 'poslanci_list'),
-    url(r'^$', 'home', name='home'),
+	
+	url(r'^poslanci/(?P<slug>[A-Za-z0-9-_]{96})/$', 'poslanec', name='poslanec'),
+	url(r'^poslanci/$', 'poslanci_list'),
+	
+	url(r'^$', 'home', name='home'),
 )
 
 urlpatterns += patterns('django.views.generic',
-    url(r'^poslanci/(?P<slug>[^/]+)/$', 'list_detail.object_detail', {'queryset': Oseba.objects.all()}),
+	url(r'^poslanci/(?P<slug>[^/]+)/$', 'list_detail.object_detail', {'queryset': Oseba.objects.all()}),
 )

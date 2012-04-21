@@ -1,125 +1,60 @@
 from django.http import HttpResponse
-from django.template import RequestContext, Context, loader
-from django.core.cache import cache
-from django.shortcuts import render_to_response
+from django.shortcuts import render
+from dz.utils import get_poslanci_by_mandat, get_poslanci, get_poslanec_stats, null_date, get_mandat_current
 
-from models import Mandat, Funkcija, ClanOdbora, ClanStranke, Stranka
-from temporal import END_OF_TIME
+from models import Funkcija, ClanStranke, Stranka
 
 import datetime
 import json
 import random
 
-#LONG_LIVE = 60*60*24 # Cache for a day
-LONG_LIVE = 5 # 5 seconds cache
-
-def null_date(date):
-	if date == END_OF_TIME:
-		return None
-	return date
+POSLANCI_RANDOM_LIMIT = 4
 
 def home(request):
 	ctx = {}
 	
-	today = datetime.date.today()
-
-	mandat = None
-	mandat_st = cache.get('dz-aktualni-mandat', 0)
-	if not mandat:
-		mandat = Mandat.objects.order_by('-st')[0]
-		mandat_st = mandat.st
-		cache.set('dz-zadnji-mandat', mandat_st, LONG_LIVE)
-
-	# Malo poslancev na mandat, zato poberi vse za random izbor
-	poslanci = cache.get('dz-poslanci', [])
-	if not poslanci:
-		if not mandat:
-			mandat = Mandat.objects.filter(st=mandat_st)[0]
-		poslanci = Funkcija.objects.filter(mandat=mandat)
-		cache.set('dz-poslanci', poslanci)
-
-	# Izberi 4 nakljucne
+	mandat = get_mandat_current()
+	poslanci = get_poslanci_by_mandat(mandat)
+	
+	# Izberi 4 nakljucne poslance
 	st_poslancev = len(poslanci)
 	picked = set([])
-	izbrani = []
-	while len(picked) < 8:
-		picked.add(poslanci[random.randint(0, st_poslancev-1)])
-
+	while len(picked) < POSLANCI_RANDOM_LIMIT:
+		picked.add(poslanci[random.randint(0, st_poslancev - 1)])
+	
 	# Za vsakega kandidata poberi...
+	izbrani = []
+	today = datetime.date.today()
 	for k in picked:
-		kandidat = {}
-
-		# ... osebne podatke (ime, sliko)
-		oseba = k.oseba
-		kandidat['ime'] = "%s %s" % (oseba.ime, oseba.priimek)
-		kandidat['slug'] = oseba.slug
-		kandidat['slika'] = oseba.slika
-
-		# ... mandate v katerih je bil (=> izracunaj stevilo in obdobje v dneh)
-		k_mandati = Funkcija.objects.filter(oseba=oseba)
-
-		kandidat['st_mandatov'] = len(k_mandati)
-		dolzina_sluzenja = sum([ ((null_date(m.do) or today) - m.od).days for m in k_mandati ])
-		kandidat['poslanskih_dni'] = dolzina_sluzenja
-		
-		poslanske_skupine = list(ClanStranke.objects.filter(oseba=oseba).order_by('-do'))
-		if poslanske_skupine:
-			kandidat['stranka'] = poslanske_skupine[0]
-		kandidat['stevilo_strank'] = len(poslanske_skupine)
-		
-		'''
-		# ... stranko v kateri je
-
-		# ... stevilo strank v katerih je bil
-		'''
-
-		# ... stevilo odborov v zadnjem mandatu
-		odbori = set([])
-		pos_mandati = Funkcija.objects.filter(oseba=oseba, mandat=mandat) # e.g.: poslanec->minister->poslanec
-		for pos_mandat in pos_mandati:
-			for clanstvo in ClanOdbora.objects.filter(poslanec=pos_mandat, mandat=mandat):
-				odbori.add(clanstvo.odbor.pk)
-		kandidat['odbori'] = len(odbori)
-
-		'''
-		# ... stevilo komisij v zadnjem mandatu
-
-		# ... stevilo delegacij v zadnjem mandatu
-		'''
+		print k.id
+		kandidat = get_poslanec_stats(k, mandat, today)
 		izbrani.append(kandidat)
-
+	
 	ctx['izbrani'] = izbrani
-	return render_to_response('home.html', Context(ctx))
+	
+	return render(request, 'home.html', ctx)
+	
+
+def stranka(request, stranka_id):
+	ctx = {
+		'poslanci': get_poslanci({'stranka__pk': stranka_id}, mandat=get_mandat_current()),
+	}
+	return render(request, 'poslanci.html', ctx)
+	
 
 def poslanci_list(request):
-	clanstvo = list(ClanStranke.objects.all().select_related('oseba', 'stranka').order_by('oseba__priimek', 'oseba__ime'))
+	ctx = {
+		'poslanci': get_poslanci(),
+	}
+	return render(request, 'poslanci.html', ctx)
 	
-	funkcije = Funkcija.objects.all().select_related('oseba', 'stranka')
-	
-	# stevilo dni
-	today = datetime.date.today()
-	dni_dict = {}
-	mandatov = {}
-	for f in funkcije:
-		dni = dni_dict.setdefault(f.oseba.pk, 0)
-		dni_dict[f.oseba.pk] = dni + ((null_date(f.do) or today) - f.od).days
-		mandat = mandatov.setdefault(f.oseba.pk, set())
-		mandat.add(f.mandat)
-	
-	for i in clanstvo:
-		i.oseba.dni = dni_dict[i.oseba.pk]
-		i.oseba.st_mandatov = len(mandatov[i.oseba.pk])
-	
-	context = {
-		'object_list': clanstvo,
-		}
-	return render_to_response('dz/oseba_list.html', RequestContext(request, context))
 
 def d_squared(tracks, nodepairs):
 	#for a,b in nodepairs:
 		#(tracks[a]-tracks[b])**2
 		
 	return list(sorted([((tracks[a]-tracks[b])**2,a,b) for a,b in nodepairs], reverse=True))
+	
 
 def stranke_json(request):
 	"json strank za d3.js vizualizacijo"
@@ -200,6 +135,7 @@ def stranke_json(request):
 		condensed[master_id] = newsteza
 	
 	return HttpResponse(json.dumps({'stranke_all': stranke, 'stranke_condensed': condensed}, indent=3), mimetype='application/json')
+	
 
 def poslanec(request, slug):
 	# Poberi poslanca s tem slugom
@@ -208,3 +144,4 @@ def poslanec(request, slug):
 
 	# Izpisi template 
 	pass
+	

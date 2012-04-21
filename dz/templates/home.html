@@ -1,77 +1,10 @@
-{% load dz_extras %}<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Delajo zate!</title>
-		<link rel="stylesheet" href="/static/style.css" />
-		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|Arvo:700' rel="stylesheet" type="text/css" />
-	</head>
-	<body>
-		<div class="site">
-			<header>
-				<h1><span>Delajo <strong>zate!</strong><span></h1>
-			</header>
-			<nav class="top">
-				<ol>
-					<!--li><a href="/poslanci/">Poslanci</a></li>
-					<li><a href="/stranke/">Stranke</a></li>
-					<li><a href="/delovna-telesa/">Delovna telesa</a></li>
-					<li><a href="/skupine/">Skupine</a></li-->
-				</ol>
-			</nav>
+{% extends "base.html" %}
+{% load dz_extras %}
+
+{% block content %}
 			<section class="random">
-				<ol class="cards">
-					{% for poslanec in izbrani %}
-					<li>
-						<div class="card">
-							<h2> {{ poslanec.ime }}</h2>
-							<div class="stranka"><a class="strankatag {{ poslanec.stranka.stranka.okrajsava|lower }}"
-								style="background-color: #{{ poslanec.stranka.stranka.barva }};"
-								href="/stranke/{{ poslanec.stranka.stranka.id }}/"
-								title="{{ poslanec.stranka.stranka.ime }}">{{ poslanec.stranka.stranka.okrajsava }}
-							</a></div>
-							<div class="img">
-								<img src="{{ poslanec.slika|default:"/static/img/unknown.png"}}" alt="" title="{{ poslanec.ime }}, vir:{% if poslanec.slika %}dz-rs.si{% else %}http://www.flickr.com/photos/marypaulose/295058238/sizes/z/in/photostream/{% endif %}" />
-							</div>
-							<dl>
-								<dt>Obdobje</dt>
-								<dd>{{ poslanec.poslanskih_dni }} dni</dd>
-								<dt>Mandatov</dt>
-								<dd>{{ poslanec.st_mandatov }}</dd>
-							</dl>
-							<ol class="badges">
-								<li class="odbori"><span>{{ poslanec.odbori }}</span> odbor{{ poslanec.odbori|slopluralize:",a,i,ov" }}</li>
-								<li class="komisije"><span>&nbsp;</span> komisij{{ poslanec.komisije|slopluralize:"a,i,e," }}</li>
-								<li class="delegacije"><span>&nbsp;</span> deleg.</li>
-								<li class="skupine"><span>&nbsp;</span> skupin{{ poslanec.skupine|slopluralize:"a,i,e," }}</li>
-							</ol>
-						</div>
-					</li>
-					{% endfor %}
+				<ol class="cards">{% for poslanec in izbrani %}
+					{% include "sub_poslanec_card.html" %}
+				{% endfor %}
 				</ol>
-			</section>
-			<!--section class="seje">
-				<h2>Seje</h2>
-				<p>Žal se nam še ni uspelo prebiti čez podatke.</p>
-			</section-->
-			<footer>
-				<nav>
-					<ol>
-						<!--li><span><a href="/poslanci/">Poslanci</a></span></li>
-						<li><span><a href="/stranke/">Stranke</a></span></li>
-						<li>
-							<span><a href="/delovna-telesa/">Delovna telesa</a></span>
-							<ol>
-								<li><span><a href="/odbori/">Odbori</a></span></li>
-								<li><span><a href="/komisije/">Komisije</a></span></li>
-							</ol>
-						</li>
-						<li><a href="/delegacije/">Delegacije</a></li>
-						<li><a href="/skupine/">Skupine</a></li-->
-					</ol>
-				</nav>
-				<p>Started at Open Data Hackday 2011 at <a href="http://www.kiberpipa.org">Kiberpipa</a>. Data from <a href="http://www.dz-rs.si">www.dz-rs.si</a>.</p>
-			</footer>
-		</div>
-	</body>
-</html>
+			</section>{% endblock %}
