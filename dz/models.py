@@ -7,6 +7,9 @@ from django.contrib.contenttypes import generic
 
 FUNKCIJE = (
 	('poslanec', 'Poslanec/ka'),
+	('član', 'Član'),
+	('predsednik', 'Predsednik'),
+	('podpredsednik', 'Podpredsednik'),
 )
 
 def null_date(date):
@@ -86,6 +89,7 @@ class ImeStranke(models.Model):
 	
 	class Meta:
 		ordering = [ '-od']
+		verbose_name_plural = u'Imena strank'
 
 class Mandat(models.Model):
 	st = models.IntegerField() # Kateri mandat
