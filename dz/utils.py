@@ -3,7 +3,8 @@ from temporal import END_OF_TIME
 
 from django.core.cache import cache
 
-from dz.models import Mandat, Funkcija, ClanStranke, ClanOdbora, Oseba, Stranka
+from django.contrib.contenttypes.models import ContentType
+from dz.models import Mandat, Funkcija, ClanStranke, ClanOdbora, Oseba, Stranka, Pozicija, DrzavniZbor
 
 #LONG_LIVE = 60*60*24 # Cache for a day
 LONG_LIVE = 5 # 5 seconds cache
@@ -29,7 +30,9 @@ def get_poslanci_by_mandat(mandat=None):
 	cache_key = 'dz-poslanci-mandat-%s' % ("%d" % mandat.st if mandat else "current")
 	poslanci = cache.get(cache_key, [])
 	if not poslanci:
-		poslanci = Funkcija.objects.filter(mandat__st=mandat.st).select_related("oseba")
+		#poslanci = Funkcija.objects.filter(mandat__st=mandat.st).select_related("oseba")
+		dz = DrzavniZbor.objects.get(mandat=mandat)
+		poslanci = Pozicija.objects.filter(tip_organizacije=ContentType.objects.get_for_model(dz), id_organizacije=dz.id)
 		cache.set(cache_key, poslanci)
 	return poslanci
 	

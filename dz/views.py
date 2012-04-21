@@ -19,14 +19,14 @@ def home(request):
 	# Izberi 4 nakljucne poslance
 	st_poslancev = len(poslanci)
 	picked = set([])
-	while len(picked) < POSLANCI_RANDOM_LIMIT:
-		picked.add(poslanci[random.randint(0, st_poslancev - 1)])
+	if st_poslancev:
+		while len(picked) < POSLANCI_RANDOM_LIMIT:
+			picked.add(poslanci[random.randint(0, st_poslancev - 1)])
 	
 	# Za vsakega kandidata poberi...
 	izbrani = []
 	today = datetime.date.today()
 	for k in picked:
-		print k.id
 		kandidat = get_poslanec_stats(k, mandat, today)
 		izbrani.append(kandidat)
 	
