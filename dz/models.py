@@ -2,8 +2,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from delajozate.temporal import END_OF_TIME
-from django.contrib.contenttypes.models import ContentType
-from django.contrib.contenttypes import generic
 
 FUNKCIJE = (
 	('poslanec', 'Poslanec/ka'),
@@ -16,6 +14,11 @@ def null_date(date):
 	if date == END_OF_TIME:
 		return None
 	return date
+	
+
+class Organizacija(models.Model):
+	pass
+	
 
 class Oseba(models.Model):
 	ime = models.CharField(max_length=32)
@@ -57,6 +60,7 @@ class Oseba(models.Model):
 				self.slug = "%s-%d" % (slug, count)
 				count += 1
 		super(Oseba, self).save(*args, **kwargs)
+	
 
 class Stranka(models.Model):
 	# kako modelirat kontinuiteto stranke, kadar se preimenuje?
@@ -74,12 +78,19 @@ class Stranka(models.Model):
 	facebook = models.URLField(blank=True)
 	podatki_preverjeni = models.BooleanField(default=False)
 	opombe = models.TextField(blank=True)
+	organizacija = models.OneToOneField(Organizacija, null=True)
+	
+	def save(self, *args, **kwargs):
+		if not self.organizacija_id:
+			self.organizacija = Organizacija.objects.create()
+		super(Odbor, self).save(*args, **kwargs)
 	
 	class Meta:
 		verbose_name_plural = u'Stranke'
 	
 	def __unicode__(self):
 		return u'%s (%s)%s' % (self.ime, self.okrajsava, self.do != END_OF_TIME and u'\u271d' or u'')
+	
 
 class ImeStranke(models.Model):
 	stranka = models.ForeignKey(Stranka)
@@ -90,6 +101,7 @@ class ImeStranke(models.Model):
 	class Meta:
 		ordering = [ '-od']
 		verbose_name_plural = u'Imena strank'
+	
 
 class Mandat(models.Model):
 	st = models.IntegerField() # Kateri mandat
@@ -101,6 +113,7 @@ class Mandat(models.Model):
 	
 	def __unicode__(self):
 		return unicode(self.st)
+	
 
 class Skupina(models.Model): # Poslanska
 	ime = models.CharField(max_length=64)
@@ -108,16 +121,30 @@ class Skupina(models.Model): # Poslanska
 	od = models.DateField(null=True, blank=True)
 	do = models.DateField(null=True, blank=True)
 	mandat = models.ForeignKey(Mandat)
+	organizacija = models.OneToOneField(Organizacija, null=True)
+	
+	def save(self, *args, **kwargs):
+		if not self.organizacija_id:
+			self.organizacija = Organizacija.objects.create()
+		super(Odbor, self).save(*args, **kwargs)
 	
 	class Meta:
 		verbose_name_plural = u'Skupine'
+	
 
 class DrzavniZbor(models.Model):
 	mandat = models.ForeignKey(Mandat)
+	organizacija = models.OneToOneField(Organizacija, null=True)
+	
+	def save(self, *args, **kwargs):
+		if not self.organizacija_id:
+			self.organizacija = Organizacija.objects.create()
+		super(Odbor, self).save(*args, **kwargs)
 	
 	class Meta:
 		verbose_name = u'Državni Zbor'
 		verbose_name_plural = u'Državni Zbori'
+	
 
 class Odbor(models.Model):
 	ime = models.CharField(max_length=500)
@@ -127,12 +154,19 @@ class Odbor(models.Model):
 	do = models.DateField(blank=True)
 	podatki_preverjeni = models.BooleanField(default=False)
 	opombe = models.TextField(blank=True)
+	organizacija = models.OneToOneField(Organizacija, null=True)
+	
+	def save(self, *args, **kwargs):
+		if not self.organizacija_id:
+			self.organizacija = Organizacija.objects.create()
+		super(Odbor, self).save(*args, **kwargs)
 	
 	class Meta:
 		verbose_name_plural = u'Odbori'
 	
 	def __unicode__(self):
 		return '%s (%s)' % (self.ime, self.mandat)
+	
 
 class Funkcija(models.Model):
 	oseba = models.ForeignKey(Oseba)
@@ -149,6 +183,7 @@ class Funkcija(models.Model):
 	
 	def __unicode__(self):
 		return u'%s (%s)' % (self.oseba, self.mandat)
+	
 
 class ClanStranke(models.Model):
 	oseba = models.ForeignKey(Oseba)
@@ -162,6 +197,7 @@ class ClanStranke(models.Model):
 		verbose_name = u'Član stranke'
 		verbose_name_plural = u'Člani strank'
 		ordering = ('-do',)
+	
 
 class ClanOdbora(models.Model):
 	odbor = models.ForeignKey(Odbor)
@@ -180,14 +216,10 @@ class ClanOdbora(models.Model):
 
 class Pozicija(models.Model):
 	oseba = models.ForeignKey(Oseba)
-	
-	tip_organizacije = models.ForeignKey(ContentType)
-	id_organizacije = models.PositiveIntegerField()
-	organizacija = generic.GenericForeignKey('tip_organizacije', 'id_organizacije')
-	
+	organizacija = models.ForeignKey(Organizacija, null=True)
 	tip = models.CharField(max_length=64, default='poslanec', choices=FUNKCIJE)
 	od = models.DateField()
-	do = models.DateField(blank=True)
+	do = models.DateField(blank=True, default=END_OF_TIME)
 	podatki_preverjeni = models.BooleanField(default=False)
 	opombe = models.TextField(blank=True)
 	
