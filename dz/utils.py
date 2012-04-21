@@ -30,9 +30,9 @@ def get_poslanci_by_mandat(mandat=None):
 	cache_key = 'dz-poslanci-mandat-%s' % ("%d" % mandat.st if mandat else "current")
 	poslanci = cache.get(cache_key, [])
 	if not poslanci:
-		#poslanci = Funkcija.objects.filter(mandat__st=mandat.st).select_related("oseba")
-		dz = DrzavniZbor.objects.get(mandat=mandat)
-		poslanci = Pozicija.objects.filter(tip_organizacije=ContentType.objects.get_for_model(dz), id_organizacije=dz.id)
+		poslanci = Funkcija.objects.filter(mandat__st=mandat.st).select_related("oseba")
+		#dz = DrzavniZbor.objects.get(mandat=mandat)
+		#poslanci = Pozicija.objects.filter(tip_organizacije=ContentType.objects.get_for_model(dz), id_organizacije=dz.id)
 		cache.set(cache_key, poslanci)
 	return poslanci
 	
