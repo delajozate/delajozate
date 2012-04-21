@@ -1,14 +1,14 @@
 {% load dz_extras %}
 					<li>
 						<div class="card">
-							<h2> {{ poslanec.oseba.ime_priimek }}</h2>{% if poslanec.stranka %}{% with poslanec.stranka as stranka %}
+							<h2> {{ poslanec.oseba }}</h2>{% if poslanec.stranka %}{% with poslanec.stranka as stranka %}
 							<div class="stranka"><a class="strankatag {{ stranka.okrajsava|lower }}"
 								style="background-color: #{{ stranka.barva }};"
 								href="/stranke/{{ stranka.id }}/"
 								title="{{ stranka.ime }}">{{ stranka.okrajsava }}
 							</a></div>{% endwith %}{% endif %}
 							<div class="img">
-								<img src="{{ poslanec.oseba.slika_or_default }}" alt="" title="{{ poslanec.oseba.ime_priimek }}, vir:{{ poslanec.oseba.slika_vir }}" />
+								<img src="{{ poslanec.oseba.slika_or_default }}" alt="" title="{{ poslanec.oseba }}, vir:{{ poslanec.oseba.slika_vir }}" />
 							</div>
 							<dl>
 								<dt>Obdobje</dt>
