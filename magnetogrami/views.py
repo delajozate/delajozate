@@ -17,8 +17,8 @@ def seja_list(request):
 	return render_to_response('magnetogrami/seja_list.html', RequestContext(request, context))
 
 def _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja=None):
-	assert mdt == 'dz' # for now
-	seja = Seja.objects.get(mandat=mandat, slug=slug)
+	#assert mdt == 'dz' # for now
+	seja = Seja.objects.get(mandat=mandat, slug=slug, delovno_telo=mdt)
 	
 	if datum_zasedanja is None:
 		try:
