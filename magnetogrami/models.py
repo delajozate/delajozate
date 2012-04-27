@@ -63,7 +63,7 @@ class Zapis(models.Model):
 			return self.odstavki[0:30]
 
 class GovorecMap(models.Model):
-	govorec = models.CharField(max_length=200)
+	govorec = models.CharField(max_length=200, unique=True, db_index=True)
 	oseba = models.ForeignKey(Oseba)
 	
 	class Meta:
@@ -100,7 +100,6 @@ def _parse_time(time_string):
 
 def seja_import_one(jsonData):
 	govorci_fn = os.path.join(os.path.dirname(__file__), 'govorci.json')
-	govorci_map = json.load(open(govorci_fn))
 	
 	with transaction.commit_on_success():
 		mandat = int(jsonData.get('mandat'))
@@ -178,7 +177,11 @@ def seja_import_one(jsonData):
 							m = re.match('^(.*)\s\(PS \w{2,5}\)$', govorec)
 							if m:
 								govorec = m.group(1)
-						oseba_id = govorci_map.get(govorec, None)
+						try:
+							oseba_id = GovorecMap.objects.get(govorec=govorec).oseba.id
+						except GovorecMap.DoesNotExist:
+							oseba_id = None
+						
 						for ods in jsonZapis.get('odstavki'):
 							values.extend([
 								count,
