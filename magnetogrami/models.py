@@ -1,5 +1,9 @@
-from django.db import models
+import json
+import os
+import re
+import dateutil.parser
 
+from django.db import models, transaction, connection
 from delajozate.dz.models import Oseba
 
 class Seja(models.Model):
@@ -9,6 +13,7 @@ class Seja(models.Model):
 	datum_zacetka = models.DateField(null=True)
 	status = models.CharField(max_length=128)
 	mandat = models.IntegerField()
+	delovno_telo = models.CharField(max_length=20)
 	url = models.URLField()
 
 	class Meta:
@@ -56,3 +61,148 @@ class Zapis(models.Model):
 			return self.govorec + ":" + self.odstavki[0:30]
 		else:
 			return self.odstavki[0:30]
+
+class GovorecMap(models.Model):
+	govorec = models.CharField(max_length=200)
+	oseba = models.ForeignKey(Oseba)
+	
+	class Meta:
+		verbose_name = u'Preslikava govorec-oseba'
+		verbose_name_plural = u'Preslikave govorec-oseba'
+	def __unicode__(self):
+		return u'"%s" -> %s' % (self.govorec, self.oseba)
+	
+	def save(self, *args, **kwargs):
+		super(GovorecMap, self).save(*args, **kwargs)
+		
+		# posodobi obstojece zapise
+		with transaction.commit_on_success():
+			transaction.set_dirty()
+			
+			cur = connection.cursor()
+			cur.execute('''UPDATE %s SET govorec_oseba_id = %%s WHERE govorec = %%s''' % Zapis._meta.db_table, [self.oseba.id, self.govorec])
+		
+
+def _parse_time(time_string):
+	try:
+		parsed_time = time.strptime(time_string, "%H.%S")
+	except:
+		try:
+			parsed_time = time.strptime(time_string, "%H")
+		except:
+			parsed_time = None
+
+	if parsed_time:
+		return time.strftime("%H:%S", parsed_time)
+	else:
+		return None
+
+
+def seja_import_one(jsonData):
+	govorci_fn = os.path.join(os.path.dirname(__file__), 'govorci.json')
+	govorci_map = json.load(open(govorci_fn))
+	
+	with transaction.commit_on_success():
+		mandat = int(jsonData.get('mandat'))
+		naslov_seje = jsonData.get('naslov')
+		dt = jsonData.get('delovno_telo')
+		try:
+			seja = Seja.objects.get(
+				mandat=mandat,
+				naslov=naslov_seje,
+				delovno_telo=dt,
+				)
+		except Seja.DoesNotExist:
+			seja = Seja(mandat=mandat, naslov=naslov_seje, delovno_telo=dt)
+		
+		match = re.search('((\d+)\.\s*(redna|izredna|nujna))', naslov_seje, re.I)
+		if not match:
+			print naslov_seje
+		seja_slug = ('%s-%s' % match.groups()[1:]).lower()
+		seja.slug = seja_slug
+		try:
+			seja.datum_zacetka = dateutil.parser.parse(jsonData.get('datum_zacetka'), dayfirst=True)
+		except:
+			seja.datum_zacetka = None
+		seja.seja = match.group(1)
+		seja.url = jsonData.get('url')
+		seja.save()
+
+		# jsonSeja objects
+		for jsonSeja in jsonData.get('seja_info', []):
+			sejaInfo = SejaInfo()
+			sejaInfo.seja = seja
+			sejaInfo.url = jsonSeja.get('url')
+			sejaInfo.naslov = jsonSeja.get('naslov')
+			sejaInfo.datum = dateutil.parser.parse(jsonSeja.get('datum'), dayfirst=True)
+			sejaInfo.save()
+
+		# Zasedanja
+		for jsonZasedanje in jsonData.get('zasedanja'):
+			for jsonPovezava in jsonZasedanje.get('povezave'):
+				datum = dateutil.parser.parse(jsonZasedanje.get('datum'), dayfirst=True)
+				created = False
+				try:
+					zasedanje = Zasedanje.objects.get(
+						datum=datum,
+						seja=seja,
+						)
+				except Zasedanje.DoesNotExist:
+					zasedanje = Zasedanje(
+						datum=datum,
+						seja=seja,
+						)
+					created = True
+				
+				if not created:
+					continue
+				if jsonPovezava.get('zacetek'):
+					zasedanje.zacetek = _parse_time(jsonPovezava.get('zacetek'))
+				if jsonPovezava.get('konec'):
+					zasedanje.konec = _parse_time(jsonPovezava.get('konec'))
+
+				zasedanje.tip = jsonPovezava.get('tip')
+				zasedanje.naslov = jsonPovezava.get('naslov')
+				zasedanje.save()
+
+				cursor = connection.cursor()
+				count = 0
+				keys = ['seq', 'zasedanje_id', 'govorec', 'govorec_oseba_id', 'odstavki']
+
+				values = []
+				for jsonOdsek in jsonPovezava.get('odseki'):
+					for jsonZapis in jsonOdsek.get('zapisi'):
+						govorec = jsonZapis.get('govorec')
+						if govorec is not None:
+							govorec = govorec.strip()
+							m = re.match('^(.*)\s\(PS \w{2,5}\)$', govorec)
+							if m:
+								govorec = m.group(1)
+						oseba_id = govorci_map.get(govorec, None)
+						for ods in jsonZapis.get('odstavki'):
+							values.extend([
+								count,
+								zasedanje.id,
+								govorec,
+								oseba_id,
+								ods,
+								])
+							count += 1
+
+				params = values
+				onerowtempl = '(' + ', '.join(['%s'] * len(keys)) + ')'
+				all_rows_template = ', '.join([onerowtempl] * (len(params) / len(keys)))
+				sql = '''INSERT INTO %s (%s) VALUES %s''' % (
+					Zapis._meta.db_table,
+					', '.join(keys),
+					all_rows_template)
+				if params:
+					cursor.execute(sql, params)
+		if seja.datum_zacetka is None:
+			# use as an alternative
+			try:
+				seja.datum_zacetka = Zasedanje.objects.filter(seja=seja).order_by('-datum')[0].datum
+			except:
+				pass
+		seja.save()
+	
