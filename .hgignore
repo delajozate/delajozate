@@ -3,7 +3,7 @@
 syntax: glob
 
 *.pyc
-localsettings.py
+delajozate/localsettings.py
 delajozate.pid
 *~
 *.swp
