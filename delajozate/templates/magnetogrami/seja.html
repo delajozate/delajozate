@@ -48,6 +48,9 @@ addLoadEvent(updateHighlight);
 {% if zapis.govorec_oseba %}
     {{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}
     <br />{% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
+    {% for stranka in zapis.govorec_oseba.stranke %}
+    <em>{{stranka.stranka.ime}}</em>
+    {% endfor %}
 {% else %}
     {{ zapis.govorec|default_if_none:"&nbsp;" }}
 {% endif %}
