@@ -25,11 +25,11 @@ class Organizacija(models.Model):
 				return v if value else p
 			except ObjectDoesNotExist:
 				pass
-		return None if value else "unknown" 
+		return None if value else "" 
 	
 	def __unicode__(self):
 		t = self.type()
-		return u"[%s] %s" % (t, getattr(self, t)) if t != "unknown" else None
+		return u"[%s] %s" % (t, getattr(self, t)) if t != "" else None
 	
 	def value(self):
 		return self.type(True)
