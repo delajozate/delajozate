@@ -1,11 +1,12 @@
 # coding: utf-8
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.template.defaultfilters import slugify
 from delajozate.temporal import END_OF_TIME
 
 FUNKCIJE = (
 	('poslanec', 'Poslanec/ka'),
-	('član', 'Član'),
+	('clan', 'Član'),
 	('predsednik', 'Predsednik'),
 	('podpredsednik', 'Podpredsednik'),
 )
@@ -17,7 +18,21 @@ def null_date(date):
 	
 
 class Organizacija(models.Model):
-	pass
+	def type(self, value=False):
+		for p in ["stranka", "skupina", "drzavnizbor", "odbor"]:
+			try:
+				v = getattr(self, p)
+				return v if value else p
+			except ObjectDoesNotExist:
+				pass
+		return None if value else "unknown" 
+	
+	def __unicode__(self):
+		t = self.type()
+		return u"[%s] %s" % (t, getattr(self, t)) if t != "unknown" else None
+	
+	def value(self):
+		return self.type(True)
 	
 
 class Oseba(models.Model):
@@ -83,7 +98,7 @@ class Stranka(models.Model):
 	def save(self, *args, **kwargs):
 		if not self.organizacija_id:
 			self.organizacija = Organizacija.objects.create()
-		super(Odbor, self).save(*args, **kwargs)
+		super(Stranka, self).save(*args, **kwargs)
 	
 	class Meta:
 		verbose_name_plural = u'Stranke'
@@ -126,7 +141,7 @@ class Skupina(models.Model): # Poslanska
 	def save(self, *args, **kwargs):
 		if not self.organizacija_id:
 			self.organizacija = Organizacija.objects.create()
-		super(Odbor, self).save(*args, **kwargs)
+		super(Skupina, self).save(*args, **kwargs)
 	
 	class Meta:
 		verbose_name_plural = u'Skupine'
@@ -139,7 +154,7 @@ class DrzavniZbor(models.Model):
 	def save(self, *args, **kwargs):
 		if not self.organizacija_id:
 			self.organizacija = Organizacija.objects.create()
-		super(Odbor, self).save(*args, **kwargs)
+		super(DrzavniZbor, self).save(*args, **kwargs)
 	
 	class Meta:
 		verbose_name = u'Državni Zbor'

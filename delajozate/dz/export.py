@@ -4,34 +4,49 @@ from django.conf import settings
 from django.core.serializers import serialize
 from django.db import models
 
-import django, south, dz, search
+# need to do it this way so the command works. beats me why...
+import django.contrib.staticfiles.models as staticfilesModels
+import django.contrib.auth.models as authModels
+import django.contrib.sites.models as siteModels
+import django.contrib.admin.models as adminModels
+import django.contrib.contenttypes.models as contenttypeModels
+import django.contrib.sessions.models as sessionModels
+import south.models as southModels
+import delajozate.dz.models as dzModels
+import delajozate.magnetogrami.models as magnetogramiModels
 
 # Make sure to use the correct order so dependencies are not broken
+
 MODELS = (
-	django.contrib.auth.models.Group,
-	django.contrib.auth.models.User,
-	dz.models.Oseba,
-	dz.models.Stranka,
-	dz.models.Mandat,
-	dz.models.Skupina, # Stranka
-	dz.models.ClanStranke, # Oseba, Stranka
-	dz.models.Poslanec, # Oseba, Mandat
-	dz.models.Odbor, # Mandat
-	dz.models.ClanOdbora, # Odbor, Poslanec, Mandat
-	search.models.Seja, 
-	search.models.SejaInfo, # Seja
-	search.models.Zasedanje, # Seja
-	search.models.Zapis, # Zasedanje
+	siteModels.Site,
+	authModels.Group,
+	authModels.User,
+	dzModels.Organizacija,
+	dzModels.Oseba,
+	dzModels.Stranka, # Organizacija
+	dzModels.ImeStranke, # Stranka
+	dzModels.Mandat, 
+	dzModels.Skupina, # Stranka, Organizacija
+	dzModels.DrzavniZbor, # Mandat, Organizacija
+	dzModels.Odbor, # Mandat, Organizacija
+	dzModels.Funkcija, # Oseba, Mandat
+ 	dzModels.ClanStranke, # Oseba, Stranka
+	dzModels.ClanOdbora, # Odbor, Funkcija, Mandat
+	dzModels.Pozicija, # Oseba, Organizacija
+	magnetogramiModels.GovorecMap,
 )
 
 IGNORE_MODELS = (
-	django.contrib.auth.models.Permission,
-	django.contrib.auth.models.Message,
-	django.contrib.admin.models.LogEntry,
-	south.models.MigrationHistory,
-	django.contrib.contenttypes.models.ContentType,
-	django.contrib.sites.models.Site,
-	django.contrib.sessions.models.Session
+	authModels.Permission,
+	authModels.Message,
+	adminModels.LogEntry,
+	southModels.MigrationHistory,
+	contenttypeModels.ContentType,
+	sessionModels.Session,
+	magnetogramiModels.Seja, 
+	magnetogramiModels.SejaInfo, # Seja
+	magnetogramiModels.Zasedanje, # Seja
+	magnetogramiModels.Zapis, # Zasedanje
 )
 
 def get_class(class_str):
@@ -39,7 +54,10 @@ def get_class(class_str):
 	root = parts.pop(0)
 	app = __import__(root)
 	while parts:
-		app = getattr(app, parts.pop(0))
+		try:
+			app = getattr(app, parts.pop(0))
+		except AttributeError:
+			print "Cannot import models for %s - possibly some models will not be exported." % class_str
 	return app
 	
 
@@ -74,7 +92,7 @@ def exportdata(models=MODELS, **kwargs):
 	file = open(filename, "w")
 	l = []
 	for model in models:
-		l.extend(list(model.objects.all()))
+		l.extend(list(model.objects.all().order_by('pk')))
 	s = serialize("json", l, **kwargs)
 	file.write(s)
 	file.close()
