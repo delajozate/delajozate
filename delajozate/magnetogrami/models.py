@@ -6,6 +6,12 @@ import dateutil.parser
 from django.db import models, transaction, connection
 from delajozate.dz.models import Oseba
 
+GLASOVI = (
+    ('0', 'Proti'),
+	('1', 'Za'),
+	('2', 'Ni glasoval'),
+)
+
 class Seja(models.Model):
 	naslov = models.CharField(max_length=255)
 	seja = models.CharField(max_length=255) # TODO: check validity
@@ -31,6 +37,7 @@ class SejaInfo(models.Model):
 	naslov = models.CharField(max_length=255)
 	datum = models.DateField()
 
+
 class Zasedanje(models.Model):
 	seja = models.ForeignKey(Seja)
 	naslov = models.CharField(max_length=255, null=True)
@@ -45,6 +52,24 @@ class Zasedanje(models.Model):
 
 	def __unicode__(self):
 		return self.naslov + "(" + str(self.datum) + ")"
+
+
+class Glasovanje(models.Model):
+    seja = models.ForeignKey(Seja, null=True)
+    ura = models.TimeField(null=True)
+    url = models.URLField(null=True)
+    datum = models.DateField(null=True)
+    dokument = models.CharField(max_length=255, null=True)
+    naslov = models.CharField(max_length=255, null=True)
+    faza_postopka = models.CharField(max_length=255, null=True)
+
+
+class Glas(models.Model):
+    glasovanje = models.ForeignKey(Glasovanje, null=True)
+    oseba = models.ForeignKey(Oseba, null=True)
+    kvorum = models.BooleanField(default=False)
+    glasoval = models.CharField(max_length=255, choices=GLASOVI)
+
 
 class Zapis(models.Model):
 	zasedanje = models.ForeignKey(Zasedanje)
@@ -65,7 +90,7 @@ class Zapis(models.Model):
 class GovorecMap(models.Model):
 	govorec = models.CharField(max_length=200, unique=True, db_index=True)
 	oseba = models.ForeignKey(Oseba)
-	
+
 	class Meta:
 		verbose_name = u'Preslikava govorec-oseba'
 		verbose_name_plural = u'Preslikave govorec-oseba'
@@ -100,7 +125,7 @@ def _parse_time(time_string):
 
 def seja_import_one(jsonData):
 	govorci_fn = os.path.join(os.path.dirname(__file__), 'govorci.json')
-	
+
 	with transaction.commit_on_success():
 		mandat = int(jsonData.get('mandat'))
 		naslov_seje = jsonData.get('naslov')
@@ -113,7 +138,7 @@ def seja_import_one(jsonData):
 				)
 		except Seja.DoesNotExist:
 			seja = Seja(mandat=mandat, naslov=naslov_seje, delovno_telo=dt)
-		
+
 		match = re.search('((\d+)\.\s*(redna|izredna|nujna))', naslov_seje, re.I)
 		if not match:
 			print naslov_seje
@@ -136,6 +161,60 @@ def seja_import_one(jsonData):
 			sejaInfo.datum = dateutil.parser.parse(jsonSeja.get('datum'), dayfirst=True)
 			sejaInfo.save()
 
+        #Glasovanja
+        for jsonGlasovanje in jsonData.get('glasovanja'):
+
+            ura=jsonGlasovanje.get("ura")
+            url=jsonGlasovanje.get("url")
+            datum=dateutil.parser.parse(jsonGlasovanje.get('datum'), dayfirst=True)
+            dokument=jsonGlasovanje.get("dokument")
+            naslov = jsonGlasovanje.get("naslov")
+            faza_postopka=jsonGlasovanje.get("faza postopka")
+            poslanec = glas.get("poslanec").encode("utf-8")
+
+            try:
+                glasovanje = Glasovanje.objects.get(
+                    seja=seja,
+                    ura=ura,
+                    url=url,
+                    datum=datum,
+                    dokument=dokument,
+                    naslov = naslov,
+                    faza_postopka=faza_postopka,
+                )
+            except Glasovanje.DoesNotExist:
+                glasovanje = Glasovanje()
+                glasovanje.seja = seja
+                glasovanje.ura = ura
+                glasovanje.url = url
+                glasovanje.datum = datum
+                glasovanje.dokument = dokument
+                glasovanje.naslov = naslov
+                glasovanje.faza_postopka = faza_postopka
+                glasovanje.save()
+
+            for glas in jsonGlasovanje.get("glasovi"):
+                term = r'(' + '|'.join(poslanec.split()) + ')'
+                oseba = Oseba.objects.filter(ime__iregex=term, priimek__iregex=term)
+                oseba = oseba[0] if oseba else None
+
+                if not oseba:
+                    #now what???
+                    pass
+
+                try:
+                    g = Glas.objects.get(
+                        glasovanje = glasovanje,
+                        oseba = oseba
+                    )
+                except Glas.DoesNotExist:
+                    g = Glas()
+                    g.glasovanje = glasovanje
+                    g.kvorum = glas.get("kvorum")
+                    g.glasoval = glas.get("glasoval")
+                    g.oseba = oseba
+                    g.save()
+
 		# Zasedanja
 		for jsonZasedanje in jsonData.get('zasedanja'):
 			for jsonPovezava in jsonZasedanje.get('povezave'):
@@ -152,7 +231,7 @@ def seja_import_one(jsonData):
 						seja=seja,
 						)
 					created = True
-				
+
 				if not created:
 					continue
 				if jsonPovezava.get('zacetek'):
@@ -181,7 +260,7 @@ def seja_import_one(jsonData):
 							oseba_id = GovorecMap.objects.get(govorec=govorec).oseba.id
 						except GovorecMap.DoesNotExist:
 							oseba_id = None
-						
+
 						for ods in jsonZapis.get('odstavki'):
 							values.extend([
 								count,
@@ -208,4 +287,3 @@ def seja_import_one(jsonData):
 			except:
 				pass
 		seja.save()
-	
