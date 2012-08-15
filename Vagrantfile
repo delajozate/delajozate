@@ -35,7 +35,7 @@ Vagrant::Config.run do |config|
     end
 
     # Add to /etc/hosts: 33.33.33.25 dev.playdoh.org
-    config.vm.network :hostonly, "33.33.33.25"
+    config.vm.network :hostonly, "33.33.33.24"
 
     config.vm.provision :puppet do |puppet|
         puppet.manifests_path = "puppet/manifests"

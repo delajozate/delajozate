@@ -35,7 +35,7 @@ addLoadEvent(updateHighlight);
 <div class="zasedanja-list">
 <ul>
 {% for z in seja.magnetogrami %}
-    <li><a href="{% url delajozate.magnetogrami.views.seja seja.delovno_telo seja.mandat seja.slug z.datum %}">{{ z.datum }}</a></li>
+    <li><a href="{% url delajozate.magnetogrami.views.seja seja.delovno_telo seja.mandat seja.slug z.datum %}">{{ z.datum }}</a> <a href="{{ z.url }}">(ogled izvirnega besedila na strani Državnega zbora)</a></li>
 {% endfor %}
 </ul>
 </div>
