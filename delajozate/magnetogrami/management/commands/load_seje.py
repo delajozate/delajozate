@@ -23,7 +23,7 @@ class Command(BaseCommand):
 		
 		
 		last_id = get_last_id()
-		url_template = 'http://localhost:8000/drzava/dzrs/seja/?valid_end=9999-12-31&id__gte=%d'
+		url_template = 'http://33.33.33.25:8012/drzava/dzrs/seja/?valid_end=9999-12-31&id__gte=%d'
 		
 		req = urllib.urlopen(url_template % last_id)
 		data = req.read()
@@ -35,7 +35,7 @@ class Command(BaseCommand):
 		j = simplejson.loads(data)
 		ids = []
 		for item in j:
-			print item['id'], item['naslov']
+			print [item['id'], item['naslov']]
 			seja_import_one(item['json'])
 			ids.append(item['id'])
 		

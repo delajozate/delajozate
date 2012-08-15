@@ -1,3 +1,4 @@
+# coding: utf-8
 import json
 import os
 import re
@@ -7,7 +8,7 @@ from django.db import models, transaction, connection
 from delajozate.dz.models import Oseba
 
 class Seja(models.Model):
-	naslov = models.CharField(max_length=255)
+	naslov = models.CharField(max_length=2000)
 	seja = models.CharField(max_length=255) # TODO: check validity
 	slug = models.CharField(max_length=100, db_index=True)
 	datum_zacetka = models.DateField(null=True)
@@ -101,6 +102,17 @@ def _parse_time(time_string):
 def seja_import_one(jsonData):
 	govorci_fn = os.path.join(os.path.dirname(__file__), 'govorci.json')
 	
+	if jsonData['url'] in (
+		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=IV&seja=24%20025.%20Redna&uid=E55FDF1837852856C1257275002A20A7', # mogoce skupna seja, ni magnetograma afaik
+		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=III&seja=18%20015.%20Redna&uid=BF0C1A3AD3AD5771C1256C7C0035B39E', # id 2377, skupna seja
+		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=III&seja=20%20013.%20Redna&uid=0485BF77D1915B2AC1256AEA0027F57D', # id 2534, no idea
+		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=III&seja=21%20005.%20Redna&uid=99B38E120CF33D2EC1256A3800491AA2', # id 2586, no idea
+		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=III&seja=18%20002.%20Redna&uid=86E49857111C3DB0C1256A06004F1763', # id 2608, broek zap. st.
+		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=II&seja=34%20004.%20Redna&uid=566456472D99E269C125687A002D0AEB', # id 2645, broek zap. st.
+		):
+		# glupe skupne seje :/
+		return
+	
 	with transaction.commit_on_success():
 		mandat = int(jsonData.get('mandat'))
 		naslov_seje = jsonData.get('naslov')
@@ -114,9 +126,12 @@ def seja_import_one(jsonData):
 		except Seja.DoesNotExist:
 			seja = Seja(mandat=mandat, naslov=naslov_seje, delovno_telo=dt)
 		
-		match = re.search('((\d+)\.\s*(redna|izredna|nujna))', naslov_seje, re.I)
+		match = re.search(u'((\d+)\s?\.\s*(redna|izredna|nujna|srečanje|zasedanje))', naslov_seje, re.I | re.U)
 		if not match:
+			print [naslov_seje]
+			print jsonData.get('url')
 			print naslov_seje
+			
 		seja_slug = ('%s-%s' % match.groups()[1:]).lower()
 		seja.slug = seja_slug
 		try:
@@ -162,6 +177,7 @@ def seja_import_one(jsonData):
 
 				zasedanje.tip = jsonPovezava.get('tip')
 				zasedanje.naslov = jsonPovezava.get('naslov')
+				zasedanje.url = jsonPovezava.get('url')
 				zasedanje.save()
 
 				cursor = connection.cursor()
