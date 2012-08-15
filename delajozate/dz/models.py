@@ -18,6 +18,7 @@ def null_date(date):
 	
 
 class Organizacija(models.Model):
+	"This model has no fields. It's referenced from other models."
 	def type(self, value=False):
 		for p in ["stranka", "skupina", "drzavnizbor", "odbor"]:
 			try:
