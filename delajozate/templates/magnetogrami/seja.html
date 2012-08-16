@@ -48,9 +48,10 @@ addLoadEvent(updateHighlight);
 {% if zapis.govorec_oseba %}
     {{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}
     <br />{% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
-    {% for stranka in zapis.govorec_oseba.stranke %}
-    <em>{{stranka.stranka.ime}}</em>
-    {% endfor %}
+    {% comment %}
+    {# XXX FIXME clan stranke se ni preverjen oz. pravilno v bazi, zato se veza ne prikaze #}
+    <em>{{ zapis.clan_stranke.stranka }}</em>
+    {% endcomment %}
 {% else %}
     {{ zapis.govorec|default_if_none:"&nbsp;" }}
 {% endif %}
