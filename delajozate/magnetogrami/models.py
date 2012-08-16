@@ -1,4 +1,3 @@
-# coding: utf-8
 import json
 import os
 import re
@@ -6,6 +5,12 @@ import dateutil.parser
 
 from django.db import models, transaction, connection
 from delajozate.dz.models import Oseba
+
+GLASOVI = (
+	('0', 'Proti'),
+	('1', 'Za'),
+	('2', 'Ni glasoval'),
+)
 
 class Seja(models.Model):
 	naslov = models.CharField(max_length=2000)
@@ -32,6 +37,7 @@ class SejaInfo(models.Model):
 	naslov = models.CharField(max_length=255)
 	datum = models.DateField()
 
+
 class Zasedanje(models.Model):
 	seja = models.ForeignKey(Seja)
 	naslov = models.CharField(max_length=255, null=True)
@@ -46,6 +52,25 @@ class Zasedanje(models.Model):
 
 	def __unicode__(self):
 		return self.naslov + "(" + str(self.datum) + ")"
+
+
+class Glasovanje(models.Model):
+	seja = models.ForeignKey(Seja, null=True)
+	ura = models.TimeField(null=True, blank=True)
+	url = models.URLField(null=True)
+	datum = models.DateField(null=True, blank=True)
+	dokument = models.CharField(max_length=2000, null=True)
+	naslov = models.CharField(max_length=2000, null=True)
+	faza_postopka = models.CharField(max_length=255, null=True)
+
+
+class Glas(models.Model):
+	glasovanje = models.ForeignKey(Glasovanje, null=True)
+	oseba = models.ForeignKey(Oseba, null=True)
+	kvorum = models.BooleanField(default=False)
+	glasoval = models.CharField(max_length=255, choices=GLASOVI)
+	poslanec = models.CharField(max_length=128)
+
 
 class Zapis(models.Model):
 	zasedanje = models.ForeignKey(Zasedanje)
@@ -62,11 +87,18 @@ class Zapis(models.Model):
 			return self.govorec + ":" + self.odstavki[0:30]
 		else:
 			return self.odstavki[0:30]
+	
+	def clan_stranke():
+		def fget(self):
+			d = self.zasedanje.datum
+			return self.govorec_oseba.stranke.filter(od__lte=d, do__gt=d)
+		return (fget,)
+	clan_stranke = property(*clan_stranke())
 
 class GovorecMap(models.Model):
 	govorec = models.CharField(max_length=200, unique=True, db_index=True)
 	oseba = models.ForeignKey(Oseba)
-	
+
 	class Meta:
 		verbose_name = u'Preslikava govorec-oseba'
 		verbose_name_plural = u'Preslikave govorec-oseba'
@@ -103,16 +135,15 @@ def seja_import_one(jsonData):
 	govorci_fn = os.path.join(os.path.dirname(__file__), 'govorci.json')
 	
 	if jsonData['url'] in (
-		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=IV&seja=24%20025.%20Redna&uid=E55FDF1837852856C1257275002A20A7', # mogoce skupna seja, ni magnetograma afaik
-		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=III&seja=18%20015.%20Redna&uid=BF0C1A3AD3AD5771C1256C7C0035B39E', # id 2377, skupna seja
-		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=III&seja=20%20013.%20Redna&uid=0485BF77D1915B2AC1256AEA0027F57D', # id 2534, no idea
-		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=III&seja=21%20005.%20Redna&uid=99B38E120CF33D2EC1256A3800491AA2', # id 2586, no idea
-		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=III&seja=18%20002.%20Redna&uid=86E49857111C3DB0C1256A06004F1763', # id 2608, broek zap. st.
-		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=II&seja=34%20004.%20Redna&uid=566456472D99E269C125687A002D0AEB', # id 2645, broek zap. st.
+		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=IV&seja=24%20025.%20Redna&uid=E55FDF1837852856C1257275002A20A7',
+		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=III&seja=18%20015.%20Redna&uid=BF0C1A3AD3AD5771C1256C7C0035B39E',
+		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=III&seja=20%20013.%20Redna&uid=0485BF77D1915B2AC1256AEA0027F57D',
+		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=III&seja=21%20005.%20Redna&uid=99B38E120CF33D2EC1256A3800491AA2',
+		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=III&seja=18%20002.%20Redna&uid=86E49857111C3DB0C1256A06004F1763',
+		'http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/izbranaSejaDt?mandat=II&seja=34%20004.%20Redna&uid=566456472D99E269C125687A002D0AEB',
 		):
 		# glupe skupne seje :/
 		return
-	
 	with transaction.commit_on_success():
 		mandat = int(jsonData.get('mandat'))
 		naslov_seje = jsonData.get('naslov')
@@ -126,7 +157,7 @@ def seja_import_one(jsonData):
 		except Seja.DoesNotExist:
 			seja = Seja(mandat=mandat, naslov=naslov_seje, delovno_telo=dt)
 		
-		match = re.search(u'((\d+)\s?\.\s*(redna|izredna|nujna|srečanje|zasedanje))', naslov_seje, re.I | re.U)
+		match = re.search(u'((\d+)\s?\.\s*(redna|izredna|nujna|zasedanje))', naslov_seje, re.I)
 		if not match:
 			print [naslov_seje]
 			print jsonData.get('url')
@@ -151,6 +182,85 @@ def seja_import_one(jsonData):
 			sejaInfo.datum = dateutil.parser.parse(jsonSeja.get('datum'), dayfirst=True)
 			sejaInfo.save()
 
+		#Glasovanja
+		for jsonGlasovanje in jsonData.get('glasovanja'):
+
+			url = jsonGlasovanje.get("url")
+			ura = jsonGlasovanje.get("ura")
+			if not ura:
+				ura = None
+			if jsonGlasovanje.get('datum'):
+				datum = dateutil.parser.parse(jsonGlasovanje.get('datum'), dayfirst=True)
+			else:
+				datum = None
+			dokument = jsonGlasovanje.get("dokument")
+			naslov = jsonGlasovanje.get("naslov")
+			faza_postopka = jsonGlasovanje.get("faza postopka")
+
+			try:
+				glasovanje = Glasovanje.objects.get(
+					seja=seja,
+					ura=ura,
+					url=url,
+					datum=datum,
+					dokument=dokument,
+					naslov = naslov,
+					faza_postopka=faza_postopka,
+				)
+			except Glasovanje.DoesNotExist:
+				print datum
+				print dokument
+				print naslov
+				glasovanje = Glasovanje()
+				glasovanje.seja = seja
+				glasovanje.ura = ura
+				glasovanje.url = url
+				glasovanje.datum = datum
+				glasovanje.dokument = dokument
+				glasovanje.naslov = naslov
+				glasovanje.faza_postopka = faza_postopka
+				glasovanje.save()
+
+			for glas in jsonGlasovanje.get("glasovi"):
+				poslanec = glas.get("poslanec")# .encode("utf-8")
+				#print [poslanec]
+				try:
+					g = GovorecMap.objects.get(govorec=poslanec)
+					oseba = g.oseba
+				except GovorecMap.DoesNotExist:
+					sp = poslanec.split()
+					if len(sp) == 2:
+						poslanec_r = u'%s %s' % (sp[1], sp[0])
+						try:
+							g = GovorecMap.objects.get(govorec=poslanec_r)
+							oseba = g.oseba
+						except GovorecMap.DoesNotExist:
+							print '---- FAIL', [poslanec], poslanec
+							oseba = None
+					else:
+						print '---- FAIL', [poslanec], poslanec
+						oseba = None
+				
+				
+				try:
+					g = Glas.objects.get(
+						glasovanje = glasovanje,
+						poslanec = poslanec
+					)
+					if oseba is not None and g.oseba != oseba:
+						# ob najdeni osebi shrani
+						g.oseba = oseba
+						g.save()
+				except Glas.DoesNotExist:
+					g = Glas(
+						glasovanje=glasovanje,
+						kvorum=glas.get('kvorum'),
+						glasoval=glas.get('glasoval'),
+						oseba=oseba,
+						poslanec=poslanec
+						)
+					g.save()
+			
 		# Zasedanja
 		for jsonZasedanje in jsonData.get('zasedanja'):
 			for jsonPovezava in jsonZasedanje.get('povezave'):
@@ -167,7 +277,7 @@ def seja_import_one(jsonData):
 						seja=seja,
 						)
 					created = True
-				
+
 				if not created:
 					continue
 				if jsonPovezava.get('zacetek'):
@@ -197,7 +307,7 @@ def seja_import_one(jsonData):
 							oseba_id = GovorecMap.objects.get(govorec=govorec).oseba.id
 						except GovorecMap.DoesNotExist:
 							oseba_id = None
-						
+
 						for ods in jsonZapis.get('odstavki'):
 							values.extend([
 								count,
@@ -224,4 +334,3 @@ def seja_import_one(jsonData):
 			except:
 				pass
 		seja.save()
-	
