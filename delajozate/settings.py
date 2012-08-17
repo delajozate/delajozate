@@ -130,6 +130,7 @@ INSTALLED_APPS = (
 	'django.contrib.staticfiles',
 	# Uncomment the next line to enable the admin:
 	'django.contrib.admin',
+	'haystack',
 	# Uncomment the next line to enable admin documentation:
 #	'django.contrib.admindocs',
 	'south',
@@ -165,8 +166,11 @@ LOGGING = {
 FIXTURE_DIRS = (
 	here('fixtures/'),
 )
+HAYSTACK_SITECONF = 'delajozate.search.search_setup'
+HAYSTACK_SEARCH_ENGINE = 'solr'
+HAYSTACK_SOLR_URL = 'http://127.0.0.1:8983/solr'
 
-SOLR_URL = "http://localhost:8983/solr/"
+#SOLR_URL = "http://localhost:8983/solr/"
 
 try:
 	from localsettings import *

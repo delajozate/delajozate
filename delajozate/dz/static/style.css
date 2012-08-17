@@ -76,3 +76,8 @@ footer a { color: #fff; }
 h1, h2, h3 { padding: 5px; }
 .zasedanja-list { padding-left: 20px; }
 
+/* iskanje */
+fieldset { border: none; }
+label.forma { width: 8em; height: 2em; display: block; float: left; }
+fieldset div { clear: both; }
+.highlight { font-weight: 500; }

@@ -81,6 +81,8 @@ class Zapis(models.Model):
 
 	class Meta:
 		ordering = ('seq',)
+		verbose_name = 'Zapis magnetograma'
+		verbose_name_plural = 'Zapisi magnetogramov'
 
 	def __unicode__(self):
 		if self.govorec:
@@ -94,6 +96,12 @@ class Zapis(models.Model):
 			return self.govorec_oseba.stranke.filter(od__lte=d, do__gt=d)
 		return (fget,)
 	clan_stranke = property(*clan_stranke())
+	
+	def datum():
+		def fget(self):
+			return self.zasedanje.datum
+		return (fget,)
+	datum = property(*datum())
 
 class GovorecMap(models.Model):
 	govorec = models.CharField(max_length=200, unique=True, db_index=True)

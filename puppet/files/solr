@@ -1,0 +1,52 @@
+#!/bin/sh
+# Start/stop the solr daemon.
+#
+### BEGIN INIT INFO
+# Provides:          solr
+# Required-Start:    $remote_fs $syslog $time
+# Required-Stop:     $remote_fs $syslog $time
+# Should-Start:      $network $named
+# Should-Stop:       $network $named
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Delajo zate solr indexing service
+# Description:       Delajo zate solr indexing service
+### END INIT INFO
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+DESC="solr daemon"
+NAME=solr
+DAEMON=/home/vagrant/solr/cores/dzsolr.sh
+PIDFILE=/var/run/solr.pid
+SCRIPTNAME=/etc/init.d/"$NAME"
+
+test -f $DAEMON || exit 0
+
+. /lib/lsb/init-functions
+
+case "$1" in
+start)	log_daemon_msg "Starting Delajo zate indexing" "solr"
+	su - vagrant -c "(cd /home/vagrant/solr/cores && screen -d -m -S solr -s /bin/bash ./dzsolr.sh $PIDFILE)"
+        log_end_msg $?
+	;;
+stop)	log_daemon_msg "Stopping Delajo zate indexing" "solr"
+        killproc -p $PIDFILE $DAEMON
+        RETVAL=$?
+        [ $RETVAL -eq 0 ] && [ -e "$PIDFILE" ] && rm -f $PIDFILE
+        log_end_msg $RETVAL
+        ;;
+restart) log_daemon_msg "Restarting Delajo zate indexing" "solr" 
+        $0 stop
+        $0 start
+        ;;
+reload|force-reload) log_daemon_msg "Not doing anything" "solr"
+        log_end_msg 0
+        ;;
+status)
+        status_of_proc -p $PIDFILE $DAEMON $NAME && exit 0 || exit $?
+        ;;
+*)	log_action_msg "Usage: /etc/init.d/solr {start|stop|status|restart|reload|force-reload}"
+        exit 2
+        ;;
+esac
+exit 0

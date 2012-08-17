@@ -6,3 +6,4 @@ sunburnt
 pysolr
 python-dateutil==1.5
 django-debug-toolbar
+django-haystack

@@ -21,6 +21,7 @@ class dev {
         python: before => Class[nginx];
         nginx: before => Class[custom];
         memcached: ;
+        solr: ;
         custom: ;
     }
 }
