@@ -17,7 +17,8 @@ class solr {
     exec { "symlink-lemmatizer":
         command => "ln -s /home/vagrant/solr/cores/libLemmatizer-`${hostarch}`.so /home/vagrant/solr/cores/libLemmatizer.so",
         cwd => "/home/vagrant/solr/cores",
-        require => Exec["extract-solr"];
+        require => Exec["extract-solr"],
+        creates => "/home/vagrant/solr/cores/libLemmatizer.so";
     }
 
     package { "openjdk-6-jre-headless":
