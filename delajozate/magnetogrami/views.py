@@ -5,17 +5,22 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.db.models import Q
 
-from delajozate.magnetogrami.models import Seja, SejaInfo, Zasedanje, Zapis
+from delajozate.dz.models import DelovnoTelo
+from delajozate.magnetogrami.models import Seja, Zasedanje, Zapis
 
 def tipi_sej(request):
     context = {
-        'object_list': [], # XXX FIXME
+        'object_list': DelovnoTelo.objects.exclude(dz_id=None).order_by('-od', '-do'), # XXX FIXME
         }
     
     return render_to_response('magnetogrami/tipi_sej.html', RequestContext(request, context))
 
-def seja_list(request):
-    zasedanja = Zasedanje.objects.filter(Q(tip='magnetogram') | Q(tip='dobesednizapis')).select_related('seja').order_by('-datum')
+def seja_list(request, mdt, mandat=None):
+    
+    zasedanja = Zasedanje.objects.filter(seja__delovno_telo=mdt).filter(Q(tip='magnetogram') |Q(tip='dobesednizapis')).select_related('seja').order_by('-datum')
+    
+    if mandat is not None:
+        zasedanja.filter(seja__mandat=mandat)
 
     context = {
         'object_list': zasedanja,

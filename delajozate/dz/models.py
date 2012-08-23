@@ -20,7 +20,7 @@ def null_date(date):
 class Organizacija(models.Model):
 	"This model has no fields. It's referenced from other models."
 	def type(self, value=False):
-		for p in ["stranka", "skupina", "drzavnizbor", "odbor"]:
+		for p in ["stranka", "skupina", "drzavnizbor", "delovnotelo"]:
 			try:
 				v = getattr(self, p)
 				return v if value else p
@@ -162,8 +162,9 @@ class DrzavniZbor(models.Model):
 		verbose_name_plural = u'Državni Zbori'
 	
 
-class Odbor(models.Model):
-	ime = models.CharField(max_length=500)
+class DelovnoTelo(models.Model):
+	ime = models.CharField(max_length=2000)
+	dz_id = models.CharField(max_length=10)
 	mandat = models.ForeignKey(Mandat)
 	url = models.URLField(blank=True, default="")
 	od = models.DateField()
@@ -175,10 +176,11 @@ class Odbor(models.Model):
 	def save(self, *args, **kwargs):
 		if not self.organizacija_id:
 			self.organizacija = Organizacija.objects.create()
-		super(Odbor, self).save(*args, **kwargs)
+		super(DelovnoTelo, self).save(*args, **kwargs)
 	
 	class Meta:
-		verbose_name_plural = u'Odbori'
+		verbose_name = u'Delovno telo'
+		verbose_name_plural = u'Delovna telesa'
 	
 	def __unicode__(self):
 		return '%s (%s)' % (self.ime, self.mandat)
@@ -216,7 +218,7 @@ class ClanStranke(models.Model):
 	
 
 class ClanOdbora(models.Model):
-	odbor = models.ForeignKey(Odbor)
+	odbor = models.ForeignKey(DelovnoTelo)
 	poslanec = models.ForeignKey(Funkcija)
 	mandat = models.ForeignKey(Mandat)
 	funkcija = models.CharField(max_length=32)

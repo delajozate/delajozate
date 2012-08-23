@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.contenttypes import generic
 from delajozate.dz.models import Oseba, Stranka, Skupina, ClanStranke, \
-	Mandat, Funkcija, Odbor, ClanOdbora, ImeStranke, Pozicija
+	Mandat, Funkcija, DelovnoTelo, ClanOdbora, ImeStranke, Pozicija
 
 class FunkcijaAdmin(admin.ModelAdmin):
 	search_fields = ('oseba__ime', 'oseba__priimek', 'funkcija')
@@ -17,8 +17,8 @@ class PozicijaInline(generic.GenericStackedInline):
 class StrankaAdmin(admin.ModelAdmin):
 	list_display = ('ime', 'okrajsava', 'twitter', 'od', 'do', 'podatki_preverjeni')
 
-class OdborAdmin(admin.ModelAdmin):
-	list_display = ('ime', 'mandat', 'od', 'do', 'podatki_preverjeni')
+class DelovnoTeloAdmin(admin.ModelAdmin):
+	list_display = ('ime', 'mandat', 'dz_id', 'od', 'do', 'podatki_preverjeni')
 
 class ClanOdboraAdmin(admin.ModelAdmin):
 	list_display = ('poslanec', 'odbor', 'od', 'do', 'podatki_preverjeni')
@@ -53,7 +53,7 @@ admin.site.register(Skupina)
 admin.site.register(ClanStranke, ClanStrankeAdmin)
 admin.site.register(Mandat, MandatAdmin)
 admin.site.register(Funkcija, FunkcijaAdmin)
-admin.site.register(Odbor, OdborAdmin)
+admin.site.register(DelovnoTelo, DelovnoTeloAdmin)
 admin.site.register(ClanOdbora, ClanOdboraAdmin)
 admin.site.register(ImeStranke, ImeStrankeAdmin)
 admin.site.register(Pozicija, PozicijaAdmin)

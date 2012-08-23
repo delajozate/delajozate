@@ -37,6 +37,17 @@
 {% endif %}
 </p>
 
+<h3>Delovno telo</h3>
+<p>
+{% if delovnotelo_errors %}
+	{% for e in delovnotelo_errors %}
+	{{ e }}<br />
+	{% endfor %}
+{% else %}
+	OK
+{% endif %}
+</p>
+
 <h3>Seja</h3>
 <p>
 {% if seja_errors %}

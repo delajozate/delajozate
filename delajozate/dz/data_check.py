@@ -5,7 +5,7 @@ from django.template import RequestContext
 from django.db import connection
 from django.contrib.auth.decorators import login_required
 
-from dz.models import Mandat, Oseba, Funkcija
+from dz.models import Mandat, Oseba, Funkcija, DelovnoTelo
 from magnetogrami.models import Glasovanje, Glas, Zapis
 
 def _check_mandat():
@@ -59,6 +59,24 @@ def _check_funkcija():
     
     
     return funkcija_errors
+
+def _check_delovnotelo():
+    delovnotelo_errors = []
+    
+    sql = """SELECT * from (SELECT DT.id, DT.mandat_id, M.do, DT.od, DT.do, M.do = DT.do AND M.od = DT.od as date_check from dz_delovnotelo DT join dz_mandat M on (M.id=DT.mandat_id)) as Q where Q.date_check = false;"""
+    cur = connection.cursor()
+    cur.execute(sql, [])
+    data = cur.fetchall()
+    if data:
+        ids = [i[0] for i in data]
+        delovnotelo_errors.append(u'Delovna telesa nimajo pravilnih datumov glede na mandat: %s' % (ids))
+
+    brez_idjev = DelovnoTelo.objects.filter(dz_id='')
+    if brez_idjev.count() > 0:
+        ids = [i.id for i in brez_idjev]
+        delovnotelo_errors.append(u'Delovna telesa nimajo DZ_ID polj: %s' % (ids,))
+
+    return delovnotelo_errors
 
 def _check_seja():
     seja_errors = []
@@ -143,6 +161,7 @@ def data_check(request):
     mandat_errors = _check_mandat()
     oseba_errors = _check_oseba()
     funkcija_errors = _check_funkcija()
+    delovnotelo_errors = _check_delovnotelo()
     seja_errors = _check_seja()
     zasedanje_errors = _check_zasedanje()
     zapis_errors = _check_zapis()
@@ -153,6 +172,7 @@ def data_check(request):
         'mandat_errors': mandat_errors,
         'oseba_errors': oseba_errors,
         'funkcija_errors': funkcija_errors,
+        'delovnotelo_errors': delovnotelo_errors,
         'seja_errors': seja_errors,
         'zasedanje_errors': zasedanje_errors,
         'zapis_errors': zapis_errors,
