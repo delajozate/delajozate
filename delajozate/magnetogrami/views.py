@@ -7,6 +7,13 @@ from django.db.models import Q
 
 from delajozate.magnetogrami.models import Seja, SejaInfo, Zasedanje, Zapis
 
+def tipi_sej(request):
+    context = {
+        'object_list': [], # XXX FIXME
+        }
+    
+    return render_to_response('magnetogrami/tipi_sej.html', RequestContext(request, context))
+
 def seja_list(request):
     zasedanja = Zasedanje.objects.filter(Q(tip='magnetogram') | Q(tip='dobesednizapis')).select_related('seja').order_by('-datum')
 

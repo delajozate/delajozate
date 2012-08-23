@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Data check</title>
+</head>
+<body>
+
+<h3>Mandat</h3>
+<p>
+{% if mandat_errors %}
+	{% for e in mandat_errors %}
+	{{ e }}<br />
+	{% endfor %}
+{% else %}
+	OK
+{% endif %}
+</p>
+
+<h3>Oseba</h3>
+<p>
+{% if oseba_errors %}
+	{% for e in oseba_errors %}
+	{{ e }}<br />
+	{% endfor %}
+{% else %}
+	OK
+{% endif %}
+</p>
+
+<h3>Funkcija</h3>
+<p>
+{% if funkcija_errors %}
+	{% for e in funkcija_errors %}
+	{{ e }}<br />
+	{% endfor %}
+{% else %}
+	OK
+{% endif %}
+</p>
+
+<h3>Seja</h3>
+<p>
+{% if seja_errors %}
+	{% for e in seja_errors %}
+	{{ e }}<br />
+	{% endfor %}
+{% else %}
+	OK
+{% endif %}
+</p>
+
+<h3>Zasedanje</h3>
+<p>
+{% if zasedanje_errors %}
+	{% for e in zasedanje_errors %}
+	{{ e }}<br />
+	{% endfor %}
+{% else %}
+	OK
+{% endif %}
+</p>
+
+<h3>Zapis</h3>
+<p>
+{% if zapis_errors %}
+	{% for e in zapis_errors %}
+	{{ e }}<br />
+	{% endfor %}
+{% else %}
+	OK
+{% endif %}
+</p>
+
+<h3>Glasovanje</h3>
+<p>
+{% if glasovanje_errors %}
+	{% for e in glasovanje_errors %}
+	{{ e }}<br />
+	{% endfor %}
+{% else %}
+	OK
+{% endif %}
+</p>
+
+<h3>Glas</h3>
+<p>
+{% if glas_errors %}
+	{% for e in glas_errors %}
+	{{ e }}<br />
+	{% endfor %}
+{% else %}
+	OK
+{% endif %}
+</p>
+
+
+
+</body>
+</html>

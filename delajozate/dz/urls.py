@@ -5,7 +5,11 @@ from delajozate.dz.models import Oseba
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('dz.views',
+urlpatterns = patterns('dz.data_check',
+	url(r'^datacheck/$', 'data_check', name='data_check'),
+)
+
+urlpatterns += patterns('dz.views',
 	#url(r'^stranke/', 'stranke_list', name='stranke_list'),
 	url(r'^stranke/(?P<stranka_id>\d+)/', 'stranka', name='stranka'),
 	url(r'^stranke/json/', 'stranke_json', name='stranke_json'),
