@@ -8,11 +8,8 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         
-        # Adding index on 'GovorecMap', fields ['govorec']
-        db.create_index('magnetogrami_govorecmap', ['govorec'])
-
-        # Adding unique constraint on 'GovorecMap', fields ['govorec']
-        db.create_unique('magnetogrami_govorecmap', ['govorec'])
+        # Deleting model 'SejaInfo'
+        db.delete_table('magnetogrami_sejainfo')
 
         # Changing field 'Seja.naslov'
         db.alter_column('magnetogrami_seja', 'naslov', self.gf('django.db.models.fields.CharField')(max_length=2000))
@@ -20,11 +17,15 @@ class Migration(SchemaMigration):
 
     def backwards(self, orm):
         
-        # Removing unique constraint on 'GovorecMap', fields ['govorec']
-        db.delete_unique('magnetogrami_govorecmap', ['govorec'])
-
-        # Removing index on 'GovorecMap', fields ['govorec']
-        db.delete_index('magnetogrami_govorecmap', ['govorec'])
+        # Adding model 'SejaInfo'
+        db.create_table('magnetogrami_sejainfo', (
+            ('url', self.gf('django.db.models.fields.URLField')(max_length=200)),
+            ('datum', self.gf('django.db.models.fields.DateField')()),
+            ('naslov', self.gf('django.db.models.fields.CharField')(max_length=255)),
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('seja', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['magnetogrami.Seja'])),
+        ))
+        db.send_create_signal('magnetogrami', ['SejaInfo'])
 
         # Changing field 'Seja.naslov'
         db.alter_column('magnetogrami_seja', 'naslov', self.gf('django.db.models.fields.CharField')(max_length=255))
@@ -48,6 +49,26 @@ class Migration(SchemaMigration):
             'twitter': ('django.db.models.fields.CharField', [], {'max_length': '32', 'blank': 'True'}),
             'vir_slike': ('django.db.models.fields.CharField', [], {'max_length': '200', 'blank': 'True'})
         },
+        'magnetogrami.glas': {
+            'Meta': {'object_name': 'Glas'},
+            'glasoval': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'glasovanje': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['magnetogrami.Glasovanje']", 'null': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'kvorum': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
+            'oseba': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['dz.Oseba']", 'null': 'True'}),
+            'poslanec': ('django.db.models.fields.CharField', [], {'max_length': '128'})
+        },
+        'magnetogrami.glasovanje': {
+            'Meta': {'object_name': 'Glasovanje'},
+            'datum': ('django.db.models.fields.DateField', [], {'null': 'True', 'blank': 'True'}),
+            'dokument': ('django.db.models.fields.CharField', [], {'max_length': '2000', 'null': 'True'}),
+            'faza_postopka': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'naslov': ('django.db.models.fields.CharField', [], {'max_length': '2000', 'null': 'True'}),
+            'seja': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['magnetogrami.Seja']", 'null': 'True'}),
+            'ura': ('django.db.models.fields.TimeField', [], {'null': 'True', 'blank': 'True'}),
+            'url': ('django.db.models.fields.URLField', [], {'max_length': '200', 'null': 'True'})
+        },
         'magnetogrami.govorecmap': {
             'Meta': {'object_name': 'GovorecMap'},
             'govorec': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '200', 'db_index': 'True'}),
@@ -64,14 +85,6 @@ class Migration(SchemaMigration):
             'seja': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'slug': ('django.db.models.fields.CharField', [], {'max_length': '100', 'db_index': 'True'}),
             'status': ('django.db.models.fields.CharField', [], {'max_length': '128'}),
-            'url': ('django.db.models.fields.URLField', [], {'max_length': '200'})
-        },
-        'magnetogrami.sejainfo': {
-            'Meta': {'object_name': 'SejaInfo'},
-            'datum': ('django.db.models.fields.DateField', [], {}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'naslov': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
-            'seja': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['magnetogrami.Seja']"}),
             'url': ('django.db.models.fields.URLField', [], {'max_length': '200'})
         },
         'magnetogrami.zapis': {

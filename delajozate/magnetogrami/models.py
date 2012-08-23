@@ -31,13 +31,6 @@ class Seja(models.Model):
 	def magnetogrami(self):
 		return Zasedanje.objects.filter(seja=self).filter(models.Q(tip='magnetogram') | models.Q(tip='dobesednizapis')).select_related('seja')
 
-class SejaInfo(models.Model):
-	seja = models.ForeignKey(Seja)
-	url = models.URLField()
-	naslov = models.CharField(max_length=255)
-	datum = models.DateField()
-
-
 class Zasedanje(models.Model):
 	seja = models.ForeignKey(Seja)
 	naslov = models.CharField(max_length=255, null=True)
