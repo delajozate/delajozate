@@ -8,7 +8,7 @@
         <fieldset>
             <div>
                 {{ form.q.errors }}
-                <label class="forma" for="id_q">Iskanje:</label> <input type="text" size="80" name="q" value="{{ form.q.value }}" id="id_q" />
+                <label class="forma" for="id_q">Iskanje:</label> <input type="text" size="80" name="q" value="{{ form.q.value|default_if_none:"" }}" id="id_q" />
             </div>
             <div>
                 {{ form.models.errors }}
@@ -28,12 +28,12 @@
                     <blockquote>
                         {% highlight result.text with query max_length 400 css_class "highlight" %}
                     </blockquote>
-                    {% if result.author_t %}
-                        <a href="/poslanci/FIXME/{{ result.author_t}}" rel="author">{{ result.author_t }}</a>
+                    {% if result.govorec_t %}
+                        <a href="/osebe/{{ result.govorec_slug_t }}/" rel="author">{{ result.govorec_t }}</a>
                     {% else %}
                         ?
                     {% endif %}
-                    , {{ result.pub_date_dt|date:"DATE_FORMAT" }}
+                    , <a href="{{ result.permalink_t }}#p{{ result.seq_i }}">{{ result.ime_seje_t }}</a>, {{ result.pub_date_dt|date:"DATE_FORMAT" }}
                 </p>
             {% empty %}
                 <p>Za to iskanje ni rezultatov.</p>

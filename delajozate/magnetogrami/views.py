@@ -17,13 +17,17 @@ def tipi_sej(request):
 
 def seja_list(request, mdt, mandat=None):
     
+    delovno_telo = None
     zasedanja = Zasedanje.objects.filter(seja__delovno_telo=mdt).filter(Q(tip='magnetogram') |Q(tip='dobesednizapis')).select_related('seja').order_by('-datum')
     
     if mandat is not None:
         zasedanja.filter(seja__mandat=mandat)
+        if mdt != 'dz': # XXX FIXME add DelovnoTelo?
+            delovno_telo = DelovnoTelo.objects.get(dz_id=mdt, mandat__st=mandat)
 
     context = {
         'object_list': zasedanja,
+        'delovno_telo': delovno_telo,
         }
     return render_to_response('magnetogrami/seja_list.html', RequestContext(request, context))
 
@@ -69,7 +73,7 @@ def citat(request, mdt, mandat, slug, datum_zasedanja, odstavek):
     seja, zasedanje, zapisi = _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja)
 
     odstavek = int(odstavek)
-    zapisi = zapisi.filter(seq__gte=max(0, odstavek - 2), seq__lte=odstavek + 2)
+    zapisi = [zapisi.get(seq=odstavek)]
 
     context = {
         'seja': seja,

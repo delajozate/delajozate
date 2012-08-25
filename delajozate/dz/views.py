@@ -2,37 +2,22 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from dz.utils import get_poslanci_by_mandat, get_poslanci, get_poslanec_stats, null_date, get_mandat_current
 
-from models import Funkcija, ClanStranke, Stranka
+from dz.models import Funkcija, ClanStranke, Stranka, Oseba, Mandat
+from magnetogrami.models import Zasedanje
 
 import datetime
 import json
 import random
+from delajozate.temporal import END_OF_TIME
 
 POSLANCI_RANDOM_LIMIT = 4
 
 def home(request):
-	ctx = {}
+	context = {
+		'zasedanja': Zasedanje.objects.all().order_by('-datum')[:5]
+	}
 	
-	mandat = get_mandat_current()
-	poslanci = get_poslanci_by_mandat(mandat)
-	
-	# Izberi 4 nakljucne poslance
-	st_poslancev = len(poslanci)
-	picked = set([])
-	if st_poslancev:
-		while len(picked) < POSLANCI_RANDOM_LIMIT:
-			picked.add(poslanci[random.randint(0, st_poslancev - 1)])
-	
-	# Za vsakega kandidata poberi...
-	izbrani = []
-	today = datetime.date.today()
-	for k in picked:
-		kandidat = get_poslanec_stats(k, mandat, today)
-		izbrani.append(kandidat)
-	
-	ctx['izbrani'] = izbrani
-	
-	return render(request, 'home.html', ctx)
+	return render(request, 'home.html', context)
 	
 
 def stranka(request, stranka_id):
@@ -42,11 +27,21 @@ def stranka(request, stranka_id):
 	return render(request, 'poslanci.html', ctx)
 	
 
-def poslanci_list(request):
-	ctx = {
-		'poslanci': get_poslanci(),
+def poslanci_list(request, mandat):
+	if mandat == 'danes':
+		poslanci = Funkcija.objects.filter(funkcija='poslanec', do=END_OF_TIME).order_by('oseba__priimek')
+		mandat_str = 'today'
+	else:
+		mandat = mandat[:-len('-mandat')]
+		m = Mandat.objects.get(st=mandat)
+		mandat_str = '%s-mandat' % m.st,
+		poslanci = Funkcija.objects.filter(funkcija='poslanec', od__gte=m.od, do__lte=m.do).order_by('oseba__priimek')
+	context = {
+		'poslanci': poslanci,
+		'mandat': mandat_str,
+		'mandati': Mandat.objects.all(),
 	}
-	return render(request, 'poslanci.html', ctx)
+	return render(request, 'poslanci.html', context)
 	
 
 def d_squared(tracks, nodepairs):
@@ -138,10 +133,16 @@ def stranke_json(request):
 	
 
 def poslanec(request, slug):
-	# Poberi poslanca s tem slugom
-
-	# Poberi podatke zanj
-
-	# Izpisi template 
-	pass
+	context = {
+		'oseba': Oseba.objects.get(slug=slug),
+		}
 	
+	return render(request, "poslanec.html", context)
+
+def robots(request):
+	
+	robots_txt = """User-agent: *
+Disallow: /iskanje/
+"""
+	
+	return HttpResponse(robots_txt, mimetype="text/plain")

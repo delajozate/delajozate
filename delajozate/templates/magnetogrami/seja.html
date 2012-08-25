@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% load dz_extras %}
 
 {% block head %}
 <script type="text/javascript">
@@ -35,7 +35,7 @@ addLoadEvent(updateHighlight);
 <div class="zasedanja-list">
 <ul>
 {% for z in seja.magnetogrami %}
-    <li><a href="{% url delajozate.magnetogrami.views.seja seja.delovno_telo seja.mandat seja.slug z.datum %}">{{ z.datum }}</a> <a href="{{ z.url }}">(ogled izvirnega besedila na strani Državnega zbora)</a></li>
+    <li><a href="{% url delajozate.magnetogrami.views.seja seja.mandat seja.delovno_telo seja.slug z.datum %}">{{ z.datum }}</a> <a href="{{ z.url }}">(ogled izvirnega besedila na strani Državnega zbora)</a></li>
 {% endfor %}
 </ul>
 </div>
@@ -46,12 +46,14 @@ addLoadEvent(updateHighlight);
 <div class="break"></div>
 <div class="govorec">
 {% if zapis.govorec_oseba %}
-    {{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}
-    <br />{% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
-    {% comment %}
-    {# XXX FIXME clan stranke se ni preverjen oz. pravilno v bazi, zato se veza ne prikaze #}
-    <em>{{ zapis.clan_stranke.stranka }}</em>
-    {% endcomment %}
+    <a rel="author" href="/osebe/{{ zapis.govorec_oseba.slug }}/">{{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}</a>
+    <br />
+    {% with zapis.govorec_oseba.clanstvo|datum_filter:zapis.zasedanje.datum as clanstvo %}
+    <em>{{ clanstvo.0.stranka|default_if_none:"?" }}</em>
+    {% endwith %}
+    <br />
+    {% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
+    
 {% else %}
     {{ zapis.govorec|default_if_none:"&nbsp;" }}
 {% endif %}
@@ -60,7 +62,7 @@ addLoadEvent(updateHighlight);
 
 <div class="receno" id="p{{ zapis.seq }}">
     <div class="zapis-link" >
-        <a href="{% url magnetogrami_citat mdt="dz" mandat=seja.mandat slug=seja.slug datum_zasedanja=zapis.zasedanje.datum odstavek=zapis.seq %}">#</a>
+        <a href="{% url magnetogrami_citat mdt=seja.delovno_telo mandat=seja.mandat slug=seja.slug datum_zasedanja=zapis.zasedanje.datum odstavek=zapis.seq %}">#</a>
     </div>
     {{ zapis.odstavki|linebreaksbr }}
 </div>

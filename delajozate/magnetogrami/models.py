@@ -4,7 +4,7 @@ import re
 import dateutil.parser
 
 from django.db import models, transaction, connection
-from delajozate.dz.models import Oseba
+from delajozate.dz.models import Oseba, Mandat, DelovnoTelo
 
 GLASOVI = (
 	('0', 'Proti'),
@@ -46,6 +46,10 @@ class Zasedanje(models.Model):
 	def __unicode__(self):
 		return self.naslov + "(" + str(self.datum) + ")"
 
+	@models.permalink
+	def get_absolute_url(self):
+	    return ('delajozate.magnetogrami.views.seja', None, {'mdt': self.seja.delovno_telo, 'mandat': self.seja.mandat, 'slug': self.seja.slug, 'datum_zasedanja': self.datum} )
+
 
 class Glasovanje(models.Model):
 	seja = models.ForeignKey(Seja, null=True)
@@ -83,6 +87,22 @@ class Zapis(models.Model):
 		else:
 			return self.odstavki[0:30]
 	
+	@models.permalink
+	def get_absolute_url(self):
+	    return ('delajozate.magnetogrami.views.seja', None, {
+			'mdt': self.zasedanje.seja.delovno_telo, 
+			'mandat': self.zasedanje.seja.mandat, 
+			'slug': self.zasedanje.seja.slug, 
+			'datum_zasedanja': self.zasedanje.datum
+		})
+	
+	def permalink():
+		def fget(self):
+			return self.get_absolute_url()
+		return (fget,)
+	permalink = property(*permalink())
+
+	
 	def clan_stranke():
 		def fget(self):
 			d = self.zasedanje.datum
@@ -95,6 +115,22 @@ class Zapis(models.Model):
 			return self.zasedanje.datum
 		return (fget,)
 	datum = property(*datum())
+	
+	def govorec_slug():
+		def fget(self):
+			if self.govorec_oseba:
+				return self.govorec_oseba.slug
+		return (fget,)
+	govorec_slug = property(*govorec_slug())
+	
+	def ime_seje():
+		def fget(self):
+			return self.zasedanje.seja.naslov
+		return (fget,)
+	ime_seje = property(*ime_seje())
+	
+	
+	
 
 class GovorecMap(models.Model):
 	govorec = models.CharField(max_length=200, unique=True, db_index=True)
@@ -160,9 +196,11 @@ def seja_import_one(jsonData):
 		
 		match = re.search(u'((\d+)\s?\.\s*(redna|izredna|nujna|zasedanje))', naslov_seje, re.I)
 		if not match:
-			print [naslov_seje]
-			print jsonData.get('url')
-			print naslov_seje
+			match = re.search('seja=(KPDZ|\d+)%200*(\d+)\.?%20(redna|izredna|nujna|zasedanje)', jsonData.get('url'), re.I)
+			if not match:
+				print [naslov_seje]
+				print jsonData.get('url')
+				print naslov_seje
 			
 		seja_slug = ('%s-%s' % match.groups()[1:]).lower()
 		seja.slug = seja_slug
@@ -173,15 +211,6 @@ def seja_import_one(jsonData):
 		seja.seja = match.group(1)
 		seja.url = jsonData.get('url')
 		seja.save()
-
-		# jsonSeja objects
-		for jsonSeja in jsonData.get('seja_info', []):
-			sejaInfo = SejaInfo()
-			sejaInfo.seja = seja
-			sejaInfo.url = jsonSeja.get('url')
-			sejaInfo.naslov = jsonSeja.get('naslov')
-			sejaInfo.datum = dateutil.parser.parse(jsonSeja.get('datum'), dayfirst=True)
-			sejaInfo.save()
 
 		#Glasovanja
 		for jsonGlasovanje in jsonData.get('glasovanja'):

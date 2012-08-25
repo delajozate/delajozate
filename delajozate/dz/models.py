@@ -1,8 +1,12 @@
 # coding: utf-8
+import datetime
+
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.template.defaultfilters import slugify
 from delajozate.temporal import END_OF_TIME
+from django.db import connection
+
 
 FUNKCIJE = (
 	('poslanec', 'Poslanec/ka'),
@@ -68,6 +72,22 @@ class Oseba(models.Model):
 			return self.vir_slike
 		return 'http://www.flickr.com/photos/marypaulose/295058238/sizes/z/in/photostream/'
 	
+	def st_mandatov(self):
+		return self.funkcija_set.all().count()
+	
+	def poslanskih_dni(self):
+		cur = connection.cursor()
+		sql = '''SELECT SUM(CASE WHEN F.do > NOW()::date THEN NOW()::date ELSE F.do END - F.od) AS st_dni FROM dz_funkcija F WHERE oseba_id = %s'''
+		params = [self.pk]
+		cur.execute(sql, params)
+		return cur.fetchall()[0][0]
+	
+	def clanstvo(self, day=None):
+		return self.clanstranke_set.all().order_by('-do')
+	
+	def funkcije(self):
+		return self.funkcija_set.all().order_by('-do')
+	
 	def save(self, *args, **kwargs):
 		if not self.slug:
 			self.slug = slug = slugify("%s %s" % (self.ime, self.priimek))
@@ -103,6 +123,7 @@ class Stranka(models.Model):
 	
 	class Meta:
 		verbose_name_plural = u'Stranke'
+		ordering = ('-do', 'ime')
 	
 	def __unicode__(self):
 		return u'%s (%s)%s' % (self.ime, self.okrajsava, self.do != END_OF_TIME and u'\u271d' or u'')

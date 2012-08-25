@@ -2,33 +2,67 @@
 {% load dz_extras %}
 
 {% block content %}
-			<section class="random">
-				<ol class="cards">{% for poslanec in poslanci %}
-					{% include "sub_poslanec_card.html" %}{% endfor %}
-					<!--li>
-						<div class="card">
-							<h2>{{ poslanec.oseba.ime_priimek }}</h2>{% with poslanec.stranka as stranka %}
-							<div class="stranka"><a class="strankatag {{ stranka.okrajsava|lower }}"
-								style="background-color: #{{ stranka.barva }};"
-								href="/stranke/{{ stranka.id }}/"
-								title="{{ stranka.ime }}">{{ stranka.okrajsava }}
-							</a></div>{% endwith %}
-							<div class="img">
-								<img src="{{ poslanec.oseba.slika_or_default }}" alt="" title="{{ poslanec.oseba.ime_priimek }}, vir:{{ poslanec.oseba.slika_vir }}" />
-							</div>
-							<dl>
-								<dt>Obdobje</dt>
-								<dd>{{ poslanec.oseba.dni }} dni</dd>
-								<dt>Mandatov</dt>
-								<dd>{{ poslanec.oseba.st_mandatov }}</dd>
-							</dl>
-							<ol class="badges">
-								<li class="odbori"><span>?</span> odbor{{ poslanec.oseba.st_odborov|slopluralize:",a,i,ov" }}</li>
-								<li class="komisije"><span>?</span> komisij{{ poslanec.oseba.komisije|slopluralize:"a,i,e," }}</li>
-								<li class="delegacije"><span>?</span> deleg.</li>
-								<li class="skupine"><span>?</span> skupin{{ poslanec.oseba.skupine|slopluralize:"a,i,e," }}</li>
-							</ol>
-						</div>
-					</li-->
-				</ol>
-			</section>{% endblock %}
+
+<ul>
+{% for m in mandati %}
+<li><a href="/poslanci/{{ m.st }}-mandat/">{{ m.st }}. mandat Državnega zbora</a></li>
+{% endfor %}
+<li><a href="/poslanci/danes/">Danes</a></li>
+</ul>
+
+{% for funkcija in poslanci %}
+{% with funkcija.oseba as oseba %}
+<section class="random">
+{% ifchanged oseba.pk %}
+<ol class="cards">
+	{% with oseba.clanstvo|datum_filter:mandat as clanstvo %}
+	<li>
+		<div class="card">
+			{% if clanstvo %}
+			<div class="stranka"><a class="strankatag {{ clanstvo.0.stranka.okrajsava|lower }}"
+				href="#"
+				title="{{ clanstvo.0.stranka.ime }}">{{ clanstvo.0.stranka.okrajsava }}
+			</a></div>
+			{% endif %}
+			<div class="img">
+				<img class="image" src="{{ oseba.slika_or_default }}" alt="" title="{{ oseba }}, vir:{{ oseba.slika_vir }}" />
+			</div>
+			<dl>
+				<dt>Poslanskih dni</dt>
+				<dd>{{ oseba.poslanskih_dni|default_if_none:"0" }}</dd>
+				<dt>Mandatov</dt>
+				<dd>{{ oseba.st_mandatov }}</dd>
+				<!--dt>Strank</dt>
+				<dd>{{ oseba.stranke|length }}</dd-->
+			</dl>{% if not short %}
+			{% comment %}
+			<ol class="badges">
+				<li class="odbori"><span>{{ oseba.odbori|default_if_none:"?" }}</span> odbor{{ oseba.odbori|slopluralize:",a,i,ov" }}</li>
+				<li class="komisije"><span>?</span> komisij{{ oseba.komisije|slopluralize:"a,i,e," }}</li>
+				<li class="delegacije"><span>?</span> deleg.</li>
+				<li class="skupine"><span>?</span> skupin{{ oseba.skupine|slopluralize:"a,i,e," }}</li>
+			</ol>
+			{% endcomment %}
+			{% endif %}
+		</div>
+	</li>
+	<li>
+		<h1>
+		<span class="fn">
+			<span class="given-name">{{ oseba.ime }}</span>
+			<span class="family-name">{{ oseba.priimek }}</span>
+		</span>
+		</h1>
+		{% for f in oseba.funkcije|datum_filter:mandat %}
+		<span class="role">{{ f.get_funkcija_display }}</span>
+		{% endfor %}
+		<br />
+		<span class="org">{{ clanstvo.0.stranka|default_if_none:"Nepovezan poslanec/ka" }}</span>
+	{% endwith %}
+	</li>
+</ol>
+{% endifchanged %}
+</section>
+{% endwith %}
+{% endfor %}
+{% endblock %}

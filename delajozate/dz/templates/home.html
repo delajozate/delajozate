@@ -3,8 +3,10 @@
 
 {% block content %}
 			<section class="random">
-				<ol class="cards">{% for poslanec in izbrani %}
-					{% include "sub_poslanec_card.html" %}
+				<h2>Zadnja zasedanja sej</h2>
+				<ul>
+				{% for z in zasedanja %}
+					<li><a href="{{ z.get_absolute_url }}">{{ z.seja.naslov }}</a></li>
 				{% endfor %}
-				</ol>
+				</ul>
 			</section>{% endblock %}

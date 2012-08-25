@@ -17,8 +17,7 @@
 <div class="break"></div>
 <div class="govorec">
 {% if zapis.govorec_oseba %}
-    {{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}
-    <br />{% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
+    <a rel="author" href="/poslanci/{{ zapis.govorec_oseba.slug }}/">{{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}</a>    <br />{% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
 {% else %}
     {{ zapis.govorec|default_if_none:"&nbsp;"|title }}
 {% endif %}

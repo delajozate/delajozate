@@ -1,5 +1,4 @@
 {% load dz_extras %}
-					<li>
 						<div class="card">
 							<h2> {{ poslanec.oseba }}</h2>{% if poslanec.stranka %}{% with poslanec.stranka as stranka %}
 							<div class="stranka"><a class="strankatag {{ stranka.okrajsava|lower }}"
@@ -24,4 +23,3 @@
 								<li class="skupine"><span>?</span> skupin{{ poslanec.skupine|slopluralize:"a,i,e," }}</li>
 							</ol>{% endif %}
 						</div>
-					</li>

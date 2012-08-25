@@ -18,40 +18,40 @@ h1, h2, h3 { padding: 5px; }
 
 {% block content %}
 
-<h1>{{ delovno_telo.ime }}</h1>
-
-{% if object_list %}
-{% for z in object_list %}
-{% ifchanged z.seja.mandat %}
-<h1>{{ z.seja.mandat }}. mandat</h1>
+{% for dt in object_list %}
+{% ifchanged dt.mandat %}
+<h1>{{ dt.mandat }}. mandat</h1>
 {% endifchanged %}
 
-{% ifchanged z.seja %}
+{% ifchanged dt.mandat %}
 {% if not forloop.first %}
 </ul>
 </div>
 {% endif %}
-<h2>{{ z.seja.naslov }}</h2>
-<h3>Zasedanja</h3>
+<h2></h2>
+<h3>Delovna telesa</h3>
 <div class="zasedanja-list">
 <ul>
 {% endifchanged %}
 
 <li>
-	<a href="{% url delajozate.magnetogrami.views.seja z.seja.mandat z.seja.delovno_telo z.seja.slug z.datum %}">
-		{{ z.datum }}
-	</a>
+	{% if dt.dz_id %}
+	<a href="{% url delajozate.magnetogrami.views.seja_list dt.mandat dt.dz_id %}">
+	{% endif %}
+	{{ dt.ime }}
+	{% if dt.dz_id %}</a>
+	{% endif %}
 </li>
 
-{% ifchanged z.seja %}{% if forloop.last %}
+{% ifchanged dt.mandat %}{% if forloop.last %}
 </ul>
 </div>
 {% endif %}{% endifchanged %}
 
 
+
 {% endfor %}
-{% else %}
-<p>To delovno telo nima (javno objavljenih) magnetogramov.</p>
-{% endif %}
+
+<br />
 
 {% endblock %}

@@ -1,5 +1,6 @@
 # coding: utf-8
 import datetime
+import time
 from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext
 from django.db import connection
@@ -157,6 +158,7 @@ def _check_glas():
 
 @login_required
 def data_check(request):
+    t1 = time.time()
     
     mandat_errors = _check_mandat()
     oseba_errors = _check_oseba()
@@ -168,6 +170,9 @@ def data_check(request):
     glasovanje_errors = _check_glasovanje()
     glas_errors = _check_glas()
     
+    t2 = time.time()
+    
+    
     context = {
         'mandat_errors': mandat_errors,
         'oseba_errors': oseba_errors,
@@ -178,5 +183,6 @@ def data_check(request):
         'zapis_errors': zapis_errors,
         'glasovanje_errors': glasovanje_errors,
         'glas_errors': glas_errors,
+        'took': t2-t1,
     }
     return render(request, "data_check.html", context)
