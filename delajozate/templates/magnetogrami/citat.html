@@ -22,8 +22,9 @@
     {% with zapis.govorec_oseba.clanstvo|datum_filter:zapis.zasedanje.datum as clanstvo %}
     <em class="org">{{ clanstvo.0.stranka|default_if_none:"?" }}</em><br />
     {% endwith %}
+    <em class="role" style="display:none;">Poslanec/ka</em>
     {% if zapis.govorec_oseba.slika %}
-        <img class="govorec-slika image" src="{{ zapis.govorec_oseba.slika }}" />
+        <img class="govorec-slika photo" src="{{ zapis.govorec_oseba.slika }}" />
     {% endif %}
     </span>
 
