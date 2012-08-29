@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% load dz_extras %}
 
 {% block head %}
 <style type="text/css">
@@ -17,7 +17,16 @@
 <div class="break"></div>
 <div class="govorec">
 {% if zapis.govorec_oseba %}
-    <a rel="author" href="/osebe/{{ zapis.govorec_oseba.slug }}/">{{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}</a>    <br />{% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
+    <span class="vcard">
+    <a rel="author" href="/osebe/{{ zapis.govorec_oseba.slug }}/"><span class="fn"><span class="given-name">{{ zapis.govorec_oseba.ime }}</span> <span class="family-name">{{ zapis.govorec_oseba.priimek }}</span></span></a><br />
+    {% with zapis.govorec_oseba.clanstvo|datum_filter:zapis.zasedanje.datum as clanstvo %}
+    <em class="org">{{ clanstvo.0.stranka|default_if_none:"?" }}</em><br />
+    {% endwith %}
+    {% if zapis.govorec_oseba.slika %}
+        <img class="govorec-slika image" src="{{ zapis.govorec_oseba.slika }}" />
+    {% endif %}
+    </span>
+
 {% else %}
     {{ zapis.govorec|default_if_none:"&nbsp;"|title }}
 {% endif %}
