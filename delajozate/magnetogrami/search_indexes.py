@@ -17,6 +17,7 @@ class ZapisIndex(indexes.SearchIndex):
 		return Zapis
 	
 	def index_queryset(self):
-		return self.get_model().objects.all().order_by('zasedanje__datum', 'seq')
+		return self.get_model().objects.all().order_by('zasedanje__datum', 'seq').select_related('zasedanje', 'govorec_oseba', 'zasedanje__seja')
+	
 
 site.register(Zapis, ZapisIndex)
