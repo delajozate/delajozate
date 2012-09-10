@@ -34,7 +34,7 @@ def seja_list(request, mdt, mandat=None):
 
 def _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja=None):
     #assert mdt == 'dz' # for now
-    seja = Seja.objects.get(mandat=mandat, slug=slug, delovno_telo=mdt)
+    seja = get_object_or_404(Seja, mandat=mandat, slug=slug, delovno_telo=mdt)
 
     if datum_zasedanja is None:
         try:
