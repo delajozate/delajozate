@@ -3,6 +3,8 @@ import re
 from django.views.decorators.cache import cache_page
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.db.models import Q
 
 from delajozate.dz.models import DelovnoTelo
@@ -59,6 +61,10 @@ def _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja=None):
 
 
 def seja(request, mdt, mandat, slug, datum_zasedanja=None):
+    if slug.startswith('0'):
+        newslug = re.sub('^0*', '', slug)
+        return HttpResponseRedirect(reverse('delajozate.magnetogrami.views.seja', args=(mandat, mdt, newslug, datum_zasedanja)))
+
     seja, zasedanje, zapisi = _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja)
 
     context = {
@@ -70,6 +76,10 @@ def seja(request, mdt, mandat, slug, datum_zasedanja=None):
 
 
 def citat(request, mdt, mandat, slug, datum_zasedanja, odstavek):
+    if slug.startswith('0'):
+        newslug = re.sub('^0*', '', slug)
+        return HttpResponseRedirect(reverse('delajozate.magnetogrami.views.citat', args=(mandat, mdt, newslug, datum_zasedanja, odstavek)))
+
     seja, zasedanje, zapisi = _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja)
 
     odstavek = int(odstavek)
