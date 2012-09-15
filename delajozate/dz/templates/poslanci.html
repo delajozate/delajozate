@@ -24,9 +24,11 @@
 				title="{{ clanstvo.0.stranka.ime }}">{{ clanstvo.0.stranka.okrajsava }}
 			</a></div>
 			{% endif %}
-			<div class="img">
-				<img class="image" src="{{ oseba.slika_or_default }}" alt="" title="{{ oseba }}, vir:{{ oseba.slika_vir }}" />
-			</div>
+			<a href="/osebe/{{ oseba.slug }}/">
+				<div class="img">
+					<img class="image" src="{{ oseba.slika_or_default }}" alt="" title="{{ oseba }}, vir:{{ oseba.slika_vir }}" />
+				</div>
+			</a>
 			<dl>
 				<dt>Poslanskih dni</dt>
 				<dd>{{ oseba.poslanskih_dni|default_if_none:"0" }}</dd>
@@ -48,10 +50,12 @@
 	</li>
 	<li>
 		<h1>
-		<span class="fn">
-			<span class="given-name">{{ oseba.ime }}</span>
-			<span class="family-name">{{ oseba.priimek }}</span>
-		</span>
+		<a href="/osebe/{{ oseba.slug }}/">
+			<span class="fn">
+				<span class="given-name">{{ oseba.ime }}</span>
+				<span class="family-name">{{ oseba.priimek }}</span>
+			</span>
+		</a>
 		</h1>
 		{% for f in oseba.funkcije|datum_filter:mandat %}
 		<span class="role">{{ f.get_funkcija_display }}</span>
