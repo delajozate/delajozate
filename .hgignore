@@ -13,3 +13,8 @@ lib
 bin
 .idea
 puppet/manifests/build
+parts/
+*egg-info/
+develop-eggs
+.mr.developer.cfg
+.installed.cfg
