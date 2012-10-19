@@ -102,6 +102,13 @@ def _check_zasedanje():
         ids = [i[0] for i in data]
         zasedanje_errors.append(u'Zasedanja datumsko niso znotraj pravega mandata: %s' % (ids,))
     
+    sql = """SELECT count(*) from magnetogrami_zasedanje where url is null;"""
+    cur.execute(sql, [])
+    data = cur.fetchall()
+    if data:
+        zasedanje_errors.append(u'Število zasedanj, ki nimajo URLja na stran DZ: %s' % (data,))
+    
+    
     return zasedanje_errors
 
 def _check_zapis():
