@@ -20,7 +20,8 @@ fi
 
 
 python manage.py dumpdata --indent=4 --exclude south --exclude auth --exclude sessions --exclude admin --exclude contenttypes \
+	--exclude magnetogrami.Glasovanje \
+	--exclude magnetogrami.Glas \
 	--exclude magnetogrami.Seja \
-	--exclude magnetogrami.SejaInfo \
 	--exclude magnetogrami.Zasedanje \
 	--exclude magnetogrami.Zapis > fixtures/delajozate.json
