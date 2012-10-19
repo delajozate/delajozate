@@ -134,9 +134,9 @@ INSTALLED_APPS = (
 	# Uncomment the next line to enable admin documentation:
 #	'django.contrib.admindocs',
 	'south',
-	'dz',
-	'magnetogrami',
-	'search',
+	'delajozate.dz',
+	'delajozate.magnetogrami',
+	'delajozate.search',
 	'debug_toolbar'
 )
 

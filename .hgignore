@@ -18,3 +18,4 @@ parts/
 develop-eggs
 .mr.developer.cfg
 .installed.cfg
+eggs/
