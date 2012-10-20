@@ -52,7 +52,7 @@ class Oseba(models.Model):
 	spletna_stran = models.URLField(blank=True)
 	twitter = models.CharField(max_length=32, blank=True)
 	facebook = models.URLField(blank=True)
-	google_plus = models.BigIntegerField(null=True)
+	google_plus = models.CharField(max_length=32, blank=True)
 	podatki_preverjeni = models.BooleanField(default=False)
 	opombe = models.TextField(blank=True)
 	

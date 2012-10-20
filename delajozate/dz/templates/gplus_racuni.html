@@ -5,7 +5,8 @@
 </head>
 <body>
 
-<form>
+<form action="{% url gplus_submit %}" method="POST">
+{% csrf_token %}
 {% for oseba, osebe_plus in osebe.items %}
 	<table>
 	<tr>
@@ -16,7 +17,7 @@
 	    <td>
             {% for oseba_plus in osebe_plus %}
 				<div>
-				    <input type="radio" name="{{ oseba.id }}" value="{{ oseba_plus.id }}">
+				    <input type="radio" name="{{ oseba.id }}" value="{{ oseba_plus.plus_id }}">
                     <img src="{{ oseba_plus.plus_img }}?sz=130" > {{ oseba_plus.plus_name }}
 				</div>
             {% endfor %}
@@ -29,6 +30,7 @@
 	</table>
 	<br/><hr><br/>
 {% endfor %}
+<input type="submit" value="Poslji">
 </form>
 </body>
 </html>

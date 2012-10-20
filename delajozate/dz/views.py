@@ -146,7 +146,22 @@ Disallow: /iskanje/
 	return HttpResponse(robots_txt, mimetype="text/plain")
 
 def gplus_racuni(request):
-    from delajozate.dz.social import get_all_gplus_account_candidates
-    osebe = get_all_gplus_account_candidates()
-    ctx = { "osebe" : osebe }
-    return render(request, "gplus_racuni.html", ctx)
+	from delajozate.dz.social import get_all_gplus_account_candidates
+	osebe = get_all_gplus_account_candidates()
+	ctx = { "osebe" : osebe }
+	return render(request, "gplus_racuni.html", ctx)
+
+def gplus_racuni_submit(request):
+	for oseba_id, plus_id in request.POST.items():
+		if not oseba_id.isdigit() or not plus_id.isdigit():
+			continue
+
+		if int(plus_id) == 0:
+			continue
+
+		oseba = Oseba.objects.get(pk=int(oseba_id))
+		oseba.google_plus = plus_id
+		oseba.save()
+		print oseba.ime, oseba.priimek, "-", plus_id
+
+	return HttpResponse("OK")
