@@ -33,3 +33,6 @@ class DZTest(TestCase):
         resp = self.c.get('/iskanje/')
         self.assertEqual(resp.status_code, 200)
         
+        resp = self.c.get('/robots.txt')
+        self.assertEqual(resp.status_code, 200)
+        

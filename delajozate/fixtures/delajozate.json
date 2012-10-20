@@ -1115,7 +1115,7 @@
             "vir_slike": "www.vlada.si", 
             "slug": "janez-drnovsek", 
             "priimek": "Drnov\u0161ek", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/janez-drnovsek.jpg"
         }
     }, 
     {
@@ -2597,7 +2597,7 @@
             "vir_slike": "www.europarl.europa.eu", 
             "slug": "zoran-thaler", 
             "priimek": "Thaler", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/zoran-thaler.jpg"
         }
     }, 
     {
@@ -2787,7 +2787,7 @@
             "vir_slike": "www.vrhnika.si", 
             "slug": "richard-beuermann", 
             "priimek": "Beuermann", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/richard-beuermann.jpg"
         }
     }, 
     {
@@ -2882,7 +2882,7 @@
             "vir_slike": "www.obcina-ig.si", 
             "slug": "janez-cimperman", 
             "priimek": "Cimperman", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/janez-cimperman.jpg"
         }
     }, 
     {
@@ -3832,7 +3832,7 @@
             "vir_slike": "www.socialnidemokrati.si/", 
             "slug": "boris-sovic", 
             "priimek": "Sovi\u010d", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/boris-sovic.jpg"
         }
     }, 
     {
@@ -4174,7 +4174,7 @@
             "vir_slike": "http://www.flickr.com/photos/eppofficial/4408565710/", 
             "slug": "mihael-brejc", 
             "priimek": "Brejc", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/mihael-brejc.jpg"
         }
     }, 
     {
@@ -5884,7 +5884,7 @@
             "vir_slike": "", 
             "slug": "milan-zver", 
             "priimek": "Zver", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/milan-zver.jpg"
         }
     }, 
     {
@@ -6891,7 +6891,7 @@
             "vir_slike": "", 
             "slug": "aleksander-ravnikar", 
             "priimek": "Ravnikar", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/aleksander-ravnikar.jpg"
         }
     }, 
     {
@@ -7613,7 +7613,7 @@
             "vir_slike": "", 
             "slug": "ivo-vajgl", 
             "priimek": "Vajgl", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/ivo-vajgl.jpg"
         }
     }, 
     {
@@ -7917,7 +7917,7 @@
             "vir_slike": "", 
             "slug": "katarina-kresal", 
             "priimek": "Kresal", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/katarina-kresal.jpg"
         }
     }, 
     {
@@ -10501,7 +10501,7 @@
             "vir_slike": "", 
             "slug": "mojca-prelesnik", 
             "priimek": "Prelesnik", 
-            "slika": ""
+            "slika": "/static/img/poslanci/small/mojca-prelesnik.jpg"
         }
     }, 
     {
