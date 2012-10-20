@@ -17,6 +17,7 @@ requires = [
     'pysolr',
     'python-dateutil',
     'django-debug-toolbar',
+    'requests'
 ]
 
 if sys.platform != "darwin":

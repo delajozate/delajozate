@@ -13,7 +13,7 @@ urlpatterns += patterns('dz.views',
 	#url(r'^stranke/', 'stranke_list', name='stranke_list'),
 	url(r'^stranke/(?P<stranka_id>\d+)/', 'stranka', name='stranka'),
 	url(r'^stranke/json/', 'stranke_json', name='stranke_json'),
-	
+	url(r'^osebe/gplus/$', 'gplus_racuni'),
 	url(r'^osebe/(?P<slug>[A-Za-z0-9-_]+)/$', 'poslanec', name='poslanec'),
 	url(r'^poslanci/(?P<mandat>danes|\d+-mandat)/$', 'poslanci_list'),
 	url(r'^robots.txt$', 'robots'),

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<form>
+{% for oseba, osebe_plus in osebe.items %}
+	<table>
+	<tr>
+	    <td>
+            <b>{{ oseba.ime }} {{ oseba.priimek }}</b> <br />
+			<img src="{{ oseba.slika_or_default }}" >
+		</td>
+	    <td>
+            {% for oseba_plus in osebe_plus %}
+				<div>
+				    <input type="radio" name="{{ oseba.id }}" value="{{ oseba_plus.id }}">
+                    <img src="{{ oseba_plus.plus_img }}?sz=130" > {{ oseba_plus.plus_name }}
+				</div>
+            {% endfor %}
+		        <div>
+					<input type="radio" name="{{ oseba.id }}" value="0" checked> None
+		        </div>
+			<br>
+		</td>
+	</tr>
+	</table>
+	<br/><hr><br/>
+{% endfor %}
+</form>
+</body>
+</html>

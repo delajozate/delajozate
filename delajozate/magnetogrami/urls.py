@@ -1,6 +1,4 @@
-from django.conf.urls.defaults import patterns, include, url
-
-from delajozate.magnetogrami.models import Seja, Zasedanje
+from django.conf.urls.defaults import patterns, url
 
 urlpatterns = patterns('',
 	url(r'^$', 'delajozate.magnetogrami.views.tipi_sej',),

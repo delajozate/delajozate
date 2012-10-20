@@ -1,13 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from dz.utils import get_poslanci_by_mandat, get_poslanci, get_poslanec_stats, null_date, get_mandat_current
+from dz.utils import get_poslanci, get_mandat_current
 
-from dz.models import Funkcija, ClanStranke, Stranka, Oseba, Mandat
+from dz.models import Funkcija, Stranka, Oseba, Mandat
 from magnetogrami.models import Zasedanje
 
-import datetime
 import json
-import random
 from delajozate.temporal import END_OF_TIME
 
 POSLANCI_RANDOM_LIMIT = 4
@@ -146,3 +144,9 @@ Disallow: /iskanje/
 """
 	
 	return HttpResponse(robots_txt, mimetype="text/plain")
+
+def gplus_racuni(request):
+    from delajozate.dz.social import get_all_gplus_account_candidates
+    osebe = get_all_gplus_account_candidates()
+    ctx = { "osebe" : osebe }
+    return render(request, "gplus_racuni.html", ctx)
