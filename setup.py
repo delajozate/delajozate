@@ -17,6 +17,7 @@ requires = [
     'pysolr',
     'python-dateutil',
     'django-debug-toolbar',
+    'django-haystack',
 ]
 
 if sys.platform != "darwin":
