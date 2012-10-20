@@ -18,7 +18,8 @@
             {% for oseba_plus in osebe_plus %}
 				<div>
 				    <input type="radio" name="{{ oseba.id }}" value="{{ oseba_plus.plus_id }}">
-                    <img src="{{ oseba_plus.plus_img }}?sz=130" > {{ oseba_plus.plus_name }}
+                    <img src="{{ oseba_plus.plus_img }}?sz=130" > {{ oseba_plus.plus_name }};
+				    ID: <a href="https://profiles.google.com/{{ oseba_plus.plus_id}}"> {{ oseba_plus.plus_id }} </a>
 				</div>
             {% endfor %}
 		        <div>

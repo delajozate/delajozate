@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
 from dz.utils import get_poslanci, get_mandat_current
@@ -145,12 +146,14 @@ Disallow: /iskanje/
 	
 	return HttpResponse(robots_txt, mimetype="text/plain")
 
+@login_required
 def gplus_racuni(request):
 	from delajozate.dz.social import get_all_gplus_account_candidates
 	osebe = get_all_gplus_account_candidates()
 	ctx = { "osebe" : osebe }
 	return render(request, "gplus_racuni.html", ctx)
 
+@login_required
 def gplus_racuni_submit(request):
 	for oseba_id, plus_id in request.POST.items():
 		if not oseba_id.isdigit() or not plus_id.isdigit():
