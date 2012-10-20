@@ -62,7 +62,11 @@
 		{% endfor %}
 		<br />
 		<span class="org">{{ clanstvo.0.stranka|default_if_none:"Nepovezan poslanec/ka" }}</span>
-	{% endwith %}
+		{% if oseba.google_plus %}
+			<br /><br />
+			<a href="https://profiles.google.com/{{ oseba.google_plus }}" rel="me">Google Plus</a>
+		{% endif %}
+		{% endwith %}
 	</li>
 </ol>
 {% endifchanged %}
