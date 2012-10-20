@@ -53,9 +53,10 @@ class Zasedanje(models.Model):
 
 class Glasovanje(models.Model):
 	seja = models.ForeignKey(Seja, null=True)
+	# TODO: join ura and datum
 	ura = models.TimeField(null=True, blank=True)
-	url = models.URLField(null=True)
 	datum = models.DateField(null=True, blank=True)
+	url = models.URLField(null=True)
 	dokument = models.CharField(max_length=2000, null=True)
 	naslov = models.CharField(max_length=2000, null=True)
 	faza_postopka = models.CharField(max_length=255, null=True)

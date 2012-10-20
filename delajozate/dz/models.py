@@ -96,7 +96,14 @@ class Oseba(models.Model):
 				self.slug = "%s-%d" % (slug, count)
 				count += 1
 		super(Oseba, self).save(*args, **kwargs)
-	
+
+
+class Tweet(models.Model):
+	tweet_id = models.BigIntegerField(blank=False, null=True)
+	text = models.CharField(max_length=250)
+	oseba = models.ForeignKey(Oseba)
+	created_at = models.DateTimeField()
+
 
 class Stranka(models.Model):
 	# kako modelirat kontinuiteto stranke, kadar se preimenuje?

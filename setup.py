@@ -18,6 +18,7 @@ requires = [
     'python-dateutil',
     'django-debug-toolbar',
     'django-haystack',
+    'python-twitter',
 ]
 
 if sys.platform != "darwin":

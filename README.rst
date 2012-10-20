@@ -31,3 +31,8 @@ Quick install guide::
 
   # run
   bin/django runserver
+
+TODO
+====
+
+Setup crontab for bin/django twitter_sync every 30min

@@ -1,31 +1,36 @@
-from django.http import HttpResponse
-from django.shortcuts import render
-from dz.utils import get_poslanci_by_mandat, get_poslanci, get_poslanec_stats, null_date, get_mandat_current
-
-from dz.models import Funkcija, ClanStranke, Stranka, Oseba, Mandat
-from magnetogrami.models import Zasedanje
-
+import collections
 import datetime
 import json
 import random
+
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.utils.html import escape
+
+from dz.utils import get_poslanci_by_mandat, get_poslanci, get_poslanec_stats, null_date, get_mandat_current
+from dz.models import Funkcija, ClanStranke, Stranka, Oseba, Mandat, Tweet
+from magnetogrami.models import Zasedanje, Glas
+
 from temporal import END_OF_TIME
 
+
 POSLANCI_RANDOM_LIMIT = 4
+
 
 def home(request):
 	context = {
 		'zasedanja': Zasedanje.objects.all().order_by('-datum')[:5]
 	}
-	
+
 	return render(request, 'home.html', context)
-	
+
 
 def stranka(request, stranka_id):
 	ctx = {
 		'poslanci': get_poslanci({'stranka__pk': stranka_id}, mandat=get_mandat_current()),
 	}
 	return render(request, 'poslanci.html', ctx)
-	
+
 
 def poslanci_list(request, mandat):
 	if mandat == 'danes':
@@ -42,28 +47,28 @@ def poslanci_list(request, mandat):
 		'mandati': Mandat.objects.all(),
 	}
 	return render(request, 'poslanci.html', context)
-	
+
 
 def d_squared(tracks, nodepairs):
 	#for a,b in nodepairs:
 		#(tracks[a]-tracks[b])**2
-		
-	return list(sorted([((tracks[a]-tracks[b])**2,a,b) for a,b in nodepairs], reverse=True))
-	
+
+	return list(sorted([((tracks[a] - tracks[b]) ** 2, a, b) for a, b in nodepairs], reverse=True))
+
 
 def stranke_json(request):
 	"json strank za d3.js vizualizacijo"
-	
+
 	stiki = {}
-	
+
 	for s in Stranka.objects.all().order_by('od'):
 		start_sticisce = stiki.setdefault(s.od, {})
 		start_sticisce.setdefault('od', []).append(s)
 		end_sticisce = stiki.setdefault(s.do, {})
 		end_sticisce.setdefault('do', []).append(s)
-	
+
 	from pprint import pprint
-	
+
 	masters = {}
 	steze = {}
 	povezave = {}
@@ -72,7 +77,7 @@ def stranke_json(request):
 		#print s
 		if len(s.get('od', [])) == 1 and len(s.get('do', [])) == 1:
 			# preimenovanje
-			s_v  = s['od'][0]
+			s_v = s['od'][0]
 			s_iz = s['do'][0]
 			mastr = masters.setdefault(s_iz.id, s_iz.id)
 			while mastr != masters[mastr]:
@@ -83,21 +88,21 @@ def stranke_json(request):
 			for d in s.get('od', []):
 				do = povezave.setdefault(d.id, [])
 				do.extend([i.id for i in s.get('do', [])])
-	
+
 	for s in Stranka.objects.all().order_by('od'):
 		if not s.id in masters:
 			steza = masters.setdefault(s.id, s.id)
 			steze.setdefault(steza, [s])
-	
+
 	povezave_resolved = []
 	for k, v in povezave.items():
 		for i in v:
 			povezave_resolved.append((masters[k], masters[i]))
-	
-	steze_index = dict([(b,a) for a,b in list(enumerate(steze.keys()))])
-	
+
+	steze_index = dict([(b, a) for a, b in list(enumerate(steze.keys()))])
+
 	#pprint(steze)
-	
+
 	stranke = {}
 	for s in Stranka.objects.all():
 		s_dict = {
@@ -111,7 +116,7 @@ def stranke_json(request):
 			'spremenila_v': [v.id for v in s.spremenila_v.all()],
 			}
 		stranke[s.id] = s_dict
-	
+
 	condensed = {}
 	for master_id, steza in steze.iteritems():
 		newsteza = []
@@ -128,21 +133,65 @@ def stranke_json(request):
 			}
 			newsteza.append(s_dict)
 		condensed[master_id] = newsteza
-	
+
 	return HttpResponse(json.dumps({'stranke_all': stranke, 'stranke_condensed': condensed}, indent=3), mimetype='application/json')
-	
+
 
 def poslanec(request, slug):
+	oseba = Oseba.objects.get(slug=slug)
+	tweeti = Tweet.objects.filter(oseba=oseba)
+	glasovi = Glas.objects.filter(oseba=oseba)
+
+	now = datetime.datetime.now()
+	today = now.replace(hour=0, minute=0, second=0, microsecond=0)
+	# TODO: actually count weeks
+	this_week = now - datetime.timedelta(days=-7)
+	last_week = now - datetime.timedelta(days=-14)
+	two_weeks_ago = now - datetime.timedelta(days=-21)
+	month_ago = now - datetime.timedelta(days=-31)
+
+	casovnica = []
+	for tweet in tweeti:
+		casovnica.append((tweet.created_at, tweet, 'tweet'))
+	for glas in glasovi:
+		# convert date to datetime so we can compare it to datetime
+		casovnica.append((datetime.datetime(*(glas.glasovanje.datum.timetuple()[:6])), glas, 'glas'))
+
+	casovnica = sorted(casovnica, key=lambda k: k[0], reverse=True)
+
 	context = {
-		'oseba': Oseba.objects.get(slug=slug),
-		}
-	
+		'oseba': oseba,
+		'today_list': [],
+		'this_week_list': [],
+		'last_week_list': [],
+		'two_weeks_ago_list': [],
+		'month_ago_list': [],
+		'the_rest_list': [],
+	}
+
+	item = collections.namedtuple('Item', 'obj, type')
+
+	for date, obj, type_ in casovnica:
+		if today < date <= now:
+			context['today_list'].append(item._make((obj, type_)))
+		if this_week < date <= today:
+			context['this_week_list'].append(item._make((obj, type_)))
+		if last_week < date <= this_week:
+			context['last_week_list'].append(item._make((obj, type_)))
+		if two_weeks_ago < date <= last_week:
+			context['two_weeks_ago_list'].append(item._make((obj, type_)))
+		if month_ago < date <= last_week:
+			context['month_ago_list'].append(item._make((obj, type_)))
+		if date <= month_ago:
+			context['the_rest_list'].append(item._make((obj, type_)))
+
 	return render(request, "poslanec.html", context)
 
+
 def robots(request):
-	
+
 	robots_txt = """User-agent: *
 Disallow: /iskanje/
 """
-	
+
 	return HttpResponse(robots_txt, mimetype="text/plain")
