@@ -49,7 +49,9 @@
 		{% endfor %}
 		<br />
 		<span class="org">{{ clanstvo.0.stranka|default_if_none:"Nepovezan poslanec" }}</span>
+		{% if oseba.twitter %}
 		<p>Twitter: <a href="https://twitter.com/{{oseba.twitter}}">{{oseba.twitter}}</a></p>
+		{% endif %}
 		<p>Email: {{oseba.email}}</p>
 	</li>
 	{% endwith %}
