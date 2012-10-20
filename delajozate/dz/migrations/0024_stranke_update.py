@@ -45,6 +45,7 @@ class Migration(DataMigration):
 		
 		# Step 2
 		for p in orm.Pozicija.objects.filter(organizacija__stranka__in=self.STRANKE_MAP.keys()):
+			s = p.organizacija.stranka
 			nid = self.STRANKE_MAP.get(s.id, s.id) # id je nov če obstaja oz. isti če ne
 			p.organizacija = orm.Organizacija.objects.get(stranka__id=nid)
 			p.save()
