@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
 
-from delajozate.dz.models import Oseba
+from dz.models import Oseba
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()

@@ -8,7 +8,7 @@ from magnetogrami.models import Zasedanje
 import datetime
 import json
 import random
-from delajozate.temporal import END_OF_TIME
+from temporal import END_OF_TIME
 
 POSLANCI_RANDOM_LIMIT = 4
 
