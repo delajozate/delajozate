@@ -1,17 +1,17 @@
-from django.http import HttpResponse
-from django.shortcuts import render
-from django.utils.html import escape
-from dz.utils import get_poslanci
-
-from dz.models import Funkcija, ClanStranke, Stranka, Oseba, Mandat
-from magnetogrami.models import Zasedanje, Glas
-
+import collections
 import datetime
 import json
 import random
-from temporal import END_OF_TIME
 
-POSLANCI_RANDOM_LIMIT = 4
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.utils.html import escape
+
+from dz.utils import get_poslanci
+from dz.models import Funkcija, ClanStranke, Stranka, Oseba, Mandat, Tweet
+from magnetogrami.models import Zasedanje, Glas
+
+from temporal import END_OF_TIME
 
 def home(request):
 	context = {
