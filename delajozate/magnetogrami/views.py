@@ -52,11 +52,6 @@ def _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja=None):
     if zasedanje is not None:
         zapisi = Zapis.objects.filter(zasedanje=zasedanje).select_related('govorec_oseba', 'zasedanje')
 
-    #add stranka/stranke to govorec_oseba
-    for zapis in zapisi:
-        if zapis.govorec_oseba:
-            zapis.govorec_oseba.stranke = zapis.govorec_oseba.clanstranke_set.filter(od__lte=datum_zasedanja, do__gte=datum_zasedanja)
-
     return seja, zasedanje, zapisi
 
 

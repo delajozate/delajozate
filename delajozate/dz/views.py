@@ -1,21 +1,17 @@
-import collections
-import datetime
-import json
-import random
-
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils.html import escape
+from dz.utils import get_poslanci
 
-from dz.utils import get_poslanci_by_mandat, get_poslanci, get_poslanec_stats, null_date, get_mandat_current
-from dz.models import Funkcija, ClanStranke, Stranka, Oseba, Mandat, Tweet
+from dz.models import Funkcija, ClanStranke, Stranka, Oseba, Mandat
 from magnetogrami.models import Zasedanje, Glas
 
+import datetime
+import json
+import random
 from temporal import END_OF_TIME
 
-
 POSLANCI_RANDOM_LIMIT = 4
-
 
 def home(request):
 	context = {
@@ -116,7 +112,7 @@ def stranke_json(request):
 			'spremenila_v': [v.id for v in s.spremenila_v.all()],
 			}
 		stranke[s.id] = s_dict
-
+	
 	condensed = {}
 	for master_id, steza in steze.iteritems():
 		newsteza = []
@@ -133,7 +129,7 @@ def stranke_json(request):
 			}
 			newsteza.append(s_dict)
 		condensed[master_id] = newsteza
-
+	
 	return HttpResponse(json.dumps({'stranke_all': stranke, 'stranke_condensed': condensed}, indent=3), mimetype='application/json')
 
 

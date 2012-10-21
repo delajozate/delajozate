@@ -148,6 +148,13 @@ def _check_glasovanje():
         ids = [i[0] for i in data]
         glasovanje_errors.append(u'Datum glasovanja ne ustreza zasedanjem seje: %s' % (ids,))
 
+    sql = """SELECT count(*) FROM magnetogrami_glasovanje WHERE naslov = '';"""
+    cur = connection.cursor()
+    cur.execute(sql, [])
+    data = cur.fetchall()
+    if data:
+        glasovanje_errors.append(u'Glasovanj brez naslova: %s' % data[0])
+
     return glasovanje_errors
 
 def _check_glas():
