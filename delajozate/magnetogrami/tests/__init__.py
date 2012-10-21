@@ -41,4 +41,28 @@ class MagnetogramiTest(TestCase):
         resp = c.get('/seje/5-mandat/dz/11-redna/2009-11-25/')
         self.assertEqual(resp.status_code, 200)
         
+        # citat
+        resp = c.get('/seje/5-mandat/dz/11-redna/2009-11-25/p51/')
+        self.assertEqual(resp.status_code, 200)
+
+class ChecksTest(TestCase):
+    def setUp(self):
+        from django.contrib.auth.models import User
+        self.u = User(username='testuser', email='testuser@example.com')
+        self.u.set_password('testpass')
+        self.u.save()
+    
+    def tearDown(self):
+        self.u.delete()
+    
+    def test_checks(self):
+        c = Client()
+        
+        resp = c.get('/datacheck/')
+        self.assertEqual(resp.status_code, 302)
+        
+        c.login(username='testuser', password='testpass')
+        
+        resp = c.get('/datacheck/')
+        self.assertEqual(resp.status_code, 200)
         
