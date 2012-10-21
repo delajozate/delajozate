@@ -28,9 +28,8 @@ class MagnetogramiTest(TestCase):
         resp = c.get('/seje/')
         self.assertEqual(resp.status_code, 200)
         
-        # TODO FIXME XXX
-        #resp = c.get('/seje/5-mandat/')
-        #self.assertEqual(resp.status_code, 200)
+        resp = c.get('/seje/5-mandat/')
+        self.assertEqual(resp.status_code, 200)
         
         resp = c.get('/seje/5-mandat/dz/')
         self.assertEqual(resp.status_code, 200)

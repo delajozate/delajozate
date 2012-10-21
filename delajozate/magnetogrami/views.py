@@ -17,16 +17,19 @@ def tipi_sej(request):
     
     return render_to_response('magnetogrami/tipi_sej.html', RequestContext(request, context))
 
-def seja_list(request, mdt, mandat=None):
+def seja_list(request, mdt=None, mandat=None):
     
     delovno_telo = None
-    zasedanja = Zasedanje.objects.filter(seja__delovno_telo=mdt).filter(Q(tip='magnetogram') |Q(tip='dobesednizapis')).select_related('seja').order_by('-datum')
-    
-    if mandat is not None:
-        zasedanja.filter(seja__mandat=mandat)
+    zasedanja = Zasedanje.objects.filter(Q(tip='magnetogram') |Q(tip='dobesednizapis')).select_related('seja').order_by('-datum')
+
+    if mdt is not None:
+        zasedanja = zasedanja.filter(seja__delovno_telo=mdt)
         if mdt != 'dz': # XXX FIXME add DelovnoTelo?
             delovno_telo = DelovnoTelo.objects.get(dz_id=mdt, mandat__st=mandat)
 
+    if mandat is not None:
+        zasedanja.filter(seja__mandat=mandat)
+    
     context = {
         'object_list': zasedanja,
         'delovno_telo': delovno_telo,
