@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from dz.utils import get_poslanci_by_mandat, get_poslanci, get_poslanec_stats, null_date, get_mandat_current
+from dz.utils import get_poslanci
 
 from dz.models import Funkcija, ClanStranke, Stranka, Oseba, Mandat
 from magnetogrami.models import Zasedanje
