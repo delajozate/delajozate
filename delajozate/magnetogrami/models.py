@@ -1,3 +1,4 @@
+# coding: utf-8
 import json
 import os
 import re
@@ -49,26 +50,6 @@ class Zasedanje(models.Model):
 	@models.permalink
 	def get_absolute_url(self):
 	    return ('delajozate.magnetogrami.views.seja', None, {'mdt': self.seja.delovno_telo, 'mandat': self.seja.mandat, 'slug': self.seja.slug, 'datum_zasedanja': self.datum} )
-
-
-class Glasovanje(models.Model):
-	seja = models.ForeignKey(Seja, null=True)
-	# TODO: join ura and datum
-	ura = models.TimeField(null=True, blank=True)
-	datum = models.DateField(null=True, blank=True)
-	url = models.URLField(null=True)
-	dokument = models.CharField(max_length=2000, null=True)
-	naslov = models.CharField(max_length=2000, null=True)
-	faza_postopka = models.CharField(max_length=255, null=True)
-
-
-class Glas(models.Model):
-	glasovanje = models.ForeignKey(Glasovanje, null=True)
-	oseba = models.ForeignKey(Oseba, null=True)
-	kvorum = models.BooleanField(default=False)
-	glasoval = models.CharField(max_length=255, choices=GLASOVI)
-	poslanec = models.CharField(max_length=128)
-
 
 class Zapis(models.Model):
 	zasedanje = models.ForeignKey(Zasedanje)
@@ -130,8 +111,51 @@ class Zapis(models.Model):
 		return (fget,)
 	ime_seje = property(*ime_seje())
 	
+
+class Glasovanje(models.Model):
+	seja = models.ForeignKey(Seja, null=True)
+	ura = models.TimeField(null=True, blank=True)
+	url = models.URLField(null=True)
+	datum = models.DateField(null=True, blank=True)
+	dokument = models.CharField(max_length=2000, null=True)
+	naslov = models.CharField(max_length=2000, null=True)
+	faza_postopka = models.CharField(max_length=255, null=True)
+	zapis = models.ForeignKey(Zapis, null=True, default=None)
 	
+	def __unicode__(self):
+		if self.naslov:
+			naslov = self.naslov
+		else:
+			naslov = self.seja.naslov
+		return u'%s, %s' % (self.dokument, naslov)
 	
+	def rezultati():
+		def fget(self):
+			glasovi = self.glas_set.all()
+			k = sum([i.kvorum for i in glasovi])
+			z = sum([1 for i in glasovi if i.glasoval == 'Za'])
+			p = sum([1 for i in glasovi if i.glasoval == 'Proti'])
+			n = sum([1 for i in glasovi if i.glasoval == 'Ni'])
+			return {
+				'kvorum': k,
+				'za': z,
+				'proti': p,
+				'ni': n
+				}
+		return (fget,)
+	rezultati = property(*rezultati())
+
+
+class Glas(models.Model):
+	glasovanje = models.ForeignKey(Glasovanje, null=True)
+	oseba = models.ForeignKey(Oseba, null=True)
+	kvorum = models.BooleanField(default=False)
+	glasoval = models.CharField(max_length=255, choices=GLASOVI)
+	poslanec = models.CharField(max_length=128)
+
+	class Meta:
+		ordering = ('oseba__priimek', 'oseba__ime')
+
 
 class GovorecMap(models.Model):
 	govorec = models.CharField(max_length=200, unique=True, db_index=True)
