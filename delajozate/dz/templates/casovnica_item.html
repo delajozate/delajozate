@@ -4,10 +4,7 @@
 
 {% if item.type == "glas" %}
     {# TODO: upostevaj kvorum? #}
-    Glasoval/a <strong>{{item.obj.glasoval}}</strong>
-    {% if item.obj.glasovanje.naslov %}
-    <a href="{{item.obj.glasovanje.absolute_url}}">{{item.obj.glasovanje.naslov}}</a>
-    {% else %}
-    <a href="{{item.obj.glasovanje.absolute_url}}">{{item.obj.glasovanje.seja.naslov}}: {{item.obj.glasovanje.dokument}}</a>
-    {% endif %}
+    Glasoval/a <strong>{{ item.obj.glasoval }}</strong>
+    
+    <a href="{{item.obj.glasovanje.absolute_url}}">{{ item.obj.glasovanje.dokument }}, {% if item.obj.glasovanje.naslov %}{{ item.obj.glasovanje.naslov }}{% else %}{{ item.obj.glasovanje.seja.naslov }}{% endif %}</a>
 {% endif %}
