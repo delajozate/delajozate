@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% endblock %}
+
+
+{% block content %}
+
+<h1>Glasovanja</h1>
+
+{% if object_list %}
+{% for g in object_list %}
+{% ifchanged g.seja.mandat %}
+<h2>{{ g.seja.mandat }}. mandat</h2>
+{% endifchanged %}
+
+{% ifchanged g.seja %}
+{% if not forloop.first %}
+</ul>
+</div>
+{% endif %}
+<h2>{{ g.seja.naslov }}</h2>
+<div class="zasedanja-list">
+<ul>
+{% endifchanged %}
+
+<li>
+    <a href="{% url glasovanja.views.glasovanje g.datum|date:"Y-m-d" g.id %}">
+        {{ g }}
+    </a>
+</li>
+
+{% ifchanged g.seja %}{% if forloop.last %}
+</ul>
+</div>
+{% endif %}{% endifchanged %}
+
+
+{% endfor %}
+{% else %}
+<p>To delovno telo nima (javno objavljenih) magnetogramov.</p>
+{% endif %}
+
+{% endblock %}

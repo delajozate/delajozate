@@ -41,6 +41,9 @@ class DZTest(TestCase):
         resp = self.c.get('/robots.txt')
         self.assertEqual(resp.status_code, 200)
 
+        resp = self.c.get('/glasovanja/')
+        self.assertEqual(resp.status_code, 200)
+
 
 class PoslanecTest(TestCase):
     fixtures = [

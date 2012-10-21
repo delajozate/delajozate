@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+<style>
+
+.red { background-color: #fdd; }
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<h1>{{ objects.0.glasovanje }}</h1>
+
+<table>
+<tr>
+<th>Poslanec</th><th>Kvorum</th><th>Glas</th>
+</tr>
+{% for glas in objects %}
+<tr{% if not glas.kvorum and glas.glasoval != "Ni"%} class="red"{% endif %}>
+<td>{{ glas.oseba }}</td>
+<td>{% if glas.kvorum %}Da{% else %}Ne{% endif %}</td>
+<td>{{ glas.glasoval }}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+{% endblock %}
