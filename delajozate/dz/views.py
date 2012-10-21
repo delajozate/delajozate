@@ -136,7 +136,7 @@ def stranke_json(request):
 def poslanec(request, slug):
 	oseba = Oseba.objects.get(slug=slug)
 	tweeti = Tweet.objects.filter(oseba=oseba)
-	glasovi = Glas.objects.filter(oseba=oseba)
+	glasovi = Glas.objects.filter(oseba=oseba).select_related('glasovanje', 'glasovanje__seja')
 
 	now = datetime.datetime.now()
 	today = now.replace(hour=0, minute=0, second=0, microsecond=0)
