@@ -136,6 +136,7 @@ INSTALLED_APPS = (
 	'south',
 	'dz',
 	'magnetogrami',
+	'glasovanja',
 	'search',
 	'debug_toolbar'
 )
