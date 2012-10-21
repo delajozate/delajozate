@@ -12,7 +12,7 @@ from delajozate.magnetogrami.models import Seja, Zasedanje, Zapis
 
 def tipi_sej(request):
     context = {
-        'object_list': DelovnoTelo.objects.exclude(dz_id=None).order_by('-od', '-do'), # XXX FIXME
+        'object_list': DelovnoTelo.objects.exclude(dz_id=None).order_by('-od', '-do').select_related('mandat'), # XXX FIXME
         }
     
     return render_to_response('magnetogrami/tipi_sej.html', RequestContext(request, context))
