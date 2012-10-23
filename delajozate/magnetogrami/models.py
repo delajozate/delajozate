@@ -5,7 +5,10 @@ import re
 import dateutil.parser
 
 from django.db import models, transaction, connection
+from django.core.urlresolvers import reverse
+
 from delajozate.dz.models import Oseba, Mandat, DelovnoTelo
+
 
 GLASOVI = (
 	('0', 'Proti'),
@@ -128,6 +131,9 @@ class Glasovanje(models.Model):
 		else:
 			naslov = self.seja.naslov
 		return u'%s, %s' % (self.dokument, naslov)
+	
+	def absolute_url(self):
+		return reverse('glasovanja.views.glasovanje', args=(self.datum, self.id))
 	
 	def rezultati():
 		def fget(self):
