@@ -25,7 +25,7 @@
 {% endifchanged %}
 
 <li>
-    <a href="{% url glasovanja.views.glasovanje g.datum|date:"Y-m-d" g.id %}">
+    <a href="{{ g.absolute_url }}">
         {{ g }}
     </a>
 </li>
