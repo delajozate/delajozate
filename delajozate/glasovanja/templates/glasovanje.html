@@ -12,11 +12,18 @@
 
 
 {% block content %}
+{% with glasovanje=objects.0.glasovanje %}
 
-<h1>{{ objects.0.glasovanje }}</h1>
+
+<h1>{{ glasovanje }}</h1>
 
 <p>
-    <a href="{{ objects.0.glasovanje.url }}">Ogled glasovanja na strani Državnega zbora</a>
+    Datum: {{ glasovanje.datum }}<br />
+    Ura: {{ glasovanje.ura }}
+</p>
+
+<p>
+    <a href="{{ glasovanje.url }}">Ogled glasovanja na strani Državnega zbora</a>
 </p>
 <table>
 <tr>
@@ -31,5 +38,5 @@
 {% endfor %}
 </table>
 
-
+{% endwith %}
 {% endblock %}

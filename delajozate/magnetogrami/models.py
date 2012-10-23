@@ -134,12 +134,9 @@ class Glasovanje(models.Model):
 	
 	def absolute_url(self):
 		if self.ura:
-			r = reverse('glasovanja.views.glasovanje', 
+			return reverse('glasovanja.views.glasovanje', 
 				args=(self.datum.strftime('%Y-%m-%d'), self.ura.strftime('%H:%M:%S')))
-		else:
-			r = reverse('glasovanja.views.glasovanje', args=(self.datum, self.id))
-		print r
-		return r
+		return reverse('glasovanja.views.glasovanje', args=(self.datum, self.id))
 	
 	def rezultati():
 		def fget(self):

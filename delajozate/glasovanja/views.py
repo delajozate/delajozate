@@ -9,7 +9,7 @@ from magnetogrami.models import Glasovanje, Glas
 
 def index(request):
     context = {
-        'object_list': Glasovanje.objects.all(),
+        'object_list': Glasovanje.objects.all().select_related('seja'),
         }
     return render(request, 'glasovanja.html', context)
 
@@ -20,13 +20,13 @@ def glasovanje(request, datum, ura=None, pk=None):
         ura = datetime.datetime.strptime(ura, '%H:%M:%S').time()
         glasovi = Glas.objects.filter(
             glasovanje__datum=datum,
-            glasovanje__ura=ura).select_related('oseba')
-        
+            glasovanje__ura=ura)
     elif pk is not None:
-        glasovi.filter(glasovanje__id=pk).select_related('oseba')
+        glasovi.filter(glasovanje__id=pk)
     else:
         raise Http404
     
+    glasovi = glasovi.select_related('oseba')
     context = {
         'objects': glasovi
     }
