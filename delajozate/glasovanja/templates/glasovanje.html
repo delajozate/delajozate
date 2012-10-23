@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% load dz_extras %}
 
 {% block head %}
 
@@ -31,7 +31,15 @@
 </tr>
 {% for glas in objects %}
 <tr{% if not glas.kvorum and glas.glasoval != "Ni"%} class="red"{% endif %}>
-<td>{{ glas.oseba }}</td>
+{% if glas.oseba %}
+    {% with clanstvo=glas.oseba.clanstvo|datum_filter:glasovanje.datum %}
+    <td class="" data="{{ clanstvo.0.stranka.okrajsava }}">{{ glas.oseba }}
+    ({{ clanstvo.0.stranka.okrajsava }})
+    </td>
+    {% endwith %}
+{% else %}
+<td>{{ glas.poslanec|title }}</td>
+{% endif %}
 <td>{% if glas.kvorum %}Da{% else %}Ne{% endif %}</td>
 <td>{{ glas.glasoval }}</td>
 </tr>
@@ -39,4 +47,8 @@
 </table>
 
 {% endwith %}
+
+<script type="text/javascript">
+var glasovanje_data = {{ json|escape }};
+</script>
 {% endblock %}

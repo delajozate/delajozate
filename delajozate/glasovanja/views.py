@@ -1,6 +1,7 @@
 # Create your views here.
 
 import datetime
+import json
 
 from django.shortcuts import render
 from django.http import Http404
@@ -26,8 +27,12 @@ def glasovanje(request, datum, ura=None, pk=None):
     else:
         raise Http404
     
+    glasovi_json = []
+    json_data = json.dumps(glasovi_json)
+    
     glasovi = glasovi.select_related('oseba')
     context = {
-        'objects': glasovi
+        'objects': glasovi,
+        'json': json_data,
     }
     return render(request, 'glasovanje.html', context)
