@@ -2,10 +2,10 @@
 import datetime
 
 from django.core.exceptions import ObjectDoesNotExist
-from django.db import models
+from django.db import models, connection
+from django.db.models import Q
 from django.template.defaultfilters import slugify
 from delajozate.temporal import END_OF_TIME
-from django.db import connection
 
 
 FUNKCIJE = (
@@ -83,6 +83,15 @@ class Oseba(models.Model):
 		return cur.fetchall()[0][0]
 	
 	def clanstvo(self, day=None):
+		if day:
+			# take from dz_extras.py - datum_filter, unify me
+			low = high = day
+			clanstvo = list(self.clanstranke_set.filter(
+				Q(od__lte=low, do__gt=low) |   # crosses lower boundary
+				Q(od__lte=high, do__gt=high) | # crosses upper boundary
+				Q(od__lte=low, do__gt=high)))  # or is in between
+			return clanstvo
+
 		return self.clanstranke_set.all().order_by('-do')
 	
 	def funkcije(self):
@@ -238,6 +247,9 @@ class ClanStranke(models.Model):
 	do = models.DateField(blank=True)
 	podatki_preverjeni = models.BooleanField(default=False)
 	opombe = models.TextField(blank=True)
+
+	def __unicode__(self):
+		return self.stranka.ime
 	
 	class Meta:
 		verbose_name = u'Član stranke'

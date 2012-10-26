@@ -23,6 +23,31 @@
 </p>
 
 <p>
+	<h2>Povzetek</h2>
+	{% with data=glasovanje.summary %}
+	<table>
+		<tr>
+			<th>Stranka</th>
+			<th>Večina ({{ data.majority }})</th>
+			<th>Manjšina ({{ data.minority }})</th>
+			<th>Prisotnost</th>
+		</tr>
+		{% for row in data.votes.items %}
+		<tr>
+			<th>{{ row.0 }}</th>
+			{% with cell=row.1 %}
+				<th>{{ cell.majority }}</th>
+				<th>{{ cell.minority }}</th>
+				<th>{{ cell.percent|stringformat:".1f" }} %</th>
+			{% endwith %}
+		{% endfor %}
+	</tr>
+	</table>
+	{% endwith %}
+
+</p>
+
+<p>
     <a href="{{ glasovanje.url }}">Ogled glasovanja na strani Državnega zbora</a>
 </p>
 <table>

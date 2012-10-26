@@ -3,11 +3,12 @@ import json
 import os
 import re
 import dateutil.parser
+from collections import OrderedDict	
 
 from django.db import models, transaction, connection
 from django.core.urlresolvers import reverse
 
-from delajozate.dz.models import Oseba, Mandat, DelovnoTelo
+from delajozate.dz.models import Oseba, Mandat, DelovnoTelo, Stranka
 
 
 GLASOVI = (
@@ -155,12 +156,85 @@ class Glasovanje(models.Model):
 	rezultati = property(*rezultati())
 
 
+	def summary():
+		def fget(self):
+
+			glasovi = self.glas_set.all()
+			rez = self.rezultati
+
+			if rez['proti'] >= rez['za']: 
+				majority = 'proti'
+				minority = 'za'
+			else: 
+				majority = 'za'
+				minority = 'proti'
+
+			data = {}
+			for glas in glasovi:
+				try:
+					stranka = glas.stranka.okrajsava
+				except AttributeError:
+					stranka = 'Neznana'
+				glasoval = glas.glasoval
+
+				if not data.get(stranka, None):
+					data[stranka] = {
+						'stranka': glas.stranka or None,
+						'majority': 0,
+						'minority': 0,
+						'count': 0.0,
+						'present': 0.0,
+						'percent': 0
+					}
+
+				if majority == 'za':
+					if glasoval == 'Za': 
+						data[stranka]['majority'] += 1
+					elif glasoval == 'Proti': 
+						data[stranka]['minority'] += 1
+				else:
+					if glasoval == 'Za': 
+						data[stranka]['minority'] += 1
+					elif glasoval == 'Proti':
+						data[stranka]['majority'] += 1
+
+				if glasoval in ['Za', 'Proti']:
+					data[stranka]['present'] += 1
+
+				data[stranka]['count'] += 1
+
+			for stranka in data:
+				data[stranka]['percent'] =  (data[stranka]['present'] / data[stranka]['count']) * 100
+
+			data_sorted = OrderedDict()
+			for key in sorted(data.iterkeys()):
+				data_sorted[key] = data[key]
+
+			return {
+				'majority': majority,
+				'minority': minority,
+				'votes': data_sorted
+			}
+
+		return (fget,)
+
+	summary = property(*summary())
+
+
+
 class Glas(models.Model):
 	glasovanje = models.ForeignKey(Glasovanje, null=True)
 	oseba = models.ForeignKey(Oseba, null=True)
 	kvorum = models.BooleanField(default=False)
 	glasoval = models.CharField(max_length=255, choices=GLASOVI)
 	poslanec = models.CharField(max_length=128)
+
+	def stranka():
+		def fget(self):
+			return self.oseba.clanstvo(self.glasovanje.datum)[0].stranka
+			
+		return (fget,)
+	stranka = property(*stranka())
 
 	class Meta:
 		ordering = ('oseba__priimek', 'oseba__ime')
