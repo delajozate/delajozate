@@ -8,7 +8,7 @@ from collections import OrderedDict
 from django.db import models, transaction, connection
 from django.core.urlresolvers import reverse
 
-from delajozate.dz.models import Oseba, Mandat, DelovnoTelo, Stranka
+from delajozate.dz.models import Oseba, Mandat, DelovnoTelo, Stranka, ClanStranke
 
 
 GLASOVI = (
@@ -155,11 +155,25 @@ class Glasovanje(models.Model):
 		return (fget,)
 	rezultati = property(*rezultati())
 
+	def stranke():
+		def fget(self):
+			try:
+				return self.__stranke
+			except AttributeError:
+				clanstvo = ClanStranke.objects.filter(
+					oseba__id__in=[i.oseba.pk for i in self.glas_set.all().select_related('oseba')], 
+					od__lte=self.datum, 
+					do__gt=self.datum).select_related('oseba', 'stranka')
+				self.__stranke = dict([(i.oseba.pk, i) for i in clanstvo])
+				return self.__stranke
+		return (fget,)
+	stranke = property(*stranke())
 
 	def summary():
 		def fget(self):
 
-			glasovi = self.glas_set.all()
+			glasovi = list(self.glas_set.all().select_related('oseba', 'glasovanje'))
+			
 			rez = self.rezultati
 
 			if rez['proti'] >= rez['za']: 
@@ -171,15 +185,18 @@ class Glasovanje(models.Model):
 
 			data = {}
 			for glas in glasovi:
+
 				try:
-					stranka = glas.stranka.okrajsava
+					stranka = self.stranke[glas.oseba.pk].stranka
 				except AttributeError:
 					stranka = 'Neznana'
+
 				glasoval = glas.glasoval
 
-				if not data.get(stranka, None):
-					data[stranka] = {
-						'stranka': glas.stranka or None,
+
+				if not data.get(stranka.okrajsava, None):
+					data[stranka.okrajsava] = {
+						'stranka': stranka or None,
 						'majority': 0,
 						'minority': 0,
 						'count': 0.0,
@@ -189,19 +206,19 @@ class Glasovanje(models.Model):
 
 				if majority == 'za':
 					if glasoval == 'Za': 
-						data[stranka]['majority'] += 1
+						data[stranka.okrajsava]['majority'] += 1
 					elif glasoval == 'Proti': 
-						data[stranka]['minority'] += 1
+						data[stranka.okrajsava]['minority'] += 1
 				else:
 					if glasoval == 'Za': 
-						data[stranka]['minority'] += 1
+						data[stranka.okrajsava]['minority'] += 1
 					elif glasoval == 'Proti':
-						data[stranka]['majority'] += 1
+						data[stranka.okrajsava]['majority'] += 1
 
 				if glasoval in ['Za', 'Proti']:
-					data[stranka]['present'] += 1
+					data[stranka.okrajsava]['present'] += 1
 
-				data[stranka]['count'] += 1
+				data[stranka.okrajsava]['count'] += 1
 
 			for stranka in data:
 				data[stranka]['percent'] =  (data[stranka]['present'] / data[stranka]['count']) * 100

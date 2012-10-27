@@ -57,11 +57,11 @@
 {% for glas in objects %}
 <tr{% if not glas.kvorum and glas.glasoval != "Ni"%} class="red"{% endif %}>
 {% if glas.oseba %}
-    {% with clanstvo=glas.oseba.clanstvo|datum_filter:glasovanje.datum %}
     <td class="" data="{{ clanstvo.0.stranka.okrajsava }}">{{ glas.oseba }}
-    ({{ clanstvo.0.stranka.okrajsava }})
-    </td>
+    {% with clanstvo=glasovanje.stranke|get_item:glas.oseba.pk %}
+    ({{ clanstvo.stranka.okrajsava }})
     {% endwith %}
+    </td>
 {% else %}
 <td>{{ glas.poslanec|title }}</td>
 {% endif %}
