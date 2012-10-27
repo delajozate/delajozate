@@ -88,6 +88,7 @@ def citat(request, mdt, mandat, slug, datum_zasedanja, odstavek):
         'zasedanje': zasedanje,
         'zapisi': zapisi,
         'citirano': odstavek,
+        'url_path': request.path
         }
     return render_to_response("magnetogrami/citat.html", RequestContext(request, context))
 
