@@ -11,7 +11,6 @@ urlpatterns = patterns('dz.data_check',
 
 urlpatterns += patterns('dz.views',
 	#url(r'^stranke/', 'stranke_list', name='stranke_list'),
-	url(r'^stranke/(?P<stranka_id>\d+)/', 'stranka', name='stranka'),
 	url(r'^stranke/json/', 'stranke_json', name='stranke_json'),
 	
 	url(r'^osebe/(?P<slug>[A-Za-z0-9-_]+)/$', 'poslanec', name='poslanec'),

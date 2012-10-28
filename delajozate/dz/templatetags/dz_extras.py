@@ -23,6 +23,11 @@ def slopluralize(num, suffixes):
 		return suf[2]
 	else:
 		return suf[3]
+	
+	
+@register.filter
+def get_item(dictionary, key):
+	return dictionary.get(key)
 
 @register.filter
 def datum_filter(value, arg):

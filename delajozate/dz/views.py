@@ -7,7 +7,6 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils.html import escape
 
-from dz.utils import get_poslanci
 from dz.models import Funkcija, ClanStranke, Stranka, Oseba, Mandat, Tweet
 from magnetogrami.models import Zasedanje, Glas
 
@@ -15,18 +14,9 @@ from temporal import END_OF_TIME
 
 def home(request):
 	context = {
-		'zasedanja': Zasedanje.objects.all().order_by('-datum')[:5]
+		'zasedanja': Zasedanje.objects.all().select_related('seja').order_by('-datum')[:5]
 	}
-
 	return render(request, 'home.html', context)
-
-
-def stranka(request, stranka_id):
-	ctx = {
-		'poslanci': get_poslanci({'stranka__pk': stranka_id}, mandat=get_mandat_current()),
-	}
-	return render(request, 'poslanci.html', ctx)
-
 
 def poslanci_list(request, mandat):
 	if mandat == 'danes':

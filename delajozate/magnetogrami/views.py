@@ -45,15 +45,15 @@ def _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja=None):
         try:
             zasedanje = Zasedanje.objects.filter(
                 Q(seja=seja, tip='dobesednizapis') |
-                Q(seja=seja, tip='magnetogram')).order_by('datum')[0]
+                Q(seja=seja, tip='magnetogram')).select_related('zapis').order_by('datum')[0]
         except IndexError:
             zasedanje = None
             zapisi = []
     else:
-        zasedanje = Zasedanje.objects.filter(seja=seja, datum=datum_zasedanja).filter(Q(tip='dobesednizapis') | Q(tip='magnetogram')).select_related('zapis')
+        zasedanje = Zasedanje.objects.filter(seja=seja, datum=datum_zasedanja).filter(Q(tip='dobesednizapis') | Q(tip='magnetogram')).select_related('zapis')[0]
 
     if zasedanje is not None:
-        zapisi = Zapis.objects.filter(zasedanje=zasedanje).select_related('govorec_oseba', 'zasedanje')
+        zapisi = Zapis.objects.filter(zasedanje=zasedanje).select_related('govorec_oseba', 'zasedanje', 'zasedanje__seja')
 
     return seja, zasedanje, zapisi
 
