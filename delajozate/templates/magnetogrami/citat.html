@@ -10,7 +10,7 @@
 {% block opengraph %}{% with zapis=zapisi|first %}
 <meta property="og:title" content="{{ seja.naslov }} - citat od {{ zapis.govorec_oseba }}" />
 <meta property="og:type" content="article" />    
-<meta property="og:url" content="http://www.delajozate.si{{ url_path }}" />
+<meta property="og:url" content="http://www.delajozate.si{{ request.path }}" />
 {% if zapis.govorec_oseba.slika %}<meta property="og:image" content="http://www.delajozate.si{{ zapis.govorec_oseba.slika }}" />{% endif %}
 <meta property="og:description" content="{{ zapis.odstavki|truncatewords:60 }}">
 {% endwith %}{% endblock %}
