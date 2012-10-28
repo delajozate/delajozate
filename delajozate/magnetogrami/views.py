@@ -1,7 +1,7 @@
 import re
 
 from django.views.decorators.cache import cache_page
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -15,7 +15,7 @@ def tipi_sej(request):
         'object_list': DelovnoTelo.objects.exclude(dz_id=None).order_by('-od', '-do').select_related('mandat'), # XXX FIXME
         }
     
-    return render_to_response('magnetogrami/tipi_sej.html', RequestContext(request, context))
+    return render(request, 'magnetogrami/tipi_sej.html', context)
 
 def seja_list(request, mdt=None, mandat=None):
     
@@ -34,7 +34,7 @@ def seja_list(request, mdt=None, mandat=None):
         'object_list': zasedanja,
         'delovno_telo': delovno_telo,
         }
-    return render_to_response('magnetogrami/seja_list.html', RequestContext(request, context))
+    return render(request, 'magnetogrami/seja_list.html', context)
 
 
 def _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja=None):
@@ -70,7 +70,7 @@ def seja(request, mdt, mandat, slug, datum_zasedanja=None):
         'zasedanje': zasedanje,
         'zapisi': zapisi,
         }
-    return render_to_response("magnetogrami/seja.html", RequestContext(request, context))
+    return render(request, "magnetogrami/seja.html", context)
 
 
 def citat(request, mdt, mandat, slug, datum_zasedanja, odstavek):
@@ -90,7 +90,7 @@ def citat(request, mdt, mandat, slug, datum_zasedanja, odstavek):
         'citirano': odstavek,
         'url_path': request.path
         }
-    return render_to_response("magnetogrami/citat.html", RequestContext(request, context))
+    return render(request, "magnetogrami/citat.html", context)
 
 
 
