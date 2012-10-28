@@ -14,7 +14,7 @@ from temporal import END_OF_TIME
 
 def home(request):
 	context = {
-		'zasedanja': Zasedanje.objects.all().order_by('-datum')[:5]
+		'zasedanja': Zasedanje.objects.all().select_related('seja').order_by('-datum')[:5]
 	}
 	return render(request, 'home.html', context)
 
