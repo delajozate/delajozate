@@ -103,6 +103,28 @@
 {% endif %}
 </p>
 
+<h3>Član stranke</h3>
+<p>
+{% if clanstranke_errors %}
+	{% for e in clanstranke_errors %}
+	{{ e }}<br />
+	{% endfor %}
+{% else %}
+	OK
+{% endif %}
+</p>
+
+<h3>Prenos podatkov</h3>
+<p>
+{% if translation_errors %}
+	{% for e in translation_errors %}
+	{{ e }}<br />
+	{% endfor %}
+{% else %}
+	OK
+{% endif %}
+</p>
+
 <p>Checks took {{ took }} seconds</p>
 
 </body>

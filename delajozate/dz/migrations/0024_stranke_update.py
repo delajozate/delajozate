@@ -1,8 +1,10 @@
 # encoding: utf-8
 import datetime
+from django.core.exceptions import MultipleObjectsReturned
 from south.db import db
 from south.v2 import DataMigration
 from django.db import models
+from temporal import END_OF_TIME
 
 class Migration(DataMigration):
 	
@@ -28,10 +30,24 @@ class Migration(DataMigration):
 	
 	def forwards(self, orm):
 		"""
+		0. Odstrani duplicirane Pozicije
 		1. Vsaka Stranka dobi ImeStranke z ustreznim časom
 		2. Vsaka Pozicija vezana na Stranka, ki ima po novem nov ID se spremeni na nov ID
 		3. Pozicije, ki so zaporedne po datumih za isto stranko se združijo
 		"""
+		# Step 0
+		pp = None
+		remove_list = []
+		for p in orm.Pozicija.objects.filter(organizacija__stranka__gt=0, tip="clan").order_by("od", "do", "organizacija__stranka__id", "oseba__id").values():
+			id = p["id"]
+			del p["id"]
+			if pp and pp == p:
+				remove_list.append(id)
+			pp = p
+		print "Odstranjujem %d duplikatov" % len(remove_list)
+		for pid in remove_list:
+			orm.Pozicija.objects.get(pk=pid).delete()
+			
 		# Step 1
 		for s in orm.Stranka.objects.all():
 			nid = self.STRANKE_MAP.get(s.id, s.id) # id je nov če obstaja oz. isti če ne
@@ -47,6 +63,20 @@ class Migration(DataMigration):
 		for p in orm.Pozicija.objects.filter(organizacija__stranka__in=self.STRANKE_MAP.keys()):
 			s = p.organizacija.stranka
 			nid = self.STRANKE_MAP.get(s.id, s.id) # id je nov če obstaja oz. isti če ne
+			try:
+				cs = orm.ClanStranke.objects.get(**{
+					"oseba": p.oseba,
+					"stranka": s,
+					"od": p.od
+				})
+			except MultipleObjectsReturned:
+				cs =  orm.ClanStranke.objects.filter(**{
+					"oseba": p.oseba,
+					"stranka": s,
+					"od": p.od
+				}).order_by("-do")[0]
+			if p.do == END_OF_TIME and cs.do < END_OF_TIME:
+				p.do = cs.do
 			p.organizacija = orm.Organizacija.objects.get(stranka__id=nid)
 			p.save()
 		
@@ -59,8 +89,8 @@ class Migration(DataMigration):
 				fp.save()
 				for p in pozicije:
 					p.delete()
-			
-		for p in orm.Pozicija.objects.filter(organizacija__stranka__gt=0).order_by("oseba__id", "od"):
+		
+		for p in orm.Pozicija.objects.filter(organizacija__stranka__gt=0, tip='clan').order_by("oseba__id", "od"):
 			if not len(merge_these):
 				merge_these.append(p)
 			else:
@@ -76,9 +106,27 @@ class Migration(DataMigration):
 	
 	
 	def backwards(self, orm):
-		"Write your backwards methods here."
-		raise RuntimeError("Cannot reverse this migration.")
-	
+		# Step 1
+		for o in orm.ImeStranke.objects.all():
+			o.delete()
+		
+		# Step 2 + 3
+		for o in orm.Pozicija.objects.filter(organizacija__stranka__gt=0, tip='clan'):
+			o.delete()
+		print "Izbrisane vse Pozicije vezane na stranke", orm.Pozicija.objects.filter(organizacija__stranka__gt=0, tip='clan').count()
+		
+		for f in orm.ClanStranke.objects.filter(stranka__gt=0):
+			orm.Pozicija.objects.create(**{
+				'oseba': f.oseba,
+				'organizacija': f.stranka.organizacija,
+				'tip': 'clan',
+				'od': f.od,
+				'do': f.do,
+				'podatki_preverjeni': f.podatki_preverjeni,
+				'opombe': f.opombe
+			})
+		print "Poustvarjene vse Pozicije vezane na stranke", orm.Pozicija.objects.filter(organizacija__stranka__gt=0, tip='clan').count()
+		
 	
 	models = {
 		'dz.clanodbora': {
