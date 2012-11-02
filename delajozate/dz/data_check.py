@@ -90,7 +90,7 @@ def _check_funkcija():
 		if VERBOSE:
 			for row in data:
 				funkcija_errors.append(u'- duplikat: %s' % Funkcija.objects.filter(pk=row[2]).values()[0])
-		
+	
 	return funkcija_errors
 
 def _check_delovnotelo():

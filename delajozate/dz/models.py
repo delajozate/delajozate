@@ -249,7 +249,7 @@ class ClanStranke(models.Model):
 	opombe = models.TextField(blank=True)
 
 	def __unicode__(self):
-		return self.stranka.ime
+		return self.stranka.ime if self.stranka else "Ni stranke!"
 	
 	class Meta:
 		verbose_name = u'Član stranke'

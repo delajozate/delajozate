@@ -21,7 +21,7 @@ class Migration(SchemaMigration):
         db.delete_column('dz_odbor', 'dz_id')
 
         # Changing field 'Odbor.ime'
-        db.alter_column('dz_odbor', 'ime', self.gf('django.db.models.fields.CharField')(max_length=500))
+        db.alter_column('dz_odbor', 'ime', self.gf('django.db.models.fields.CharField')(max_length=2000))
 
 
     models = {

@@ -2,21 +2,29 @@
 import datetime
 from south.db import db
 from south.v2 import DataMigration
-from django.db import models
+from django.db import models, connection
 
 class Migration(DataMigration):
 	def forwards(self, orm):
+		
+		sql = """select count(*) c, oseba_id, min(id) from dz_clanstranke where stranka_id is not null group by oseba_id, stranka_id, od, "do", opombe, podatki_preverjeni having count(*) > 1 order by c desc, oseba_id;"""
+		cur = connection.cursor()
+		cur.execute(sql, [])
+		data = cur.fetchall()
+		if len(data):
+			for row in data:
+				orm.ClanStranke.objects.get(id=row[2]).delete()
+		
 		for f in orm.ClanStranke.objects.all():
-			if f.stranka:
-				orm.Pozicija.objects.create(**{
-					'oseba': f.oseba,
-					'organizacija': f.stranka.organizacija,
-					'tip': 'clan',
-					'od': f.od,
-					'do': f.do,
-					'podatki_preverjeni': f.podatki_preverjeni,
-					'opombe': f.opombe
-				})
+			orm.Pozicija.objects.create(**{
+				'oseba': f.oseba,
+				'organizacija': f.stranka.organizacija if f.stranka else None,
+				'tip': 'clan',
+				'od': f.od,
+				'do': f.do,
+				'podatki_preverjeni': f.podatki_preverjeni,
+				'opombe': f.opombe
+			})
 
 
 	def backwards(self, orm):

@@ -2,11 +2,21 @@
 import datetime
 from south.db import db
 from south.v2 import DataMigration
-from django.db import models
+from django.db import models, connection
 
 class Migration(DataMigration):
 	def forwards(self, orm):
 		mandati_dz = {}
+		
+		# odstrani duplikate
+		sql = """select count(*) c, oseba_id, min(id) from dz_funkcija where mandat_id is not null group by oseba_id, mandat_id, od, "do", opombe, podatki_preverjeni having count(*) > 1 order by c desc, oseba_id;"""
+		cur = connection.cursor()
+		cur.execute(sql, [])
+		data = cur.fetchall()
+		if len(data):
+			for row in data:
+				orm.Funkcija.objects.get(id=row[2]).delete()
+		
 		for f in orm.Funkcija.objects.all():
 			m = f.mandat_id
 			if m not in mandati_dz:
@@ -14,6 +24,7 @@ class Migration(DataMigration):
 					'mandat': orm.Mandat.objects.get(pk=m),
 					'organizacija': orm.Organizacija.objects.create()
 				})
+			
 			orm.Pozicija.objects.create(**{
 				'oseba': f.oseba,
 				'organizacija': mandati_dz.get(m).organizacija,
