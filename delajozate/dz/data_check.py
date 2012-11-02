@@ -238,6 +238,7 @@ def _check_clanstranke():
 	
 
 def _check_translation():
+	# these only make sense before you migrate to 0024
 	errors = []
 	funkcije = Funkcija.objects.all().order_by("od", "do", "oseba__id")
 	pozicija_dz = Pozicija.objects.filter(organizacija__drzavnizbor__gt=0)
@@ -349,7 +350,7 @@ def data_check(request):
 	glas_errors = _check_glas()
 	clanstranke_errors = _check_clanstranke()
 	
-	translation_errors = _check_translation()
+	#translation_errors = _check_translation()
 	
 	t2 = time.time()
 	
@@ -364,7 +365,7 @@ def data_check(request):
 		'glasovanje_errors': glasovanje_errors,
 		'glas_errors': glas_errors,
 		'clanstranke_errors': clanstranke_errors,
-		'translation_errors': translation_errors,
+		#'translation_errors': translation_errors,
 		'took': t2-t1,
 	}
 	return render(request, "data_check.html", context)
