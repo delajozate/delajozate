@@ -2,129 +2,116 @@
 {% load dz_extras %}
 
 {% block content %}
-
-<ol class="cards vcard">
-	{% with oseba.clanstvo|datum_filter:"today" as clanstvo %}
-	<li>
-						<div class="card">
-							{% if clanstvo %}
-							<div class="stranka"><a class="strankatag {{ clanstvo.0.stranka.okrajsava|lower }}"
-								href="#"
-								title="{{ clanstvo.0.stranka.ime }}">{{ clanstvo.0.stranka.okrajsava }}
-							</a></div>
-							{% endif %}
-							<div class="img">
-								<img class="image" src="{{ oseba.slika_or_default }}" alt="" title="{{ oseba }}, vir:{{ oseba.slika_vir }}" />
-							</div>
-							<dl>
-								<dt>Poslanskih dni</dt>
-								<dd>{{ oseba.poslanskih_dni|default_if_none:"0" }}</dd>
-								<dt>Mandatov</dt>
-								<dd>{{ oseba.st_mandatov }}</dd>
-								<!--dt>Strank</dt>
-								<dd>{{ oseba.stranke|length }}</dd-->
-							</dl>{% if not short %}
-							{% comment %}
-							<ol class="badges">
-								<li class="odbori"><span>{{ oseba.odbori|default_if_none:"?" }}</span> odbor{{ oseba.odbori|slopluralize:",a,i,ov" }}</li>
-								<li class="komisije"><span>?</span> komisij{{ oseba.komisije|slopluralize:"a,i,e," }}</li>
-								<li class="delegacije"><span>?</span> deleg.</li>
-								<li class="skupine"><span>?</span> skupin{{ oseba.skupine|slopluralize:"a,i,e," }}</li>
-							</ol>
-							{% endcomment %}
-							{% endif %}
-						</div>
-						
-						
-	</li>
-	<li>
+<div class="content">
+	<div class="poslanci vcard">{% with oseba.clanstvo|datum_filter:"today" as clanstvo %}
+		<div class="card">
+			{% if clanstvo %}{% with clanstvo.0.organizacija.stranka as stranka %}
+			<div class="stranka"><a class="strankatag {{ stranka.okrajsava|lower }}"
+				href="#"
+				title="{{ stranka.ime }}">{{ stranka.okrajsava }}
+			</a></div>{% endwith %}{% endif %}
+			<a href="/osebe/{{ oseba.slug }}/">
+				<div class="img">
+					<img class="image" src="{{ oseba.slika_or_default }}" alt="" title="{{ oseba }}, vir:{{ oseba.slika_vir }}" />
+				</div>
+			</a>
+			<dl>
+				<dt>Poslanskih dni</dt>
+				<dd>{{ oseba.poslanskih_dni|default_if_none:"0" }}</dd>
+				<dt>Mandatov</dt>
+				<dd>{{ oseba.st_mandatov }}</dd>
+				<!--dt>Strank</dt>
+				<dd>{{ oseba.clanstvo|length }}</dd-->
+				<!--dt>Delovna telesa</dt>
+				<dd>{{ oseba.delovna_telesa|length }}</dd-->
+			</dl>
+		</div>
+		<div class="details">
+			<h1>
+				<span class="fn">
+					<span class="given-name">{{ oseba.ime }}</span>
+					<span class="family-name">{{ oseba.priimek }}</span>
+				</span>
+			</h1>
+			<ul>
+			{% for f in oseba.funkcije|datum_filter:"today" %}
+				<li class="role">{{ f.get_tip_display }} {{ f.organizacija.value.display }} ({{ f.trajanje }})</li>
+			{% endfor %}
+			</ul>
+			
+			<span class="org">{{ clanstvo.0.stranka|default_if_none:"Nepovezan poslanec" }}</span>
+			
+			<p>
+				Twitter:
+				{% if oseba.twitter %}
+				<a href="https://twitter.com/{{ oseba.twitter }}">@{{ oseba.twitter }}</a>
+				{% else %}
+				--
+				{% endif %}
+			</p>
+		</div>
+		{% endwith %}
+	</div>
+	
+	<div>
 		<h1>
-		<span class="fn">
-			<span class="given-name">{{ oseba.ime }}</span>
-			<span class="family-name">{{ oseba.priimek }}</span>
-		</span>
+			Časovnica
 		</h1>
-		{% for f in oseba.funkcije|datum_filter:"today" %}
-		<span class="role">{{ f.get_funkcija_display }}</span>
-		{% endfor %}
-		<br />
-		<span class="org">{{ clanstvo.0.stranka|default_if_none:"Nepovezan poslanec" }}</span>
-		
-		<p>
-			Twitter:
-			{% if oseba.twitter %}
-			<a href="https://twitter.com/{{ oseba.twitter }}">@{{ oseba.twitter }}</a>
-			{% else %}
-			--
+		<ol>
+			{% if today_list %}
+			<li><h2>Danes</h2></li>
+			{% for item in today_list %}
+			<li>
+				{% include "casovnica_item.html" with item=item only %}
+			</li>
+			{% endfor %}
 			{% endif %}
-		</p>
-	</li>
-	{% endwith %}
-</ol>
-
-
-<div>
-	<h1>
-		Časovnica
-	</h1>
-	<ol>
-		{% if today_list %}
-		<li><h2>Danes</h2></li>
-		{% for item in today_list %}
-		<li>
-			{% include "casovnica_item.html" with item=item only %}
-		</li>
-		{% endfor %}
-		{% endif %}
-		
-		{% if this_week_list %}
-		<li><h2>Ta teden</h2></li>
-		{% for item in this_week_list %}
-		<li>
-			{% include "casovnica_item.html" with item=item only %}
-		</li>
-		{% endfor %}
-		{% endif %}
-		
-		{% if last_week_list %}
-		<li><h2>Prejšni teden</h2></li>
-		{% for item in last_week_list %}
-		<li>
-			{% include "casovnica_item.html" with item=item only %}
-		</li>
-		{% endfor %}
-		{% endif %}
-		
-		{% if one_week_ago_list %}
-		<li><h2>Dva tedna nazaj</h2></li>
-		{% for item in one_week_ago_list %}
-		<li>
-			{% include "casovnica_item.html" with item=item only %}
-		</li>
-		{% endfor %}
-		{% endif %}
-		
-		{% if month_ago_list %}
-		<li><h2>Mesec dni nazaj</h2></li>
-		{% for item in month_ago_list %}
-		<li>
-			{% include "casovnica_item.html" with item=item only %}
-		</li>
-		{% endfor %}
-		{% endif %}
-		
-		{% if the_rest_list %}
-		<li><h2>Več kot mesec dni nazaj</h2></li>
-		{% for item in the_rest_list %}
-		<li>
-			{% include "casovnica_item.html" with item=item only %}
-		</li>
-		{% endfor %}
-		{% endif %}
-	</ol>
+			
+			{% if this_week_list %}
+			<li><h2>Ta teden</h2></li>
+			{% for item in this_week_list %}
+			<li>
+				{% include "casovnica_item.html" with item=item only %}
+			</li>
+			{% endfor %}
+			{% endif %}
+			
+			{% if last_week_list %}
+			<li><h2>Prejšni teden</h2></li>
+			{% for item in last_week_list %}
+			<li>
+				{% include "casovnica_item.html" with item=item only %}
+			</li>
+			{% endfor %}
+			{% endif %}
+			
+			{% if one_week_ago_list %}
+			<li><h2>Dva tedna nazaj</h2></li>
+			{% for item in one_week_ago_list %}
+			<li>
+				{% include "casovnica_item.html" with item=item only %}
+			</li>
+			{% endfor %}
+			{% endif %}
+			
+			{% if month_ago_list %}
+			<li><h2>Mesec dni nazaj</h2></li>
+			{% for item in month_ago_list %}
+			<li>
+				{% include "casovnica_item.html" with item=item only %}
+			</li>
+			{% endfor %}
+			{% endif %}
+			
+			{% if the_rest_list %}
+			<li><h2>Več kot mesec dni nazaj</h2></li>
+			{% for item in the_rest_list %}
+			<li>
+				{% include "casovnica_item.html" with item=item only %}
+			</li>
+			{% endfor %}
+			{% endif %}
+		</ol>
+	</div>
 </div>
-
-
-
-
 {% endblock %}

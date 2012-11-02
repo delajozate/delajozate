@@ -1,57 +1,21 @@
 {% extends "base.html" %}
 
-{% block head %}
-<style type="text/css">
-
-.govorec { padding: 5px; font-size: 1.1em; font-weight: 500; width: 27%; float: left; clear: left;}
-.receno { width: 60%; float: left; margin-bottom: 10px; text-align: justify;}
-.govorec-slika { width: 100px; }
-.zapis-link { float: right; position: relative; right: -30px; }
-.zapis-link a { text-decoration: none; }
-.zapis-link :hover { text-decoration: underline; }
-h1, h2, h3 { padding: 5px; }
-.zasedanja-list { padding-left: 20px; }
-
-</style>
-{% endblock %}
-
-
 {% block content %}
-
-{% for dt in object_list %}
-{% ifchanged dt.mandat %}
-<h1>{{ dt.mandat }}. mandat</h1>
-{% endifchanged %}
-
-{% ifchanged dt.mandat %}
-{% if not forloop.first %}
-</ul>
-</div>
-{% endif %}
-<h2></h2>
-<h3>Delovna telesa</h3>
-<div class="zasedanja-list">
-<ul>
-{% endifchanged %}
-
-<li>
-	{% if dt.dz_id %}
-	<a href="{% url delajozate.magnetogrami.views.seja_list dt.mandat dt.dz_id %}">
-	{% endif %}
-	{{ dt.ime }}
-	{% if dt.dz_id %}</a>
-	{% endif %}
-</li>
-
-{% ifchanged dt.mandat %}{% if forloop.last %}
-</ul>
-</div>
-{% endif %}{% endifchanged %}
-
-
-
-{% endfor %}
-
-<br />
-
+<h1>Seje</h1>
+{% for dt in object_list %}{% ifchanged dt.mandat %}{% if not forloop.first %}
+	</ul>
+</div>{% endif %}
+<div class="content">
+	<hgroup>
+		<h2>{{ dt.mandat }}. mandat</h2>
+		<h3>Delovna telesa</h3>
+	</hgroup>
+	<ul>{% endifchanged %}
+		<li>{% spaceless %}
+			{% if dt.dz_id %}<a href="{% url delajozate.magnetogrami.views.seja_list dt.mandat dt.dz_id %}">{% endif %}
+			{{ dt.ime }}
+			{% if dt.dz_id %}</a>{% endif %}
+		{% endspaceless %}</li>{% if forloop.last %}
+	</ul>
+</div>{% endif %}{% endfor %}
 {% endblock %}

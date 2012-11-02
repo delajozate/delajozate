@@ -56,7 +56,7 @@ class Oseba(models.Model):
 	opombe = models.TextField(blank=True)
 	
 	class Meta:
-		ordering = ('ime', 'priimek')
+		ordering = ('priimek', 'ime')
 		verbose_name_plural = u'Osebe'
 	
 	def __unicode__(self):
@@ -86,16 +86,19 @@ class Oseba(models.Model):
 		if day:
 			# take from dz_extras.py - datum_filter, unify me
 			low = high = day
-			clanstvo = list(self.clanstranke_set.filter(
+			clanstvo = list(self.pozicija_set.filter(
 				Q(od__lte=low, do__gt=low) |   # crosses lower boundary
 				Q(od__lte=high, do__gt=high) | # crosses upper boundary
-				Q(od__lte=low, do__gt=high)))  # or is in between
+				Q(od__lte=low, do__gt=high)), organizacija__stranka__gt=0)  # or is in between
 			return clanstvo
-
-		return self.clanstranke_set.all().order_by('-do')
+		
+		return self.pozicija_set.filter(organizacija__stranka__gt=0).order_by('-do')
 	
 	def funkcije(self):
-		return self.funkcija_set.all().order_by('-do')
+		return self.pozicija_set.exclude(organizacija=None).order_by('-do')
+	
+	def delovna_telesa(self):
+		return self.pozicija_set.filter(organizacija__delovnotelo__gt=0).order_by('od')
 	
 	def save(self, *args, **kwargs):
 		if not self.slug:
@@ -105,14 +108,17 @@ class Oseba(models.Model):
 				self.slug = "%s-%d" % (slug, count)
 				count += 1
 		super(Oseba, self).save(*args, **kwargs)
-
+	
+	def display(self):
+		return u'%s %s' % (self.ime, self.priimek)
+	
 
 class Tweet(models.Model):
 	tweet_id = models.BigIntegerField(blank=False, null=True)
 	text = models.CharField(max_length=250)
 	oseba = models.ForeignKey(Oseba)
 	created_at = models.DateTimeField()
-
+	
 
 class Stranka(models.Model):
 	# kako modelirat kontinuiteto stranke, kadar se preimenuje?
@@ -144,6 +150,9 @@ class Stranka(models.Model):
 	def __unicode__(self):
 		return u'%s (%s)%s' % (self.ime, self.okrajsava, self.do != END_OF_TIME and u'\u271d' or u'')
 	
+	def display(self):
+		return u"%s" % self.ime
+	
 
 class ImeStranke(models.Model):
 	stranka = models.ForeignKey(Stranka)
@@ -167,6 +176,9 @@ class Mandat(models.Model):
 	def __unicode__(self):
 		return unicode(self.st)
 	
+	def display(self):
+		return u"%d mandat: %s - %s" % (self.st, self.od, self.do if self.do else "")
+	
 
 class Skupina(models.Model): # Poslanska
 	ime = models.CharField(max_length=64)
@@ -184,6 +196,8 @@ class Skupina(models.Model): # Poslanska
 	class Meta:
 		verbose_name_plural = u'Skupine'
 	
+	def display(self):
+		return ""
 
 class DrzavniZbor(models.Model):
 	mandat = models.ForeignKey(Mandat)
@@ -197,6 +211,9 @@ class DrzavniZbor(models.Model):
 	class Meta:
 		verbose_name = u'Državni Zbor'
 		verbose_name_plural = u'Državni Zbori'
+	
+	def display(self):
+		return u"%d. mandat Državnega zbora" % self.mandat.st
 	
 
 class DelovnoTelo(models.Model):
@@ -221,6 +238,9 @@ class DelovnoTelo(models.Model):
 	
 	def __unicode__(self):
 		return '%s (%s)' % (self.ime, self.mandat)
+	
+	def display(self):
+		return u"%s" % self.ime
 	
 
 class Funkcija(models.Model):
@@ -285,3 +305,5 @@ class Pozicija(models.Model):
 		verbose_name = u'Pozicija'
 		verbose_name_plural = u'Pozicije'
 	
+	def trajanje(self):
+		return u"%s - %s" % (self.od, self.do if self.do != END_OF_TIME else "")

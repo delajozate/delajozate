@@ -1,83 +1,122 @@
-html, body { background: #f0ede6; margin: 0; padding: 0; }
-body { font-size: 100%; line-height: 1.25em; font-family: "Ubuntu", sans-serif; }
+html, body {background:#f0ede6;margin:0;padding:0;}
+body {font-size:100%;line-height:1.25;font-family:"Ubuntu",sans-serif;}
 
-.site { position: relative; width: 960px; margin: 0 auto 3em; padding: 0; background: #fff; color: #333; }
-.site > section { clear: both; overflow: hidden; }
+.site {position:relative;max-width:960px;margin:0 auto;padding:0;background:#fcfcfc;color:#333;
+	-moz-box-shadow:0 0 12px 0 rgba(0,0,0,.1);
+	-webkit-box-shadow:0 0 12px 0 rgba(0,0,0,.1);
+	box-shadow:0 0 12px 0 rgba(0,0,0,.1);
+}
+.site > section {clear:both;overflow:hidden;}
 
-header, footer { display: block; clear: both; }
-ol, ul, li { list-style: none; margin: 0; padding: 0; }
+h1 {font-size:2em;margin:.3125em 0 .625em;} /* 32px; 10px 20px */
+h2 {font-size:1.5em;margin:.41666667em 0 .83333333em;} /* 24px; 10px 20px */
+h3 {font-size:1.25em;line-height:1;margin:.5em 0;} /* 20px; 10px */
+h4 {font-size:1em;margin:.625em 0;} /* 16px; 10px */
+h5, h6 {font-size:.875em;text-transform:uppercase;margin:.71428571em 0;} /* 14px; 10px */
+hgroup *:not(:first-child) {margin-top:0;}
+hgroup *:not(:last-child) {margin-bottom:0;}
 
-header { position: relative; width: 100%; height: 150px; background: url(img/header_bg.png) no-repeat; overflow: hidden; }
-header h1 { position: absolute; top: 0; left: 20px; width: 150px; height: 120px; margin: 0; background: url(img/delajozate.png) no-repeat center bottom #3a6e85; color: white; font-family: Arvo, sans-serif; }
-header h1 span { visibility: hidden; }
+nav {background:#222;color:#fff;line-height:1.875em;padding:0 .625em;overflow:hidden;} /* 30px; 10px */
+nav a {color:#fff;text-decoration:none;}
+nav ol {list-style:none;margin:0;padding:0;}
+nav ol li {float:left;margin:0;padding:0;}
+nav ol li a {padding:.625em;display:block;} /* 10px */
+nav ol li a:hover {background-color:rgba(255,255,255,.2);}
 
-nav.top { position: absolute; top: 40px; left: 200px; background: transparent; color: #fff; line-height: 1.875em; padding: 0 .5em; overflow: hidden; }
-nav { background: #000; color: #fff; line-height: 1.875em; padding: 0 .5em; overflow: hidden; }
-nav a { color: #fff; text-decoration: none; }
-nav ol { list-style: none; margin: 0; padding: 0; }
-nav ol li { float: left; margin: 0; padding: 0; }
-nav ol li a { padding: .625em; display: block; }
+header, footer {display:block;clear:both;}
+ol, ul {list-style:none;margin:0;padding:0;}
+li {margin:0;padding:0;}
+p {margin:0 0 1.25em;}
 
-footer { background: #000; color: #fff; }
-footer nav { background: #ccc; padding: 0; }
-footer nav a { line-height: 1.25; }
-footer p { padding: .625em; margin: 0; }
-footer a { color: #fff; }
+/* structure */
+header {position:relative;width:100%;background:#447D93;padding:40px 0 20px;overflow:hidden;}
+header h1 {float:left;width:150px;height:120px;margin:-40px 20px 0;background:url(img/delajozate.png) no-repeat center bottom #3a6e85;color:white;font-family:Arvo,sans-serif;}
+header h1 a {display:block;width:100%;height:100%;text-decoration:none;color:inherit;}
+header h1 span {visibility:hidden;}
+header nav {float:left;background:transparent;color:#fff;}
 
-.random { margin: 1.25em 0 2.5em; }
+section.body {padding:0 2.08333333% 1.25em;} /* 0 10px 20px */
+section.body .full {margin:0 -2.17391304%;}
+section.body > nav {background:#68A3B5;}
+section.body > .content {margin:1.25em 0 2.5em;overflow:hidden;}
 
-.cards { padding-top: .5em; }
-.cards > li { width: 25%; height: 400px; float: left; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 0 1em 1em; }
+.content ol {list-style:decimal;margin:0 0 1.25em;}
+.content ul {list-style:disc;margin:0 0 1.25em;}
+.content li {margin-left:1.875em;}
+
+footer {background:#000;color:#fff;}
+footer nav {background:#999;padding:0;}
+footer nav a {line-height:1.25em;} /* 20px */
+footer p {padding:.625em;margin:0;} /* 10px */
+footer a {color:#fff;}
+
+/* cards */
+.cards {padding-top:.5em;}
+.cards > li {width:25%;height:400px;float:left;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;padding:0 1em 1em;}
 
 /* card */
-.card { background: #fff; padding: 10px; position: relative; border: 1px solid rgba(0, 0, 0, .1);
-    -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, .3); -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .3); box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+.card {background:#fff;padding:10px;position:relative;border:1px solid rgba(0,0,0,.1);width:25.5319149%;float:left; /* 240px */
+	-moz-border-radius:10px;-moz-box-shadow:0 2px 4px rgba(0,0,0,.1);-moz-box-sizing:border-box;
+	-webkit-border-radius:10px;-webkit-box-shadow:0 2px 4px rgba(0,0,0,.1);-webkit-box-sizing:border-box;
+	border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,.1);box-sizing:border-box;
 }
-.card h2 { position: absolute; color: #fff; background: rgba(0, 0, 0, .5); left: 0; right: 0; top: 0; margin: 11px 11px 0; font-size: 1.5em; line-height: 1.25em; padding: .125em .25em; }
-.card .stranka { width: 40px; height: 30px; line-height: 12px; text-align: center; border: 1px solid rgba(0, 0, 0, .05); position: absolute; right: -12px; top: -7px; font-size: .625em; text-transform: uppercase; display: table;
-    -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;
+.cards .card {width:100%;}
+.card h2 {position:absolute;color:#fff;background:rgba(0,0,0,.5);left:0;right:0;top:0;margin:11px 11px 0;font-size:1.5em;line-height:1.25em;padding:.125em .25em;}
+.card .stranka {width:40px;height:30px;line-height:12px;text-align:center;border:1px solid rgba(0,0,0,.05);position:absolute;right:-12px;top:-7px;font-size:.625em;text-transform:uppercase;display:table;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius:50%;
 }
-.card .stranka a { color: #000; text-decoration: none; width: 100%; height: 100%; text-shadow: 1px 1px 0 rgba(255, 255, 255, 1); display: table-cell; vertical-align: middle;
-    -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;
-    box-shadow: 1px 1px 1px #666;
+.card .stranka a {color:#000;text-decoration:none;width:100%;height:100%;text-shadow:1px 1px 0 rgba(255,255,255,1);display:table-cell;vertical-align:middle;
+	-moz-border-radius:50%;-moz-box-shadow:1px 1px 1px #666;
+	-webkit-border-radius:50%;-webkit-box-shadow:1px 1px 1px #666;
+	border-radius:50%;box-shadow:1px 1px 1px #666;
 }
-.card .stranka .strankatag { background: #ccc; }
-.card .stranka a.strankatag.sns { background-color: #fff301; }
-.card .stranka a.strankatag.zares { background-color: #f7971e; }
-.card .stranka a.strankatag.lds { background-color: #00adef; }
-.card .stranka a.strankatag.sls { background-color: #60c000; }
-.card .stranka a.strankatag.sds { background-color: #004a99; color: #fff; text-shadow: 1px 1px 0 rgba(0, 0, 0, 1); }
-.card .stranka a.strankatag.sd { background-color: #ff0000; color: #fff; text-shadow: 1px 1px 0 rgba(0, 0, 0, 1); }
+.card .stranka .strankatag {background:#ccc;}
+.card .stranka a.strankatag.sns {background-color:#fff301;}
+.card .stranka a.strankatag.zares {background-color:#f7971e;}
+.card .stranka a.strankatag.lds {background-color:#00adef;}
+.card .stranka a.strankatag.sls {background-color:#60c000;}
+.card .stranka a.strankatag.sds {background-color:#004a99;color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,1);}
+.card .stranka a.strankatag.sd {background-color:#ff0000;color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,1);}
 /* img */
-.card .img { border: 1px solid #999; height: 240px; overflow: hidden; }
-.card .img img { max-width: 100%; width: 100%; display: block; }
+.card .img {border:1px solid #999;height:240px;overflow:hidden;}
+.card .img img {max-width:100%;width:100%;display:block;}
 /* stats */
-.card dl { margin: .625em 0; }
-.card dt { float: left; }
-.card dd { border-bottom: 1px dotted #666; padding: 0; margin: 0; text-align: right; }
+.card dl {margin:.625em 0;}
+.card dt {float:left;}
+.card dd {border-bottom:1px dotted #666;padding:0;margin:0;text-align:right;}
 /* badges */
-.card .badges { border-left: 1px solid #999; overflow: hidden; margin: 0 0 .625em; }
-.card .badges li { border-right: 1px solid #999; float: left; font-size: .625em; width: 25%; padding: 0 .3em;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+.card .badges {border-left:1px solid #999;overflow:hidden;margin:0 0 .625em;}
+.card .badges li {border-right:1px solid #999;float:left;font-size:.625em;width:25%;padding:0 .3em;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
 }
-.card .badges li span { font-size: 2em; display: block; }
+.card .badges li span {font-size:2em;display:block;}
+
+/* poslanci */
+.poslanci {padding:.625em 0;overflow:hidden;clear:both;}
+ol.poslanci {padding:0;}
+.poslanci > li {list-style:none;padding:.625em 0;margin:0;} /* 10px */
+.poslanci .card {margin-right:1.25em;} /* 20px */
+.poslanci h1 {margin-top:0;}
+.poslanci .details {float:left;width:71.7391304%;}
 
 /* seja */
-.govorec { padding: 5px; font-size: 1.1em; font-weight: 500; width: 27%; float: left; clear: left; }
-.govorec em { font-size: .625em; font-style: normal; float: left; clear: left;}
-.receno { width: 60%; padding: 10px; margin-left: 28%; text-align: justify; }
-.break { width: 100%; clear: left; }
-.govorec-slika { width: 100px; }
-.zapis-link { float: right; position: relative; right: -30px; }
-.zapis-link a { text-decoration: none; }
-.zapis-link :hover { text-decoration: underline; }
-h1, h2, h3 { padding: 5px; }
-.zasedanja-list { padding-left: 20px; }
+.govorec {padding:5px;font-size:1.1em;font-weight:500;width:27%;float:left;clear:left;}
+.govorec em {font-size:.625em;font-style:normal;float:left;clear:left;}
+.receno {width:60%;padding:10px;margin-left:28%;text-align:justify;}
+.break {width:100%;clear:left;}
+.govorec-slika {width:100px;}
+.zapis-link {float:right;position:relative;right:-30px;}
+.zapis-link a {text-decoration:none;}
+.zapis-link :hover {text-decoration:underline;}
+h1,h2,h3 {padding:5px;}
+.zasedanja-list {padding-left:20px;}
 
 /* iskanje */
-fieldset { border: none; }
-label.forma { width: 8em; height: 2em; display: block; float: left; }
-fieldset div { clear: both; }
-.highlight { font-weight: 500; }
+fieldset {border:none;}
+label.forma {width:8em;height:2em;display:block;float:left;}
+fieldset div {clear:both;}
+.highlight {font-weight:500;}
