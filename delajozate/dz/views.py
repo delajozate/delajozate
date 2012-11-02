@@ -1,13 +1,11 @@
 import collections
 import datetime
 import json
-import random
 
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.utils.html import escape
 
-from dz.models import Funkcija, ClanStranke, Stranka, Oseba, Mandat, Tweet
+from dz.models import Stranka, Oseba, Mandat, Tweet, Pozicija
 from magnetogrami.models import Zasedanje, Glas
 
 from temporal import END_OF_TIME
@@ -20,13 +18,14 @@ def home(request):
 
 def poslanci_list(request, mandat):
 	if mandat == 'danes':
-		poslanci = Funkcija.objects.filter(funkcija='poslanec', do=END_OF_TIME).order_by('oseba__priimek')
+		poslanci = Pozicija.objects.filter(tip='poslanec', do=END_OF_TIME).order_by('oseba')
 		mandat_str = 'today'
 	else:
 		mandat = mandat[:-len('-mandat')]
 		m = Mandat.objects.get(st=mandat)
 		mandat_str = '%s-mandat' % m.st,
-		poslanci = Funkcija.objects.filter(funkcija='poslanec', od__gte=m.od, do__lte=m.do).order_by('oseba__priimek')
+		poslanci = Pozicija.objects.filter(tip='poslanec', organizacija__drzavnizbor__mandat=m).order_by('od', 'oseba')
+	print poslanci.count()
 	context = {
 		'poslanci': poslanci,
 		'mandat': mandat_str,

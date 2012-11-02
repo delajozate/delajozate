@@ -12,19 +12,21 @@
 	<body>
 		<div class="site">
 			<header>
-				<h1><span>Delajo <strong>zate!</strong></span></h1>
+				<h1><a href="/"><span>Delajo <strong>zate!</strong></span></a></h1>
+				<nav class="top">
+					<ol>
+						<li><a href="/poslanci/">Poslanci</a></li>
+						<!--li><a href="/stranke/">Stranke</a></li -->
+						<!--li><a href="/delovna-telesa/">Delovna telesa</a></li-->
+						<li><a href="/glasovanja/">Glasovanja</a></li>
+						<li><a href="/seje/">Seje</a></li>
+						<li><a href="/iskanje/">Iskanje</a></li>
+					</ol>
+				</nav>
 			</header>
-			<nav class="top">
-				<ol>
-					<li><a href="/poslanci/">Poslanci</a></li>
-					<!--li><a href="/stranke/">Stranke</a></li -->
-					<!--li><a href="/delovna-telesa/">Delovna telesa</a></li-->
-					<li><a href="/glasovanja/">Glasovanja</a></li>
-					<li><a href="/seje/">Seje</a></li>
-					<li><a href="/iskanje/">Iskanje</a></li>
-				</ol>
-			</nav>
-			{% block content %}{% endblock %}
+			<section class="body">
+				{% block content %}{% endblock %}
+			</section>
 			<footer>
 				<nav>
 					<ol>
@@ -38,7 +40,7 @@
 							</ol>
 						</li-->
 						<li><a href="/glasovanja/">Glasovanja</a></li>
-                        <li><a href="/seje/">Seje</a></li>
+						<li><a href="/seje/">Seje</a></li>
 						<li><a href="/iskanje/">Iskanje</a></li>
 					</ol>
 				</nav>
