@@ -139,8 +139,9 @@ def poslanec(request, slug):
 	for tweet in tweeti:
 		casovnica.append((tweet.created_at, tweet, 'tweet'))
 	for glas in glasovi:
-		# convert date to datetime so we can compare it to datetime
-		casovnica.append((datetime.datetime(*(glas.glasovanje.datum.timetuple()[:6])), glas, 'glas'))
+		if glas.glasovanje.datum is not None:
+			# convert date to datetime so we can compare it to datetime
+			casovnica.append((datetime.datetime(*(glas.glasovanje.datum.timetuple()[:6])), glas, 'glas'))
 
 	casovnica = sorted(casovnica, key=lambda k: k[0], reverse=True)
 
