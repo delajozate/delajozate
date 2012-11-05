@@ -46,6 +46,7 @@ class ImeStrankeAdmin(admin.ModelAdmin):
 
 class PozicijaAdmin(admin.ModelAdmin):
 	list_display = ('oseba', 'organizacija')
+	search_fields = ('oseba__ime', 'oseba__priimek',)
 
 admin.site.register(Oseba, OsebaAdmin)
 admin.site.register(Stranka, StrankaAdmin)
