@@ -38,7 +38,8 @@ header nav {float:left;background:transparent;color:#fff;}
 section.body {padding:0 2.08333333% 1.25em;} /* 0 10px 20px */
 section.body .full {margin:0 -2.17391304%;}
 section.body > nav {background:#68A3B5;}
-section.body > .content {margin:1.25em 0 2.5em;overflow:hidden;}
+section.body > .content {margin:1.25em 0 2.5em;}
+section.body > .content:after {content:".";visibility:hidden;display:block;clear:both;}
 
 .content ol {list-style:decimal;margin:0 0 1.25em;}
 .content ul {list-style:disc;margin:0 0 1.25em;}
@@ -56,9 +57,9 @@ footer a {color:#fff;}
 
 /* card */
 .card {background:#fff;padding:10px;position:relative;border:1px solid rgba(0,0,0,.1);width:25.5319149%;float:left; /* 240px */
-	-moz-border-radius:10px;-moz-box-shadow:0 2px 4px rgba(0,0,0,.1);-moz-box-sizing:border-box;
-	-webkit-border-radius:10px;-webkit-box-shadow:0 2px 4px rgba(0,0,0,.1);-webkit-box-sizing:border-box;
-	border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,.1);box-sizing:border-box;
+	-moz-border-radius:10px;-moz-box-shadow:0 2px 6px -2px rgba(0,0,0,.1);-moz-box-sizing:border-box;
+	-webkit-border-radius:10px;-webkit-box-shadow:0 2px 6px -2px rgba(0,0,0,.1);-webkit-box-sizing:border-box;
+	border-radius:10px;box-shadow:0 2px 6px -2px rgba(0,0,0,.1);box-sizing:border-box;
 }
 .cards .card {width:100%;}
 .card h2 {position:absolute;color:#fff;background:rgba(0,0,0,.5);left:0;right:0;top:0;margin:11px 11px 0;font-size:1.5em;line-height:1.25em;padding:.125em .25em;}
@@ -98,7 +99,8 @@ footer a {color:#fff;}
 /* poslanci */
 .poslanci {padding:.625em 0;overflow:hidden;clear:both;}
 ol.poslanci {padding:0;}
-.poslanci > li {list-style:none;padding:.625em 0;margin:0;} /* 10px */
+.poslanci > li {list-style:none;padding:.625em 0;margin:0;overflow:hidden;} /* 10px */
+.poslanci.full > li {padding-left:2.08333333%;padding-right:2.08333333%;} /* 20px */
 .poslanci .card {margin-right:1.25em;} /* 20px */
 .poslanci h1 {margin-top:0;}
 .poslanci .details {float:left;width:71.7391304%;}

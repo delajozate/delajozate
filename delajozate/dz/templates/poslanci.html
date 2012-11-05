@@ -9,7 +9,7 @@
 	</ol>
 </nav>
 <div class="content">
-	<ol class="poslanci">{% for funkcija in poslanci %}{% with funkcija.oseba as oseba %}{% ifchanged oseba.pk %}{% with oseba.clanstvo|datum_filter:mandat as clanstvo %}
+	<ol class="poslanci full">{% for funkcija in poslanci %}{% with funkcija.oseba as oseba %}{% ifchanged oseba.pk %}{% with oseba.clanstvo|datum_filter:mandat as clanstvo %}
 		<li data-oseba-id="{{ oseba.id }}">
 			<div class="card">
 				{% if clanstvo %}{% with clanstvo.0.organizacija.stranka as stranka %}
