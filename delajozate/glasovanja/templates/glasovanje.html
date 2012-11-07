@@ -18,8 +18,11 @@
 <h1>{{ glasovanje }}</h1>
 
 <p>
-    Datum: {{ glasovanje.datum }}<br />
-    Ura: {{ glasovanje.ura }}
+	Glasovanje je potekalo v {{ glasovanje.datum|date:"l, j. E Y" }} ob {{ glasovanje.ura }}.
+	<br />
+	Mandat Državnega zbora: {{ glasovanje.seja.mandat }}
+	<br />
+	<a href="{{ glasovanje.url }}">Ogled glasovanja na strani Državnega zbora</a>
 </p>
 
 <p>
@@ -47,9 +50,6 @@
 
 </p>
 
-<p>
-    <a href="{{ glasovanje.url }}">Ogled glasovanja na strani Državnega zbora</a>
-</p>
 <table>
 <tr>
 <th>Poslanec</th><th>Kvorum</th><th>Glas</th>
