@@ -14,11 +14,10 @@
 {% block content %}
 {% with glasovanje=objects.0.glasovanje %}
 
-
 <h1>{{ glasovanje }}</h1>
 
 <p>
-	Glasovanje je potekalo v {{ glasovanje.datum|date:"l, j. E Y" }} ob {{ glasovanje.ura }}.
+	Glasovanje je potekalo v {{ glasovanje.datum|date:"l, j. E Y" }}{% if glasovanje.ura %} ob {{ glasovanje.ura }}{% endif %}.
 	<br />
 	Mandat Državnega zbora: {{ glasovanje.seja.mandat }}
 	<br />
@@ -73,7 +72,4 @@
 
 {% endwith %}
 
-<script type="text/javascript">
-var glasovanje_data = {{ json|escape }};
-</script>
 {% endblock %}

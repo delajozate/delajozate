@@ -142,16 +142,20 @@ class Glasovanje(models.Model):
 	naslov = models.CharField(max_length=2000, null=True)
 	faza_postopka = models.CharField(max_length=255, null=True)
 	zapis = models.ForeignKey(Zapis, null=True, default=None)
+	vir_datuma = models.CharField(max_length=20, default='')
 	
 	class Meta:
 		ordering = ('-seja__mandat', '-datum')
 	
 	def __unicode__(self):
+		r = u''
+		if self.dokument:
+			r = r + self.dokument + ', '
 		if self.naslov:
-			naslov = self.naslov
+			r += self.naslov
 		else:
-			naslov = self.seja.naslov
-		return u'%s, %s' % (self.dokument, naslov)
+			r += self.seja.naslov
+		return r
 	
 	def absolute_url(self):
 		if self.ura:
@@ -181,7 +185,7 @@ class Glasovanje(models.Model):
 				return self.__stranke
 			except AttributeError:
 				clanstvo = ClanStranke.objects.filter(
-					oseba__id__in=[i.oseba.pk for i in self.glas_set.all().select_related('oseba')], 
+					oseba__id__in=[i.oseba.pk for i in self.glas_set.all().select_related('oseba') if i.oseba], 
 					od__lte=self.datum, 
 					do__gt=self.datum).select_related('oseba', 'stranka')
 				self.__stranke = dict([(i.oseba.pk, i) for i in clanstvo])
@@ -261,6 +265,9 @@ class Glas(models.Model):
 	kvorum = models.BooleanField(default=False)
 	glasoval = models.CharField(max_length=255, choices=GLASOVI)
 	poslanec = models.CharField(max_length=128)
+
+	def __unicode__(self):
+		return u'%s %s %s' % (self.poslanec, self.kvorum, self.glasoval)
 
 	def stranka():
 		def fget(self):

@@ -23,16 +23,12 @@ def glasovanje(request, datum, ura=None, pk=None):
             glasovanje__datum=datum,
             glasovanje__ura=ura)
     elif pk is not None:
-        glasovi.filter(glasovanje__id=pk)
+        glasovi = Glas.objects.filter(glasovanje__id=pk)
     else:
         raise Http404
-    
-    glasovi_json = []
-    json_data = json.dumps(glasovi_json)
     
     glasovi = glasovi.select_related('oseba')
     context = {
         'objects': glasovi,
-        'json': json_data,
     }
     return render(request, 'glasovanje.html', context)
