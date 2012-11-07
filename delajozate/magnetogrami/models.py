@@ -143,6 +143,9 @@ class Glasovanje(models.Model):
 	faza_postopka = models.CharField(max_length=255, null=True)
 	zapis = models.ForeignKey(Zapis, null=True, default=None)
 	
+	class Meta:
+		ordering = ('-seja__mandat', '-datum')
+	
 	def __unicode__(self):
 		if self.naslov:
 			naslov = self.naslov
