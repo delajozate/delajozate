@@ -66,7 +66,7 @@
 <td>{{ glas.poslanec|title }}</td>
 {% endif %}
 <td>{% if glas.kvorum %}Da{% else %}Ne{% endif %}</td>
-<td>{{ glas.glasoval }}</td>
+<td>{% if glas.glasoval == "Ni" %}-{% else %}{{ glas.glasoval }}{% endif %}</td>
 </tr>
 {% endfor %}
 </table>
