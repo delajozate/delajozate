@@ -191,7 +191,6 @@ class Glasovanje(models.Model):
 
 	def summary():
 		def fget(self):
-
 			glasovi = list(self.glas_set.all().select_related('oseba', 'glasovanje'))
 			
 			rez = self.rezultati
@@ -205,17 +204,17 @@ class Glasovanje(models.Model):
 
 			data = {}
 			for glas in glasovi:
-
 				try:
 					stranka = self.stranke[glas.oseba.pk].stranka
+					okrajsava = stranka.okrajsava
 				except AttributeError:
 					stranka = 'Neznana'
+					okrajsava = 'Neznana'
 
 				glasoval = glas.glasoval
-
-
-				if not data.get(stranka.okrajsava, None):
-					data[stranka.okrajsava] = {
+				
+				if not data.get(okrajsava, None):
+					data[okrajsava] = {
 						'stranka': stranka or None,
 						'majority': 0,
 						'minority': 0,
@@ -223,22 +222,21 @@ class Glasovanje(models.Model):
 						'present': 0.0,
 						'percent': 0
 					}
-
 				if majority == 'za':
 					if glasoval == 'Za': 
-						data[stranka.okrajsava]['majority'] += 1
+						data[okrajsava]['majority'] += 1
 					elif glasoval == 'Proti': 
-						data[stranka.okrajsava]['minority'] += 1
+						data[okrajsava]['minority'] += 1
 				else:
 					if glasoval == 'Za': 
-						data[stranka.okrajsava]['minority'] += 1
+						data[okrajsava]['minority'] += 1
 					elif glasoval == 'Proti':
-						data[stranka.okrajsava]['majority'] += 1
+						data[okrajsava]['majority'] += 1
 
 				if glasoval in ['Za', 'Proti']:
-					data[stranka.okrajsava]['present'] += 1
+					data[okrajsava]['present'] += 1
 
-				data[stranka.okrajsava]['count'] += 1
+				data[okrajsava]['count'] += 1
 
 			for stranka in data:
 				data[stranka]['percent'] =  (data[stranka]['present'] / data[stranka]['count']) * 100
@@ -252,9 +250,7 @@ class Glasovanje(models.Model):
 				'minority': minority,
 				'votes': data_sorted
 			}
-
 		return (fget,)
-
 	summary = property(*summary())
 
 
