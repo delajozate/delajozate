@@ -77,7 +77,25 @@ class Video(models.Model):
 	datum = models.DateField()
 	url = models.CharField(max_length=512)
 	ava_id = models.CharField(max_length=512, unique=True)
+	zasedanje = models.ForeignKey(Zasedanje, null=True)
 
+	class Meta:
+		ordering = ('-datum',)
+	
+	def upari(self):
+		"FIXME: improvements, maybe?"
+		qs = Zasedanje.objects.filter(datum=self.datum)
+		
+		m = re.match('^\s*(\d+\.)', self.title)
+		if m:
+			stevilka = m.group(1)
+			qs = qs.filter(seja__naslov__contains=stevilka)
+		
+		zasedanja = list(qs)
+		if len(zasedanja) == 1:
+			self.zasedanje = zasedanja[0]
+			return True
+		return False
 
 class Zapis(models.Model):
 	zasedanje = models.ForeignKey(Zasedanje)

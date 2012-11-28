@@ -35,7 +35,13 @@ addLoadEvent(updateHighlight);
 <div class="zasedanja-list">
 <ul>
 {% for z in seja.magnetogrami %}
-    <li><a href="{% url delajozate.magnetogrami.views.seja seja.mandat seja.delovno_telo seja.slug z.datum %}">{{ z.datum }}</a> <a href="{{ z.url }}">(ogled izvirnega besedila na strani Državnega zbora)</a></li>
+    <li><a href="{% url delajozate.magnetogrami.views.seja seja.mandat seja.delovno_telo seja.slug z.datum %}">{{ z.datum }}</a></li>
+    <li><a href="{{ z.url }}">- ogled izvirnega besedila na strani Državnega zbora)</a></li>
+    <li>{% if z.video_set.all %}
+        {% for video in z.video_set.all %}
+            <a href="{{ video.url }}">- ogled posnetka v arhivu RTV</a>
+        {% endfor %}
+    {% endif %}</li>
 {% endfor %}
 </ul>
 </div>
