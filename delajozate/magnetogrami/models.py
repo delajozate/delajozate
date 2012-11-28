@@ -72,6 +72,13 @@ class Zasedanje(models.Model):
 		return (fget,)
 	stranke = property(*stranke())
 
+class Video(models.Model):
+	title = models.CharField(max_length=512)
+	datum = models.DateField()
+	url = models.CharField(max_length=512)
+	ava_id = models.CharField(max_length=512, unique=True)
+
+
 class Zapis(models.Model):
 	zasedanje = models.ForeignKey(Zasedanje)
 	seq = models.IntegerField()
