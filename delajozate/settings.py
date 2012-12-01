@@ -180,8 +180,7 @@ FIXTURE_DIRS = (
 HAYSTACK_SITECONF = 'delajozate.search.search_setup'
 HAYSTACK_SEARCH_ENGINE = 'solr'
 HAYSTACK_SOLR_URL = 'http://127.0.0.1:8983/solr'
-
-#SOLR_URL = "http://localhost:8983/solr/"
+NEWSBUDDY_URL = None
 
 try:
 	from localsettings import *

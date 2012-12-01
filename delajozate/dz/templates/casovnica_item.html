@@ -8,3 +8,7 @@
     
     <a href="{{ item.obj.glasovanje.absolute_url }}">{{ item.obj.glasovanje }}</a>
 {% endif %}
+
+{% if item.type == "novica" %}
+	[{{ item.obj.source }}] <a href="{{ item.obj.link }}">{{ item.obj.title }}</a>
+{% endif %}
