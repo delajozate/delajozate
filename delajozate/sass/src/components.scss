@@ -74,6 +74,29 @@
 }
 
 /*
+ * Pagination
+ */
+.pgn-pages {
+    list-style-type: none;
+}
+.pgn-pages > li {
+    float: left;
+    width: 33%;
+}
+.pgn-pages > li.previous {
+}
+.pgn-pages > li.next {
+    text-align: right;
+}
+.pgn-current {
+    text-align: center;
+}
+.no-previous > .pgn-current {
+    margin-left: 33%;
+}
+
+
+/*
  * Search
  */
 .highlight { /* TODO: So vague it is almost useless */
