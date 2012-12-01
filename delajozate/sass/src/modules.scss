@@ -1,0 +1,156 @@
+.site {
+    background: #fcfcfc;
+    color: #333;
+    @include box-shadow(0 0 12px 0 rgba(0, 0, 0, .1));
+}
+
+header {
+    background: #447D93;
+    overflow: hidden;
+}
+header > h1 {
+    float: left;
+    width: 150px;
+    height: 120px;
+    margin: -40px 20px 0;
+    background: url(../img/delajozate.png) no-repeat center bottom #3a6e85;
+    color: white;font-family: Arvo,sans-serif;
+}
+header > h1 > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+header > h1 span {visibility: hidden;}
+header nav {
+    float: left;
+    background: transparent;
+    color: #fff;
+}
+
+nav { /* 30px; 10px */
+    background: #222;
+    color: #fff;
+    line-height: 1.875em;
+    padding: 0 .625em;
+    overflow: hidden;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+nav ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav ol li {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+nav ol li a { /* 10px */
+    display: block;
+    padding: .625em;
+}
+nav ol li a:hover {
+    background-color: rgba(255,255,255,.2);
+}
+
+section.body > nav {background: #68A3B5;}
+section.body > .content {margin: 1.25em 0 2.5em;}
+section.body > .content:after {
+    display: block;
+    clear: both;
+    visibility: hidden;
+    content: ".";
+}
+
+.content ol {
+    list-style: decimal;
+    margin: 0 0 1.25em;
+}
+.content ul {
+    list-style: disc;
+    margin: 0 0 1.25em;
+}
+.content li {margin-left: 1.875em;}
+
+footer {
+    background: #000;
+    color: #fff;
+}
+footer nav {
+    background: #999;
+    padding: 0;
+}
+footer nav a { /* 20px */
+    line-height: 1.25em;
+}
+footer p { /* 10px */
+    padding: .625em;
+    margin: 0;
+}
+footer a {color: #fff;}
+
+/* TODO: Everything bellow is EXTRA suspicious */
+/* poslanci */
+.poslanci {
+    padding: .625em 0;
+    overflow: hidden;
+    clear: both;
+}
+ol.poslanci {padding: 0;}
+.poslanci > li { /* 10px */
+    list-style: none;
+    padding: .625em 0;
+    margin: 0;
+    overflow: hidden;
+}
+.poslanci.full > li { /* 20px */
+    padding-left: 2.08333333%;
+    padding-right: 2.08333333%;
+}
+.poslanci .card {margin-right: 1.25em;} /* 20px */
+.poslanci h1 {margin-top: 0;}
+.poslanci .details {
+    float: left;
+    width: 71.7391304%;
+}
+
+/* seja */
+.govorec {
+    float: left;
+    clear: left;
+    width: 27%;
+    padding: 5px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.govorec em {
+    float: left;
+    clear: left;
+    font-size: .625em;
+    font-style: normal;
+}
+.receno {
+    width: 60%;
+    margin-left: 28%;
+    padding: 10px;
+    text-align: justify;
+}
+.break {
+    clear: left;
+    width: 100%;
+}
+.govorec-slika {width: 100px;}
+.zapis-link {
+    position: relative;
+    float: right;
+    right: -30px;
+}
+.zapis-link a {text-decoration: none;}
+.zapis-link :hover {text-decoration: underline;}
+.zasedanja-list {padding-left: 20px;}

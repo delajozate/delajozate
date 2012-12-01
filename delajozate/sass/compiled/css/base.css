@@ -1,0 +1,79 @@
+html,
+body {
+  background: #f0ede6;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 100%;
+  line-height: 1.25;
+  font-family: "Ubuntu",sans-serif;
+}
+
+h1 {
+  /* 32px; 10px 20px */
+  font-size: 2em;
+  margin: .3125em 0 .625em;
+}
+
+h2 {
+  /* 24px; 10px 20px */
+  font-size: 1.5em;
+  margin: .41666667em 0 .83333333em;
+}
+
+h3 {
+  /* 20px; 10px */
+  font-size: 1.25em;
+  line-height: 1;
+  margin: .5em 0;
+}
+
+h1, h2, h3 {
+  padding: 5px;
+}
+
+h4 {
+  /* 16px; 10px */
+  font-size: 1em;
+  margin: .625em 0;
+}
+
+h5,
+h6 {
+  /* 14px; 10px */
+  font-size: .875em;
+  text-transform: uppercase;
+  margin: .71428571em 0;
+}
+
+hgroup *:not(:first-child) {
+  margin-top: 0;
+}
+
+hgroup *:not(:last-child) {
+  margin-bottom: 0;
+}
+
+header,
+footer {
+  display: block;
+  clear: both;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0 0 1.25em;
+}

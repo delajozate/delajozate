@@ -1,0 +1,79 @@
+/*
+ * Playing card for MPs
+ */
+.card {
+    position: relative;
+    width: 25.5319149%;float: left; /* 240px */
+    padding: 10px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.1);
+    @include border-radius(10px);
+    @include box-shadow(0 2px 6px -2px rgba(0,0,0,.1));
+    @include box-sizing(border-box);
+}
+.card > .stranka{
+    display: table;
+    position: absolute;
+    right: -12px;
+    top: -7px;
+    width: 40px;
+    height: 30px;
+    border: 1px solid rgba(0,0,0,.05);
+    line-height: 12px;
+    text-align: center;
+    font-size: .625em;
+    text-transform: uppercase;
+    @include border-radius(50%);
+}
+.card > .stranka > a {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    text-decoration: none;
+    @include border-radius(50%);
+    @include box-shadow(1px 1px 1px #666);
+    @include text-shadow(1px 1px 0 rgba(255,255,255,1));
+}
+.card > .stranka > .strankatag {background: #ccc;}
+.card > .stranka > a.strankatag.sns {background-color: #fff301;}
+.card > .stranka > a.strankatag.zares {background-color: #f7971e;}
+.card > .stranka > a.strankatag.lds {background-color: #00adef;}
+.card > .stranka > a.strankatag.sls {background-color: #60c000;}
+.card > .stranka > a.strankatag.sds {
+    background-color: #004a99;
+    color: #fff;
+    @include text-shadow(1px 1px 0 rgba(0,0,0,1));
+}
+.card > .stranka > a.strankatag.sd {
+    background-color: #ff0000;
+    color: #fff;
+    @include text-shadow(1px 1px 0 rgba(0,0,0,1));
+}
+/* img */
+.card .img {
+    border: 1px solid #999;
+    overflow:hidden;
+}
+.card .img > img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+}
+/* card stats */
+.card dl {margin: .625em 0;}
+.card dt {float: left;}
+.card dd {
+    border-bottom: 1px dotted #666;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+/*
+ * Search
+ */
+.highlight { /* TODO: So vague it is almost useless */
+    font-weight:500;
+}
