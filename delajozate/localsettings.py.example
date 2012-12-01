@@ -12,4 +12,4 @@ DATABASES = {
     }
 }
 
-
+# NEWSBUDDY_URL="http://localhost:8005"
