@@ -4,28 +4,7 @@
 {% block content %}
 <div class="content">
 	<div class="poslanci vcard">{% with oseba.clanstvo|datum_filter:"today" as clanstvo %}
-		<div class="card">
-			{% if clanstvo %}{% with clanstvo.0.organizacija.stranka as stranka %}
-			<div class="stranka"><a class="strankatag {{ stranka.okrajsava|lower }}"
-				href="#"
-				title="{{ stranka.ime }}">{{ stranka.okrajsava }}
-			</a></div>{% endwith %}{% endif %}
-			<a href="/osebe/{{ oseba.slug }}/">
-				<div class="img">
-					<img class="image" src="{{ oseba.slika_or_default }}" alt="" title="{{ oseba }}, vir:{{ oseba.slika_vir }}" />
-				</div>
-			</a>
-			<dl>
-				<dt>Poslanskih dni</dt>
-				<dd>{{ oseba.poslanskih_dni|default_if_none:"0" }}</dd>
-				<dt>Mandatov</dt>
-				<dd>{{ oseba.st_mandatov }}</dd>
-				<!--dt>Strank</dt>
-				<dd>{{ oseba.clanstvo|length }}</dd-->
-				<!--dt>Delovna telesa</dt>
-				<dd>{{ oseba.delovna_telesa|length }}</dd-->
-			</dl>
-		</div>
+        {% include "components/card.html" %}
 		<div class="details">
 			<h1>
 				<span class="fn">

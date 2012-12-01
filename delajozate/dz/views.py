@@ -4,11 +4,13 @@ import json
 
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views.generic.list import ListView
 
 from dz.models import Stranka, Oseba, Mandat, Tweet, Pozicija
 from magnetogrami.models import Zasedanje, Glas
 
 from temporal import END_OF_TIME
+
 
 def home(request):
 	context = {
@@ -16,22 +18,38 @@ def home(request):
 	}
 	return render(request, 'home.html', context)
 
-def poslanci_list(request, mandat):
-	if mandat == 'danes':
-		poslanci = Pozicija.objects.filter(tip='poslanec', do=END_OF_TIME).order_by('oseba')
-		mandat_str = 'today'
-	else:
-		mandat = mandat[:-len('-mandat')]
-		m = Mandat.objects.get(st=mandat)
-		mandat_str = '%s-mandat' % m.st,
-		poslanci = Pozicija.objects.filter(tip='poslanec', organizacija__drzavnizbor__mandat=m).order_by('od', 'oseba')
-	print poslanci.count()
-	context = {
-		'poslanci': poslanci,
-		'mandat': mandat_str,
-		'mandati': Mandat.objects.all(),
-	}
-	return render(request, 'poslanci.html', context)
+
+class PoslanciList(ListView):
+	model = Pozicija
+	template_name = 'poslanci.html'
+	paginate_by = 10
+
+	def get_queryset(self, *args, **kwargs):
+		if self.mandat == 'danes':
+			return Pozicija.objects.filter(
+				tip='poslanec', do=END_OF_TIME).order_by('oseba')
+		else:
+			mandat = self.mandat[:-len('-mandat')]
+			return Pozicija.objects.filter(
+				tip='poslanec', organizacija__drzavnizbor__mandat=mandat).order_by(
+					'od', 'oseba')
+
+	def get_context_data(self, **kwargs):
+		today = datetime.date.today()
+		context = super(PoslanciList, self).get_context_data(**kwargs)
+
+		mandati = Mandat.objects.all().values("st", "od", "do")
+		for mandat in mandati:
+			if mandat['do'] > today:
+				mandat['do'] = None
+		context['mandati'] = mandati
+		context['mandat'] = self.mandat if self.mandat != "danes" else 'today'
+		context['poslanci'] = context['object_list']
+		return context
+
+	def dispatch(self, request, mandat):
+		self.mandat = mandat
+		return super(PoslanciList, self).dispatch(request, mandat)
 
 
 def d_squared(tracks, nodepairs):
@@ -101,7 +119,7 @@ def stranke_json(request):
 			'spremenila_v': [v.id for v in s.spremenila_v.all()],
 			}
 		stranke[s.id] = s_dict
-	
+
 	condensed = {}
 	for master_id, steza in steze.iteritems():
 		newsteza = []
@@ -118,7 +136,7 @@ def stranke_json(request):
 			}
 			newsteza.append(s_dict)
 		condensed[master_id] = newsteza
-	
+
 	return HttpResponse(json.dumps({'stranke_all': stranke, 'stranke_condensed': condensed}, indent=3), mimetype='application/json')
 
 

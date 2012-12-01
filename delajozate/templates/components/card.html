@@ -1,0 +1,29 @@
+<div class="card">
+    {% if clanstvo %}{% with clanstvo.0.organizacija.stranka as stranka %}
+    <div class="stranka"><a class="strankatag {{ stranka.okrajsava|lower }}"
+        href="#"
+        title="{{ stranka.ime }}">{{ stranka.okrajsava }}
+    </a></div>{% endwith %}{% endif %}
+    <a href="/osebe/{{ oseba.slug }}/">
+        <div class="img">
+            <img class="image" src="{{ oseba.slika_or_default }}" alt="" title="{{ oseba }}, vir:{{ oseba.slika_vir }}" />
+        </div>
+    </a>
+    <dl>
+        <dt>
+            <span class="fn">
+                <span class="given-name">{{ oseba.ime }}</span>
+                <span class="family-name">{{ oseba.priimek }}</span>
+            </span>
+        </dt>
+        <dd>&nbsp;</dd>{% comment %}
+        <!--dt>Poslanskih dni</dt>
+        <dd>{{ oseba.poslanskih_dni|default_if_none:"0" }}</dd-->{% endcomment %}
+        <dt>Mandatov</dt>
+        <dd>{{ oseba.st_mandatov }}</dd>{% comment %}
+        <!--dt>Strank</dt>
+        <dd>{{ oseba.clanstvo|length }}</dd-->
+        <!--dt>Delovna telesa</dt>
+        <dd>{{ oseba.delovna_telesa|length }}</dd-->{% endcomment %}
+    </dl>
+</div>
