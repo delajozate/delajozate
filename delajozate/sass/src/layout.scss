@@ -23,6 +23,18 @@ section.body > .content {
     margin: 1.25em 10px 2.5em;
 }
 
+section.body aside {
+    float: right;
+}
+
+.vcard aside { /* Make space for card's badge */
+    padding-right: 10px;
+}
+
+.poslanci.vcard {
+    overflow: hidden;
+}
+
 .poslanci {
     padding: .625em 0;
     overflow: hidden;
@@ -42,6 +54,13 @@ ol.poslanci {padding: 0;}
     .poslanci > li {
         width: 100%;
         padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    section.body aside ,
+    section.body aside > .card {
+        float: none;
     }
 }
 

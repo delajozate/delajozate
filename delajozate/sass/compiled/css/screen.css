@@ -114,6 +114,19 @@ section.body > .content {
   margin: 1.25em 10px 2.5em;
 }
 
+section.body aside {
+  float: right;
+}
+
+.vcard aside {
+  /* Make space for card's badge */
+  padding-right: 10px;
+}
+
+.poslanci.vcard {
+  overflow: hidden;
+}
+
 .poslanci {
   padding: .625em 0;
   overflow: hidden;
@@ -138,6 +151,12 @@ ol.poslanci {
   .poslanci > li {
     width: 100%;
     padding-right: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  section.body aside,
+  section.body aside > .card {
+    float: none;
   }
 }
 @media screen and (min-width: 361px) and (max-width: 500px) {
@@ -296,11 +315,6 @@ footer a {
   margin-top: 0;
 }
 
-.poslanci .details {
-  float: left;
-  width: 71.7391304%;
-}
-
 /* seja */
 .govorec {
   float: left;
@@ -379,8 +393,8 @@ footer a {
 .card > .stranka {
   display: table;
   position: absolute;
-  right: -12px;
-  top: -7px;
+  right: -7px;
+  top: -12px;
   width: 40px;
   height: 30px;
   border: 1px solid rgba(0, 0, 0, 0.05);

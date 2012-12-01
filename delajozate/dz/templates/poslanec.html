@@ -4,7 +4,11 @@
 {% block content %}
 <div class="content">
 	<div class="poslanci vcard">{% with oseba.clanstvo|datum_filter:"today" as clanstvo %}
-        {% include "components/card.html" %}
+		<aside>
+		{% with hide_card_details=yes %}
+		{% include "components/card.html" %}
+		{% endwith %}
+		</aside>
 		<div class="details">
 			<h1>
 				<span class="fn">
@@ -25,7 +29,7 @@
 				{% if oseba.twitter %}
 				<a href="https://twitter.com/{{ oseba.twitter }}">@{{ oseba.twitter }}</a>
 				{% else %}
-				--
+				neznan
 				{% endif %}
 			</p>
 		</div>

@@ -8,7 +8,7 @@
         <div class="img">
             <img class="image" src="{{ oseba.slika_or_default }}" alt="" title="{{ oseba }}, vir:{{ oseba.slika_vir }}" />
         </div>
-    </a>
+    </a>{% if hide_card_details == yes %}
     <dl>
         <dt>
             <span class="fn">
@@ -25,5 +25,5 @@
         <dd>{{ oseba.clanstvo|length }}</dd-->
         <!--dt>Delovna telesa</dt>
         <dd>{{ oseba.delovna_telesa|length }}</dd-->{% endcomment %}
-    </dl>
+    </dl>{% endif %}
 </div>
