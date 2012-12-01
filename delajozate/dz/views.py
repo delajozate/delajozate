@@ -22,7 +22,7 @@ def home(request):
 class PoslanciList(ListView):
 	model = Pozicija
 	template_name = 'poslanci.html'
-	paginate_by = 10
+	paginate_by = 12
 
 	def get_queryset(self, *args, **kwargs):
 		if self.mandat == 'danes':

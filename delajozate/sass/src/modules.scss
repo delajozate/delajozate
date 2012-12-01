@@ -60,7 +60,6 @@ nav ol li a:hover {
 }
 
 section.body > nav {background: #68A3B5;}
-section.body > .content {margin: 1.25em 0 2.5em;}
 section.body > .content:after {
     display: block;
     clear: both;
@@ -76,7 +75,6 @@ section.body > .content:after {
     list-style: disc;
     margin: 0 0 1.25em;
 }
-.content li {margin-left: 1.875em;}
 
 footer {
     background: #000;
@@ -97,23 +95,6 @@ footer a {color: #fff;}
 
 /* TODO: Everything bellow is EXTRA suspicious */
 /* poslanci */
-.poslanci {
-    padding: .625em 0;
-    overflow: hidden;
-    clear: both;
-}
-ol.poslanci {padding: 0;}
-.poslanci > li { /* 10px */
-    list-style: none;
-    padding: .625em 0;
-    margin: 0;
-    overflow: hidden;
-}
-.poslanci.full > li { /* 20px */
-    padding-left: 2.08333333%;
-    padding-right: 2.08333333%;
-}
-.poslanci .card {margin-right: 1.25em;} /* 20px */
 .poslanci h1 {margin-top: 0;}
 .poslanci .details {
     float: left;

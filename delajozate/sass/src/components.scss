@@ -3,7 +3,9 @@
  */
 .card {
     position: relative;
-    width: 25.5319149%;float: left; /* 240px */
+    float: left;
+    max-width: 249px;
+    width: 100%;
     padding: 10px;
     background: #fff;
     border: 1px solid rgba(0,0,0,.1);

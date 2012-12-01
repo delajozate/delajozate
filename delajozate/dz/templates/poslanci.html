@@ -13,23 +13,6 @@
 	<ol class="poslanci full">{% for funkcija in poslanci %}{% with funkcija.oseba as oseba %}{% ifchanged oseba.pk %}{% with oseba.clanstvo|datum_filter:mandat as clanstvo %}
 		<li data-oseba-id="{{ oseba.id }}">
 			{% include "components/card.html" %}
-			<!--
-			<div class="details">
-				<h1>
-					<a href="/osebe/{{ oseba.slug }}/">
-						<span class="fn">
-							<span class="given-name">{{ oseba.ime }}</span>
-							<span class="family-name">{{ oseba.priimek }}</span>
-						</span>
-					</a>
-				</h1>
-				<ul>
-				{% for f in oseba.funkcije|datum_filter:mandat %}
-					<li class="role">{{ f.get_tip_display }} {{ f.organizacija.value.display }} ({{ f.trajanje }})</li>
-				{% endfor %}
-				</ul>
-			</div>
-			-->
 		</li>{% endwith %}{% endifchanged %}{% endwith %}{% endfor %}
 	</ol>
 {% include "components/pagination.html" %}
