@@ -15,6 +15,7 @@ urlpatterns += patterns('dz.views',
 	url(r'^stranke/json/', 'stranke_json', name='stranke_json'),
 
 	url(r'^osebe/(?P<slug>[A-Za-z0-9-_]+)/$', 'poslanec', name='poslanec'),
+	url(r'^osebe/(?P<slug>[A-Za-z0-9-_]+)/glasovanja/$', 'poslanec_glasovanja', name='poslanec_glasovanja'),
 	url(r'^poslanci/(?P<mandat>danes|\d+-mandat)/$', PoslanciList.as_view(), name='poslanci_list'),
 	url(r'^robots.txt$', 'robots'),
 	url(r'^$', 'home', name='home'),

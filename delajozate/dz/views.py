@@ -160,11 +160,34 @@ def poslanec(request, slug):
 
 	context = {
 		'oseba': oseba,
+		'slug': slug,
 		'last_num_votes': len(glasovi),
 		'votes': glasovi,
 	}
 
 	return render(request, "poslanec.html", context)
+
+
+def poslanec_glasovanja(request, slug):
+	oseba = Oseba.objects.get(slug=slug)
+	glasovi = Glas.objects.filter(oseba=oseba).select_related(
+		'glasovanje', 'glasovanje__seja').order_by( '-glasovanje__datum')
+
+	classes = {
+		#'Ni': 'yellow',
+		'Za': 'green',
+		'Proti': 'red',
+	}
+	for glas in glasovi:
+		glas.cls = classes.get(glas.glasoval, "")
+
+	context = {
+		'oseba': oseba,
+		'slug': slug,
+		'votes': glasovi,
+	}
+
+	return render(request, "poslanec_glasovanja.html", context)
 
 
 def robots(request):

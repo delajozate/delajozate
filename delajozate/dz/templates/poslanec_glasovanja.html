@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load dz_extras %}
+
+{% block content %}
+<div class="content">
+	<div>
+		<h1>{{ oseba.ime }} {{ oseba.priimek }}</h1>
+		<p>
+			<a href="{% url poslanec slug %}">Nazaj na domačo stran poslanca.</a>
+		</p>
+	</div>
+	<div class="votes">
+		<h2>Glasovanja</h2>
+		{% if votes %}
+		<table>
+			<thead>
+				<tr class="center">
+					<th>Datum</th>
+					<th>Sklep</th>
+					<th>Glasoval</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in votes %}
+				<tr>
+					<td><time value="{{ item.glasovanje.datum|date:"c" }}">
+						{{ item.glasovanje.datum|date:"j.n.Y" }}</time></td>
+					<td><a href="{{ item.glasovanje.absolute_url }}">{{ item.glasovanje }}</a></td>
+					<td class="center {{ item.cls }}">{{ item.glasoval }}</td>
+				</tr>{% endfor %}
+			</tbody>
+		</table>
+		<p>
+			<a href="{% url poslanec slug %}">Nazaj na domačo stran poslanca.</a>
+		</p>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}
