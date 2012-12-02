@@ -138,6 +138,16 @@ def stranke_json(request):
 
 	return HttpResponse(json.dumps({'stranke_all': stranke, 'stranke_condensed': condensed}, indent=3), mimetype='application/json')
 
+def pobarvaj_glasove(glasovi):
+	classes = {
+		#'Ni': 'yellow',
+		'Za': 'green',
+		'Proti': 'red',
+	}
+	for glas in glasovi:
+		glas.cls = classes.get(glas.glasoval, "")
+	return glasovi
+
 
 def poslanec(request, slug):
 	vote_limit = 20
@@ -150,13 +160,7 @@ def poslanec(request, slug):
 	'''
 	tweeti = Tweet.objects.filter(oseba=oseba)
 	'''
-	classes = {
-		#'Ni': 'yellow',
-		'Za': 'green',
-		'Proti': 'red',
-	}
-	for glas in glasovi:
-		glas.cls = classes.get(glas.glasoval, "")
+	pobarvaj_glasove(glasovi)
 
 	context = {
 		'oseba': oseba,
@@ -170,26 +174,27 @@ class GlasovanjaList(ListView):
 	model = Glas
 	template_name = 'poslanec_glasovanja.html'
 	paginate_by = 30
+	limit = None
 
 	def get_queryset(self, *args, **kwargs):
-		return Glas.objects.filter(oseba=self.oseba).select_related(
+		qs = Glas.objects.filter(oseba=self.oseba).select_related(
 			'glasovanje', 'glasovanje__seja').order_by( '-glasovanje__datum')
+		if self.limit == 'letos':
+			today = datetime.date.today()
+			start = datetime.date(today.year, 1, 1)
+			qs = qs.filter(glasovanje__datum__gte=start)
+		return qs
 
 	def get_context_data(self, **kwargs):
-		classes = {
-			#'Ni': 'yellow',
-			'Za': 'green',
-			'Proti': 'red',
-		}
 		context = super(GlasovanjaList, self).get_context_data(**kwargs)
 		context['oseba'] = self.oseba
 		context['votes'] = context['object_list']
-		for glas in context['votes']:
-			glas.cls = classes.get(glas.glasoval, "")
+		pobarvaj_glasove(context['votes'])
 		return context
 
 	def dispatch(self, request, slug):
 		self.oseba = Oseba.objects.get(slug=slug)
+		self.limit = request.GET.get('limit', None)
 		return super(GlasovanjaList, self).dispatch(request, slug)
 
 

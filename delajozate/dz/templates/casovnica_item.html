@@ -1,10 +1,18 @@
-{% if item.type == "tweet" %}
-    [tweet] {{ item.obj.text }}
-{% endif %}
-
-{% if item.type == "glas" %}
-    {# TODO: upostevaj kvorum? #}
-    Glasoval/a <strong>{{ item.obj.glasoval }}</strong>
-    
-    <a href="{{ item.obj.glasovanje.absolute_url }}">{{ item.obj.glasovanje }}</a>
-{% endif %}
+		<table>
+			<thead>
+				<tr class="center">
+					<th>Datum</th>
+					<th>Sklep</th>
+					<th>Glasoval</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in votes %}
+				<tr>
+					<td><time value="{{ item.glasovanje.datum|date:"c" }}">
+						{{ item.glasovanje.datum|date:"j.n.Y" }}</time></td>
+					<td><a href="{{ item.glasovanje.absolute_url }}">{{ item.glasovanje }}</a></td>
+					<td class="center {{ item.cls }}">{{ item.glasoval }}</td>
+				</tr>{% endfor %}
+			</tbody>
+		</table>
