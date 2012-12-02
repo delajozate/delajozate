@@ -70,8 +70,6 @@ def stranke_json(request):
 		end_sticisce = stiki.setdefault(s.do, {})
 		end_sticisce.setdefault('do', []).append(s)
 
-	from pprint import pprint
-
 	masters = {}
 	steze = {}
 	povezave = {}
@@ -104,6 +102,7 @@ def stranke_json(request):
 
 	steze_index = dict([(b, a) for a, b in list(enumerate(steze.keys()))])
 
+	#from pprint import pprint
 	#pprint(steze)
 
 	stranke = {}
@@ -141,53 +140,29 @@ def stranke_json(request):
 
 
 def poslanec(request, slug):
+	vote_limit = 20
+
 	oseba = Oseba.objects.get(slug=slug)
+	glasovi = Glas.objects.filter(oseba=oseba).select_related(
+		'glasovanje', 'glasovanje__seja').order_by(
+			'-glasovanje__datum')[:vote_limit]
+
+	'''
 	tweeti = Tweet.objects.filter(oseba=oseba)
-	glasovi = Glas.objects.filter(oseba=oseba).select_related('glasovanje', 'glasovanje__seja')
-
-	now = datetime.datetime.now()
-	today = now.replace(hour=0, minute=0, second=0, microsecond=0)
-	# TODO: actually count weeks
-	this_week = now - datetime.timedelta(days=-7)
-	last_week = now - datetime.timedelta(days=-14)
-	two_weeks_ago = now - datetime.timedelta(days=-21)
-	month_ago = now - datetime.timedelta(days=-31)
-
-	casovnica = []
-	for tweet in tweeti:
-		casovnica.append((tweet.created_at, tweet, 'tweet'))
+	'''
+	classes = {
+		#'Ni': 'yellow',
+		'Za': 'green',
+		'Proti': 'red',
+	}
 	for glas in glasovi:
-		if glas.glasovanje.datum is not None:
-			# convert date to datetime so we can compare it to datetime
-			casovnica.append((datetime.datetime(*(glas.glasovanje.datum.timetuple()[:6])), glas, 'glas'))
-
-	casovnica = sorted(casovnica, key=lambda k: k[0], reverse=True)
+		glas.cls = classes.get(glas.glasoval, "")
 
 	context = {
 		'oseba': oseba,
-		'today_list': [],
-		'this_week_list': [],
-		'last_week_list': [],
-		'two_weeks_ago_list': [],
-		'month_ago_list': [],
-		'the_rest_list': [],
+		'last_num_votes': len(glasovi),
+		'votes': glasovi,
 	}
-
-	item = collections.namedtuple('Item', 'obj, type')
-
-	for date, obj, type_ in casovnica:
-		if today < date <= now:
-			context['today_list'].append(item._make((obj, type_)))
-		if this_week < date <= today:
-			context['this_week_list'].append(item._make((obj, type_)))
-		if last_week < date <= this_week:
-			context['last_week_list'].append(item._make((obj, type_)))
-		if two_weeks_ago < date <= last_week:
-			context['two_weeks_ago_list'].append(item._make((obj, type_)))
-		if month_ago < date <= last_week:
-			context['month_ago_list'].append(item._make((obj, type_)))
-		if date <= month_ago:
-			context['the_rest_list'].append(item._make((obj, type_)))
 
 	return render(request, "poslanec.html", context)
 
