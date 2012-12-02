@@ -37,7 +37,7 @@
 	<div class="votes">
 		{% if votes %}
 		<h2>
-			Zadnjih {{ last_num_votes }} glasovanj
+			Zadnjih {{ votes|length }} glasovanj
 		</h2>
 		<table>
 			<thead>
@@ -58,7 +58,7 @@
 			</tbody>
 		</table>
 		<p>
-			<a href="{% url poslanec_glasovanja slug %}">Seznam vseh glasovanj</a>
+			<a href="{% url poslanec_glasovanja oseba.slug %}">Seznam vseh glasovanj</a>
 		</p>
 		{% endif %}
 	</div>

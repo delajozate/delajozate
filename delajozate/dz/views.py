@@ -160,34 +160,37 @@ def poslanec(request, slug):
 
 	context = {
 		'oseba': oseba,
-		'slug': slug,
-		'last_num_votes': len(glasovi),
 		'votes': glasovi,
 	}
 
 	return render(request, "poslanec.html", context)
 
 
-def poslanec_glasovanja(request, slug):
-	oseba = Oseba.objects.get(slug=slug)
-	glasovi = Glas.objects.filter(oseba=oseba).select_related(
-		'glasovanje', 'glasovanje__seja').order_by( '-glasovanje__datum')
+class GlasovanjaList(ListView):
+	model = Glas
+	template_name = 'poslanec_glasovanja.html'
+	paginate_by = 30
 
-	classes = {
-		#'Ni': 'yellow',
-		'Za': 'green',
-		'Proti': 'red',
-	}
-	for glas in glasovi:
-		glas.cls = classes.get(glas.glasoval, "")
+	def get_queryset(self, *args, **kwargs):
+		return Glas.objects.filter(oseba=self.oseba).select_related(
+			'glasovanje', 'glasovanje__seja').order_by( '-glasovanje__datum')
 
-	context = {
-		'oseba': oseba,
-		'slug': slug,
-		'votes': glasovi,
-	}
+	def get_context_data(self, **kwargs):
+		classes = {
+			#'Ni': 'yellow',
+			'Za': 'green',
+			'Proti': 'red',
+		}
+		context = super(GlasovanjaList, self).get_context_data(**kwargs)
+		context['oseba'] = self.oseba
+		context['votes'] = context['object_list']
+		for glas in context['votes']:
+			glas.cls = classes.get(glas.glasoval, "")
+		return context
 
-	return render(request, "poslanec_glasovanja.html", context)
+	def dispatch(self, request, slug):
+		self.oseba = Oseba.objects.get(slug=slug)
+		return super(GlasovanjaList, self).dispatch(request, slug)
 
 
 def robots(request):

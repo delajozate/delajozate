@@ -6,7 +6,7 @@
 	<div>
 		<h1>{{ oseba.ime }} {{ oseba.priimek }}</h1>
 		<p>
-			<a href="{% url poslanec slug %}">Nazaj na domačo stran poslanca.</a>
+			<a href="{% url poslanec oseba.slug %}">Nazaj na domačo stran poslanca.</a>
 		</p>
 	</div>
 	<div class="votes">
@@ -30,9 +30,7 @@
 				</tr>{% endfor %}
 			</tbody>
 		</table>
-		<p>
-			<a href="{% url poslanec slug %}">Nazaj na domačo stran poslanca.</a>
-		</p>
+{% include "components/pagination.html" %}
 		{% endif %}
 	</div>
 </div>
