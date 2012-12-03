@@ -6,6 +6,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic.list import ListView
 
+import dz.news
 from dz.models import Stranka, Oseba, Mandat, Tweet, Pozicija
 from magnetogrami.models import Zasedanje, Glas
 

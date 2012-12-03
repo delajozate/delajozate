@@ -32,6 +32,7 @@
 			<th>Stranka</th>
 			<th>Večina ({{ data.majority }})</th>
 			<th>Manjšina ({{ data.minority }})</th>
+			<th>Vzdržan</th>
 			<th>Prisotnost</th>
 		</tr>
 		{% for row in data.votes.items %}
@@ -40,6 +41,7 @@
 			{% with cell=row.1 %}
 				<th>{{ cell.majority }}</th>
 				<th>{{ cell.minority }}</th>
+				<th>{{ cell.abstent }}</th>
 				<th>{{ cell.percent|stringformat:".1f" }} %</th>
 			{% endwith %}
 		{% endfor %}
