@@ -6,14 +6,17 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from dz.models import Stranka, Oseba, Mandat, Tweet, Pozicija
-from magnetogrami.models import Zasedanje, Glas
+from magnetogrami.models import Zasedanje, Glas, Glasovanje
 
 from temporal import END_OF_TIME
 
 def home(request):
 	context = {
-		'zasedanja': Zasedanje.objects.all().select_related('seja').order_by('-datum')[:5]
+		'zasedanja': Zasedanje.objects.all().select_related('seja').order_by('-datum')[:15],
+		'glasovanja': Glasovanje.objects.all().order_by('-datum')[:15],
 	}
+	print Glasovanje.objects.all().order_by('-datum')[:15]
+	print 11
 	return render(request, 'home.html', context)
 
 def poslanci_list(request, mandat):

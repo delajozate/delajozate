@@ -1,12 +1,55 @@
 {% extends "base.html" %}
 {% load dz_extras %}
 
+{% block head %}
+<style>
+.two {width:49%;float:left;}
+</style>
+{% endblock %}
+
 {% block content %}
-			<section class="random">
+			<section class="two">
+			{% for z in zasedanja %}
+				{% if forloop.first %}
 				<h2>Zadnja zasedanja sej</h2>
 				<ul>
-				{% for z in zasedanja %}
-					<li><a href="{{ z.get_absolute_url }}">{{ z.seja.naslov }}</a></li>
-				{% endfor %}
+				{% endif %}
+				
+				{% ifchanged z.datum %}
 				</ul>
-			</section>{% endblock %}
+				<br />
+				<b>{{ z.datum }}</b>
+				<ul>
+				{% endifchanged %}
+				
+				<li><a href="{{ z.get_absolute_url }}">{{ z.seja.naslov }}</a></li>
+				
+				{% if forloop.last %}
+				</ul>
+				{% endif %}
+			{% endfor %}
+			</section>
+			
+			<section class="two">
+			{% for g in glasovanja %}
+				{% if forloop.first %}
+				<h2>Zadnja glasovanja</h2>
+				<ul>
+				{% endif %}
+
+				{% ifchanged g.datum %}
+				</ul>
+				<br />
+				<b>{{ g.datum }}</b>
+				<ul>
+				{% endifchanged %}
+
+				<li><a href="{{ g.absolute_url }}">{{ g }}</a></li>
+				{% if forloop.last %}
+				</ul>
+				{% endif %}
+				
+			{% endfor %}
+			</section>
+
+{% endblock %}
