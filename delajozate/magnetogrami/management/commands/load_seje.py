@@ -23,7 +23,8 @@ class Command(BaseCommand):
 		
 		
 		last_id = get_last_id()
-		url_template = 'http://33.33.33.25:8012/drzava/dzrs/seja/?valid_end=9999-12-31&id__gte=%d'
+		#last_id = 400
+		url_template = 'http://opendata.si/drzava/dzrs/seja/?valid_end=9999-12-31&mandat=6&id__gte=%d'
 		
 		req = urllib.urlopen(url_template % last_id)
 		data = req.read()
