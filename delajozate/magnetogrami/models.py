@@ -3,6 +3,7 @@ import json
 import os
 import re
 import dateutil.parser
+import urllib
 try:
 	from collections import OrderedDict
 except ImportError:
@@ -369,7 +370,8 @@ def seja_import_one(jsonData):
 		
 		match = re.search(u'((\d+)\s?\.\s*(redna|izredna|nujna|zasedanje))', naslov_seje, re.I)
 		if not match:
-			match = re.search('seja=(KPDZ|\d+)%200*(\d+)\.?%20(redna|izredna|nujna|zasedanje)', jsonData.get('url'), re.I)
+			unquoted_url = urllib.unquote(jsonData.get('url'))
+			match = re.search(u'seja=(KPDZ|\d+) 0*(\d+)\.? (redna|izredna|nujna|zasedanje|sre.anje)', unquoted_url, re.I | re.U)
 			if not match:
 				print [naslov_seje]
 				print jsonData.get('url')
@@ -438,10 +440,10 @@ def seja_import_one(jsonData):
 							g = GovorecMap.objects.get(govorec=poslanec_r)
 							oseba = g.oseba
 						except GovorecMap.DoesNotExist:
-							print '---- FAIL', [poslanec], poslanec
+							#print '---- FAIL', [poslanec], poslanec
 							oseba = None
 					else:
-						print '---- FAIL', [poslanec], poslanec
+						#print '---- FAIL', [poslanec], poslanec
 						oseba = None
 				
 				
@@ -466,6 +468,8 @@ def seja_import_one(jsonData):
 			
 		# Zasedanja
 		for jsonZasedanje in jsonData.get('zasedanja'):
+			if jsonZasedanje.get('datum') is None:
+				continue
 			for jsonPovezava in jsonZasedanje.get('povezave'):
 				datum = dateutil.parser.parse(jsonZasedanje.get('datum'), dayfirst=True)
 				created = False
