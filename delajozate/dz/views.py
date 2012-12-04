@@ -151,7 +151,7 @@ def pobarvaj_glasove(glasovi):
 
 
 def poslanec(request, slug):
-	vote_limit = 20
+	vote_limit = 15
 
 	oseba = Oseba.objects.get(slug=slug)
 	glasovi = Glas.objects.filter(oseba=oseba).select_related(
@@ -177,6 +177,8 @@ class GlasovanjaList(ListView):
 	paginate_by = 30
 	limit = None
 
+	# TODO: Dodaj filtre: zadnji teden, mesec, leto, mandat?
+
 	def get_queryset(self, *args, **kwargs):
 		qs = Glas.objects.filter(oseba=self.oseba).select_related(
 			'glasovanje', 'glasovanje__seja').order_by( '-glasovanje__datum')
@@ -197,6 +199,26 @@ class GlasovanjaList(ListView):
 		self.oseba = Oseba.objects.get(slug=slug)
 		self.limit = request.GET.get('limit', None)
 		return super(GlasovanjaList, self).dispatch(request, slug)
+
+
+class TweetList(ListView):
+	model = Tweet
+	template_name = 'poslanec_tweet.html'
+	paginate_by = 30
+
+	def get_queryset(self, *args, **kwargs):
+		qs = Tweet.objects.filter(oseba=self.oseba).order_by('-created_at')
+		return qs
+
+	def get_context_data(self, **kwargs):
+		context = super(TweetList, self).get_context_data(**kwargs)
+		context['oseba'] = self.oseba
+		context['tweets'] = context['object_list']
+		return context
+
+	def dispatch(self, request, slug):
+		self.oseba = Oseba.objects.get(slug=slug)
+		return super(TweetList, self).dispatch(request, slug)
 
 
 def robots(request):

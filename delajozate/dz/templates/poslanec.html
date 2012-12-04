@@ -25,7 +25,8 @@
 			<p>
 				Twitter:
 				{% if oseba.twitter %}
-				<a href="https://twitter.com/{{ oseba.twitter }}">@{{ oseba.twitter }}</a> (<a href="#FAKE">seznam tweetov</a>)
+				<a href="https://twitter.com/{{ oseba.twitter }}">@{{ oseba.twitter }}</a>
+				(<a href="{% url poslanec_twitter oseba.slug %}">seznam tweetov</a>)
 				{% else %}
 				neznan
 				{% endif %}
