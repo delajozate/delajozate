@@ -5,6 +5,7 @@ import json
 from django.http import HttpResponse
 from django.shortcuts import render
 
+import dz.news
 from dz.models import Stranka, Oseba, Mandat, Tweet, Pozicija
 from magnetogrami.models import Zasedanje, Glas, Glasovanje
 
@@ -145,6 +146,11 @@ def poslanec(request, slug):
 		if glas.glasovanje.datum is not None:
 			# convert date to datetime so we can compare it to datetime
 			casovnica.append((datetime.datetime(*(glas.glasovanje.datum.timetuple()[:6])), glas, 'glas'))
+
+	novice = dz.news.get_news(" ".join([oseba.ime, oseba.priimek]))
+	if novice:
+		for novica in novice:
+			casovnica.append((novica["published"], novica, 'novica'))
 
 	casovnica = sorted(casovnica, key=lambda k: k[0], reverse=True)
 

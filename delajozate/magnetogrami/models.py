@@ -248,6 +248,7 @@ class Glasovanje(models.Model):
 						'stranka': stranka or None,
 						'majority': 0,
 						'minority': 0,
+						'abstent': 0,
 						'count': 0.0,
 						'present': 0.0,
 						'percent': 0
@@ -262,9 +263,12 @@ class Glasovanje(models.Model):
 						data[okrajsava]['minority'] += 1
 					elif glasoval == 'Proti':
 						data[okrajsava]['majority'] += 1
+				if glasoval in ['Ni']:
+					data[okrajsava]['abstent'] += 1
 
-				if glasoval in ['Za', 'Proti']:
+				if glasoval in ['Za', 'Proti', 'Ni']:
 					data[okrajsava]['present'] += 1
+				
 
 				data[okrajsava]['count'] += 1
 
