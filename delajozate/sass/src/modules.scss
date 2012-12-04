@@ -130,6 +130,7 @@ footer a {color: #fff;}
 .break {
     clear: left;
     width: 100%;
+    border-bottom: 1px dotted #ddd;
 }
 .govorec-slika {width: 100px;}
 .zapis-link {
@@ -137,6 +138,13 @@ footer a {color: #fff;}
     float: right;
     right: -30px;
 }
-.zapis-link a {text-decoration: none;}
-.zapis-link :hover {text-decoration: underline;}
+.zapis-link > a {
+    color: #ccc;
+    font-weight: normal;
+    text-decoration: none;
+}
+.zapis-link :hover {
+    color: #666;
+    text-decoration: underline;
+}
 .zasedanja-list {padding-left: 20px;}

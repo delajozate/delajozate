@@ -450,6 +450,7 @@ footer a {
 .break {
   clear: left;
   width: 100%;
+  border-bottom: 1px dotted #ddd;
 }
 
 .govorec-slika {
@@ -462,11 +463,14 @@ footer a {
   right: -30px;
 }
 
-.zapis-link a {
+.zapis-link > a {
+  color: #ccc;
+  font-weight: normal;
   text-decoration: none;
 }
 
 .zapis-link :hover {
+  color: #666;
   text-decoration: underline;
 }
 

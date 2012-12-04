@@ -29,43 +29,44 @@ addLoadEvent(updateHighlight);
 
 
 {% block content %}
-<h1>{{ seja.naslov }}</h1>
+<div class="content">
+    <h1>{{ seja.naslov }}</h1>
 
-<h3>Zasedanja</h3>
-<div class="zasedanja-list">
-<ul>
-{% for z in seja.magnetogrami %}
-    <li><a href="{% url delajozate.magnetogrami.views.seja seja.mandat seja.delovno_telo seja.slug z.datum %}">{{ z.datum }}</a> <a href="{{ z.url }}">(ogled izvirnega besedila na strani Državnega zbora)</a></li>
-{% endfor %}
-</ul>
-</div>
-
-<h2>Magnetogram</h2>
-{% for zapis in zapisi %}
-{% ifchanged zapis.govorec %}
-<div class="break"></div>
-<div class="govorec">
-{% if zapis.govorec_oseba %}
-    <a rel="author" href="/osebe/{{ zapis.govorec_oseba.slug }}/">{{ zapis.govorec_oseba.ime}} {{ zapis.govorec_oseba.priimek}}</a>
-    <br />
-    {% with zasedanje.stranke|get_item:zapis.govorec_oseba.pk as clanstvo %}
-    <em>{{ clanstvo.stranka|default_if_none:"?" }}</em>
-    {% endwith %}
-    <br />
-    {% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
-    
-{% else %}
-    {{ zapis.govorec|default_if_none:""|title }}
-{% endif %}
-</div>
-{% endifchanged %}
-
-<div class="receno" id="p{{ zapis.seq }}">
-    <div class="zapis-link" >
-        <a href="{% url magnetogrami_citat mdt=seja.delovno_telo mandat=seja.mandat slug=seja.slug datum_zasedanja=zapis.zasedanje.datum odstavek=zapis.seq %}">#</a>
+    <h3>Zasedanja</h3>
+    <div class="zasedanja-list">
+    <ul>
+    {% for z in seja.magnetogrami %}
+        <li><a href="{% url delajozate.magnetogrami.views.seja seja.mandat seja.delovno_telo seja.slug z.datum %}">{{ z.datum }}</a> <a href="{{ z.url }}">(ogled izvirnega besedila na strani Državnega zbora)</a></li>
+    {% endfor %}
+    </ul>
     </div>
-    {{ zapis.odstavki|linebreaksbr }}
-</div>
-{% endfor %}
 
+    <h2>Magnetogram</h2>
+    {% for zapis in zapisi %}
+    {% ifchanged zapis.govorec %}
+    <div class="break"></div>
+    <div class="govorec">
+    {% if zapis.govorec_oseba %}
+        <a rel="author" href="/osebe/{{ zapis.govorec_oseba.slug }}/">{{ zapis.govorec_oseba.ime}} {{ zapis.govorec_oseba.priimek}}</a>
+        <br />
+        {% with zasedanje.stranke|get_item:zapis.govorec_oseba.pk as clanstvo %}
+        <em>{{ clanstvo.stranka|default_if_none:"?" }}</em>
+        {% endwith %}
+        <br />
+        {% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
+        
+    {% else %}
+        {{ zapis.govorec|default_if_none:""|title }}
+    {% endif %}
+    </div>
+    {% endifchanged %}
+
+    <div class="receno" id="p{{ zapis.seq }}">
+        <div class="zapis-link" >
+            <a href="{% url magnetogrami_citat mdt=seja.delovno_telo mandat=seja.mandat slug=seja.slug datum_zasedanja=zapis.zasedanje.datum odstavek=zapis.seq %}">#</a>
+        </div>
+        {{ zapis.odstavki|linebreaksbr }}
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
