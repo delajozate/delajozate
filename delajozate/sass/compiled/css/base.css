@@ -161,6 +161,7 @@ th {
   text-align: left;
 }
 
+.odd-row,
 tr:nth-child(odd) td {
   background-color: #f9f9f9;
 }
@@ -183,4 +184,8 @@ tr:nth-child(odd) td {
 .yellow,
 .warn {
   color: #c09853;
+}
+
+.break {
+  margin-top: 2em;
 }

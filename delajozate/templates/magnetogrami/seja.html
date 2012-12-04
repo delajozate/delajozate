@@ -46,7 +46,7 @@ addLoadEvent(updateHighlight);
 <div class="break"></div>
 <div class="govorec">
 {% if zapis.govorec_oseba %}
-    <a rel="author" href="/osebe/{{ zapis.govorec_oseba.slug }}/">{{ zapis.govorec_oseba.ime }} {{ zapis.govorec_oseba.priimek }}</a>
+    <a rel="author" href="/osebe/{{ zapis.govorec_oseba.slug }}/">{{ zapis.govorec_oseba.ime}} {{ zapis.govorec_oseba.priimek}}</a>
     <br />
     {% with zasedanje.stranke|get_item:zapis.govorec_oseba.pk as clanstvo %}
     <em>{{ clanstvo.stranka|default_if_none:"?" }}</em>
@@ -55,7 +55,7 @@ addLoadEvent(updateHighlight);
     {% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
     
 {% else %}
-    {{ zapis.govorec|default_if_none:"&nbsp;" }}
+    {{ zapis.govorec|default_if_none:""|title }}
 {% endif %}
 </div>
 {% endifchanged %}
