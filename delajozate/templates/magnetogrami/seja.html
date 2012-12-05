@@ -42,31 +42,34 @@ addLoadEvent(updateHighlight);
     </div>
 
     <h2>Magnetogram</h2>
+    <section class="speaker">
     {% for zapis in zapisi %}
-    {% ifchanged zapis.govorec %}
-    <div class="break"></div>
-    <div class="govorec">
-    {% if zapis.govorec_oseba %}
-        <a rel="author" href="/osebe/{{ zapis.govorec_oseba.slug }}/">{{ zapis.govorec_oseba.ime}} {{ zapis.govorec_oseba.priimek}}</a>
-        <br />
-        {% with zasedanje.stranke|get_item:zapis.govorec_oseba.pk as clanstvo %}
-        <em>{{ clanstvo.stranka|default_if_none:"?" }}</em>
-        {% endwith %}
-        <br />
-        {% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
+        {% ifchanged zapis.govorec %}
+    </section>
+    <section class="speaker{% cycle " odd-row" "" %}">
+        <div class="govorec">
+        {% if zapis.govorec_oseba %}
+            <a rel="author" href="/osebe/{{ zapis.govorec_oseba.slug }}/">{{ zapis.govorec_oseba.ime}} {{ zapis.govorec_oseba.priimek}}</a>
+            <br />
+            {% with zasedanje.stranke|get_item:zapis.govorec_oseba.pk as clanstvo %}
+            <em>{{ clanstvo.stranka|default_if_none:"?" }}</em>
+            {% endwith %}
+            <br />
+            {% if zapis.govorec_oseba.slika %}<img class="govorec-slika" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
         
-    {% else %}
-        {{ zapis.govorec|default_if_none:""|title }}
-    {% endif %}
-    </div>
-    {% endifchanged %}
-
-    <div class="receno" id="p{{ zapis.seq }}">
-        <div class="zapis-link" >
-            <a href="{% url magnetogrami_citat mdt=seja.delovno_telo mandat=seja.mandat slug=seja.slug datum_zasedanja=zapis.zasedanje.datum odstavek=zapis.seq %}">#</a>
+        {% else %}
+            {{ zapis.govorec|default_if_none:""|title }}
+        {% endif %}
         </div>
-        {{ zapis.odstavki|linebreaksbr }}
-    </div>
+        {% endifchanged %}
+
+        <div class="receno" id="p{{ zapis.seq }}">
+            <div class="zapis-link" >
+                <a href="{% url magnetogrami_citat mdt=seja.delovno_telo mandat=seja.mandat slug=seja.slug datum_zasedanja=zapis.zasedanje.datum odstavek=zapis.seq %}">#</a>
+            </div>
+            {{ zapis.odstavki|linebreaksbr }}
+        </div>
+    {% if forloop.last %}</section>{% endif %}
     {% endfor %}
 </div>
 {% endblock %}

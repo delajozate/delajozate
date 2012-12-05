@@ -446,14 +446,16 @@ footer a {
   text-align: justify;
 }
 
-.break {
+.speaker {
+  overflow: hidden;
   clear: left;
   width: 100%;
+  padding: 1em 0;
   border-bottom: 1px dotted #ddd;
 }
 
 .govorec-slika {
-  width: 100px;
+  width: 75px;
 }
 
 .zapis-link {
