@@ -163,7 +163,7 @@ th {
 
 .odd-row,
 tr:nth-child(odd) td {
-  background-color: #f9f9f9;
+  background-color: #f3f3f3;
 }
 
 /* Basic classes */

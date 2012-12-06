@@ -168,7 +168,7 @@ th {
 
 .odd-row,
 tr:nth-child(odd) td {
-  background-color: #f9f9f9;
+  background-color: #f3f3f3;
 }
 
 /* Basic classes */
@@ -587,7 +587,7 @@ footer a {
   font-weight: 500;
 }
 
-.speaker em {
+.speaker > em {
   float: left;
   clear: left;
   font-size: .625em;
@@ -601,6 +601,7 @@ footer a {
 .speaker-quote {
   width: 65%;
   margin-left: 28%;
+  margin-bottom: 1em;
   text-align: justify;
 }
 
@@ -636,4 +637,26 @@ footer a {
 
 .sessions-list {
   padding-left: 20px;
+}
+
+@media screen and (max-width: 360px) {
+  .speaker,
+  .speaker > em {
+    float: none;
+    width: auto;
+    font-weight: bold;
+  }
+
+  .speaker-img {
+    display: none;
+  }
+
+  .speaker-quote {
+    width: auto;
+    margin: 0 30px 1em;
+  }
+
+  .quote-link {
+    right: -20px;
+  }
 }

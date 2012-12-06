@@ -114,7 +114,7 @@
     font-size: 1.1em;
     font-weight: 500;
 }
-.speaker em {
+.speaker > em {
     float: left;
     clear: left;
     font-size: .625em;
@@ -124,6 +124,7 @@
 .speaker-quote {
     width: 65%;
     margin-left: 28%;
+    margin-bottom: 1em;
     text-align: justify;
 }
 .speech {
@@ -153,4 +154,23 @@
 }
 .sessions-list {
     padding-left: 20px;
+}
+
+@media screen and (max-width: 360px) {
+    .speaker,
+    .speaker > em {
+        float: none;
+        width: auto;
+        font-weight: bold;
+    }
+    .speaker-img {
+        display: none;
+    }
+    .speaker-quote {
+        width: auto;
+        margin: 0 30px 1em;
+    }
+    .quote-link {
+        right: -20px;
+    }
 }
