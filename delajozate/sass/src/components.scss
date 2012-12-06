@@ -102,3 +102,55 @@
 .highlight { /* TODO: So vague it is almost useless */
     font-weight:500;
 }
+
+/*
+ * Seja
+ */
+.speaker {
+    float: left;
+    clear: left;
+    width: 27%;
+    padding: 5px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.speaker em {
+    float: left;
+    clear: left;
+    font-size: .625em;
+    font-style: normal;
+}
+.speaker-img {width: 75px;}
+.speaker-quote {
+    width: 65%;
+    margin-left: 28%;
+    text-align: justify;
+}
+.speech {
+    overflow: hidden;
+    clear: left;
+    width: 100%;
+    padding: 1em 0;
+    border-bottom: 1px dotted #ddd;
+}
+.speech:first-child {
+    padding-top: 0;
+    background: red;
+}
+.quote-link {
+    position: relative;
+    float: right;
+    right: -30px;
+}
+.quote-link > a {
+    color: #ccc;
+    font-weight: normal;
+    text-decoration: none;
+}
+.quote-link :hover {
+    color: #666;
+    text-decoration: underline;
+}
+.sessions-list {
+    padding-left: 20px;
+}

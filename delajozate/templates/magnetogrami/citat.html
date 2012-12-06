@@ -17,22 +17,23 @@
 
 
 {% block content %}
+<div class="content">
 <h1>{{ seja.naslov }}</h1>
 
 <h2>Citat magnetograma</h2>
+<section class="speech">
 {% for zapis in zapisi %}
 {% ifchanged zapis.govorec %}
-<div class="break"></div>
-<div class="govorec">
+<div class="speaker">
 {% if zapis.govorec_oseba %}
     <span class="vcard">
     <a rel="author" href="/osebe/{{ zapis.govorec_oseba.slug }}/"><span class="fn"><span class="given-name">{{ zapis.govorec_oseba.ime }}</span> <span class="family-name">{{ zapis.govorec_oseba.priimek }}</span></span></a><br />
-    {% with zapis.govorec_oseba.clanstvo|datum_filter:zapis.zasedanje.datum as clanstvo %}
-    <em class="org">{{ clanstvo.0.stranka|default_if_none:"?" }}</em><br />
+    {% with zasedanje.stranke|get_item:zapis.govorec_oseba.pk as clanstvo %}
+    <em>{{ clanstvo.stranka|default_if_none:"?" }}</em>
     {% endwith %}
-    <em class="role" style="display:none;">Poslanec/ka</em>
+    <br />
     {% if zapis.govorec_oseba.slika %}
-        <img class="govorec-slika photo" src="{{ zapis.govorec_oseba.slika }}" />
+        <img class="speaker-img photo" src="{{ zapis.govorec_oseba.slika }}" />
     {% endif %}
     </span>
 
@@ -42,12 +43,11 @@
 </div>
 {% endifchanged %}
 
-<div class="receno{% if zapis.seq == citirano %} citirano{% endif %}" id="p{{ zapis.seq }}">
-    <div class="zapis-link" >
-        <a href="{% url delajozate.magnetogrami.views.citat mdt="dz" mandat=seja.mandat slug=seja.slug datum_zasedanja=zapis.zasedanje.datum odstavek=zapis.seq %}">#</a>
-    </div>
+<div class="speaker-quote{% if zapis.seq == citirano %} citirano{% endif %}" id="p{{ zapis.seq }}">
     {{ zapis.odstavki|linebreaksbr }}
 </div>
 {% endfor %}
+</section>
 
+</div>
 {% endblock %}
