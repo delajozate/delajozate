@@ -51,6 +51,7 @@ addLoadEvent(updateHighlight);
         {% if forloop.first %}
     <section class="speech">
         {% else %}
+        </blockquote>
     </section>
     <section class="speech{% cycle " odd-row" "" %}">
         {% endif %}
@@ -68,15 +69,18 @@ addLoadEvent(updateHighlight);
             {{ zapis.govorec|default_if_none:""|title }}
         {% endif %}
         </div>
+        <blockquote class="speaker-quote"> {% comment %}TODO: Dodaj cite atribut{% endcomment %}
         {% endifchanged %}
 
-        <div class="speaker-quote" id="p{{ zapis.seq }}">
+        <div id="p{{ zapis.seq }}">
             <div class="quote-link" >
                 <a href="{% url magnetogrami_citat mdt=seja.delovno_telo mandat=seja.mandat slug=seja.slug datum_zasedanja=zapis.zasedanje.datum odstavek=zapis.seq %}">#</a>
             </div>
             {{ zapis.odstavki|linebreaksbr }}
         </div>
-    {% if forloop.last %}</section>{% endif %}
+    {% if forloop.last %}
+        </blockquote>
+    </section>{% endif %}
     {% endfor %}
 </div>
 {% endblock %}

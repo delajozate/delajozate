@@ -43,11 +43,15 @@
 </div>
 {% endifchanged %}
 
-<div class="speaker-quote{% if zapis.seq == citirano %} citirano{% endif %}" id="p{{ zapis.seq }}">
+<blockquote class="speaker-quote{% if zapis.seq == citirano %} citirano{% endif %}" id="p{{ zapis.seq }}">
     {{ zapis.odstavki|linebreaksbr }}
-</div>
+</blockquote>
 {% endfor %}
 </section>
+
+    <p>
+        <a href="#FAKE">Nazaj na magnetogram</a>
+    </p>
 
 </div>
 {% endblock %}
