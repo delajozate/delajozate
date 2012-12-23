@@ -3,7 +3,7 @@ class python {
     case $operatingsystem {
         ubuntu: {
             package {
-                ["python2.6-dev", "python2.6", "python-pip", "python-psycopg2", "libxml2-dev", "libxslt1-dev", "python-lxml"]:
+                ["python2.7-dev", "python2.7", "python-pip", "python-psycopg2", "libxml2-dev", "libxslt1-dev", "python-lxml"]:
                     ensure => installed;
             }
 

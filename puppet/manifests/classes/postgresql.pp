@@ -4,7 +4,7 @@ class postgresql {
     $user_owns_zero_databases = "psql --tuples-only --no-align -c \"SELECT COUNT(*) FROM pg_catalog.pg_database JOIN pg_authid ON pg_catalog.pg_database.datdba = pg_authid.oid WHERE rolname = '${DB_USER}';\" | grep -e '^0$'"
 
     package {
-        [ "postgresql-8.4", "postgresql-client-8.4"]:
+        [ "postgresql-9.1", "postgresql-client-9.1"]:
         ensure => installed;
     }
 
@@ -12,7 +12,7 @@ class postgresql {
         command => "createuser -d -S -R ${DB_USER}",
         user    => 'postgres',
         unless  => $userexists,
-        require => Package["postgresql-8.4"];
+        require => Package["postgresql-9.1"];
     }
 
     exec { "create-db":
@@ -22,9 +22,9 @@ class postgresql {
         require => Exec["create-db-user"];
     }
 
-    service { "postgresql-8.4":
+    service { "postgresql":
         ensure => running,
         enable => true,
-        require => Package['postgresql-8.4'];
+        require => Package['postgresql-9.1'];
     }
 }

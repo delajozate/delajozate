@@ -16,8 +16,11 @@ CONF = _config
 MOUNT_POINT = '/home/vagrant/project'
 
 Vagrant::Config.run do |config|
-    config.vm.box = "lucid32"
-    config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+    #config.vm.box = "lucid32"
+    #config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+    config.vm.box = "quantal64"
+    config.vm.box_url = "https://github.com/downloads/roderik/VagrantQuantal64Box/quantal64.box"
+
 
     config.vm.forward_port 8011, 8011
     config.vm.boot_mode = :gui
