@@ -372,7 +372,7 @@ def seja_import_one(jsonData):
 		except Seja.DoesNotExist:
 			seja = Seja(mandat=mandat, naslov=naslov_seje, delovno_telo=dt)
 		
-		match = re.search(u'((\d+)\s?\.\s*(redna|izredna|nujna|zasedanje))', naslov_seje, re.I)
+		match = re.search(u'((\d+)\s?\.\s*(redna|izredna|nujna|zasedanje|seja izvr.ilnega odbora))', naslov_seje, re.I)
 		if not match:
 			unquoted_url = urllib.unquote(jsonData.get('url'))
 			match = re.search(u'seja=(KPDZ|\d+) 0*(\d+)\.? (redna|izredna|nujna|zasedanje|sre.anje)', unquoted_url, re.I | re.U)
