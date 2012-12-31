@@ -28,7 +28,7 @@ def seja_list(request, mdt=None, mandat=None):
             delovno_telo = DelovnoTelo.objects.get(dz_id=mdt, mandat__st=mandat)
 
     if mandat is not None:
-        zasedanja.filter(seja__mandat=mandat)
+        zasedanja = zasedanja.filter(seja__mandat=mandat)
     
     context = {
         'object_list': zasedanja,
