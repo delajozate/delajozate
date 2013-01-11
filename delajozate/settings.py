@@ -140,6 +140,7 @@ INSTALLED_APPS = (
 	'django.contrib.staticfiles',
 	# Uncomment the next line to enable the admin:
 	'django.contrib.admin',
+	'raven.contrib.django',
 	'haystack',
 	# Uncomment the next line to enable admin documentation:
 #	'django.contrib.admindocs',
@@ -159,19 +160,43 @@ INSTALLED_APPS = (
 LOGGING = {
 	'version': 1,
 	'disable_existing_loggers': False,
+	'root': {
+		'level': 'WARNING',
+		'handlers': ['sentry'],
+	},
+	'formatters': {
+		'verbose': {
+			'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+		},
+	},
 	'handlers': {
-		'mail_admins': {
+		'sentry': {
 			'level': 'ERROR',
-			'class': 'django.utils.log.AdminEmailHandler'
+			'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
+		},
+		'console': {
+			'level': 'DEBUG',
+			'class': 'logging.StreamHandler',
+			'formatter': 'verbose'
 		}
 	},
 	'loggers': {
-		'django.request': {
-			'handlers': ['mail_admins'],
+		'django.db.backends': {
 			'level': 'ERROR',
-			'propagate': True,
+			'handlers': ['console'],
+			'propagate': False,
 		},
-	}
+		'raven': {
+			'level': 'DEBUG',
+			'handlers': ['console'],
+			'propagate': False,
+		},
+		'sentry.errors': {
+			'level': 'DEBUG',
+			'handlers': ['console'],
+			'propagate': False,
+		},
+	},
 }
 
 FIXTURE_DIRS = (
