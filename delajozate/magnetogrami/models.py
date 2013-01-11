@@ -243,7 +243,7 @@ class Glasovanje(models.Model):
 					stranka = okrajsava = 'Neznana'
 				except KeyError:
 					stranka = okrajsava = 'Neznana'
-					logger.error('Manjka clanstvo stranke za osebo %s (id=%s)' % (glas.oseba, glas.oseba.id), exc_info=False, extra={'request': request,})
+					logger.error('Manjka clanstvo stranke za osebo %s (id=%s) dne %s' % (glas.oseba, glas.oseba.id, self.datum), exc_info=False)
 				glasoval = glas.glasoval
 				
 				if not data.get(okrajsava, None):
