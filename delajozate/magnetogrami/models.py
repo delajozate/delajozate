@@ -4,6 +4,7 @@ import os
 import re
 import dateutil.parser
 import urllib
+import logging
 try:
 	from collections import OrderedDict
 except ImportError:
@@ -14,6 +15,7 @@ from django.core.urlresolvers import reverse
 
 from delajozate.dz.models import Oseba, Mandat, DelovnoTelo, Stranka, ClanStranke
 
+logger = logging.getlogger('magnetogrami.models')
 
 GLASOVI = (
 	('0', 'Proti'),
@@ -238,9 +240,10 @@ class Glasovanje(models.Model):
 					stranka = self.stranke[glas.oseba.pk].stranka
 					okrajsava = stranka.okrajsava
 				except AttributeError:
-					stranka = 'Neznana'
-					okrajsava = 'Neznana'
-
+					stranka = okrajsava = 'Neznana'
+				except KeyError:
+					stranka = okrajsava = 'Neznana'
+					logger.error('Manjka clanstvo stranke za osebo %s (id=%s)' % (glas.oseba, glas.oseba.id), exc_info=False, extra={'request': request,})
 				glasoval = glas.glasoval
 				
 				if not data.get(okrajsava, None):
