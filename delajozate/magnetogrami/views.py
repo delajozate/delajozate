@@ -3,7 +3,7 @@ import re
 from django.views.decorators.cache import cache_page
 from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.core.urlresolvers import reverse
 from django.db.models import Q
 
@@ -50,7 +50,10 @@ def _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja=None):
             zasedanje = None
             zapisi = []
     else:
-        zasedanje = Zasedanje.objects.filter(seja=seja, datum=datum_zasedanja).filter(Q(tip='dobesednizapis') | Q(tip='magnetogram')).select_related('zapis')[0]
+        try:
+            zasedanje = Zasedanje.objects.filter(seja=seja, datum=datum_zasedanja).filter(Q(tip='dobesednizapis') | Q(tip='magnetogram')).select_related('zapis')[0]
+        except IndexError:
+            raise Http404
 
     if zasedanje is not None:
         zapisi = Zapis.objects.filter(zasedanje=zasedanje).select_related('govorec_oseba', 'zasedanje', 'zasedanje__seja')
