@@ -15,7 +15,7 @@ from django.core.urlresolvers import reverse
 
 from delajozate.dz.models import Oseba, Mandat, DelovnoTelo, Stranka, ClanStranke
 
-logger = logging.getlogger('magnetogrami.models')
+logger = logging.getLogger('magnetogrami.models')
 
 GLASOVI = (
 	('0', 'Proti'),
