@@ -16,8 +16,6 @@ def home(request):
 		'zasedanja': Zasedanje.objects.all().select_related('seja').order_by('-datum')[:15],
 		'glasovanja': Glasovanje.objects.all().order_by('-datum')[:15],
 	}
-	print Glasovanje.objects.all().order_by('-datum')[:15]
-	print 11
 	return render(request, 'home.html', context)
 
 def poslanci_list(request, mandat):
@@ -29,7 +27,6 @@ def poslanci_list(request, mandat):
 		m = Mandat.objects.get(st=mandat)
 		mandat_str = '%s-mandat' % m.st,
 		poslanci = Pozicija.objects.filter(tip='poslanec', organizacija__drzavnizbor__mandat=m).order_by('od', 'oseba')
-	print poslanci.count()
 	context = {
 		'poslanci': poslanci,
 		'mandat': mandat_str,
@@ -56,14 +53,11 @@ def stranke_json(request):
 		end_sticisce = stiki.setdefault(s.do, {})
 		end_sticisce.setdefault('do', []).append(s)
 
-	from pprint import pprint
-
 	masters = {}
 	steze = {}
 	povezave = {}
 	stiki_list = list(sorted(stiki.items()))
 	for k, s in stiki_list:
-		#print s
 		if len(s.get('od', [])) == 1 and len(s.get('do', [])) == 1:
 			# preimenovanje
 			s_v = s['od'][0]
@@ -89,8 +83,6 @@ def stranke_json(request):
 			povezave_resolved.append((masters[k], masters[i]))
 
 	steze_index = dict([(b, a) for a, b in list(enumerate(steze.keys()))])
-
-	#pprint(steze)
 
 	stranke = {}
 	for s in Stranka.objects.all():
