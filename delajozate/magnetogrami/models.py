@@ -227,13 +227,8 @@ class Glasovanje(models.Model):
 			
 			rez = self.rezultati
 
-			if rez['proti'] >= rez['za']: 
-				majority = 'proti'
-				minority = 'za'
-			else: 
-				majority = 'za'
-				minority = 'proti'
 
+			total_for = total_against = total_absent = total_abstained = 0
 			data = {}
 			for glas in glasovi:
 				try:
@@ -244,48 +239,70 @@ class Glasovanje(models.Model):
 				except KeyError:
 					stranka = okrajsava = 'Neznana'
 					logger.error('Manjka clanstvo stranke za osebo %s (id=%s) dne %s' % (glas.oseba, glas.oseba.id, self.datum), exc_info=False)
-				glasoval = glas.glasoval
 				
 				if not data.get(okrajsava, None):
 					data[okrajsava] = {
 						'stranka': stranka or None,
-						'majority': 0,
-						'minority': 0,
-						'abstent': 0,
+						'za': 0,
+						'proti': 0,
+						'abstained': 0,
+						'absent': 0,
 						'count': 0.0,
 						'present': 0.0,
 						'percent': 0
 					}
-				if majority == 'za':
-					if glasoval == 'Za': 
-						data[okrajsava]['majority'] += 1
-					elif glasoval == 'Proti': 
-						data[okrajsava]['minority'] += 1
-				else:
-					if glasoval == 'Za': 
-						data[okrajsava]['minority'] += 1
-					elif glasoval == 'Proti':
-						data[okrajsava]['majority'] += 1
-				if glasoval in ['Ni']:
-					data[okrajsava]['abstent'] += 1
-
-				if glasoval in ['Za', 'Proti', 'Ni']:
+				if glas.kvorum:
+					if glas.glasoval == 'Za': 
+						data[okrajsava]['za'] += 1
+						total_for += 1
+					elif glas.glasoval == 'Proti': 
+						data[okrajsava]['proti'] += 1
+						total_against += 1
+					if glas.glasoval == 'Ni':
+						data[okrajsava]['abstained'] += 1
+						total_abstained += 1
 					data[okrajsava]['present'] += 1
-				
-
+				else:
+					data[okrajsava]['absent'] += 1
+					total_absent += 1
 				data[okrajsava]['count'] += 1
-
+			
+			if total_for >= total_against:
+				majority = 'za'
+				minority = 'proti'
+				majority_voted = total_for
+				minority_voted = total_against
+			else:
+				majority = 'proti'
+				minority = 'za'
+				majority_voted = total_against
+				minority_voted = total_for
+			
+			
 			for stranka in data:
 				data[stranka]['percent'] =  (data[stranka]['present'] / data[stranka]['count']) * 100
 
 			data_sorted = OrderedDict()
 			for key in sorted(data.iterkeys()):
 				data_sorted[key] = data[key]
+				data_sorted[key]['majority'] = data_sorted[key][majority]
+				data_sorted[key]['minority'] = data_sorted[key][minority]
+			
+			data_sorted['Skupaj'] = {
+						'stranka': None,
+						'majority': majority_voted,
+						'minority': minority_voted,
+						'abstained': total_abstained,
+						'absent': total_absent,
+						'count': 0.0,
+						'present': (90 - total_absent),
+						'percent': ((90.0 - total_absent) / 90.0 * 100.0),
+					}
 
 			return {
 				'majority': majority,
 				'minority': minority,
-				'votes': data_sorted
+				'votes': data_sorted,
 			}
 		return (fget,)
 	summary = property(*summary())
