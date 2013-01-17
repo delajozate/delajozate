@@ -40,7 +40,7 @@
 		</tr>
 		{% for row in data.votes.items %}
 		<tr{% if forloop.last %} class="sum"{% endif %}>
-			<td>{{ row.0 }}</td>
+			<td title="{{ row.1.stranka|default_if_none:"" }}">{{ row.0 }}</td>
 			{% with cell=row.1 %}
 				<td>{{ cell.majority }}</td>
 				<td>{{ cell.minority }}</td>
