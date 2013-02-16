@@ -29,7 +29,7 @@ MODELS = (
 	dzModels.Skupina, # Stranka, Organizacija
 	dzModels.DrzavniZbor, # Mandat, Organizacija
 	dzModels.Odbor, # Mandat, Organizacija
-	dzModels.Funkcija, # Oseba, Mandat
+	#dzModels.Funkcija, # Oseba, Mandat
  	#dzModels.ClanStranke, # Oseba, Stranka
 	#dzModels.ClanOdbora, # Odbor, Funkcija, Mandat
 	dzModels.Pozicija, # Oseba, Organizacija

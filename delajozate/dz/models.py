@@ -75,11 +75,11 @@ class Oseba(models.Model):
 		return 'http://www.flickr.com/photos/marypaulose/295058238/sizes/z/in/photostream/'
 	
 	def st_mandatov(self):
-		return self.funkcija_set.all().count()
+		return self.pozicija_set.filter(tip='poslanec').count()
 	
 	def poslanskih_dni(self):
 		cur = connection.cursor()
-		sql = '''SELECT SUM(CASE WHEN F.do > NOW()::date THEN NOW()::date ELSE F.do END - F.od) AS st_dni FROM dz_funkcija F WHERE oseba_id = %s'''
+		sql = '''SELECT SUM(CASE WHEN F.do > NOW()::date THEN NOW()::date ELSE F.do END - F.od) AS st_dni FROM dz_pozicija F WHERE oseba_id = %s AND tip = 'poslanec' '''
 		params = [self.pk]
 		cur.execute(sql, params)
 		return cur.fetchall()[0][0]
@@ -248,27 +248,6 @@ class DelovnoTelo(models.Model):
 	
 	def display(self):
 		return u"%s" % self.ime
-	
-
-class Funkcija(models.Model):
-	oseba = models.ForeignKey(Oseba)
-	funkcija = models.CharField(max_length=64, default='poslanec', choices=FUNKCIJE)
-	mandat = models.ForeignKey(Mandat)
-	od = models.DateField()
-	do = models.DateField(blank=True)
-	podatki_preverjeni = models.BooleanField(default=False)
-	opombe = models.TextField(blank=True)
-	
-	class Meta:
-		ordering = ('id',)
-		verbose_name_plural = u'Funkcije'
-	
-	def __init__(self, *args, **kwargs):
-		print 'Deprecated: Funkcija', args, kwargs
-		super(Funkcija, self).__init__(*args, **kwargs)
-	
-	def __unicode__(self):
-		return u'%s (%s)' % (self.oseba, self.mandat)
 
 class Pozicija(models.Model):
 	oseba = models.ForeignKey(Oseba)

@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.db import connection
 from django.contrib.auth.decorators import login_required
 
-from dz.models import Mandat, Oseba, Funkcija, DelovnoTelo, Pozicija
+from dz.models import Mandat, Oseba, DelovnoTelo, Pozicija
 from magnetogrami.models import Glasovanje
 
 VERBOSE = False
@@ -343,7 +343,7 @@ def data_check(request):
 	
 	mandat_errors = _check_mandat()
 	oseba_errors = _check_oseba()
-	funkcija_errors = _check_funkcija()
+	funkcija_errors = [] # _check_funkcija()
 	delovnotelo_errors = _check_delovnotelo()
 	seja_errors = _check_seja()
 	zasedanje_errors = _check_zasedanje()

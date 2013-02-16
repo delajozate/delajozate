@@ -1,12 +1,7 @@
 from django.contrib import admin
 from django.contrib.contenttypes import generic
 from delajozate.dz.models import Oseba, Stranka, Skupina, \
-	Mandat, Funkcija, DelovnoTelo, ImeStranke, Pozicija
-
-class FunkcijaAdmin(admin.ModelAdmin):
-	search_fields = ('oseba__ime', 'oseba__priimek', 'funkcija')
-	list_display = ('oseba', 'mandat', 'funkcija', 'od', 'do', 'podatki_preverjeni')
-	list_filter = ('mandat', 'podatki_preverjeni')
+	Mandat, DelovnoTelo, ImeStranke, Pozicija
 
 class PozicijaInline(generic.GenericStackedInline):
 	model = Pozicija
@@ -38,7 +33,6 @@ admin.site.register(Oseba, OsebaAdmin)
 admin.site.register(Stranka, StrankaAdmin)
 admin.site.register(Skupina)
 admin.site.register(Mandat, MandatAdmin)
-admin.site.register(Funkcija, FunkcijaAdmin)
 admin.site.register(DelovnoTelo, DelovnoTeloAdmin)
 admin.site.register(ImeStranke, ImeStrankeAdmin)
 admin.site.register(Pozicija, PozicijaAdmin)
