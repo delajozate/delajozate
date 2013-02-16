@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.db import connection
 from django.contrib.auth.decorators import login_required
 
-from dz.models import Mandat, Oseba, Funkcija, DelovnoTelo, ClanOdbora, Pozicija
+from dz.models import Mandat, Oseba, Funkcija, DelovnoTelo, Pozicija
 from magnetogrami.models import Glasovanje
 
 VERBOSE = False
@@ -242,9 +242,11 @@ def _check_translation():
 	errors = []
 	funkcije = Funkcija.objects.all().order_by("od", "do", "oseba__id")
 	pozicija_dz = Pozicija.objects.filter(organizacija__drzavnizbor__gt=0)
-	clanistranke = ClanStranke.objects.all().order_by("od", "do", "stranka__id", "oseba__id")
+	#clanistranke = ClanStranke.objects.all().order_by("od", "do", "stranka__id", "oseba__id")
+	clanistranke = []
 	pozicija_stranke = Pozicija.objects.filter(organizacija__stranka__gt=0)
-	claniodborov = ClanOdbora.objects.all().order_by("od", "do", "poslanec__oseba__id")
+	#claniodborov = ClanOdbora.objects.all().order_by("od", "do", "poslanec__oseba__id")
+	claniodborov = []
 	pozicija_odbori = Pozicija.objects.filter(organizacija__delovnotelo__gt=0)
 	
 	def check_from_to_dates(s, d, sfx):

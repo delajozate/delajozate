@@ -270,26 +270,6 @@ class Funkcija(models.Model):
 	def __unicode__(self):
 		return u'%s (%s)' % (self.oseba, self.mandat)
 
-class ClanOdbora(models.Model):
-	odbor = models.ForeignKey(DelovnoTelo)
-	poslanec = models.ForeignKey(Funkcija)
-	mandat = models.ForeignKey(Mandat)
-	funkcija = models.CharField(max_length=32)
-	od = models.DateField()
-	do = models.DateField(blank=True)
-	podatki_preverjeni = models.BooleanField(default=False)
-	opombe = models.TextField(blank=True)
-	
-	class Meta:
-		verbose_name = u'Član odbora'
-		verbose_name_plural = u'Člani odbora'
-	
-	def __init__(self, *args, **kwargs):
-		print 'Deprecated: ClanOdbora', args, kwargs
-		super(ClanOdbora, self).__init__(*args, **kwargs)
-	
-
-
 class Pozicija(models.Model):
 	oseba = models.ForeignKey(Oseba)
 	organizacija = models.ForeignKey(Organizacija, null=True)
