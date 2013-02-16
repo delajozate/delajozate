@@ -30,7 +30,7 @@ MODELS = (
 	dzModels.DrzavniZbor, # Mandat, Organizacija
 	dzModels.Odbor, # Mandat, Organizacija
 	dzModels.Funkcija, # Oseba, Mandat
- 	dzModels.ClanStranke, # Oseba, Stranka
+ 	#dzModels.ClanStranke, # Oseba, Stranka
 	dzModels.ClanOdbora, # Odbor, Funkcija, Mandat
 	dzModels.Pozicija, # Oseba, Organizacija
 	magnetogramiModels.GovorecMap,

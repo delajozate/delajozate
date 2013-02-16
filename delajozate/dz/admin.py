@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.contenttypes import generic
-from delajozate.dz.models import Oseba, Stranka, Skupina, ClanStranke, \
+from delajozate.dz.models import Oseba, Stranka, Skupina, \
 	Mandat, Funkcija, DelovnoTelo, ClanOdbora, ImeStranke, Pozicija
 
 class FunkcijaAdmin(admin.ModelAdmin):
@@ -30,14 +30,6 @@ class OsebaAdmin(admin.ModelAdmin):
 	list_display = ('ime', 'priimek', 'rojstni_dan', 'podatki_preverjeni', 'twitter', 'spletna_stran', 'slika')
 	search_fields = ('ime', 'priimek')
 
-class ClanStrankeAdmin(admin.ModelAdmin):
-	search_fields = ('oseba__ime', 'oseba__priimek', 'stranka__ime')
-	list_display = ('oseba', 'stranka', 'od', 'do', 'podatki_preverjeni')
-	list_filter = ('podatki_preverjeni',)
-	#inlines = [
-		#PozicijaInline,
-	#]
-
 class MandatAdmin(admin.ModelAdmin):
 	list_display = ('st', 'od', 'do')
 
@@ -51,7 +43,6 @@ class PozicijaAdmin(admin.ModelAdmin):
 admin.site.register(Oseba, OsebaAdmin)
 admin.site.register(Stranka, StrankaAdmin)
 admin.site.register(Skupina)
-admin.site.register(ClanStranke, ClanStrankeAdmin)
 admin.site.register(Mandat, MandatAdmin)
 admin.site.register(Funkcija, FunkcijaAdmin)
 admin.site.register(DelovnoTelo, DelovnoTeloAdmin)

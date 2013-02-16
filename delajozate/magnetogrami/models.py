@@ -13,7 +13,7 @@ except ImportError:
 from django.db import models, transaction, connection
 from django.core.urlresolvers import reverse
 
-from delajozate.dz.models import Oseba, Mandat, DelovnoTelo, Stranka, ClanStranke
+from delajozate.dz.models import Oseba, Mandat, DelovnoTelo, Stranka, Pozicija
 
 logger = logging.getLogger('magnetogrami.models')
 
@@ -66,11 +66,13 @@ class Zasedanje(models.Model):
 			try:
 				return self.__stranke
 			except AttributeError:
-				clanstvo = ClanStranke.objects.filter(
-					oseba__id__in=set([i.govorec_oseba.pk for i in self.zapis_set.all().select_related('govorec_oseba', 'zasedanje') if i.govorec_oseba is not None]), 
-					od__lte=self.datum, 
-					do__gt=self.datum).select_related('oseba', 'stranka')
-				self.__stranke = dict([(i.oseba.pk, i) for i in clanstvo])
+				clanstvo = Pozicija.objects.filter(
+					organizacija__stranka__isnull=False,
+					oseba__id__in=[i.govorec_oseba.pk for i in self.zapis_set.all().select_related('govorec_oseba', 'zasedanje') if i.govorec_oseba is not None],
+					od__lte=self.datum,
+					do__gt=self.datum
+					).select_related("oseba", "stranka")
+				self.__stranke = dict([(i.oseba.pk, i.organizacija.value()) for i in clanstvo])
 				return self.__stranke
 		return (fget,)
 	stranke = property(*stranke())
@@ -212,11 +214,13 @@ class Glasovanje(models.Model):
 			try:
 				return self.__stranke
 			except AttributeError:
-				clanstvo = ClanStranke.objects.filter(
-					oseba__id__in=[i.oseba.pk for i in self.glas_set.all().select_related('oseba') if i.oseba], 
-					od__lte=self.datum, 
-					do__gt=self.datum).select_related('oseba', 'stranka')
-				self.__stranke = dict([(i.oseba.pk, i) for i in clanstvo])
+				clanstvo = Pozicija.objects.filter(
+					organizacija__stranka__isnull=False,
+					oseba__id__in=[i.oseba.pk for i in self.glas_set.all().select_related('oseba') if i.oseba],
+					od__lte=self.datum,
+					do__gt=self.datum
+					).select_related("oseba", "organizacija__stranka")
+				self.__stranke = dict([(i.oseba.pk, i.organizacija.value()) for i in clanstvo])
 				return self.__stranke
 		return (fget,)
 	stranke = property(*stranke())
@@ -232,7 +236,7 @@ class Glasovanje(models.Model):
 			data = {}
 			for glas in glasovi:
 				try:
-					stranka = self.stranke[glas.oseba.pk].stranka
+					stranka = self.stranke[glas.oseba.pk]
 					okrajsava = stranka.okrajsava
 				except AttributeError:
 					stranka = okrajsava = 'Neznana'

@@ -64,7 +64,7 @@
 {% if glas.oseba %}
     <td class="" data="{{ clanstvo.0.stranka.okrajsava }}">{{ glas.oseba }}
     {% with clanstvo=glasovanje.stranke|get_item:glas.oseba.pk %}
-    ({{ clanstvo.stranka.okrajsava }})
+    ({{ clanstvo.okrajsava }})
     {% endwith %}
     </td>
 {% else %}

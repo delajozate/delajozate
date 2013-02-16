@@ -1,7 +1,7 @@
 # coding: utf-8
 import datetime
 
-from django.core.exceptions import ObjectDoesNotExist
+
 from django.db import models, connection
 from django.db.models import Q
 from django.template.defaultfilters import slugify
@@ -19,25 +19,27 @@ def null_date(date):
 	if date == END_OF_TIME:
 		return None
 	return date
-	
+
+ORG_CHOICES = (
+	(1, 'stranka'),
+	(2, 'skupina'),
+	(3, 'drzavnizbor'),
+	(4, 'delovnotelo'),
+)
 
 class Organizacija(models.Model):
-	"This model has no fields. It's referenced from other models."
-	def type(self, value=False):
-		for p in ["stranka", "skupina", "drzavnizbor", "delovnotelo"]:
-			try:
-				v = getattr(self, p)
-				return v if value else p
-			except ObjectDoesNotExist:
-				pass
-		return None if value else "" 
+	tip = models.IntegerField(choices=ORG_CHOICES)
+	
+	def type(self):
+		return self.get_tip_display()
 	
 	def __unicode__(self):
 		t = self.type()
 		return u"[%s] %s" % (t, getattr(self, t)) if t != "" else None
 	
 	def value(self):
-		return self.type(True)
+		return getattr(self, self.type())
+	
 	
 
 class Oseba(models.Model):
@@ -89,16 +91,16 @@ class Oseba(models.Model):
 			clanstvo = list(self.pozicija_set.filter(
 				Q(od__lte=low, do__gt=low) |   # crosses lower boundary
 				Q(od__lte=high, do__gt=high) | # crosses upper boundary
-				Q(od__lte=low, do__gt=high)), organizacija__stranka__gt=0)  # or is in between
+				Q(od__lte=low, do__gt=high)).filter( organizacija__stranka__gt=0).select_related('organizacija', 'organizacija__stranka'))  # or is in between
 			return clanstvo
 		
-		return self.pozicija_set.filter(organizacija__stranka__gt=0).order_by('-do')
+		return self.pozicija_set.filter(organizacija__stranka__gt=0).order_by('-do').select_related('organizacija', 'organizacija__stranka')
 	
 	def funkcije(self):
-		return self.pozicija_set.exclude(organizacija=None).order_by('-do')
+		return self.pozicija_set.exclude(organizacija=None).order_by('-do').select_related('organizacija', 'organizacija__drzavnizbor')
 	
 	def delovna_telesa(self):
-		return self.pozicija_set.filter(organizacija__delovnotelo__gt=0).order_by('od')
+		return self.pozicija_set.filter(organizacija__delovnotelo__gt=0).order_by('od').select_related('organizacija', 'organizacija__delovnotelo')
 	
 	def save(self, *args, **kwargs):
 		if not self.slug:
@@ -119,6 +121,11 @@ class Tweet(models.Model):
 	oseba = models.ForeignKey(Oseba)
 	created_at = models.DateTimeField()
 	
+	class Meta:
+		ordering = ('-created_at',)
+	
+	def __unicode__(self):
+		return self.text
 
 class Stranka(models.Model):
 	# kako modelirat kontinuiteto stranke, kadar se preimenuje?
@@ -256,26 +263,12 @@ class Funkcija(models.Model):
 		ordering = ('id',)
 		verbose_name_plural = u'Funkcije'
 	
+	def __init__(self, *args, **kwargs):
+		print 'Deprecated: Funkcija', args, kwargs
+		super(Funkcija, self).__init__(*args, **kwargs)
+	
 	def __unicode__(self):
 		return u'%s (%s)' % (self.oseba, self.mandat)
-	
-
-class ClanStranke(models.Model):
-	oseba = models.ForeignKey(Oseba)
-	stranka = models.ForeignKey(Stranka, null=True, blank=True)
-	od = models.DateField()
-	do = models.DateField(blank=True)
-	podatki_preverjeni = models.BooleanField(default=False)
-	opombe = models.TextField(blank=True)
-
-	def __unicode__(self):
-		return self.stranka.ime if self.stranka else "Ni stranke!"
-	
-	class Meta:
-		verbose_name = u'Član stranke'
-		verbose_name_plural = u'Člani strank'
-		ordering = ('-do',)
-	
 
 class ClanOdbora(models.Model):
 	odbor = models.ForeignKey(DelovnoTelo)
@@ -291,6 +284,11 @@ class ClanOdbora(models.Model):
 		verbose_name = u'Član odbora'
 		verbose_name_plural = u'Člani odbora'
 	
+	def __init__(self, *args, **kwargs):
+		print 'Deprecated: ClanOdbora', args, kwargs
+		super(ClanOdbora, self).__init__(*args, **kwargs)
+	
+
 
 class Pozicija(models.Model):
 	oseba = models.ForeignKey(Oseba)
