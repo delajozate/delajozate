@@ -1,0 +1,20 @@
+# editor stuff
+*.pyc
+*~
+*.swp
+.idea
+# virtualenv and deploy
+bin
+lib
+local
+include
+puppet/manifests/build
+parts/
+*egg-info/
+develop-eggs/
+.mr.developer.cfg
+.installed.cfg
+eggs/
+# project files
+delajozate/localsettings.py
+delajozate/static
