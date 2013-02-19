@@ -1,0 +1,9 @@
+{% if is_paginated %}
+	<div class="pgn">
+        <ul class="pgn-pages{% if not page_obj.has_previous %} no-previous{% endif %}">
+			{% if page_obj.has_previous %}<li class="previous"><a href="?page={{ page_obj.previous_page_number }}">Prejšnja</a></li>{% endif %}
+            <li class="pgn-current">{{ page_obj.number }} /  {{ page_obj.paginator.num_pages }}</li>
+			{% if page_obj.has_next %}<li class="next"><a href="?page={{ page_obj.next_page_number }}">Naslednja</a></li>{% endif %}
+		</ul>
+	</div>
+{% endif %}

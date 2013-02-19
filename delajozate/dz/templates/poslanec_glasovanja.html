@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load dz_extras %}
+
+{% block content %}
+<div class="content">
+	<div>
+		<h1>{{ oseba.ime }} {{ oseba.priimek }}</h1>
+		<p>
+			<a href="{% url poslanec oseba.slug %}">Nazaj na domačo stran poslanca.</a>
+		</p>
+	</div>
+	<div class="votes">
+		<h2>Glasovanja</h2>
+		{% if votes %}
+{% include "casovnica_item.html" %}
+{% include "components/pagination.html" %}
+		{% endif %}
+	</div>
+</div>
+{% endblock %}

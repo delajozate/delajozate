@@ -1,0 +1,108 @@
+.site {
+    background: #fcfcfc;
+    color: #333;
+    @include box-shadow(0 0 12px 0 rgba(0, 0, 0, .1));
+}
+
+header {
+    background: #447D93;
+    overflow: hidden;
+}
+header > h1 {
+    float: left;
+    width: 150px;
+    height: 120px;
+    margin: -40px 20px 0;
+    background: url(../img/delajozate.png) no-repeat center bottom #3a6e85;
+    color: white;
+}
+header > h1 > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+header > h1 span {visibility: hidden;}
+header nav {
+    float: left;
+    background: transparent;
+    color: #fff;
+}
+
+nav { /* 30px; 10px */
+    background: #222;
+    color: #fff;
+    line-height: 1.875em;
+    padding: .625em;
+    overflow: hidden;
+}
+nav > span {
+    float: left;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+nav > ol {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav > ol > li {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+nav > ol > li > a { /* 10px */
+    display: block;
+    padding: 0 .625em;
+}
+nav > ol > li > a:hover {
+    background-color: rgba(255,255,255,.2);
+}
+
+@media screen and (max-width: 360px) {
+    nav > ol > li {
+        float: none;
+    }
+}
+
+section.body > nav {background: #68A3B5;}
+section.body > .content:after {
+    display: block;
+    clear: both;
+    visibility: hidden;
+    content: ".";
+}
+
+.content ol {
+    list-style: decimal;
+    margin: 0 0 1.25em;
+}
+.content ul {
+    margin: 0 0 1.25em;
+}
+
+footer {
+    background: #000;
+    color: #fff;
+}
+footer nav {
+    background: #999;
+    padding: 0;
+}
+footer nav a { /* 20px */
+    line-height: 1.25em;
+}
+footer p { /* 10px */
+    padding: .625em;
+    margin: 0;
+}
+footer a {color: #fff;}
+
+/* TODO: Everything bellow is EXTRA suspicious */
+/* poslanci */
+.poslanci h1 {margin-top: 0;}
+

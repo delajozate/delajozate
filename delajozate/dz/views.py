@@ -4,12 +4,14 @@ import json
 
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views.generic.list import ListView
 
 import dz.news
 from dz.models import Stranka, Oseba, Mandat, Tweet, Pozicija
 from magnetogrami.models import Zasedanje, Glas, Glasovanje
 
 from temporal import END_OF_TIME
+
 
 def home(request):
 	context = {
@@ -18,22 +20,37 @@ def home(request):
 	}
 	return render(request, 'home.html', context)
 
-def poslanci_list(request, mandat):
-	if mandat == 'danes':
-		poslanci = Pozicija.objects.filter(tip='poslanec', do=END_OF_TIME).order_by('oseba')
-		mandat_str = 'today'
-	else:
-		mandat = mandat[:-len('-mandat')]
-		m = Mandat.objects.get(st=mandat)
-		mandat_str = '%s-mandat' % m.st,
-		poslanci = Pozicija.objects.filter(tip='poslanec', organizacija__drzavnizbor__mandat=m).order_by('od', 'oseba')
-	context = {
-		'poslanci': poslanci,
-		'mandat': mandat_str,
-		'mandati': Mandat.objects.all(),
-	}
-	return render(request, 'poslanci.html', context)
+class PoslanciList(ListView):
+	model = Pozicija
+	template_name = 'poslanci.html'
+	paginate_by = 12
 
+	def get_queryset(self, *args, **kwargs):
+		if self.mandat == 'danes':
+			return Pozicija.objects.filter(
+				tip='poslanec', do=END_OF_TIME).order_by('oseba')
+		else:
+			mandat = self.mandat[:-len('-mandat')]
+			return Pozicija.objects.filter(
+				tip='poslanec', organizacija__drzavnizbor__mandat=mandat).order_by(
+					'od', 'oseba')
+
+	def get_context_data(self, **kwargs):
+		today = datetime.date.today()
+		context = super(PoslanciList, self).get_context_data(**kwargs)
+
+		mandati = Mandat.objects.all().values("st", "od", "do")
+		for mandat in mandati:
+			if mandat['do'] > today:
+				mandat['do'] = None
+		context['mandati'] = mandati
+		context['mandat'] = self.mandat if self.mandat != "danes" else 'today'
+		context['poslanci'] = context['object_list']
+		return context
+
+	def dispatch(self, request, mandat):
+		self.mandat = mandat
+		return super(PoslanciList, self).dispatch(request, mandat)
 
 def d_squared(tracks, nodepairs):
 	#for a,b in nodepairs:
@@ -97,7 +114,7 @@ def stranke_json(request):
 			'spremenila_v': [v.id for v in s.spremenila_v.all()],
 			}
 		stranke[s.id] = s_dict
-	
+
 	condensed = {}
 	for master_id, steza in steze.iteritems():
 		newsteza = []
@@ -114,65 +131,89 @@ def stranke_json(request):
 			}
 			newsteza.append(s_dict)
 		condensed[master_id] = newsteza
-	
+
 	return HttpResponse(json.dumps({'stranke_all': stranke, 'stranke_condensed': condensed}, indent=3), mimetype='application/json')
+
+def pobarvaj_glasove(glasovi):
+	classes = {
+		#'Ni': 'yellow',
+		'Za': 'green',
+		'Proti': 'red',
+	}
+	for glas in glasovi:
+		glas.cls = classes.get(glas.glasoval, "")
+	return glasovi
 
 
 def poslanec(request, slug):
+	vote_limit = 15
+
 	oseba = Oseba.objects.get(slug=slug)
+	glasovi = Glas.objects.filter(oseba=oseba).select_related(
+		'glasovanje', 'glasovanje__seja').order_by(
+			'-glasovanje__datum')[:vote_limit]
+
+	'''
 	tweeti = Tweet.objects.filter(oseba=oseba)
-	glasovi = Glas.objects.filter(oseba=oseba).select_related('glasovanje', 'glasovanje__seja')
-
-	now = datetime.datetime.now()
-	today = now.replace(hour=0, minute=0, second=0, microsecond=0)
-	# TODO: actually count weeks
-	this_week = now - datetime.timedelta(days=-7)
-	last_week = now - datetime.timedelta(days=-14)
-	two_weeks_ago = now - datetime.timedelta(days=-21)
-	month_ago = now - datetime.timedelta(days=-31)
-
-	casovnica = []
-	for tweet in tweeti:
-		casovnica.append((tweet.created_at, tweet, 'tweet'))
-	for glas in glasovi:
-		if glas.glasovanje.datum is not None:
-			# convert date to datetime so we can compare it to datetime
-			casovnica.append((datetime.datetime(*(glas.glasovanje.datum.timetuple()[:6])), glas, 'glas'))
-
-	novice = dz.news.get_news(" ".join([oseba.ime, oseba.priimek]))
-	if novice:
-		for novica in novice:
-			casovnica.append((novica["published"], novica, 'novica'))
-
-	casovnica = sorted(casovnica, key=lambda k: k[0], reverse=True)
+	'''
+	pobarvaj_glasove(glasovi)
 
 	context = {
 		'oseba': oseba,
-		'today_list': [],
-		'this_week_list': [],
-		'last_week_list': [],
-		'two_weeks_ago_list': [],
-		'month_ago_list': [],
-		'the_rest_list': [],
+		'votes': glasovi,
 	}
 
-	item = collections.namedtuple('Item', 'obj, type')
-
-	for date, obj, type_ in casovnica:
-		if today < date <= now:
-			context['today_list'].append(item._make((obj, type_)))
-		if this_week < date <= today:
-			context['this_week_list'].append(item._make((obj, type_)))
-		if last_week < date <= this_week:
-			context['last_week_list'].append(item._make((obj, type_)))
-		if two_weeks_ago < date <= last_week:
-			context['two_weeks_ago_list'].append(item._make((obj, type_)))
-		if month_ago < date <= last_week:
-			context['month_ago_list'].append(item._make((obj, type_)))
-		if date <= month_ago:
-			context['the_rest_list'].append(item._make((obj, type_)))
-
 	return render(request, "poslanec.html", context)
+
+
+class GlasovanjaList(ListView):
+	model = Glas
+	template_name = 'poslanec_glasovanja.html'
+	paginate_by = 30
+	limit = None
+
+	# TODO: Dodaj filtre: zadnji teden, mesec, leto, mandat?
+
+	def get_queryset(self, *args, **kwargs):
+		qs = Glas.objects.filter(oseba=self.oseba).select_related(
+			'glasovanje', 'glasovanje__seja').order_by( '-glasovanje__datum')
+		if self.limit == 'letos':
+			today = datetime.date.today()
+			start = datetime.date(today.year, 1, 1)
+			qs = qs.filter(glasovanje__datum__gte=start)
+		return qs
+
+	def get_context_data(self, **kwargs):
+		context = super(GlasovanjaList, self).get_context_data(**kwargs)
+		context['oseba'] = self.oseba
+		context['votes'] = context['object_list']
+		pobarvaj_glasove(context['votes'])
+		return context
+
+	def dispatch(self, request, slug):
+		self.oseba = Oseba.objects.get(slug=slug)
+		self.limit = request.GET.get('limit', None)
+		return super(GlasovanjaList, self).dispatch(request, slug)
+
+
+class TweetList(ListView):
+	model = Tweet
+	template_name = 'poslanec_tweet.html'
+	paginate_by = 30
+
+	def get_queryset(self, *args, **kwargs):
+		qs = Tweet.objects.filter(oseba=self.oseba).order_by('-created_at')
+		return qs
+
+	def get_context_data(self, **kwargs):
+		context = super(TweetList, self).get_context_data(**kwargs)
+		context['oseba'] = self.oseba
+		context['tweets'] = context['object_list']
+		return context
+
+	def dispatch(self, request, slug):
+		self.oseba = Oseba.objects.get(slug=slug)
+		return super(TweetList, self).dispatch(request, slug)
 
 
 def robots(request):

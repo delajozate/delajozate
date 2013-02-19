@@ -1,0 +1,168 @@
+html,
+body {
+  background: #f0ede6;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 100%;
+  line-height: 1.25;
+  font-family: "Ubuntu",sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1.5;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999999;
+}
+
+h1 {
+  /* 32px; 10px 20px */
+  font-size: 2em;
+  margin: .3125em 0 .625em;
+}
+
+h2 {
+  /* 24px; 10px 20px */
+  font-size: 1.5em;
+  margin: .41666667em 0 .83333333em;
+}
+
+h3 {
+  /* 20px; 10px */
+  font-size: 1.25em;
+  line-height: 1;
+  margin: .5em 0;
+}
+
+h1, h2, h3 {
+  padding: 5px 0;
+}
+
+h4 {
+  /* 16px; 10px */
+  font-size: 1em;
+  margin: .625em 0;
+}
+
+h5,
+h6 {
+  /* 14px; 10px */
+  font-size: .875em;
+  text-transform: uppercase;
+  margin: .71428571em 0;
+}
+
+hgroup *:not(:first-child) {
+  margin-top: 0;
+}
+
+hgroup *:not(:last-child) {
+  margin-bottom: 0;
+}
+
+header,
+footer {
+  display: block;
+  clear: both;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+p {
+  max-width: 60em;
+  margin: 0 0 1.25em;
+  line-height: 1.5;
+}
+
+a {
+  color: #555;
+}
+
+img {
+  /* Responsive images (ensure images don't scale beyond their parents) */
+  max-width: 100%;
+  /* Part 1: Set a maxium relative to the parent */
+  width: auto\9;
+  /* IE7-8 need help adjusting responsive images */
+  height: auto;
+  /* Part 2: Scale the height according to the width, otherwise you get stretching */
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 5px 10px 5px 0;
+  border-bottom: 1px solid #ccc;
+  line-height: 1.5;
+  vertical-align: top;
+  text-align: left;
+}
+
+.odd-row,
+tr:nth-child(odd) td {
+  background-color: #f3f3f3;
+}
+
+/* Basic classes */
+.center {
+  text-align: center;
+}
+
+.green,
+.ok {
+  color: green;
+}
+
+.red,
+.fail {
+  color: red;
+}
+
+.yellow,
+.warn {
+  color: #c09853;
+}
+
+.break {
+  margin-top: 2em;
+}

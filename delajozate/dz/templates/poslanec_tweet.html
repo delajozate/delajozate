@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load dz_extras %}
+
+{% block content %}
+<div class="content">
+	<div>
+		<h1>{{ oseba.ime }} {{ oseba.priimek }}</h1>
+		<p>
+			<a href="{% url poslanec oseba.slug %}">Nazaj na domačo stran poslanca.</a>
+		</p>
+	</div>
+	<div class="tweets">
+		<h2>Sporočila s Twittra</h2>
+		{% if tweets %}
+		<table>
+			<thead>
+				<tr class="center">
+					<th>Objavljen&nbsp;pred</th>
+					<th>Sporočilo</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in tweets %}
+				<tr>{% with when=item.created_at %}
+					<td><time value="{{ when|date:"c" }}">
+						<abbr title="{{ when|date:"j. E Y G:i" }}">{{ when|timesince }}</abbr></time></td>{% endwith %}
+					<td><a href="http://twitter.com/{{ oseba.twitter }}/status/{{ item.tweet_id }}">{{ item.text|safe }}</a></td>
+				</tr>{% endfor %}
+			</tbody>
+		</table>
+{% include "components/pagination.html" %}
+		{% endif %}
+	</div>
+</div>
+{% endblock %}

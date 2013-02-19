@@ -4,28 +4,11 @@
 {% block content %}
 <div class="content">
 	<div class="poslanci vcard">{% with oseba.clanstvo|datum_filter:"today" as clanstvo %}
-		<div class="card">
-			{% if clanstvo %}{% with clanstvo.0.organizacija.stranka as stranka %}
-			<div class="stranka"><a class="strankatag {{ stranka.okrajsava|lower }}"
-				href="#"
-				title="{{ stranka.ime }}">{{ stranka.okrajsava }}
-			</a></div>{% endwith %}{% endif %}
-			<a href="/osebe/{{ oseba.slug }}/">
-				<div class="img">
-					<img class="image" src="{{ oseba.slika_or_default }}" alt="" title="{{ oseba }}, vir:{{ oseba.slika_vir }}" />
-				</div>
-			</a>
-			<dl>
-				<dt>Poslanskih dni</dt>
-				<dd>{{ oseba.poslanskih_dni|default_if_none:"0" }}</dd>
-				<dt>Mandatov</dt>
-				<dd>{{ oseba.st_mandatov }}</dd>
-				<!--dt>Strank</dt>
-				<dd>{{ oseba.clanstvo|length }}</dd-->
-				<!--dt>Delovna telesa</dt>
-				<dd>{{ oseba.delovna_telesa|length }}</dd-->
-			</dl>
-		</div>
+		<aside>
+		{% with hide_card_details=yes %}
+		{% include "components/card.html" %}
+		{% endwith %}
+		</aside>
 		<div class="details">
 			<h1>
 				<span class="fn">
@@ -38,80 +21,30 @@
 				<li class="role">{{ f.get_tip_display }} {{ f.organizacija.value.display }} ({{ f.trajanje }})</li>
 			{% endfor %}
 			</ul>
-			
 			<span class="org">{{ clanstvo.0.stranka|default_if_none:"Nepovezan poslanec" }}</span>
-			
 			<p>
 				Twitter:
 				{% if oseba.twitter %}
 				<a href="https://twitter.com/{{ oseba.twitter }}">@{{ oseba.twitter }}</a>
+				(<a href="{% url poslanec_twitter oseba.slug %}">seznam tweetov</a>)
 				{% else %}
-				--
+				neznan
 				{% endif %}
 			</p>
 		</div>
 		{% endwith %}
 	</div>
 	
-	<div>
-		<h1>
-			Časovnica
-		</h1>
-		<ol>
-			{% if today_list %}
-			<li><h2>Danes</h2></li>
-			{% for item in today_list %}
-			<li>
-				{% include "casovnica_item.html" with item=item only %}
-			</li>
-			{% endfor %}
-			{% endif %}
-			
-			{% if this_week_list %}
-			<li><h2>Ta teden</h2></li>
-			{% for item in this_week_list %}
-			<li>
-				{% include "casovnica_item.html" with item=item only %}
-			</li>
-			{% endfor %}
-			{% endif %}
-			
-			{% if last_week_list %}
-			<li><h2>Prejšni teden</h2></li>
-			{% for item in last_week_list %}
-			<li>
-				{% include "casovnica_item.html" with item=item only %}
-			</li>
-			{% endfor %}
-			{% endif %}
-			
-			{% if one_week_ago_list %}
-			<li><h2>Dva tedna nazaj</h2></li>
-			{% for item in one_week_ago_list %}
-			<li>
-				{% include "casovnica_item.html" with item=item only %}
-			</li>
-			{% endfor %}
-			{% endif %}
-			
-			{% if month_ago_list %}
-			<li><h2>Mesec dni nazaj</h2></li>
-			{% for item in month_ago_list %}
-			<li>
-				{% include "casovnica_item.html" with item=item only %}
-			</li>
-			{% endfor %}
-			{% endif %}
-			
-			{% if the_rest_list %}
-			<li><h2>Več kot mesec dni nazaj</h2></li>
-			{% for item in the_rest_list %}
-			<li>
-				{% include "casovnica_item.html" with item=item only %}
-			</li>
-			{% endfor %}
-			{% endif %}
-		</ol>
+	<div class="votes">
+		{% if votes %}
+		<h2>
+			Zadnjih {{ votes|length }} glasovanj
+		</h2>
+{% include "casovnica_item.html" %}
+		<p>
+			<a href="{% url poslanec_glasovanja oseba.slug %}">Seznam vseh glasovanj</a>
+		</p>
+		{% endif %}
 	</div>
 </div>
 {% endblock %}

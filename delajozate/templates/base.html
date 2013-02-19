@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>{% block title %}Delajo zate!{% endblock %}</title>
-		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic|Arvo:700&subset=latin,latin-ext' rel="stylesheet" type="text/css" />
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,700,300italic&subset=latin,latin-ext' rel="stylesheet" type="text/css" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-		<link rel="stylesheet" href="/static/style.css"/>
+		<link rel="stylesheet" href="/static/css/screen.css"/>
 		{% block head %}{% endblock %}
 		{% block opengraph %}{% endblock %}
 	</head>
@@ -30,15 +30,7 @@
 			<footer>
 				<nav>
 					<ol>
-						<li><span><a href="/poslanci/">Poslanci</a></span></li>
-						<!-- li><span><a href="/stranke/">Stranke</a></span></li -->
-						<!--li>
-							<span><a href="/delovna-telesa/">Delovna telesa</a></span>
-							<ol>
-								<li><span><a href="/odbori/">Odbori</a></span></li>
-								<li><span><a href="/komisije/">Komisije</a></span></li>
-							</ol>
-						</li-->
+						<li><a href="/poslanci/">Poslanci</a></li>
 						<li><a href="/glasovanja/">Glasovanja</a></li>
 						<li><a href="/seje/">Seje</a></li>
 						<li><a href="/iskanje/">Iskanje</a></li>
@@ -46,7 +38,7 @@
 				</nav>
 				<p>
 					Projekt se je začel v 2011 v okviru Open Data delavnice v <a href="http://www.kiberpipa.org">Kiberpipi</a>. 
-					Podatki s spletne strani <a href="http://www.dz-rs.si">Državnega zbora</a>.
+					Vir podatkov: <a href="http://www.dz-rs.si">Državni zbor</a>.
 				</p>
 			</footer>
 		</div>

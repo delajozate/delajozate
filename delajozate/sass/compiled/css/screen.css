@@ -1,0 +1,639 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*@import "compass/reset";*/
+html,
+body {
+  background: #f0ede6;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 100%;
+  line-height: 1.25;
+  font-family: "Ubuntu",sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1.5;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999999;
+}
+
+h1 {
+  /* 32px; 10px 20px */
+  font-size: 2em;
+  margin: .3125em 0 .625em;
+}
+
+h2 {
+  /* 24px; 10px 20px */
+  font-size: 1.5em;
+  margin: .41666667em 0 .83333333em;
+}
+
+h3 {
+  /* 20px; 10px */
+  font-size: 1.25em;
+  line-height: 1;
+  margin: .5em 0;
+}
+
+h1, h2, h3 {
+  padding: 5px 0;
+}
+
+h4 {
+  /* 16px; 10px */
+  font-size: 1em;
+  margin: .625em 0;
+}
+
+h5,
+h6 {
+  /* 14px; 10px */
+  font-size: .875em;
+  text-transform: uppercase;
+  margin: .71428571em 0;
+}
+
+hgroup *:not(:first-child) {
+  margin-top: 0;
+}
+
+hgroup *:not(:last-child) {
+  margin-bottom: 0;
+}
+
+header,
+footer {
+  display: block;
+  clear: both;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+p {
+  max-width: 60em;
+  margin: 0 0 1.25em;
+  line-height: 1.5;
+}
+
+a {
+  color: #555;
+}
+
+img {
+  /* Responsive images (ensure images don't scale beyond their parents) */
+  max-width: 100%;
+  /* Part 1: Set a maxium relative to the parent */
+  width: auto\9;
+  /* IE7-8 need help adjusting responsive images */
+  height: auto;
+  /* Part 2: Scale the height according to the width, otherwise you get stretching */
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 5px 10px 5px 0;
+  border-bottom: 1px solid #ccc;
+  line-height: 1.5;
+  vertical-align: top;
+  text-align: left;
+}
+
+.odd-row,
+tr:nth-child(odd) td {
+  background-color: #f3f3f3;
+}
+
+/* Basic classes */
+.center {
+  text-align: center;
+}
+
+.green,
+.ok {
+  color: green;
+}
+
+.red,
+.fail {
+  color: red;
+}
+
+.yellow,
+.warn {
+  color: #c09853;
+}
+
+.break {
+  margin-top: 2em;
+}
+
+.site {
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.site > section {
+  clear: both;
+  overflow: hidden;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  padding: 40px 0 20px;
+}
+
+section.body {
+  /* 0 10px 20px */
+  padding: 0 0 1.25em;
+}
+
+section.body > .content {
+  margin: 1.25em 10px 2.5em;
+}
+
+section.body aside {
+  float: right;
+}
+
+.vcard aside {
+  /* Make space for card's badge */
+  padding-right: 10px;
+}
+
+.poslanci.vcard {
+  overflow: hidden;
+}
+
+.poslanci {
+  padding: .625em 0;
+  overflow: hidden;
+  clear: both;
+}
+
+ol.poslanci {
+  padding: 0;
+}
+
+.poslanci > li {
+  /* 10px */
+  list-style: none;
+  display: inline-block;
+  width: 30%;
+  padding: .625em 3% .625em 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 360px) {
+  .poslanci > li {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  section.body aside,
+  section.body aside > .card {
+    float: none;
+  }
+}
+@media screen and (min-width: 361px) and (max-width: 500px) {
+  .poslanci > li {
+    width: 45%;
+    padding-right: 4%;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 750px) {
+  .poslanci > li {
+    width: 30%;
+    padding-right: 2%;
+  }
+}
+@media screen and (min-width: 751px) {
+  .poslanci > li {
+    width: 19%;
+    padding-right: 5%;
+  }
+}
+.site {
+  background: #fcfcfc;
+  color: #333;
+  -webkit-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+header {
+  background: #447D93;
+  overflow: hidden;
+}
+
+header > h1 {
+  float: left;
+  width: 150px;
+  height: 120px;
+  margin: -40px 20px 0;
+  background: url(../img/delajozate.png) no-repeat center bottom #3a6e85;
+  color: white;
+}
+
+header > h1 > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+header > h1 span {
+  visibility: hidden;
+}
+
+header nav {
+  float: left;
+  background: transparent;
+  color: #fff;
+}
+
+nav {
+  /* 30px; 10px */
+  background: #222;
+  color: #fff;
+  line-height: 1.875em;
+  padding: .625em;
+  overflow: hidden;
+}
+
+nav > span {
+  float: left;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav > ol {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav > ol > li {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+nav > ol > li > a {
+  /* 10px */
+  display: block;
+  padding: 0 .625em;
+}
+
+nav > ol > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 360px) {
+  nav > ol > li {
+    float: none;
+  }
+}
+section.body > nav {
+  background: #68A3B5;
+}
+
+section.body > .content:after {
+  display: block;
+  clear: both;
+  visibility: hidden;
+  content: ".";
+}
+
+.content ol {
+  list-style: decimal;
+  margin: 0 0 1.25em;
+}
+
+.content ul {
+  margin: 0 0 1.25em;
+}
+
+footer {
+  background: #000;
+  color: #fff;
+}
+
+footer nav {
+  background: #999;
+  padding: 0;
+}
+
+footer nav a {
+  /* 20px */
+  line-height: 1.25em;
+}
+
+footer p {
+  /* 10px */
+  padding: .625em;
+  margin: 0;
+}
+
+footer a {
+  color: #fff;
+}
+
+/* TODO: Everything bellow is EXTRA suspicious */
+/* poslanci */
+.poslanci h1 {
+  margin-top: 0;
+}
+
+/*
+ * Playing card for MPs
+ */
+.card {
+  position: relative;
+  float: left;
+  max-width: 249px;
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.1);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.card > .stranka {
+  display: table;
+  position: absolute;
+  right: -7px;
+  top: -12px;
+  width: 40px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  line-height: 12px;
+  text-align: center;
+  font-size: .625em;
+  text-transform: uppercase;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.card > .stranka > a {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  color: #000;
+  text-decoration: none;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 1px 1px #666666;
+  -moz-box-shadow: 1px 1px 1px #666666;
+  box-shadow: 1px 1px 1px #666666;
+  text-shadow: 1px 1px 0 white;
+}
+
+.card > .stranka > .strankatag {
+  background: #ccc;
+}
+
+.card > .stranka > a.strankatag.sns {
+  background-color: #fff301;
+}
+
+.card > .stranka > a.strankatag.zares {
+  background-color: #f7971e;
+}
+
+.card > .stranka > a.strankatag.lds {
+  background-color: #00adef;
+}
+
+.card > .stranka > a.strankatag.sls {
+  background-color: #60c000;
+}
+
+.card > .stranka > a.strankatag.sds {
+  background-color: #004a99;
+  color: #fff;
+  text-shadow: 1px 1px 0 black;
+}
+
+.card > .stranka > a.strankatag.sd {
+  background-color: #ff0000;
+  color: #fff;
+  text-shadow: 1px 1px 0 black;
+}
+
+/* img */
+.card .img {
+  border: 1px solid #999;
+  overflow: hidden;
+}
+
+.card .img > img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* card stats */
+.card dl {
+  margin: .625em 0;
+}
+
+.card dt {
+  float: left;
+}
+
+.card dd {
+  border-bottom: 1px dotted #666;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+/*
+ * Pagination
+ */
+.pgn-pages {
+  list-style-type: none;
+}
+
+.pgn-pages > li {
+  float: left;
+  width: 33%;
+}
+
+.pgn-pages > li.next {
+  text-align: right;
+}
+
+.pgn-current {
+  text-align: center;
+}
+
+.no-previous > .pgn-current {
+  margin-left: 33%;
+}
+
+/*
+ * Search
+ */
+.highlight {
+  /* TODO: So vague it is almost useless */
+  font-weight: 500;
+}
+
+/*
+ * Seja
+ */
+.speaker {
+  float: left;
+  clear: left;
+  width: 27%;
+  padding: 5px;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.speaker > em {
+  float: left;
+  clear: left;
+  font-size: .625em;
+  font-style: normal;
+}
+
+.speaker-img {
+  width: 75px;
+}
+
+.speaker-quote {
+  width: 65%;
+  margin-left: 28%;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.speech {
+  overflow: hidden;
+  clear: left;
+  width: 100%;
+  padding: 1em 0;
+  border-bottom: 1px dotted #ddd;
+}
+
+.speech:first-child {
+  padding-top: 0;
+  background: red;
+}
+
+.quote-link {
+  position: relative;
+  float: right;
+  right: -30px;
+}
+
+.quote-link > a {
+  color: #ccc;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.quote-link :hover {
+  color: #666;
+  text-decoration: underline;
+}
+
+.sessions-list {
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 360px) {
+  .speaker,
+  .speaker > em {
+    float: none;
+    width: auto;
+    font-weight: bold;
+  }
+
+  .speaker-img {
+    display: none;
+  }
+
+  .speaker-quote {
+    width: auto;
+    margin: 0 30px 1em;
+  }
+
+  .quote-link {
+    right: -20px;
+  }
+}
