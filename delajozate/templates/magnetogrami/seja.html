@@ -32,19 +32,21 @@ addLoadEvent(updateHighlight);
 <div class="content">
     <h1>{{ seja.naslov }}</h1>
 
-    {% if seja.magnetogrami|length > 1 %}
     <p><strong>Zasedanja:</strong></p>
     <ul>
     {% for z in seja.magnetogrami %}
-        <li><a href="{% url delajozate.magnetogrami.views.seja seja.mandat seja.delovno_telo seja.slug z.datum %}">{{ z.datum }}</a> <a href="{{ z.url }}">(vir: Državni zbor)</a></li>
+        <li><a href="{% url delajozate.magnetogrami.views.seja seja.mandat seja.delovno_telo seja.slug z.datum %}">{{ z.datum }}</a></li>
+        <li>
+            <ul>
+                <li><a href="{{ z.url }}">izvirno besedilo na strani Državnega zbora</a></li>
+                {% for video in z.video_set.all %}
+                <li><a href="{{ video.url }}">posnetek v arhivu RTV Slovenija</a></li>
+                {% endfor %}
+            </ul>
+        </li>
     {% endfor %}
     </ul>
-    {% else %}
-    {% for z in seja.magnetogrami %}
-    <p><strong>Zasedanje:</strong> <a href="{% url delajozate.magnetogrami.views.seja seja.mandat seja.delovno_telo seja.slug z.datum %}">{{ z.datum }}</a> <a href="{{ z.url }}">(vir: Državni zbor)</a></p>
-    {% endfor %}
-    {% endif %}
-
+    
     <h2 class="center">Vsebina</h2>
     {% for zapis in zapisi %}
         {% ifchanged zapis.govorec %}
