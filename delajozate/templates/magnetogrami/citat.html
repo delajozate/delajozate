@@ -38,7 +38,7 @@
     </span>
 
 {% else %}
-    {{ zapis.govorec|default_if_none:"&nbsp;"|title }}
+    {{ zapis.govorec|default_if_none:""|title }}
 {% endif %}
 </div>
 {% endifchanged %}
@@ -50,7 +50,7 @@
 </section>
 
     <p>
-        <a href="#FAKE">Nazaj na magnetogram</a>
+        <a href="{% url delajozate.magnetogrami.views.seja seja.mandat seja.delovno_telo seja.slug zasedanje.datum %}#p{{ citirano }}">Nazaj na magnetogram</a>
     </p>
 
 </div>
