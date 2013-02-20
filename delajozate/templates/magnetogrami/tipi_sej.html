@@ -10,7 +10,11 @@
 		<h2>{{ dt.mandat }}. mandat</h2>
 		<h3>Delovna telesa</h3>
 	</hgroup>
-	<ul>{% endifchanged %}
+	<ul>
+		<li>
+			<a href="{% url delajozate.magnetogrami.views.seja_list dt.mandat 'dz' %}">Državni zbor</a>
+		</li>
+	{% endifchanged %}
 		<li>{% spaceless %}
 			{% if dt.dz_id %}<a href="{% url delajozate.magnetogrami.views.seja_list dt.mandat dt.dz_id %}">{% endif %}
 			{{ dt.ime }}
