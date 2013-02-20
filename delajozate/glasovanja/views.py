@@ -5,12 +5,23 @@ import json
 
 from django.shortcuts import render
 from django.http import Http404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from magnetogrami.models import Glasovanje, Glas
 
 def index(request):
+    glasovanja_list = Glasovanje.objects.all().select_related('seja')
+    paginator = Paginator(glasovanja_list, 100)
+    page = request.GET.get('page', 1)
+    try:
+        glasovanja = paginator.page(page)
+    except PageNotAnInteger:
+        glasovanja = paginator.page(1)
+    except EmptyPage:
+        glasovanja = paginator.page(paginator.num_pages)
+    
     context = {
-        'object_list': Glasovanje.objects.all().select_related('seja'),
+        'glasovanja': glasovanja,
         }
     return render(request, 'glasovanja.html', context)
 

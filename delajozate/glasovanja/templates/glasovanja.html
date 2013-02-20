@@ -8,8 +8,8 @@
 
 <h1>Glasovanja</h1>
 
-{% if object_list %}
-{% for g in object_list %}
+{% if glasovanja.object_list %}
+{% for g in glasovanja.object_list %}
 {% ifchanged g.seja.mandat %}
 <h2>{{ g.seja.mandat }}. mandat</h2>
 {% endifchanged %}
@@ -37,6 +37,23 @@
 
 
 {% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if glasovanja.has_previous %}
+            <a href="?page={{ glasovanja.previous_page_number }}">prejšnja stran</a>
+        {% endif %}
+
+        <span class="current">
+            Stran {{ glasovanja.number }} od {{ glasovanja.paginator.num_pages }}.
+        </span>
+
+        {% if glasovanja.has_next %}
+            <a href="?page={{ glasovanja.next_page_number }}">naslednja stran</a>
+        {% endif %}
+    </span>
+</div>
+
 {% else %}
 <p>To delovno telo nima (javno objavljenih) magnetogramov.</p>
 {% endif %}
