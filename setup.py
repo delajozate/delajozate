@@ -10,7 +10,7 @@ README = open(os.path.join(here, 'README.rst')).read()
 
 
 requires = [
-    'Django',
+    'Django==1.3.7',
     'python-memcached',
     'South==0.7.3',
     'httplib2',
