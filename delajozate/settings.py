@@ -141,7 +141,7 @@ INSTALLED_APPS = (
 	'django.contrib.staticfiles',
 	# Uncomment the next line to enable the admin:
 	'django.contrib.admin',
-	'raven.contrib.django',
+	#'raven.contrib.django',
 	'haystack',
 	# Uncomment the next line to enable admin documentation:
 #	'django.contrib.admindocs',
@@ -163,7 +163,7 @@ LOGGING = {
 	'disable_existing_loggers': False,
 	'root': {
 		'level': 'WARNING',
-		'handlers': ['sentry'],
+		'handlers': [], # 'sentry'],
 	},
 	'formatters': {
 		'verbose': {
@@ -171,10 +171,10 @@ LOGGING = {
 		},
 	},
 	'handlers': {
-		'sentry': {
-			'level': 'ERROR',
-			'class': 'raven.handlers.logging.SentryHandler',
-		},
+		#'sentry': {
+		#	'level': 'ERROR',
+		#	'class': 'raven.handlers.logging.SentryHandler',
+		#},
 		'console': {
 			'level': 'DEBUG',
 			'class': 'logging.StreamHandler',
@@ -187,16 +187,16 @@ LOGGING = {
 			'handlers': ['console'],
 			'propagate': False,
 		},
-		'raven': {
-			'level': 'DEBUG',
-			'handlers': ['console'],
-			'propagate': False,
-		},
-		'sentry.errors': {
-			'level': 'DEBUG',
-			'handlers': ['console'],
-			'propagate': False,
-		},
+		#'raven': {
+		#	'level': 'DEBUG',
+		#	'handlers': ['console'],
+		#	'propagate': False,
+		#},
+		#'sentry.errors': {
+		#	'level': 'DEBUG',
+		#	'handlers': ['console'],
+		#	'propagate': False,
+		#},
 	},
 }
 
