@@ -1,14 +1,11 @@
 {% extends "base.html" %}
 {% load dz_extras %}
 
-{% block head %}
-<style>
-.two {width:49%;float:left;}
-</style>
-{% endblock %}
+{% block head %}{% endblock %}
 
 {% block content %}
-			<section class="two">
+		<div class="content">
+			<section class="two-cols-first">
 			{% for z in zasedanja %}
 				{% if forloop.first %}
 				<h2>Zadnja zasedanja sej</h2>
@@ -17,8 +14,7 @@
 				
 				{% ifchanged z.datum %}
 				</ul>
-				<br />
-				<b>{{ z.datum }}</b>
+                <h4>{{ z.datum }}</h4>
 				<ul>
 				{% endifchanged %}
 				
@@ -29,8 +25,7 @@
 				{% endif %}
 			{% endfor %}
 			</section>
-			
-			<section class="two">
+			<section class="two-cols-second">
 			{% for g in glasovanja %}
 				{% if forloop.first %}
 				<h2>Zadnja glasovanja</h2>
@@ -39,8 +34,7 @@
 
 				{% ifchanged g.datum %}
 				</ul>
-				<br />
-				<b>{{ g.datum }}</b>
+				<h4>{{ g.datum }}</h4>
 				<ul>
 				{% endifchanged %}
 
@@ -51,5 +45,6 @@
 				
 			{% endfor %}
 			</section>
+		</div>
 
 {% endblock %}

@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Seje</h1>
+<div class="content">
+	<h1>Seje</h1>
 {% for dt in object_list %}{% ifchanged dt.mandat %}{% if not forloop.first %}
 	</ul>
-</div>{% endif %}
-<div class="content">
+{% endif %}
 	<hgroup>
 		<h2>{{ dt.mandat }}. mandat</h2>
 		<h3>Delovna telesa</h3>
@@ -17,9 +17,9 @@
 	{% endifchanged %}
 		<li>{% spaceless %}
 			{% if dt.dz_id %}<a href="{% url delajozate.magnetogrami.views.seja_list dt.mandat dt.dz_id %}">{% endif %}
-			{{ dt.ime }}
-			{% if dt.dz_id %}</a>{% endif %}
+			{{ dt.ime }}{% if dt.dz_id %}</a>{% endif %}
 		{% endspaceless %}</li>{% if forloop.last %}
 	</ul>
-</div>{% endif %}{% endfor %}
+{% endif %}{% endfor %}
+</div>
 {% endblock %}

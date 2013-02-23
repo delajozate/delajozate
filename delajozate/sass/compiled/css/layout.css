@@ -19,6 +19,7 @@ header {
 section.body {
   /* 0 10px 20px */
   padding: 0 0 1.25em;
+  /* 0 width sides so subnav looks ok */
 }
 
 section.body > .content {
@@ -29,6 +30,28 @@ section.body aside {
   float: right;
 }
 
+.two-cols-first,
+.two-cols-second {
+  float: left;
+  width: 48%;
+}
+
+.two-cols-first {
+  margin: 0 1.9% 0 0;
+}
+
+.two-cols-second {
+  margin: 0 0 0 1.9%;
+}
+
+@media only screen and (max-width: 450px) {
+  .two-cols-first,
+  .two-cols-second {
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+}
 .vcard aside {
   /* Make space for card's badge */
   padding-right: 10px;
