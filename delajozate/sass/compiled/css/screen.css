@@ -684,11 +684,6 @@ footer a {
   border-bottom: 1px dotted #ddd;
 }
 
-.speech:first-child {
-  padding-top: 0;
-  background: red;
-}
-
 .quote-link {
   position: relative;
   float: right;
