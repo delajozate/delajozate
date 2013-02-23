@@ -20,6 +20,7 @@ fi
 
 
 python manage.py dumpdata --indent=4 --exclude south --exclude auth --exclude sessions --exclude admin --exclude contenttypes \
+	--exclude magnetogrami.Video \
 	--exclude magnetogrami.Glasovanje \
 	--exclude magnetogrami.Glas \
 	--exclude magnetogrami.Seja \
