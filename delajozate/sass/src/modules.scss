@@ -102,6 +102,76 @@ footer p { /* 10px */
 }
 footer a {color: #fff;}
 
+/*
+ * Voting page
+ */
+
+.red { background-color: #fdd; }
+.table-total { font-weight:bold; }
+
+.vote-summary,
+.vote-details {
+    width: 100%;
+    max-width: 40em;
+    border-collapse: collapse;
+    margin: 1em 0 2em;
+}
+
+.vote-summary {text-align: center;}
+
+.vote-summary th,
+.vote-summary td,
+.vote-details th,
+.vote-details td {
+    padding-left:.5em;
+}
+
+@media only screen and (max-width: 520px) {
+    /* We only need to handle vote-summary. vote-details always looks ok */
+    .vote-summary,
+    .vote-summary > thead,
+    .vote-summary > tbody,
+    .vote-summary th,
+    .vote-summary td,
+    .vote-summary tr { display: block; }
+
+    .vote-summary > thead > tr {
+        position: absolute;
+        top: -4999px;
+        left: -4999px;
+    }
+
+    .vote-summary tr {
+        border-bottom: 1px solid #ccc;
+    }
+
+    /* Behave like a row */
+    .vote-summary td {
+        position: relative;
+        padding-left: 7em;
+        border: none;
+        text-align: left;
+    }
+
+    /* Now like a table header; top/left values mimic padding */
+    .vote-summary td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 5em;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    /* Label the data */
+    .vote-summary td:nth-of-type(1):before { content: "Stranka"; }
+    .vote-summary td:nth-of-type(2):before { content: "Večina"; }
+    .vote-summary td:nth-of-type(3):before { content: "Manjšina"; }
+    .vote-summary td:nth-of-type(4):before { content: "Vzdržanih"; }
+    .vote-summary td:nth-of-type(5):before { content: "Odsotnih"; }
+    .vote-summary td:nth-of-type(6):before { content: "Prisotnost"; }
+}
+
 /* TODO: Everything bellow is EXTRA suspicious */
 /* poslanci */
 .poslanci h1 {margin-top: 0;}
