@@ -112,7 +112,8 @@ p {
 }
 
 a {
-  color: #555;
+  /*color: #555; */
+  text-decoration: none;
 }
 
 img {
