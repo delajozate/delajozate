@@ -59,9 +59,9 @@ class PoslanecTest(TestCase):
         self.tweet2 = Tweet.objects.create(text='August', oseba=oseba, tweet_id=2, created_at=datetime.datetime.now()-datetime.timedelta(31))
 
     def test_order(self):
-        resp = self.c.get('/osebe/dragutin-mate/')
-        self.assertEqual(resp.context['the_rest_list'][0].obj, self.tweet2)
+        resp = self.c.get('/osebe/dragutin-mate/tweets/')
+        self.assertEqual(resp.context['object_list'][0], self.tweet2)
         #self.assertEqual(resp.context['the_rest_list'][1].obj.glasovanje.datum, datetime.date(2012, 7, 13))
         
-        self.assertEqual(resp.context['the_rest_list'][-1].obj, self.tweet1)
+        self.assertEqual(resp.context['object_list'][1], self.tweet1)
         #self.assertEqual(len(resp.context['the_rest_list']), 18)
