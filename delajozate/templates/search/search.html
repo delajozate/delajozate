@@ -7,35 +7,33 @@
 
     <form method="get" action="." role="search">
         <fieldset>
-            <div>
+            <p>
                 {{ form.q.errors }}
-                <label class="forma" for="id_q">Iskanje:</label> <input type="text" size="80" name="q" value="{{ form.q.value|default_if_none:"" }}" id="id_q" />
-            </div>
+                <label class="q" for="id_q">Iskanje:</label> <input type="search" size="80" name="q" value="{{ form.q.value|default_if_none:"" }}" id="id_q" />
+            </p>
             <div>
                 {{ form.models.errors }}
-                <label class="forma" for="id_models">Išči po:</label>
+                <span>Išči po:</span><br />
                 {{ form.models }}
             </div>
-            <div>
-                <label class="forma">&nbsp;</label> <input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;Išči&nbsp;&nbsp;&nbsp;&nbsp;">
-            </div>
+            <p>
+                <input type="submit" value="Išči" class="btn" />
+            </p>
         </fieldset>
         
         {% if query %}
             <h3>Rezultati</h3>
 
                 {% for result in page.object_list %}
-                <p>
-                    <blockquote>
-                        {% highlight result.text with query max_length 400 css_class "highlight" %}
-                    </blockquote>
-                    {% if result.govorec_t %}
-                        <a href="/osebe/{{ result.govorec_slug_t }}/" rel="author">{{ result.govorec_t }}</a>
-                    {% else %}
-                        ?
-                    {% endif %}
-                    , <a href="{{ result.permalink_t }}#p{{ result.seq_i }}">{{ result.ime_seje_t }}</a>, {{ result.pub_date_dt|date:"DATE_FORMAT" }}
-                </p>
+            <blockquote>
+                {% highlight result.text with query max_length 400 css_class "highlight" %}
+            </blockquote>
+            {% if result.govorec_t %}
+                <a href="/osebe/{{ result.govorec_slug_t }}/" rel="author">{{ result.govorec_t }}</a>
+            {% else %}
+                ?
+            {% endif %}
+            , <a href="{{ result.permalink_t }}#p{{ result.seq_i }}">{{ result.ime_seje_t }}</a>, {{ result.pub_date_dt|date:"DATE_FORMAT" }}
             {% empty %}
                 <p>Za to iskanje ni rezultatov.</p>
             {% endfor %}
