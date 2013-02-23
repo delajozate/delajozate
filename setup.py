@@ -20,6 +20,7 @@ requires = [
     'django-debug-toolbar',
     'django-haystack',
     'python-twitter',
+    'requests',
 ]
 
 if sys.platform != "darwin":
