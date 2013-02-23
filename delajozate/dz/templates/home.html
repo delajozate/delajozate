@@ -14,8 +14,7 @@
 				
 				{% ifchanged z.datum %}
 				</ul>
-				<br />
-				<b>{{ z.datum }}</b>
+                <h4>{{ z.datum }}</h4>
 				<ul>
 				{% endifchanged %}
 				
@@ -26,7 +25,6 @@
 				{% endif %}
 			{% endfor %}
 			</section>
-			
 			<section class="two-cols-second">
 			{% for g in glasovanja %}
 				{% if forloop.first %}
@@ -36,8 +34,7 @@
 
 				{% ifchanged g.datum %}
 				</ul>
-				<br />
-				<b>{{ g.datum }}</b>
+				<h4>{{ g.datum }}</h4>
 				<ul>
 				{% endifchanged %}
 
