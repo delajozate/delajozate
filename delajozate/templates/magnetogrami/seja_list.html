@@ -17,41 +17,41 @@ h1, h2, h3 { padding: 5px; }
 
 
 {% block content %}
+<div class="content">
+	<h1>{{ delovno_telo.ime }}</h1>
 
-<h1>{{ delovno_telo.ime }}</h1>
+	{% if object_list %}
+	{% for z in object_list %}
+	{% ifchanged z.seja.mandat %}
+	<h1>{{ z.seja.mandat }}. mandat</h1>
+	{% endifchanged %}
 
-{% if object_list %}
-{% for z in object_list %}
-{% ifchanged z.seja.mandat %}
-<h1>{{ z.seja.mandat }}. mandat</h1>
-{% endifchanged %}
+	{% ifchanged z.seja %}
+	{% if not forloop.first %}
+	</ul>
+	</div>
+	{% endif %}
+	<h2>{{ z.seja.naslov }}</h2>
+	<h3>Zasedanja</h3>
+	<div class="zasedanja-list">
+	<ul>
+	{% endifchanged %}
 
-{% ifchanged z.seja %}
-{% if not forloop.first %}
-</ul>
+	<li>
+		<a href="{% url delajozate.magnetogrami.views.seja z.seja.mandat z.seja.delovno_telo z.seja.slug z.datum %}">
+			{{ z.datum }}
+		</a>
+	</li>
+
+	{% ifchanged z.seja %}{% if forloop.last %}
+	</ul>
+	</div>
+	{% endif %}{% endifchanged %}
+
+
+	{% endfor %}
+	{% else %}
+	<p>To delovno telo nima (javno objavljenih) magnetogramov.</p>
+	{% endif %}
 </div>
-{% endif %}
-<h2>{{ z.seja.naslov }}</h2>
-<h3>Zasedanja</h3>
-<div class="zasedanja-list">
-<ul>
-{% endifchanged %}
-
-<li>
-	<a href="{% url delajozate.magnetogrami.views.seja z.seja.mandat z.seja.delovno_telo z.seja.slug z.datum %}">
-		{{ z.datum }}
-	</a>
-</li>
-
-{% ifchanged z.seja %}{% if forloop.last %}
-</ul>
-</div>
-{% endif %}{% endifchanged %}
-
-
-{% endfor %}
-{% else %}
-<p>To delovno telo nima (javno objavljenih) magnetogramov.</p>
-{% endif %}
-
 {% endblock %}

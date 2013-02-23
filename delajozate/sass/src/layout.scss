@@ -16,7 +16,7 @@ header {
 }
 
 section.body { /* 0 10px 20px */
-    padding: 0 0 1.25em;
+    padding: 0 0 1.25em; /* 0 width sides so subnav looks ok */
 }
 
 section.body > .content {
