@@ -393,6 +393,100 @@ footer a {
   color: #fff;
 }
 
+/*
+ * Voting page
+ */
+.red {
+  background-color: #fdd;
+}
+
+.table-total {
+  font-weight: bold;
+}
+
+.vote-summary,
+.vote-details {
+  width: 100%;
+  max-width: 40em;
+  border-collapse: collapse;
+  margin: 1em 0 2em;
+}
+
+.vote-summary {
+  text-align: center;
+}
+
+.vote-summary th,
+.vote-summary td,
+.vote-details th,
+.vote-details td {
+  padding-left: .5em;
+}
+
+@media only screen and (max-width: 520px) {
+  /* We only need to handle vote-summary. vote-details always looks ok */
+  .vote-summary,
+  .vote-summary > thead,
+  .vote-summary > tbody,
+  .vote-summary th,
+  .vote-summary td,
+  .vote-summary tr {
+    display: block;
+  }
+
+  .vote-summary > thead > tr {
+    position: absolute;
+    top: -4999px;
+    left: -4999px;
+  }
+
+  .vote-summary tr {
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* Behave like a row */
+  .vote-summary td {
+    position: relative;
+    padding-left: 7em;
+    border: none;
+    text-align: left;
+  }
+
+  /* Now like a table header; top/left values mimic padding */
+  .vote-summary td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 5em;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  /* Label the data */
+  .vote-summary td:nth-of-type(1):before {
+    content: "Stranka";
+  }
+
+  .vote-summary td:nth-of-type(2):before {
+    content: "Večina";
+  }
+
+  .vote-summary td:nth-of-type(3):before {
+    content: "Manjšina";
+  }
+
+  .vote-summary td:nth-of-type(4):before {
+    content: "Vzdržanih";
+  }
+
+  .vote-summary td:nth-of-type(5):before {
+    content: "Odsotnih";
+  }
+
+  .vote-summary td:nth-of-type(6):before {
+    content: "Prisotnost";
+  }
+}
 /* TODO: Everything bellow is EXTRA suspicious */
 /* poslanci */
 .poslanci h1 {
@@ -590,11 +684,6 @@ footer a {
   border-bottom: 1px dotted #ddd;
 }
 
-.speech:first-child {
-  padding-top: 0;
-  background: red;
-}
-
 .quote-link {
   position: relative;
   float: right;
@@ -635,5 +724,64 @@ footer a {
 
   .quote-link {
     right: -20px;
+  }
+}
+/*
+ * Table with MP's votes
+ */
+.votes-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+@media only screen and (max-width: 450px) {
+  .votes-table,
+  .votes-table > thead,
+  .votes-table > tbody,
+  .votes-table th,
+  .votes-table td,
+  .votes-table tr {
+    display: block;
+  }
+
+  .votes-table > thead > tr {
+    position: absolute;
+    top: -4999px;
+    left: -4999px;
+  }
+
+  .votes-table tr {
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* Behave like a row */
+  .votes-table td {
+    position: relative;
+    padding-left: 7em;
+    border: none;
+    text-align: left;
+  }
+
+  /* Now like a table header; top/left values mimic padding */
+  .votes-table td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 5em;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  /* Label the data */
+  .votes-table td:nth-of-type(1):before {
+    content: "Datum";
+  }
+
+  .votes-table td:nth-of-type(2):before {
+    content: "Sklep";
+  }
+
+  .votes-table td:nth-of-type(3):before {
+    content: "Glasoval";
   }
 }

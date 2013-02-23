@@ -9,11 +9,11 @@
 		{% block head %}{% endblock %}
 		{% block opengraph %}{% endblock %}
 	</head>
-	<body>
+	<body role="document">
 		<div class="site">
 			<header>
 				<h1><a href="/"><span>Delajo <strong>zate!</strong></span></a></h1>
-				<nav class="top">
+				<nav class="top" role="navigation">
 					<ol>
 						<li><a href="/poslanci/">Poslanci</a></li>
 						<!--li><a href="/stranke/">Stranke</a></li -->
@@ -24,10 +24,10 @@
 					</ol>
 				</nav>
 			</header>
-			<section class="body">
+			<section class="body" role="main">
 				{% block content %}{% endblock %}
 			</section>
-			<footer>
+			<footer role="contentinfo">
 				<nav>
 					<ol>
 						<li><a href="/poslanci/">Poslanci</a></li>

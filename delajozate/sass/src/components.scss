@@ -134,10 +134,6 @@
     padding: 1em 0;
     border-bottom: 1px dotted #ddd;
 }
-.speech:first-child {
-    padding-top: 0;
-    background: red;
-}
 .quote-link {
     position: relative;
     float: right;
@@ -173,4 +169,54 @@
     .quote-link {
         right: -20px;
     }
+}
+
+/*
+ * Table with MP's votes
+ */
+.votes-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+@media only screen and (max-width: 450px) {
+    .votes-table,
+    .votes-table > thead,
+    .votes-table > tbody,
+    .votes-table th,
+    .votes-table td,
+    .votes-table tr { display: block; }
+
+    .votes-table > thead > tr {
+        position: absolute;
+        top: -4999px;
+        left: -4999px;
+    }
+
+    .votes-table tr {
+        border-bottom: 1px solid #ccc;
+    }
+
+    /* Behave like a row */
+    .votes-table td {
+        position: relative;
+        padding-left: 7em;
+        border: none;
+        text-align: left;
+    }
+
+    /* Now like a table header; top/left values mimic padding */
+    .votes-table td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 5em;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    /* Label the data */
+    .votes-table td:nth-of-type(1):before { content: "Datum"; }
+    .votes-table td:nth-of-type(2):before { content: "Sklep"; }
+    .votes-table td:nth-of-type(3):before { content: "Glasoval"; }
 }

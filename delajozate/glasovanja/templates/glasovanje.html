@@ -1,18 +1,5 @@
 {% extends "base.html" %}{% load dz_extras %}
 
-{% block head %}
-
-<style>
-
-.red { background-color: #fdd; }
-.votesummary {text-align: center;}
-.sum { font-weight:bold; }
-.votesummary th {padding-left:4px;}
-</style>
-
-{% endblock %}
-
-
 {% block content %}
 {% with glasovanje=objects.0.glasovanje %}
 
@@ -22,60 +9,65 @@
 	Glasovanje je potekalo v {{ glasovanje.datum|date:"l, j. E Y" }}{% if glasovanje.ura %} ob {{ glasovanje.ura }}{% endif %}.
 	<br />
 	Mandat Državnega zbora: {{ glasovanje.seja.mandat }}
-	<br />
-	<a href="{{ glasovanje.url }}">Ogled glasovanja na strani Državnega zbora</a>
 </p>
 
-<p>
-	<h2>Povzetek</h2>
-	{% with data=glasovanje.summary %}
-	<table class="votesummary">
-		<tr>
-			<th>Stranka</th>
-			<th>Večina ({{ data.majority }})</th>
-			<th>Manjšina ({{ data.minority }})</th>
-			<th>Vzdržanih</th>
-			<th>Odsotnih</th>
-			<th>Prisotnost</th>
-		</tr>
-		{% for row in data.votes.items %}
-		<tr{% if forloop.last %} class="sum"{% endif %}>
-			<td title="{{ row.1.stranka|default_if_none:"" }}">{{ row.0 }}</td>
-			{% with cell=row.1 %}
-				<td>{{ cell.majority }}</td>
-				<td>{{ cell.minority }}</td>
-				<td>{{ cell.abstained }}</td>
-				<td>{{ cell.absent }}</td>
-				<td>{{ cell.percent|stringformat:".1f" }} %</td>
-			{% endwith %}
-		{% endfor %}
+<h2>Povzetek glasovanja</h2>
+{% with data=glasovanje.summary %}
+<table class="vote-summary">
+	<tr>
+		<th>Stranka</th>
+		<th>Večina ({{ data.majority }})</th>
+		<th>Manjšina ({{ data.minority }})</th>
+		<th>Vzdržanih</th>
+		<th>Odsotnih</th>
+		<th>Prisotnost</th>
 	</tr>
-	</table>
-	{% endwith %}
-
-</p>
-
-<table>
-<tr>
-<th>Poslanec</th><th>Kvorum</th><th>Glas</th>
+	{% for row in data.votes.items %}
+	<tr{% if forloop.last %} class="table-total"{% endif %}>
+		<td title="{{ row.1.stranka|default_if_none:"" }}">{{ row.0 }}</td>
+		{% with cell=row.1 %}
+			<td>{{ cell.majority }}</td>
+			<td>{{ cell.minority }}</td>
+			<td>{{ cell.abstained }}</td>
+			<td>{{ cell.absent }}</td>
+			<td>{{ cell.percent|stringformat:".1f" }} %</td>
+		{% endwith %}
+	{% endfor %}
 </tr>
-{% for glas in objects %}
-<tr{% if not glas.kvorum and glas.glasoval != "Ni"%} class="red"{% endif %}>
-{% if glas.oseba %}
-    <td class="" data="{{ clanstvo.0.stranka.okrajsava }}">{{ glas.oseba }}
-    {% with clanstvo=glasovanje.stranke|get_item:glas.oseba.pk %}
-    ({{ clanstvo.okrajsava }})
-    {% endwith %}
-    </td>
-{% else %}
-<td>{{ glas.poslanec|title }}</td>
-{% endif %}
-<td>{% if glas.kvorum %}Da{% else %}Ne{% endif %}</td>
-<td>{% if glas.glasoval == "Ni" %}-{% else %}{{ glas.glasoval }}{% endif %}</td>
-</tr>
-{% endfor %}
+</table>
+{% endwith %}
+
+<h2>Podrobnosti</h2>
+
+<table class="vote-details">
+	<thead>
+		<tr>
+			<th>Poslanec</th>
+			<th>Kvorum</th>
+			<th>Glas</th>
+		</tr>
+	</thead>
+	<tbody>
+	{% for glas in objects %}
+		<tr{% if not glas.kvorum and glas.glasoval != "Ni"%} class="red"{% endif %}>
+		{% if glas.oseba %}
+			<td class="" data="{{ clanstvo.0.stranka.okrajsava }}">{{ glas.oseba }}
+			{% with clanstvo=glasovanje.stranke|get_item:glas.oseba.pk %}
+			({{ clanstvo.okrajsava }}){% endwith %}
+			</td>
+		{% else %}
+			<td>{{ glas.poslanec|title }}</td>
+		{% endif %}
+			<td>{% if glas.kvorum %}Da{% else %}Ne{% endif %}</td>
+			<td>{% if glas.glasoval == "Ni" %}-{% else %}{{ glas.glasoval }}{% endif %}</td>
+		</tr>
+	{% endfor %}
+	</tbody>
 </table>
 
 {% endwith %}
+<p>
+	Vir: <a href="{{ glasovanje.url }}">Ogled glasovanja na strani Državnega zbora</a>
+<p>
 
 {% endblock %}

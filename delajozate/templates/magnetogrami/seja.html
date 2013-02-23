@@ -48,6 +48,7 @@ addLoadEvent(updateHighlight);
     </ul>
     
     <h2 class="center">Vsebina</h2>
+    <div role="log">
     {% for zapis in zapisi %}
         {% ifchanged zapis.govorec %}
         {% if forloop.first %}
@@ -84,5 +85,6 @@ addLoadEvent(updateHighlight);
         </blockquote>
     </section>{% endif %}
     {% endfor %}
+</div>
 </div>
 {% endblock %}
