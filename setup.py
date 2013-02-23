@@ -17,6 +17,7 @@ requires = [
     'python-dateutil',
     'django-debug-toolbar',
     'python-twitter',
+    'PySolarized'
 ]
 
 if sys.platform != "darwin":
