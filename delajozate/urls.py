@@ -11,7 +11,6 @@ urlpatterns = patterns('',
     # url(r'^delajozate/', include('delajozate.foo.urls')),
     url(r'^seje/', include('magnetogrami.urls')),
     url(r'^glasovanja/', include('glasovanja.urls')),
-    url(r'^iskanje/', include('haystack.urls')),
     url(r'^', include('dz.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

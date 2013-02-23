@@ -14,11 +14,8 @@ requires = [
     'python-memcached',
     'South==0.7.3',
     'httplib2',
-    'sunburnt',
-    'pysolr',
     'python-dateutil',
     'django-debug-toolbar',
-    'django-haystack',
     'python-twitter',
 ]
 
