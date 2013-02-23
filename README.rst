@@ -4,14 +4,14 @@ INSTALL
 Quick install guide::
 
   # libpq needed for psycopg2 (Linux)
-  sudo apt-get install libpq-dev
+  sudo apt-get install libpq-dev python-dev build-essential
 
   # create a virtualenv in containing dir
   mkdir dz && cd dz
   virtualenv .
 
   # clone code
-  hg clone https://bitbucket.org/samastur/delajozate
+  git clone https://github.com/delajozate/delajozate.git
 
   # activate virtualenv
   . bin/activate
