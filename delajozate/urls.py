@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^seje/', include('magnetogrami.urls')),
     url(r'^glasovanja/', include('glasovanja.urls')),
     url(r'^iskanje/', include('haystack.urls')),
+    url(r'^koledar/', 'cal.views.ical'),
     url(r'^', include('dz.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

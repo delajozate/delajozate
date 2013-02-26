@@ -36,7 +36,10 @@ def fetch_dzrs_events():
             dtkw = dict([(k,int(v)) for k,v in dtkw.iteritems()])
 
             start = datetime.datetime(**dtkw)
-            end = start + datetime.timedelta(3600)
+            end = start + datetime.timedelta(hours=1)
+            
+            if len(Event.objects.filter(title=e.get('title'), start=start))>0:
+                continue
             
             event = Event()
             event.start = start
