@@ -21,7 +21,7 @@ requires = [
     'django-haystack',
     'python-twitter',
     'requests',
-    'icalendar',
+    'icalendar==3.3',
 ]
 
 if sys.platform != "darwin":

@@ -10,3 +10,4 @@ django-haystack
 python-twitter==0.8.2
 raven==2.0.6
 requests
+icalendar==3.3
