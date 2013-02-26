@@ -5,57 +5,57 @@
 
 
 {% block content %}
+<div class="content">
+    <h1>Glasovanja</h1>
 
-<h1>Glasovanja</h1>
+    {% if glasovanja.object_list %}
+    {% for g in glasovanja.object_list %}
+    {% ifchanged g.seja.mandat %}
+    <h2>{{ g.seja.mandat }}. mandat</h2>
+    {% endifchanged %}
 
-{% if glasovanja.object_list %}
-{% for g in glasovanja.object_list %}
-{% ifchanged g.seja.mandat %}
-<h2>{{ g.seja.mandat }}. mandat</h2>
-{% endifchanged %}
+    {% ifchanged g.seja %}
+    {% if not forloop.first %}
+    </ul>
+    </div>
+    {% endif %}
+    <h2>{{ g.seja.naslov }}</h2>
+    <div class="zasedanja-list">
+    <ul>
+    {% endifchanged %}
 
-{% ifchanged g.seja %}
-{% if not forloop.first %}
-</ul>
-</div>
-{% endif %}
-<h2>{{ g.seja.naslov }}</h2>
-<div class="zasedanja-list">
-<ul>
-{% endifchanged %}
+    <li>
+        <a href="{{ g.absolute_url }}">
+            {{ g }}
+        </a>
+    </li>
 
-<li>
-    <a href="{{ g.absolute_url }}">
-        {{ g }}
-    </a>
-</li>
-
-{% ifchanged g.seja %}{% if forloop.last %}
-</ul>
-</div>
-{% endif %}{% endifchanged %}
+    {% ifchanged g.seja %}{% if forloop.last %}
+    </ul>
+    </div>
+    {% endif %}{% endifchanged %}
 
 
-{% endfor %}
+    {% endfor %}
 
-<div class="pagination">
-    <span class="step-links">
-        {% if glasovanja.has_previous %}
-            <a href="?page={{ glasovanja.previous_page_number }}">prejšnja stran</a>
-        {% endif %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if glasovanja.has_previous %}
+                <a href="?page={{ glasovanja.previous_page_number }}">prejšnja stran</a>
+            {% endif %}
 
-        <span class="current">
-            Stran {{ glasovanja.number }} od {{ glasovanja.paginator.num_pages }}.
+            <span class="current">
+                Stran {{ glasovanja.number }} od {{ glasovanja.paginator.num_pages }}.
+            </span>
+
+            {% if glasovanja.has_next %}
+                <a href="?page={{ glasovanja.next_page_number }}">naslednja stran</a>
+            {% endif %}
         </span>
+    </div>
 
-        {% if glasovanja.has_next %}
-            <a href="?page={{ glasovanja.next_page_number }}">naslednja stran</a>
-        {% endif %}
-    </span>
+    {% else %}
+    <p>To delovno telo nima (javno objavljenih) magnetogramov.</p>
+    {% endif %}
 </div>
-
-{% else %}
-<p>To delovno telo nima (javno objavljenih) magnetogramov.</p>
-{% endif %}
-
 {% endblock %}
