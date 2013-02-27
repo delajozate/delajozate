@@ -6,6 +6,9 @@ from models import Event
 
 NUM_EVENTS = 50
 
+def calendar(request):
+    pass
+
 def ical(request):
 
     cal = Calendar()
