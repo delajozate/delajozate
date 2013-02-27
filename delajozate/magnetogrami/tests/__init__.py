@@ -43,6 +43,20 @@ class MagnetogramiTest(TestCase):
         # citat
         resp = c.get('/seje/5-mandat/dz/11-redna/2009-11-25/p51/')
         self.assertEqual(resp.status_code, 200)
+        
+        resp = c.get('/osebe/roberto-battelli/')
+        self.assertEqual(resp.status_code, 200)
+
+        resp = c.get('/osebe/roberto-battelli/glasovanja/')
+        self.assertEqual(resp.status_code, 200)
+
+        resp = c.get('/glasovanja/')
+        self.assertEqual(resp.status_code, 200)
+
+        resp = c.get('/glasovanja/2009-11-25/16:08:13/')
+        self.assertEqual(resp.status_code, 200)
+
+
 
 class ChecksTest(TestCase):
     def setUp(self):

@@ -44,6 +44,8 @@ class DZTest(TestCase):
         resp = self.c.get('/glasovanja/')
         self.assertEqual(resp.status_code, 200)
 
+        resp = self.c.get('/stranke/json/')
+        self.assertEqual(resp.status_code, 200)
 
 class PoslanecTest(TestCase):
     #fixtures = [
@@ -65,3 +67,5 @@ class PoslanecTest(TestCase):
         
         self.assertEqual(resp.context['object_list'][1], self.tweet1)
         #self.assertEqual(len(resp.context['the_rest_list']), 18)
+        
+        
