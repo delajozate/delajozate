@@ -1,5 +1,0 @@
-{{ object.zasedanje.seja.naslov }}
-{{ object.zasedanje.naslov}}
-{{ object.zasedanje.datum }} - {{ object.zasedanje.zacetek }} - {{ object.zasedanje.konec }}
-{{ object.govorec }}
-{{ object.odstavki }}

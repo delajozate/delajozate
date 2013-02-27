@@ -1,16 +1,16 @@
-import datetime
-import dateutil.parser
 import json
 import os
 import re
-import sunburnt
 import time
-
-from django.db import transaction, connection
-
-import settings
-from magnetogrami.models import Seja, SejaInfo, Zasedanje, Zapis
+from django.conf import settings
 from dz.models import Oseba, Stranka
+import pysolarized
+
+import dateutil.parser
+from django.db import transaction, connection
+from magnetogrami.models import Seja, Zasedanje, Zapis
+from temporal import END_OF_TIME
+
 
 class Importer():
 	def parse_time(self, time_string):
@@ -106,7 +106,7 @@ class Importer():
 											govorec,
 											oseba_id,
 											ods,
-											])
+										])
 										count += 1
 
 							params = values
@@ -127,72 +127,65 @@ class Importer():
 					seja.save()
 
 	def do_solr_import(self):
-		# Shrani zapise v Solr
-		solr = sunburnt.SolrInterface(settings.SOLR_URL)
-		solr.delete_all()       # Clear Solr index
-
-		midnight = datetime.time(0, 0)
-		numZapis = Zapis.objects.count()
-		counter = 0
-
+		solr = pysolarized.Solr(settings.SOLR_URL)
+		solr.deleteAll()
 		for oseba in Oseba.objects.all():
-			stranke = []
-			for clan in oseba.clanstranke_set.all():
-				if clan.stranka:
-					stranke.append((clan.stranka.ime, clan.stranka.okrajsava))
-			dict = {"id": "OS%d" % oseba.pk,
-			        "tip": "oseba",
-			        "ime": "%s %s" % (oseba.ime, oseba.priimek),
-			        "besedilo": "%s %s %s %s" % (oseba.ime, oseba.priimek, oseba.email,
-			                                     " ".join([ime + " " + okrajsava for ime, okrajsava in stranke]))}
-			solr.add(dict)
+			doc = { "id": "os_%s" % (oseba.id,), "id_db": oseba.id, "tip": "oseba",
+					"ime": "%s %s" % (oseba.ime, oseba.priimek,) }
 
-		print "Osebe imported, starting Stranke..."
+			if oseba.twitter:
+				doc["str_twitter"] = oseba.twitter
+
+			if oseba.facebook:
+				doc["str_facebook"] = oseba.facebook
+
+			if oseba.rojstni_dan:
+				doc["datum_rojstva"] = pysolarized.to_solr_date(oseba.rojstni_dan)
+
+			solr.add(doc)
+
 		for stranka in Stranka.objects.all():
-			imena_clanov = []
-			for clan in stranka.clanstranke_set.all():
-				imena_clanov.append("%s %s" % (clan.oseba.ime, clan.oseba.priimek))
+			doc = { "id": "st_%s" % (stranka.id,), "id_db": stranka.id, "tip": "stranka",
+					"ime": stranka.ime, "str_okrajsava": stranka.okrajsava}
 
-			dict = {"id": "ST%d" % stranka.pk,
-			        "tip": "stranka",
-			        "ime": "%s (%s)" % (stranka.ime, stranka.okrajsava),
-			        "besedilo": "%s %s %s %s %s" % (
-			        stranka.ime, stranka.okrajsava, stranka.email, stranka.maticna, " ".join(imena_clanov))}
-			solr.add(dict)
+			if stranka.od:
+				doc["datum_od"] = pysolarized.to_solr_date(stranka.od)
 
-		print "Stranked imported, starting Zapisi..."
-		for zapis in Zapis.objects.select_related().iterator():
-			zasedanje_id = zapis.zasedanje.pk
-			dict = {"id": "ZP%d" % zapis.pk,
-			        "tip": "zapis",
-			        "zasedanje_id": zasedanje_id,
-			        "seja_id": zapis.zasedanje.seja.pk,
-			        "datum": datetime.datetime.combine(zapis.zasedanje.datum, midnight), # Sunburnt expects datetime
-			        "govorec": zapis.govorec,
-			        "ime": zapis.zasedanje.seja.naslov,
-			        "besedilo": zapis.odstavki}
-			solr.add(dict)
-			counter += 1
-			if counter % 100 == 0:
-				print counter, "/", numZapis
+			if stranka.do != END_OF_TIME:
+				doc["datum_do"] = pysolarized.to_solr_date(stranka.do)
 
-		print "Zapisi imported, starting Zasedanje..."
-		counter = 0
-		for zasedanje in Zasedanje.objects.select_related().iterator():
-			besedila = []
-			for zapis in zasedanje.zapis_set.iterator():
-				besedila.append("%s: %s" % (zapis.govorec, zapis.odstavki))
+			solr.add(doc)
 
-			dict = {"id": "ZS%d" % zasedanje.pk,
-			        "tip": "zasedanje",
-			        "seja_id": zasedanje.seja.pk,
-			        "datum": datetime.datetime.combine(zasedanje.datum, midnight),
-			        "ime": zasedanje.seja.naslov,
-			        "besedilo": "\n".join(besedila)}
-			solr.add(dict)
-			counter += 1
-			if counter % 100 == 0:
-				print counter, "/", Zasedanje.objects.count()
+		for seja in Seja.objects.all():
+			for zasedanje in seja.zasedanje_set.all():
+				doc = { "id": "zas_%s" % (zasedanje.id, ), "id_db": zasedanje.id, "tip": "zasedanje" }
+				if zasedanje.naslov:
+					doc["ime"] = zasedanje.naslov
+				if zasedanje.datum:
+					doc["datum_zasedanja"] = pysolarized.to_solr_date(zasedanje.datum)
+				if zasedanje.tip:
+					doc["str_tip"] = zasedanje.tip
 
-		solr.commit()
-		print "Data commited to Solr."
+				zasedanje_txt = []
+				for zapis in zasedanje.zapis_set.all():
+					zapis_doc = { "id": "zap_%s" % (zapis.id, ), "id_db": zapis.id, "tip": "zapis",
+								"vsebina": zapis.odstavki}
+
+					if zapis.govorec:
+						zapis_doc["id_oseba"] = zapis.govorec_oseba_id
+						if zapis.govorec_oseba:
+							zapis_doc["txt_govorec"] = "%s %s" % (zapis.govorec_oseba.ime, zapis.govorec_oseba.priimek,)
+
+					zapis_doc["id_zasedanje"] = zapis.zasedanje_id
+					zapis_doc["id_seja"] = zapis.zasedanje.seja_id
+
+					if zapis.datum:
+						zapis_doc["datum_zapisa"] = pysolarized.to_solr_date(zapis.datum)
+
+					solr.add(zapis_doc)
+					zasedanje_txt.append(zapis.odstavki)
+
+				doc["vsa_polja"] = zasedanje_txt
+				solr.add(doc)
+				solr.commit()
+

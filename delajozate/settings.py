@@ -142,7 +142,6 @@ INSTALLED_APPS = (
 	# Uncomment the next line to enable the admin:
 	'django.contrib.admin',
 	#'raven.contrib.django',
-	'haystack',
 	# Uncomment the next line to enable admin documentation:
 #	'django.contrib.admindocs',
 	'south',
@@ -204,9 +203,8 @@ LOGGING = {
 FIXTURE_DIRS = (
 	here('fixtures/'),
 )
-HAYSTACK_SITECONF = 'delajozate.search.search_setup'
-HAYSTACK_SEARCH_ENGINE = 'solr'
-HAYSTACK_SOLR_URL = 'http://127.0.0.1:8983/solr'
+
+SOLR_URL = "http://localhost:8984/solr/dz"
 NEWSBUDDY_URL = None
 
 try:

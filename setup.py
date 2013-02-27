@@ -14,14 +14,12 @@ requires = [
     'python-memcached',
     'South==0.7.3',
     'httplib2',
-    'sunburnt',
-    'pysolr',
     'python-dateutil',
     'django-debug-toolbar',
-    'django-haystack',
     'python-twitter',
     'requests',
     'icalendar==3.3',
+    'PySolarized'
 ]
 
 if sys.platform != "darwin":
