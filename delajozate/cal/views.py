@@ -1,7 +1,6 @@
 from icalendar import Calendar, Event as IEvent
 import datetime
 from django.http import HttpResponse
-from datetime import date
 from models import Event
 
 NUM_EVENTS = 50
@@ -10,17 +9,14 @@ def calendar(request):
     pass
 
 def ical(request):
-
     cal = Calendar()
-    
     cal.add('prodid', '-//%s Events Calendar//%s//' % ("URNIK", "DELAJOZATE"))
     cal.add('version', '2.0')
 
     site_token = "DELAJOZATE"
-    
-    events = Event.objects.order_by('start').reverse()[:NUM_EVENTS]
+    startdate = datetime.date.today() - datetime.timedelta(1)
+    events = Event.objects.filter(start__gte=startdate).order_by('start')[:NUM_EVENTS]
     for e in events:
-
         ical_event = IEvent()
         ical_event.add('summary', e.title)
         ical_event.add('dtstart', e.start)

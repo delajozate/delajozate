@@ -15,11 +15,6 @@ FUNKCIJE = (
 	('podpredsednik', 'Podpredsednik'),
 )
 
-def null_date(date):
-	if date == END_OF_TIME:
-		return None
-	return date
-
 ORG_CHOICES = (
 	(1, 'stranka'),
 	(2, 'skupina'),

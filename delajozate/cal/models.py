@@ -21,8 +21,10 @@ def fetch_dzrs_events():
     import requests
     n = 0
     resp = requests.get(URL % n)
-    
-    for day in resp.json():
+    parse_dzrs_events(resp.json())
+
+def parse_dzrs_events(events_json):
+    for day in events_json:
         for e in day['json']:
             notes = e.get('opomba', '')
             dtkw = re.match('(?P<year>\d{4})-(?P<month>\d\d)-(?P<day>\d\d)', e['date']).groupdict()
