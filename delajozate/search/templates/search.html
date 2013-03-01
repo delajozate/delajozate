@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="content">
+    <h2>Iskanje</h2>
+
+    <form method="get" action="." role="search">
+        <fieldset>
+            <p>
+                {{ form.q.errors }}
+                <label class="q" for="id_q">Iskanje:</label> <input type="search" size="80" name="q" value="{{ form.q.value|default_if_none:"" }}" id="id_q" />
+            </p>
+            <p>
+                <input type="submit" value="Išči" class="btn" />
+            </p>
+        </fieldset>
+
+        {% if results %}
+            <h3>Rezultati</h3>
+            {% if osebe %}
+                <h4>Osebe</h4>
+                <p>
+                    {% for oseba in osebe %}
+                            <a href="/osebe/{{ oseba.slug }}" rel="author">{{ oseba.ime }}</a> <br/>
+                    {% endfor %}
+                </p>
+            {% endif %}
+
+            {% if zapisi %}
+                <h4>Zapisi</h4>
+                {% for zapis in zapisi %}
+                    {% if zapis.vsebina %}
+                        {% for citat in zapis.vsebina %}
+                        <blockquote>
+                            {{ citat }}
+                        </blockquote>
+                        {% endfor %}
+                    {% endif %}
+                    {% if zapis.ime_govorca %}
+                        <a href="/osebe/{{ zapis.govorec_slug }}" rel="author">{{ zapis.ime_govorca }}</a>
+                    {% else %}
+                        ?
+                    {% endif %}
+                    , <a href="{{ zapis.permalink }}#p{{ zapis.seq }}">{{ zapis.ime_seje }}</a>, {{ zapis.datum|date:"DATE_FORMAT" }}<br />
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+    </form>
+</div>
+{% endblock %}
