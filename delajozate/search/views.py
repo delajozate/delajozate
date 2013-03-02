@@ -4,14 +4,31 @@ from dz.models import Oseba
 from magnetogrami.models import Seja, Zapis
 import pysolarized
 
+RESULTS_PAGE_SIZE = 30
 
 def index(request):
 	context = { "osebe": [], "stranke": [], "zapisi": [] }
+
 	if request.GET.has_key('q'):
+		query = request.GET["q"]
+		context["query"] = query
+
+		# Check for current page
+		page = 1        # We start counting from 1 otherwise page = 0 confuses template ifs
+		if request.GET.has_key("page"):
+			try:
+				page = max(1, int(request.GET["page"]))
+			except ValueError:
+				page = 1
+
 		# Do search
 		solr = pysolarized.Solr(settings.SOLR_URL)
-		results = solr.query(request.GET.get('q'), sort=["tip asc", "datum_zapisa desc", "datum_od desc"])
+		results = solr.query(query,
+		                     sort=["tip asc", "datum_zapisa desc", "datum_od desc"],
+		                     start=(page - 1) * RESULTS_PAGE_SIZE,
+		                     rows=RESULTS_PAGE_SIZE)
 
+		# Parse search results
 		if not results or results.results_count == 0:
 			context["results"] = None
 		else:
@@ -46,6 +63,14 @@ def index(request):
 						zapis["vsebina"] = result["vsebina"]
 
 					context["zapisi"].append(zapis)
+
+			# Figure out pagination
+			if results.results_count > RESULTS_PAGE_SIZE:
+				if results.start_index > 0:
+					context["prev_page"] = max(1, page - 1)
+				# Page + 1 since we're counting from 0
+				if page * RESULTS_PAGE_SIZE < results.results_count:
+					context["next_page"] = page + 1
 
 		context["results"] = results.documents
 

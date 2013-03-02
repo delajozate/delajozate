@@ -60,6 +60,15 @@
                     , <a href="{{ zapis.permalink }}#p{{ zapis.seq }}">{{ zapis.ime_seje }}</a>, {{ zapis.datum|date:"DATE_FORMAT" }}<br />
                 {% endfor %}
             {% endif %}
+
+            {% if prev_page or next_page %}
+                <div>
+                    {% if prev_page %}<a href="?q={{ query }}&amp;page={{ prev_page }}">{% endif %}&laquo; Prejšnja stran{% if prev_page %}</a>{% endif %}
+                    |
+                    {% if next_page %}<a href="?q={{ query }}&amp;page={{ next_page }}">{% endif %}Naslednja stran &raquo;{% if next_page %}</a>{% endif %}
+                </div>
+            {% endif %}
+
         {% endif %}
 
     </form>
