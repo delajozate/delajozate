@@ -31,7 +31,7 @@
         <filter class="solr.StopFilterFactory" words="stopwords.txt" ignoreCase="true" />
         <filter class="solr.LowerCaseFilterFactory" />
         <filter class="solr.ASCIIFoldingFilterFactory" />
-        <filter class="si.virag.solr.RdrLemmatizerFactory" dictionary="REPLACE_ME/data/lem-me-sl.bin" />
+        <filter class="si.virag.solr.RdrLemmatizerFactory" dictionary="REPLACE_ME/lem-me-sl.bin" />
         <filter class="solr.ShingleFilterFactory" maxShingleSize="3" outputUnigrams="true" />
       </analyzer>
       <analyzer type="query">
@@ -54,8 +54,10 @@
       <field name="id_db" type="string" indexed="false" stored="true" multiValued="false" required="false" />
       <!-- Tip zapisa -->
       <field name="tip" type="string" indexed="true" stored="true" multiValued="false" required="true" />
-      <field name="ime" type="text" indexed="true" stored="true" multiValued="false" required="false" />
-      <field name="vsebina" type="text" indexed="true" stored="true" multiValued="true" required="false" />
+      <field name="ime" type="text" indexed="true" stored="true" multiValued="false" required="false"
+              termVectors="true" termPositions="true" termOffsets="true" />
+      <field name="vsebina" type="text" indexed="true" stored="true" multiValued="true" required="false" 
+              termVectors="true" termPositions="true" termOffsets="true" />
       <!-- Reference na IDje drugih objekov -->
       <dynamicField name="id_*" type="string" indexed="false" stored="true" multiValued="false" required="false" />
       <!-- Prostor za datume -->

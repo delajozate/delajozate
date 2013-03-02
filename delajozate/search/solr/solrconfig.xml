@@ -35,6 +35,17 @@
     </updateLog>
   </updateHandler>
 
+  <searchComponent class="solr.HighlightComponent" name="highlight">
+    <highlighting>
+      <boundaryScanner class="solr.highlight.BreakIteratorBoundaryScanner" default="true" name="breakIterator">
+        <lst name="defaults">
+            <str name="hl.bs.type">SENTENCE</str>
+            <str name="hl.bs.language">sl</str>
+            <str name="hl.bs.country">SI</str>
+        </lst>
+      </boundaryScanner>
+    </highlighting>
+  </searchComponent>
   <requestDispatcher handleSelect="true" >
     <requestParsers enableRemoteStreaming="false" multipartUploadLimitInKB="2048" />
   </requestDispatcher>
@@ -48,9 +59,11 @@
       <str name="json.nl">map</str>
       <str name="hl">true</str>
       <str name="hl.fl">ime,vsebina</str>
-      <str name="f.title.hl.fragsize">0</str>
+      <str name="hl.boundaryScanner">breakIterator</str>
+      <str name="hl.mergeContiguous">true</str>
+      <str name="hl.useFastVectorHighlighter">true</str>
+      <str name="hl.snippets">3</str>
     </lst>
-
   </requestHandler>
 
   <requestHandler name="/analysis/field" startup="lazy" class="solr.FieldAnalysisRequestHandler" />

@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     # url(r'^delajozate/', include('delajozate.foo.urls')),
     url(r'^seje/', include('magnetogrami.urls')),
     url(r'^glasovanja/', include('glasovanja.urls')),
+    url(r'^iskanje/', include('search.urls')),
     url(r'^koledar/', include('cal.urls')),
     url(r'^', include('dz.urls')),
 

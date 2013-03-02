@@ -131,7 +131,7 @@ class Importer():
 		solr.deleteAll()
 		for oseba in Oseba.objects.all():
 			doc = { "id": "os_%s" % (oseba.id,), "id_db": oseba.id, "tip": "oseba",
-					"ime": "%s %s" % (oseba.ime, oseba.priimek,) }
+					"ime": "%s %s" % (oseba.ime, oseba.priimek,), "str_slug": oseba.slug }
 
 			if oseba.twitter:
 				doc["str_twitter"] = oseba.twitter
@@ -146,7 +146,7 @@ class Importer():
 
 		for stranka in Stranka.objects.all():
 			doc = { "id": "st_%s" % (stranka.id,), "id_db": stranka.id, "tip": "stranka",
-					"ime": stranka.ime, "str_okrajsava": stranka.okrajsava}
+					"ime": stranka.ime, "str_okrajsava": stranka.okrajsava }
 
 			if stranka.od:
 				doc["datum_od"] = pysolarized.to_solr_date(stranka.od)
@@ -156,25 +156,22 @@ class Importer():
 
 			solr.add(doc)
 
-		for seja in Seja.objects.all():
-			for zasedanje in seja.zasedanje_set.all():
-				doc = { "id": "zas_%s" % (zasedanje.id, ), "id_db": zasedanje.id, "tip": "zasedanje" }
-				if zasedanje.naslov:
-					doc["ime"] = zasedanje.naslov
-				if zasedanje.datum:
-					doc["datum_zasedanja"] = pysolarized.to_solr_date(zasedanje.datum)
-				if zasedanje.tip:
-					doc["str_tip"] = zasedanje.tip
-
-				zasedanje_txt = []
-				for zapis in zasedanje.zapis_set.all():
-					zapis_doc = { "id": "zap_%s" % (zapis.id, ), "id_db": zapis.id, "tip": "zapis",
-								"vsebina": zapis.odstavki}
+		for seja in Seja.objects.select_related().all():
+			for zasedanje in seja.zasedanje_set.select_related().all():
+				for zapis in zasedanje.zapis_set.select_related().all():
+					zapis_doc = {   "id": "zap_%s" % (zapis.id, ),
+					                "id_db": zapis.id,
+					                "tip": "zapis",
+									"vsebina": zapis.odstavki,
+									"str_ime_seje": seja.naslov,
+									"str_permalink": zapis.permalink,
+									"str_seq": zapis.seq }
 
 					if zapis.govorec:
 						zapis_doc["id_oseba"] = zapis.govorec_oseba_id
 						if zapis.govorec_oseba:
 							zapis_doc["txt_govorec"] = "%s %s" % (zapis.govorec_oseba.ime, zapis.govorec_oseba.priimek,)
+							zapis_doc["str_govorec_slug"] = zapis.govorec_oseba.slug
 
 					zapis_doc["id_zasedanje"] = zapis.zasedanje_id
 					zapis_doc["id_seja"] = zapis.zasedanje.seja_id
@@ -183,9 +180,7 @@ class Importer():
 						zapis_doc["datum_zapisa"] = pysolarized.to_solr_date(zapis.datum)
 
 					solr.add(zapis_doc)
-					zasedanje_txt.append(zapis.odstavki)
 
-				doc["vsa_polja"] = zasedanje_txt
 				solr.add(doc)
 				solr.commit()
 
