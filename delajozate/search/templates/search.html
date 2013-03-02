@@ -26,13 +26,29 @@
                 </p>
             {% endif %}
 
+            {% if stranke %}
+                <h4>Stranke</h4>
+                <p>
+                    {% for stranka in stranke %}
+                         {{ stranka.ime }} ({{ stranka.okrajsava }})
+                         {% if stranka.od %}
+                             , {{ stranka.od|date:"DATE_FORMAT" }} -
+                         {% endif %}
+                         {% if stranka.do %}
+                             {{ stranka.do|date:"DATE_FORMAT" }}
+                         {% endif %}
+                        <br />
+                    {% endfor %}
+                </p>
+            {% endif %}
+
             {% if zapisi %}
                 <h4>Zapisi</h4>
                 {% for zapis in zapisi %}
                     {% if zapis.vsebina %}
                         {% for citat in zapis.vsebina %}
                         <blockquote>
-                            {{ citat }}
+                            {{ citat|safe }}
                         </blockquote>
                         {% endfor %}
                     {% endif %}
