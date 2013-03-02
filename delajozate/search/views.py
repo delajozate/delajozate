@@ -57,7 +57,7 @@ def index(request):
 						zapis["ime_govorca"] = result["txt_govorec"]
 						zapis["govorec_slug"] = result["str_govorec_slug"]
 
-					if id in results.highlights:
+					if id in results.highlights and "vsebina" in results.highlights[id]:
 						zapis["vsebina"] = results.highlights[id].get("vsebina", None)
 					elif "vsebina" in result:
 						zapis["vsebina"] = result["vsebina"]
