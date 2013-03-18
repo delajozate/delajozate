@@ -6,7 +6,7 @@ from django.db import models, connection
 from django.db.models import Q
 from django.template.defaultfilters import slugify
 from delajozate.temporal import END_OF_TIME
-
+from delajozate.search.simple import SearchModel
 
 FUNKCIJE = (
 	('poslanec', 'Poslanec/ka'),
@@ -34,7 +34,6 @@ class Organizacija(models.Model):
 
 	def value(self):
 		return getattr(self, self.type())
-
 
 
 class Oseba(models.Model):
@@ -109,6 +108,9 @@ class Oseba(models.Model):
 	def display(self):
 		return u'%s %s' % (self.ime, self.priimek)
 
+class OsebaSearch(SearchModel):
+    model = Oseba
+    index_fields = ['display', 'spletna_stran', 'twitter']
 
 class Tweet(models.Model):
 	tweet_id = models.BigIntegerField(blank=False, null=True)
@@ -121,6 +123,10 @@ class Tweet(models.Model):
 
 	def __unicode__(self):
 		return self.text
+
+class TweetSearch(SearchModel):
+    model = Tweet
+    index_fields = ['text', 'oseba']
 
 class Stranka(models.Model):
 	# kako modelirat kontinuiteto stranke, kadar se preimenuje?
