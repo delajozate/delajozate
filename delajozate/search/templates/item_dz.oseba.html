@@ -1,0 +1,16 @@
+<div class="hit">
+
+    <div class="hit-img">
+        <img class="speaker-img" src="{% firstof item.str_slika "/static/img/unknown.png" %}" title="{{ item.str_display }}, vir:{{ item.str_slika_vir }}"/>
+    </div>
+
+    <a href="{{ item.str_permalink }}">{{ item.str_display }}</a>
+    <br />
+    Twitter: {% if item.str_twitter %}<a href="http://twitter.com/{{ item.str_twitter }}">@{{ item.str_twitter }}</a>{% else %}-{% endif %}
+    <br />
+
+    {% if item.str_spletna_stran %}
+        Spletna stran: <a href="{{ item.str_spletna_stran }}">{{ item.str_spletna_stran }}</a>
+    {% endif %}
+
+</div>

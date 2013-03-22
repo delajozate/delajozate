@@ -1,0 +1,17 @@
+{% load searchtags %}
+<div class="hit">
+
+    {% if itemhighlights %}
+        <blockquote>
+        {{ itemhighlights.vsebina.0|safe }}
+            
+        </blockquote>
+    {% endif %}
+    {% if item.str_govorec_slug %}
+        <a href="/osebe/{{ item.str_govorec_slug }}" rel="author">{{ item.str_govorec_oseba }}</a>
+    {% else %}
+        ?
+    {% endif %}
+    , <a href="{{ item.str_permalink }}#p{{ item.str_seq }}">{{ item.str_ime_seje }}</a>, {{ item.datum_timestamp|solrdate2date|date:"DATE_FORMAT" }}<br />
+
+</div>

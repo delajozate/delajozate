@@ -1,0 +1,8 @@
+{% load searchtags %}
+<div class="hit">
+
+    @{{ item.str_tweeter_id }}: <a href="http://twitter.com/{{ item.str_tweeter_id }}/status/{{ item.str_tweet_id }}">{{ item.str_text }}</a>
+    <br />
+    {{ item.datum_timestamp|solrdate2date|date:"DATETIME_FORMAT" }}
+
+</div>

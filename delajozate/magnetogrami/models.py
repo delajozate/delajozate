@@ -3,8 +3,10 @@ import json
 import os
 import re
 import dateutil.parser
+import datetime
 import urllib
 import logging
+import pytz
 try:
 	from collections import OrderedDict
 except ImportError:
@@ -14,6 +16,7 @@ from django.db import models, transaction, connection
 from django.core.urlresolvers import reverse
 
 from delajozate.dz.models import Oseba, Mandat, DelovnoTelo, Stranka, Pozicija
+from delajozate.search.simple import SearchModel
 
 logger = logging.getLogger('magnetogrami.models')
 
@@ -27,7 +30,7 @@ class Seja(models.Model):
 	naslov = models.CharField(max_length=2000)
 	seja = models.CharField(max_length=255) # TODO: check validity
 	slug = models.CharField(max_length=100, db_index=True)
-	datum_zacetka = models.DateField(null=True)
+	datum_zacetka = models.DateField(null=True, db_index=True)
 	status = models.CharField(max_length=128)
 	mandat = models.IntegerField()
 	delovno_telo = models.CharField(max_length=20)
@@ -45,17 +48,17 @@ class Seja(models.Model):
 class Zasedanje(models.Model):
 	seja = models.ForeignKey(Seja)
 	naslov = models.CharField(max_length=255, null=True)
-	datum = models.DateField(null=True)
+	datum = models.DateField(null=True, db_index=True)
 	zacetek = models.TimeField(null=True)
 	konec = models.TimeField(null=True)
 	url = models.URLField(null=True)
 	tip = models.CharField(max_length=255, null=True)
 
 	class Meta:
-		ordering = ('datum',)
+		ordering = ('-datum',)
 
 	def __unicode__(self):
-		return self.naslov + "(" + str(self.datum) + ")"
+		return self.seja.naslov + " (" + str(self.datum) + ")"
 
 	@models.permalink
 	def get_absolute_url(self):
@@ -86,6 +89,9 @@ class Video(models.Model):
 
 	class Meta:
 		ordering = ('-datum',)
+	
+	def __unicode__(self):
+		return self.title
 	
 	def upari(self):
 		"FIXME: improvements, maybe?"
@@ -143,11 +149,11 @@ class Zapis(models.Model):
 		return (fget,)
 	clan_stranke = property(*clan_stranke())
 	
-	def datum():
+	def timestamp():
 		def fget(self):
 			return self.zasedanje.datum
 		return (fget,)
-	datum = property(*datum())
+	timestamp = property(*timestamp())
 	
 	def govorec_slug():
 		def fget(self):
@@ -161,7 +167,22 @@ class Zapis(models.Model):
 			return self.zasedanje.seja.naslov
 		return (fget,)
 	ime_seje = property(*ime_seje())
+
+class ZapisSearch(SearchModel):
+	model = Zapis
+	index_fields = ['seq', 'timestamp', 'govorec_oseba', 'govorec_slug', 'permalink', 'ime_seje']
+	hilight = 'odstavki'
 	
+	def index_zasedanje(self, zasedanje):
+		self.index(items=zasedanje.zapis_set.all())
+	
+	def full_index(self):
+		from multiprocessing import Process
+		for z in Zasedanje.objects.all().order_by('datum')[:10]:
+			print z.datum
+			p = Process(target=self.index_zasedanje, args=(z,))
+			p.start()
+			p.join()
 
 class Glasovanje(models.Model):
 	seja = models.ForeignKey(Seja, null=True)
@@ -176,6 +197,8 @@ class Glasovanje(models.Model):
 	
 	class Meta:
 		ordering = ('-seja__mandat', '-datum')
+		verbose_name = 'Glasovanje'
+		verbose_name_plural = 'Glasovanja'
 	
 	def __unicode__(self):
 		r = u''
@@ -187,11 +210,18 @@ class Glasovanje(models.Model):
 			r += self.seja.naslov
 		return r
 	
+	def timestamp(self):
+		ts = datetime.datetime(self.datum.year, self.datum.month, self.datum.day, tzinfo=pytz.UTC)
+		if self.ura:
+			ts = ts.replace(hour=self.ura.hour, minute=self.ura.minute, second=self.ura.second)
+		return ts
+	
+	@models.permalink
 	def absolute_url(self):
 		if self.ura:
-			return reverse('glasovanja.views.glasovanje', 
-				args=(self.datum.strftime('%Y-%m-%d'), self.ura.strftime('%H:%M:%S')))
-		return reverse('glasovanja.views.glasovanje', args=(self.datum, self.id))
+			return ('glasovanja.views.glasovanje', 
+				(self.datum.strftime('%Y-%m-%d'), self.ura.strftime('%H:%M:%S')))
+		return ('glasovanja.views.glasovanje', (self.datum, self.id))
 	
 	def rezultati():
 		def fget(self):
@@ -199,16 +229,23 @@ class Glasovanje(models.Model):
 			k = sum([i.kvorum for i in glasovi])
 			z = sum([1 for i in glasovi if i.glasoval == 'Za'])
 			p = sum([1 for i in glasovi if i.glasoval == 'Proti'])
-			n = sum([1 for i in glasovi if i.glasoval == 'Ni'])
+			n = sum([1 for i in glasovi if i.glasoval == 'Ni' and i.kvorum])
+			od = sum([1 for i in glasovi if i.glasoval == 'Ni' and not i.kvorum])
 			return {
 				'kvorum': k,
 				'za': z,
 				'proti': p,
-				'ni': n
+				'ni': n,
+				'odsoten': od,
 				}
 		return (fget,)
 	rezultati = property(*rezultati())
-
+	
+	def passed(self):
+		self.glas_set.all()
+		rez = self.rezultati
+		return int(rez['za'] > rez['proti'] + rez['ni'])
+	
 	def stranke():
 		def fget(self):
 			try:
@@ -271,7 +308,7 @@ class Glasovanje(models.Model):
 					total_absent += 1
 				data[okrajsava]['count'] += 1
 			
-			if total_for >= total_against:
+			if total_for >= total_against + total_abstained:
 				majority = 'za'
 				minority = 'proti'
 				majority_voted = total_for
@@ -311,7 +348,10 @@ class Glasovanje(models.Model):
 		return (fget,)
 	summary = property(*summary())
 
-
+class GlasovanjeSearch(SearchModel):
+    model = Glasovanje
+    hilight = 'naslov'
+    index_fields = ['dokument', 'naslov', 'faza_postopka', 'timestamp', 'absolute_url', 'passed']
 
 class Glas(models.Model):
 	glasovanje = models.ForeignKey(Glasovanje, null=True)

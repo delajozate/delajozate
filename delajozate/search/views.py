@@ -3,16 +3,23 @@ from django.shortcuts import render
 from dz.models import Oseba
 from magnetogrami.models import Seja, Zapis
 import pysolarized
+from delajozate.search.simple import search_register_by_name
 
 RESULTS_PAGE_SIZE = 30
 
 def index(request):
-	context = { "osebe": [], "stranke": [], "zapisi": [] }
+	
+	context = {
+		'tipi': [{'value': k,'name': v._meta.verbose_name_plural} for k,v in search_register_by_name.iteritems()]
+		}
 
 	if request.GET.has_key('q'):
-		query = request.GET["q"]
-		context["query"] = query
-
+		context["query"] = query = request.GET["q"]
+		context['qfilter'] = qfilter = request.GET.getlist('tip')
+		filterquery = None
+		if qfilter:
+			qfilter = [i for i in qfilter if i in search_register_by_name]
+			filterquery = {'tip': '(%s)' % (' OR '.join(qfilter),)}
 		# Check for current page
 		page = 1        # We start counting from 1 otherwise page = 0 confuses template ifs
 		if request.GET.has_key("page"):
@@ -23,8 +30,10 @@ def index(request):
 
 		# Do search
 		solr = pysolarized.Solr(settings.SOLR_URL)
+		
 		results = solr.query(query,
-		                     sort=["tip asc", "datum_zapisa desc", "datum_od desc"],
+		                     sort=["score desc"],
+		                     filters=filterquery,
 		                     start=(page - 1) * RESULTS_PAGE_SIZE,
 		                     rows=RESULTS_PAGE_SIZE)
 
@@ -32,38 +41,7 @@ def index(request):
 		if not results or results.results_count == 0:
 			context["results"] = None
 		else:
-			for result in results.documents:
-				if result["tip"] == "oseba":
-					context["osebe"].append({"ime": result["ime"], "slug": result["str_slug"]})
-				elif result["tip"] == "stranka":
-					stranka = {"ime" : result["ime"],
-					            "okrajsava": result["str_okrajsava"] }
-
-					if "datum_od" in result:
-						stranka["od"] = pysolarized.from_solr_date(result["datum_od"])
-					if "datum_do" in result:
-						stranka["do"] = pysolarized.from_solr_date(result["datum_do"])
-
-					context["stranke"].append(stranka)
-				elif result["tip"] == "zapis":
-					id = result["id"]
-					date = pysolarized.from_solr_date(result["datum_zapisa"])
-					zapis = {"ime_seje": result["str_ime_seje"],
-					         "datum": date,
-					         "permalink": result["str_permalink"],
-					         "seq": result["str_seq"], }
-
-					if "id_oseba" in result:
-						zapis["ime_govorca"] = result["txt_govorec"]
-						zapis["govorec_slug"] = result["str_govorec_slug"]
-
-					if id in results.highlights and "vsebina" in results.highlights[id]:
-						zapis["vsebina"] = results.highlights[id].get("vsebina", None)
-					elif "vsebina" in result:
-						zapis["vsebina"] = result["vsebina"]
-
-					context["zapisi"].append(zapis)
-
+			context['results'] = results.documents
 			# Figure out pagination
 			if results.results_count > RESULTS_PAGE_SIZE:
 				if results.start_index > 0:
@@ -73,5 +51,6 @@ def index(request):
 					context["next_page"] = page + 1
 
 		context["results"] = results.documents
-
+		context['highlights'] = results.highlights
+		
 	return render(request, 'search.html', context)

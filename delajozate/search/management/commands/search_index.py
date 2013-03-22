@@ -6,7 +6,9 @@ class Command(BaseCommand):
     help = "Imports data into solr index"
     def handle(self, *args, **options):
         from delajozate.search.simple import search_register
-        
         for model, searchmodel in search_register.items():
             print 'Indexing', model.__name__
-            searchmodel.index()
+            if hasattr(searchmodel, 'full_index'):
+                searchmodel().full_index()
+            else:
+                searchmodel().index()

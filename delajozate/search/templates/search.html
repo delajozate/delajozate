@@ -1,4 +1,19 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% load searchtags %}
+
+{% block head %}
+<style>
+.hit {
+    clear:both;
+}
+.hit em {
+    font-weight: bold;
+}
+.hit-img {
+    padding: 4px;
+    float:left;
+}
+</style>
+{% endblock %}
 
 {% block content %}
 <div class="content">
@@ -6,26 +21,34 @@
 
     <form method="get" action="." role="search">
         <fieldset>
+            <div style="float: left;">
             <p>
-                {{ form.q.errors }}
-                <label class="q" for="id_q">Iskanje:</label> <input type="search" size="80" name="q" value="{{ form.q.value|default_if_none:"" }}" id="id_q" />
+                <label class="q" for="id_q">Iskanje:</label> <input type="search" size="80" name="q" value="{{ query|default_if_none:"" }}" id="id_q" />
             </p>
             <p>
                 <input type="submit" value="Išči" class="btn" />
             </p>
+            </div>
+            <div style="float: right;">
+                <p>Išči po:</p>
+                {% for tip in tipi %}
+                <input id="id_checkbox_{{ tip.value }}" type="checkbox" name="tip" value="{{ tip.value }}" {% if tip.value in qfilter %}checked="checked"{% endif %} /><label for="id_checkbox_{{ tip.value }}"> {{ tip.name }}</label>
+                <br />
+                {% endfor %}
+            </div>
         </fieldset>
 
         {% if results %}
             <h3>Rezultati</h3>
-            {% if osebe %}
-                <h4>Osebe</h4>
-                <p>
-                    {% for oseba in osebe %}
-                            <a href="/osebe/{{ oseba.slug }}" rel="author">{{ oseba.ime }}</a> <br/>
-                    {% endfor %}
-                </p>
-            {% endif %}
-
+            
+            {% for item in results %}
+                
+                {% with templatename=item.tip|search_template itemhighlights=highlights|dictget:item.id%}
+                {% include templatename with item=item itemhighlights=itemhighlights %}
+                {% endwith %}
+                <br />
+            {% endfor %}
+            
             {% if stranke %}
                 <h4>Stranke</h4>
                 <p>
@@ -42,24 +65,6 @@
                 </p>
             {% endif %}
 
-            {% if zapisi %}
-                <h4>Zapisi</h4>
-                {% for zapis in zapisi %}
-                    {% if zapis.vsebina %}
-                        {% for citat in zapis.vsebina %}
-                        <blockquote>
-                            {{ citat|safe }}
-                        </blockquote>
-                        {% endfor %}
-                    {% endif %}
-                    {% if zapis.ime_govorca %}
-                        <a href="/osebe/{{ zapis.govorec_slug }}" rel="author">{{ zapis.ime_govorca }}</a>
-                    {% else %}
-                        ?
-                    {% endif %}
-                    , <a href="{{ zapis.permalink }}#p{{ zapis.seq }}">{{ zapis.ime_seje }}</a>, {{ zapis.datum|date:"DATE_FORMAT" }}<br />
-                {% endfor %}
-            {% endif %}
 
             {% if prev_page or next_page %}
                 <div>

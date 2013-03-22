@@ -108,9 +108,13 @@ class Oseba(models.Model):
 	def display(self):
 		return u'%s %s' % (self.ime, self.priimek)
 
+	@models.permalink
+	def permalink(self):
+		return ('poslanec', (self.slug,))
+
 class OsebaSearch(SearchModel):
-    model = Oseba
-    index_fields = ['display', 'spletna_stran', 'twitter']
+	model = Oseba
+	index_fields = ['slika', 'slika_vir', 'display', 'spletna_stran', 'twitter', 'permalink']
 
 class Tweet(models.Model):
 	tweet_id = models.BigIntegerField(blank=False, null=True)
@@ -120,13 +124,22 @@ class Tweet(models.Model):
 
 	class Meta:
 		ordering = ('-created_at',)
+		verbose_name = 'Tvit'
+		verbose_name_plural = 'Tviti'
 
 	def __unicode__(self):
 		return self.text
+	
+	def timestamp(self):
+		return self.created_at
+	
+	def tweeter_id(self):
+		return self.oseba.twitter
 
-class TweetSearch(SearchModel):
-    model = Tweet
-    index_fields = ['text', 'oseba']
+# keep searching over tweets disabled for now.
+#class TweetSearch(SearchModel):
+	#model = Tweet
+	#index_fields = ['text', 'oseba', 'timestamp', 'tweeter_id', 'tweet_id']
 
 class Stranka(models.Model):
 	# kako modelirat kontinuiteto stranke, kadar se preimenuje?

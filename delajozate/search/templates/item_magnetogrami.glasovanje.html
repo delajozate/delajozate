@@ -1,0 +1,12 @@
+{% load searchtags %}
+<div class="hit">
+    
+    {% with datum=item.datum_timestamp|solrdate2date %}
+    Glasovanje z dne {{ datum|date:"l, j. F Y" }} ob {{ datum|date:"G:i:s" }}
+    {% endwith %}
+    <br />
+    <a href="{{ item.str_absolute_url }}">{{ item.str_naslov }}</a>, {{ item.str_dokument }}
+    <br />
+    Sprejet akt: {% if item.str_passed == "1" %}<font color="green">✔</font>{% else %}<font color="red">✗</font>{% endif %}
+
+</div>
