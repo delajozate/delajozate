@@ -10,23 +10,22 @@ def get_solr_backend():
     solr = pysolarized.Solr(settings.SOLR_URL)
     return solr
 
-def register_search(model, searchmodel):
-    global search_register
-    modl = search_register_by_name.setdefault(model.model_name, model)
+def register_search(model, model_name, searchmodel):
+    global search_register, search_register_by_name
+    modl = search_register_by_name.setdefault(model_name, model)
     search_register.setdefault(modl, searchmodel)
     return modl
 
 class SearchBase(type):
     def __new__(cls, name, bases, attrs):
         new_class = super(SearchBase, cls).__new__(cls, name, bases, attrs)
-        new_class.model_name = None
         parents = [b for b in bases if isinstance(b, SearchBase)]
         if not parents:
             return new_class
 
         modl = attrs.get('model')
-        modl.model_name = '%s.%s' % (modl._meta.app_label, modl.__name__)
-        return register_search(modl, new_class)
+        new_class.model_name = '%s.%s' % (modl._meta.app_label, modl.__name__)
+        return register_search(modl, new_class.model_name, new_class)
 
 class SearchModel(object):
     __metaclass__ = SearchBase
@@ -36,11 +35,15 @@ class SearchModel(object):
     index_fields = None
     hilight = None
 
+    def get_queryset(self):
+        return self.model.objects.all()
+
     def index(self, items=None):
         solr = get_solr_backend()
         meta = self.model._meta
+
         if items is None:
-            items = self.model.objects.all()
+            items = self.get_queryset()
         try:
             num_items = items.count()
         except Exception, e:

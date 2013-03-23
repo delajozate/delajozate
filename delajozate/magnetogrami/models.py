@@ -174,11 +174,12 @@ class ZapisSearch(SearchModel):
 	hilight = 'odstavki'
 	
 	def index_zasedanje(self, zasedanje):
-		self.index(items=zasedanje.zapis_set.all())
+		self.index(items=Zapis.objects.filter(zasedanje__pk=zasedanje.pk).select_related('zasedanje', 'zasedanje__seja', 'govorec_oseba'))
 	
+
 	def full_index(self):
 		from multiprocessing import Process
-		for z in Zasedanje.objects.all().order_by('datum')[:10]:
+		for z in Zasedanje.objects.all().order_by('datum'):
 			print z.datum
 			p = Process(target=self.index_zasedanje, args=(z,))
 			p.start()
