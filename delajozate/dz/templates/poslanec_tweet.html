@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% load dz_extras %}
 
+{% block title %}{{ oseba.ime }} {{ oseba.priimek }}, {{ oseba.stranka.ime }} ({{ oseba.stranka.okrajsava }}) - Delajo zate!{% endblock %}
+
 {% block content %}
 <div class="content">
 	<div>
 		<h1>{{ oseba.ime }} {{ oseba.priimek }}</h1>
 		<p>
-			<a href="{% url poslanec oseba.slug %}">Nazaj na domačo stran poslanca.</a>
+			<a href="{% url poslanec oseba.slug %}">Nazaj na domačo stran osebe.</a>
 		</p>
 	</div>
 	<div class="tweets">

@@ -15,12 +15,19 @@ FUNKCIJE = (
 	('podpredsednik', 'Podpredsednik'),
 )
 
+TIP_STRANKA = 1
 ORG_CHOICES = (
-	(1, 'stranka'),
+	(TIP_STRANKA, 'stranka'),
 	(2, 'skupina'),
 	(3, 'drzavnizbor'),
 	(4, 'delovnotelo'),
 )
+
+def datum_filter(qs, low, high):
+	return qs.filter(
+		Q(od__lte=low, do__gt=low)   | # crosses lower boundary
+		Q(od__lte=high, do__gt=high) | # crosses upper boundary
+		Q(od__lte=low, do__gt=high))   # or is in between
 
 class Organizacija(models.Model):
 	tip = models.IntegerField(choices=ORG_CHOICES)
@@ -82,16 +89,23 @@ class Oseba(models.Model):
 		if day:
 			# take from dz_extras.py - datum_filter, unify me
 			low = high = day
-			clanstvo = list(self.pozicija_set.filter(
-				Q(od__lte=low, do__gt=low) |   # crosses lower boundary
-				Q(od__lte=high, do__gt=high) | # crosses upper boundary
-				Q(od__lte=low, do__gt=high)).filter( organizacija__stranka__gt=0).select_related('organizacija', 'organizacija__stranka'))  # or is in between
+			qs = self.pozicija_set.filter( organizacija__stranka__gt=0).select_related('organizacija', 'organizacija__stranka')
+			clanstvo = list(datum_filter(qs, low, high))
 			return clanstvo
 
 		return self.pozicija_set.filter(organizacija__stranka__gt=0).order_by('-do').select_related('organizacija', 'organizacija__stranka')
 
 	def funkcije(self):
 		return self.pozicija_set.exclude(organizacija=None).order_by('-do').select_related('organizacija', 'organizacija__drzavnizbor')
+	
+	def stranke(self):
+		return self.funkcije().filter(organizacija__tip=TIP_STRANKA)
+	
+	def stranka(self):
+		today = datetime.date.today()
+		stranka = list(datum_filter(self.stranke(), today, today))
+		if stranka:
+			return stranka[0].organizacija.value()
 
 	def delovna_telesa(self):
 		return self.pozicija_set.filter(organizacija__delovnotelo__gt=0).order_by('od').select_related('organizacija', 'organizacija__delovnotelo')

@@ -1,5 +1,7 @@
 {% extends "base.html" %}{% load dz_extras %}
 
+{% block title %}Glasovanje, {{ objects.0.glasovanje }} - Delajo zate!{% endblock %}
+
 {% block content %}
 <div class="content">
 	{% with glasovanje=objects.0.glasovanje %}

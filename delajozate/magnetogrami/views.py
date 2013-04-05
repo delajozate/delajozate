@@ -1,3 +1,4 @@
+# coding: utf-8
 import re
 
 from django.views.decorators.cache import cache_page
@@ -24,7 +25,12 @@ def seja_list(request, mdt=None, mandat=None):
 
     if mdt is not None:
         zasedanja = zasedanja.filter(seja__delovno_telo=mdt)
-        if mdt != 'dz': # XXX FIXME add DelovnoTelo?
+        if mdt == 'dz':
+            # mock delovno telo
+            delovno_telo = {
+                'ime': u'Državni zbor',
+            }
+        else:
             delovno_telo = DelovnoTelo.objects.get(dz_id=mdt, mandat__st=mandat)
 
     if mandat is not None:

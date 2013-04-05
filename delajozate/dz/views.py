@@ -3,7 +3,7 @@ import datetime
 import json
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic.list import ListView
 
 import dz.news
@@ -26,13 +26,15 @@ class PoslanciList(ListView):
 	paginate_by = 12
 
 	def get_queryset(self, *args, **kwargs):
+		self.mandat_obj = None
 		if self.mandat == 'danes':
 			return Pozicija.objects.filter(
 				tip='poslanec', do=END_OF_TIME).order_by('oseba')
 		else:
 			mandat = self.mandat[:-len('-mandat')]
+			self.mandat_obj = get_object_or_404(Mandat, st=mandat)
 			return Pozicija.objects.filter(
-				tip='poslanec', organizacija__drzavnizbor__mandat=mandat).order_by(
+				tip='poslanec', organizacija__drzavnizbor__mandat=self.mandat_obj).order_by(
 					'od', 'oseba')
 
 	def get_context_data(self, **kwargs):
@@ -44,7 +46,11 @@ class PoslanciList(ListView):
 			if mandat['do'] > today:
 				mandat['do'] = None
 		context['mandati'] = mandati
-		context['mandat'] = self.mandat if self.mandat != "danes" else 'today'
+		if self.mandat == "danes":
+			context['mandat'] = 'today'
+		else:
+			context['mandat'] = self.mandat
+		context['mandat_obj'] = self.mandat_obj
 		context['poslanci'] = context['object_list']
 		return context
 

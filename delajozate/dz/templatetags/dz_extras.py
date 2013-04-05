@@ -6,6 +6,7 @@ from django.template.defaultfilters import stringfilter
 from django.db.models import Q
 
 from delajozate.dz.models import Mandat
+from delajozate.dz.models import datum_filter as datum_filter_func
 
 register = template.Library()
 
@@ -52,10 +53,6 @@ def datum_filter(value, arg):
 	#print 'A', value, low, high
 	#print 'B', value.filter(od__gte=low, do__lte=high)
 	#print 'C', value.filter(Q(od__lte=low, do__gt=low) | Q(od__lte=high, do__gt=high) | Q(od__lte=low, do__gt=high))
-	clanstvo = list(value.filter(
-		Q(od__lte=low, do__gt=low) |   # crosses lower boundary
-		Q(od__lte=high, do__gt=high) | # crosses upper boundary
-		Q(od__lte=low, do__gt=high)))  # or is in between
-	
+	clanstvo = list(datum_filter_func(value, low, high))
 	return clanstvo
 	

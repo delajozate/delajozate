@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load dz_extras %}
 
+{% block title %}{{ oseba.ime }} {{ oseba.priimek }}, {{ oseba.stranka.ime }} ({{ oseba.stranka.okrajsava }}) - Delajo zate!{% endblock %}
+
 {% block content %}
 <div class="content">
 	<div class="poslanci vcard">{% with oseba.clanstvo|datum_filter:"today" as clanstvo %}
@@ -16,12 +18,19 @@
 					<span class="family-name">{{ oseba.priimek }}</span>
 				</span>
 			</h1>
+			<b>
+				<span class="org organization-name">
+					{{ oseba.stranka.ime }} ({{ oseba.stranka.okrajsava }})
+				</span>
+			</b>
+			<br />
+			<br />
 			<ul>
 			{% for f in oseba.funkcije|datum_filter:"today" %}
+				
 				<li class="role">{{ f.get_tip_display }} {{ f.organizacija.value.display }} ({{ f.trajanje }})</li>
 			{% endfor %}
 			</ul>
-			<span class="org">{{ clanstvo.0.stranka|default_if_none:"Nepovezan poslanec" }}</span>
 			<p>
 				Twitter:
 				{% if oseba.twitter %}

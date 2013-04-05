@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load dz_extras %}
 
+{% block title %}Poslanci{% if mandat_obj %} v {{ mandat_obj.st }}. mandatu {% else %} danes {% endif %}- Delajo zate!{% endblock %}
+
+
 {% block content %}
 <nav class="full">
 	<span>Mandati DZ:</span>
