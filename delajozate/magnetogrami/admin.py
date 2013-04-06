@@ -5,6 +5,7 @@ from delajozate.magnetogrami.models import GovorecMap, Video, Zasedanje
 
 class GovorecMapAdmin(admin.ModelAdmin):
 	list_display = ('govorec', 'oseba')
+	search_fields = ('govorec',)
 
 class VideoAdmin(admin.ModelAdmin):
 	list_display = ('title', 'zasedanje', 'datum', 'ava_id', 'url')

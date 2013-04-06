@@ -37,7 +37,7 @@ class Organizacija(models.Model):
 
 	def __unicode__(self):
 		t = self.type()
-		return u"[%s] %s" % (t, getattr(self, t)) if t != "" else None
+		return u"[%s] %s" % (t, getattr(self, t)) if t not in ("", 0) else ""
 
 	def value(self):
 		return getattr(self, self.type())
@@ -249,6 +249,9 @@ class DrzavniZbor(models.Model):
 
 	def display(self):
 		return u"%d. mandat Državnega zbora" % self.mandat.st
+	
+	def __unicode__(self):
+		return self.display()
 
 
 class DelovnoTelo(models.Model):
