@@ -393,7 +393,10 @@ class GovorecMap(models.Model):
 			transaction.set_dirty()
 			
 			cur = connection.cursor()
+			# zapisi
 			cur.execute('''UPDATE %s SET govorec_oseba_id = %%s WHERE govorec = %%s''' % Zapis._meta.db_table, [self.oseba.id, self.govorec])
+			# glasovanja
+			cur.execute('''UPDATE %s SET oseba_id = %%s WHERE poslanec = %%s''' % Glas._meta.db_table, [self.oseba.id, self.govorec])
 		
 
 def _parse_time(time_string):
