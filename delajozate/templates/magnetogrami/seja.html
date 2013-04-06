@@ -65,7 +65,11 @@ addLoadEvent(updateHighlight);
             <a rel="author" href="/osebe/{{ zapis.govorec_oseba.slug }}/">{{ zapis.govorec_oseba.ime}} {{ zapis.govorec_oseba.priimek}}</a>
             <br />
             {% with zasedanje.stranke|get_item:zapis.govorec_oseba.pk as clanstvo %}
-            <em>{{ clanstvo.stranka|default_if_none:"?" }}</em>
+            <em>
+            {% if not clanstvo %}?{% else %}
+            {{ clanstvo.organizacija.stranka.ime }} ({{ clanstvo.organizacija.stranka.okrajsava }})
+            {% endif %}
+            </em>
             {% endwith %}
             <br />
             {% if zapis.govorec_oseba.slika %}<img class="speaker-img" src="{{ zapis.govorec_oseba.slika }}" />{% endif %}
