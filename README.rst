@@ -24,6 +24,11 @@ Quick install guide::
   # setup settings, database
   cp delajozate/localsettings.py.example delajozate/localsettings.py
   
+  # create database
+  # NOTE: for collation to work, you need to
+  # have appropriate locales generated locally.
+  createdb -E utf-8 -O `whoami` --lc-collate=sl_SI.UTF-8 --lc-ctype=sl_SI.UTF-8 -T template0 delajozate
+  
   # fill database
   bin/django syncdb
   bin/django migrate
