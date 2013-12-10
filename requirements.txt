@@ -1,11 +1,12 @@
-django==1.3.1
+Django==1.4.10
 python-memcached
 South==0.7.3
 httplib2
 python-dateutil==1.5
 django-debug-toolbar
 python-twitter==0.8.2
-raven==2.0.6
+raven==3.5.2
 requests
 icalendar==3.3
 pysolarized
+psycopg2
