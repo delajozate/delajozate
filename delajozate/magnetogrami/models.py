@@ -176,6 +176,14 @@ class ZapisSearch(SearchModel):
 	def index_zasedanje(self, zasedanje):
 		self.index(items=Zapis.objects.filter(zasedanje__pk=zasedanje.pk).select_related('zasedanje', 'zasedanje__seja', 'govorec_oseba'))
 	
+	def get_queryset(self):
+		from django.conf import settings
+		
+		resp = requests.get(settings.SOLR_URL + 'select?q=*%3A*&sort=datum_timestamp+desc&wt=json')
+		
+		dt = datetime.datetime.strptime(resp.json()['response']['docs'][0]['datum_timestamp'], '%Y-%m-%dT%H:%M:%SZ')
+		dt = (dt - datetime.timedelta(7))
+		return Zapis.objects.filter(zasedanje__datum__gte=dt).order_by('zasedanje__datum')
 
 	def full_index(self):
 		from multiprocessing import Process
