@@ -31,7 +31,7 @@ def index(request):
 		# Do search
 		solr = pysolarized.Solr(settings.SOLR_URL)
 		
-		results = solr.query(query,
+		results = solr.query(query.encode('raw_unicode_escape'),
 		                     sort=["score desc, datum_timestamp desc"],
 		                     filters=filterquery,
 		                     start=(page - 1) * RESULTS_PAGE_SIZE,
