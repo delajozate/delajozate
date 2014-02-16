@@ -46,7 +46,7 @@ class Organizacija(models.Model):
 class Oseba(models.Model):
 	ime = models.CharField(max_length=32)
 	priimek = models.CharField(max_length=64)
-	slug = models.SlugField(max_length=96)
+	slug = models.SlugField(max_length=96, unique=True)
 	email = models.EmailField(max_length=64, blank=True)
 	rojstni_dan = models.DateField(blank=True, null=True)
 	dan_smrti = models.DateField(blank=True, null=True)
