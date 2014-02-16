@@ -45,8 +45,13 @@ def seja_list(request, mdt=None, mandat=None):
 
 def _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja=None):
     #assert mdt == 'dz' # for now
-    seja = get_object_or_404(Seja, mandat=mandat, slug=slug, delovno_telo=mdt)
-
+    seje = Seja.objects.filter(mandat=mandat, slug=slug, delovno_telo=mdt).order_by('-id')
+    
+    try:
+        seja = seje[0]
+    except IndexError:
+        raise Http404
+    
     if datum_zasedanja is None:
         try:
             zasedanje = Zasedanje.objects.filter(
