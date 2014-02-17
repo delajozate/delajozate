@@ -18,7 +18,7 @@ from django.core.urlresolvers import reverse
 from delajozate.dz.models import Oseba, Mandat, DelovnoTelo, Stranka, Pozicija
 from delajozate.search.simple import SearchModel
 
-logger = logging.getLogger('magnetogrami.models')
+datalogger = logging.getLogger('data')
 
 GLASOVI = (
 	('0', 'Proti'),
@@ -286,9 +286,11 @@ class Glasovanje(models.Model):
 					okrajsava = stranka.okrajsava
 				except AttributeError:
 					stranka = okrajsava = 'Neznana'
+					datalogger.info('Manjka povezava med poslancem in osebo: "%s". Dodaj preslikavo med govorcem in osebo.' % (glas.poslanec,), exc_info=False)
+				
 				except KeyError:
 					stranka = okrajsava = 'Neznana'
-					logger.error('Manjka clanstvo stranke za osebo %s (id=%s) dne %s' % (glas.oseba, glas.oseba.id, self.datum), exc_info=False)
+					datalogger.info('Manjka clanstvo stranke za osebo %s (oseba_id=%s)' % (glas.oseba, glas.oseba.id), exc_info=False)
 				
 				if not data.get(okrajsava, None):
 					data[okrajsava] = {
