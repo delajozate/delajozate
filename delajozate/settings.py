@@ -140,7 +140,7 @@ INSTALLED_APPS = (
 	'django.contrib.staticfiles',
 	# Uncomment the next line to enable the admin:
 	'django.contrib.admin',
-	#'raven.contrib.django',
+	'raven.contrib.django.raven_compat',
 	# Uncomment the next line to enable admin documentation:
 #	'django.contrib.admindocs',
 	'south',
