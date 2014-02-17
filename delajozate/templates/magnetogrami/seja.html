@@ -40,7 +40,11 @@ addLoadEvent(updateHighlight);
         <li><a href="{% url delajozate.magnetogrami.views.seja seja.mandat seja.delovno_telo seja.slug z.datum %}">{{ z.datum }}</a></li>
         <li>
             <ul>
+                {% if z.url %}
                 <li><a href="{{ z.url }}">izvirno besedilo na strani Državnega zbora</a></li>
+                {% else %}
+                <li>brez povezave na izvorno besedilo na strani Državnega zobra</li>
+                {% endif %}
                 {% for video in z.video_set.all %}
                 <li><a href="{{ video.url }}">posnetek v arhivu RTV Slovenija</a></li>
                 {% endfor %}
