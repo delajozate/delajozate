@@ -158,9 +158,22 @@ class Zapis(models.Model):
 	def govorec_slug():
 		def fget(self):
 			if self.govorec_oseba:
-				return self.govorec_oseba.slug
+				slug = self.govorec_oseba.slug
+				if slug is None:
+					return u''
+				return unicode(slug)
 		return (fget,)
 	govorec_slug = property(*govorec_slug())
+	
+	def govorec_text():
+		def fget(self):
+			if self.govorec_oseba is not None:
+				text = unicode(self.govorec_oseba)
+			else:
+				text = self.govorec
+			return text
+		return (fget,)
+	govorec_text = property(*govorec_text())
 	
 	def ime_seje():
 		def fget(self):
@@ -170,7 +183,7 @@ class Zapis(models.Model):
 
 class ZapisSearch(SearchModel):
 	model = Zapis
-	index_fields = ['seq', 'timestamp', 'govorec_oseba', 'govorec_slug', 'permalink', 'ime_seje']
+	index_fields = ['seq', 'timestamp', 'govorec_text', 'govorec_slug', 'permalink', 'ime_seje']
 	hilight = 'odstavki'
 	
 	def index_zasedanje(self, zasedanje):
