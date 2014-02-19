@@ -75,6 +75,8 @@ def _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja=None):
 def seja(request, mdt, mandat, slug, datum_zasedanja=None):
     if slug.startswith('0'):
         newslug = re.sub('^0*', '', slug)
+        if newslug == '':
+            raise Http404
         return HttpResponseRedirect(reverse('delajozate.magnetogrami.views.seja', args=(mandat, mdt, newslug, datum_zasedanja)))
 
     seja, zasedanje, zapisi = _get_seja_zapisi(request, mdt, mandat, slug, datum_zasedanja)
