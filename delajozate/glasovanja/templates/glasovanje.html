@@ -11,7 +11,11 @@
 	<p>
 		Glasovanje je potekalo v {{ glasovanje.datum|date:"l, j. E Y" }}{% if glasovanje.ura %} ob {{ glasovanje.ura }}{% endif %}.
 		<br />
+		Seja: <a href="{{ zasedanja.0.get_absolute_url }}">{{ seja }}</a>
+		<br />
 		Mandat Državnega zbora: {{ glasovanje.seja.mandat }}
+		
+
 	</p>
 
 	<h2>Povzetek glasovanja</h2>
@@ -40,7 +44,7 @@
 	</table>
 	{% endwith %}
 
-	<h2>Podrobnosti</h2>
+	<h2>Glasovi</h2>
 
 	<table class="vote-details">
 		<thead>

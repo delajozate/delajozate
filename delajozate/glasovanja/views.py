@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.http import Http404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from magnetogrami.models import Glasovanje, Glas
+from magnetogrami.models import Glasovanje, Glas, Seja, Zasedanje
 
 def index(request):
     glasovanja_list = Glasovanje.objects.all().select_related('seja')
@@ -38,8 +38,14 @@ def glasovanje(request, datum, ura=None, pk=None):
     else:
         raise Http404
     
+    glasovi = glasovi.select_related('glasovanje', 'glasovanje__seja')
+    seja = glasovi[0].glasovanje.seja
+    zasedanja = Zasedanje.objects.filter(seja=seja, datum=datum).order_by('-id')
+    
     glasovi = glasovi.select_related('oseba')
     context = {
         'objects': glasovi,
+        'seja': seja,
+        'zasedanja': zasedanja,
     }
     return render(request, 'glasovanje.html', context)
