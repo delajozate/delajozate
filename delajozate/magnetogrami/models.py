@@ -355,6 +355,8 @@ class Glasovanje(models.Model):
 			
 			data_sorted['Skupaj'] = {
 						'stranka': None,
+						'za': total_for,
+						'proti': total_against,
 						'majority': majority_voted,
 						'minority': minority_voted,
 						'abstained': total_abstained,

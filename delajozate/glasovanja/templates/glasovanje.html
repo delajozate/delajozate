@@ -28,6 +28,7 @@
 			<th>Vzdržanih</th>
 			<th>Odsotnih</th>
 			<th>Prisotnost</th>
+			<th colspan="2">Graf</th>
 		</tr>
 		{% for row in data.votes.items %}
 		<tr{% if forloop.last %} class="table-total"{% endif %}>
@@ -38,6 +39,12 @@
 				<td>{{ cell.abstained }}</td>
 				<td>{{ cell.absent }}</td>
 				<td>{{ cell.percent|stringformat:".1f" }} %</td>
+				<td class="vote-graph vote-graph-border">
+					<div class="voted-no" style="width:{% widthratio cell.proti 1 3 %}px;"></div>
+				</td>
+				<td class="vote-graph">
+					<div class="voted-yes" style="width:{% widthratio cell.za 1 3 %}px;"></div>
+				</td>
 			{% endwith %}
 		{% endfor %}
 	</tr>

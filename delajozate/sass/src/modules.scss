@@ -114,18 +114,45 @@ footer a {color: #fff;}
 .vote-summary,
 .vote-details {
     width: 100%;
-    max-width: 40em;
     border-collapse: collapse;
     margin: 1em 0 2em;
 }
 
-.vote-summary {text-align: center;}
+.vote-summary td, .vote-summary th {
+    text-align: center;
+}
+.vote-details {
+    max-width: 40em;
+}
 
 .vote-summary th,
 .vote-summary td,
 .vote-details th,
 .vote-details td {
     padding-left:.5em;
+}
+
+td.vote-graph {
+    margin:0;
+    padding: 8px 0px;
+    padding-left: 0px;
+}
+
+.voted-no, .voted-yes {
+    height: 1em;
+    display: block;
+}
+.voted-no {
+    float:right;
+    background-color: red;
+}
+.voted-yes {
+    float:left;
+    background-color: green;
+}
+
+td.vote-graph-border {
+    border-right: 1px solid #ccc;
 }
 
 @media only screen and (max-width: 520px) {
@@ -152,7 +179,6 @@ footer a {color: #fff;}
         position: relative;
         padding-left: 7em;
         border: none;
-        text-align: left;
     }
 
     /* Now like a table header; top/left values mimic padding */

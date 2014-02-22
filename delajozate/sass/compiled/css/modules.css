@@ -1,84 +1,210 @@
+@charset "UTF-8";
+.site {
+  background: #fcfcfc;
+  color: #333;
+  -webkit-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1); }
+
+header {
+  background: #447D93;
+  overflow: hidden; }
+
+header > h1 {
+  float: left;
+  width: 150px;
+  height: 120px;
+  margin: -40px 20px 0;
+  background: url(../img/delajozate.png) no-repeat center bottom #3a6e85;
+  color: white; }
+
+header > h1 > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit; }
+
+header > h1 span {
+  visibility: hidden; }
+
+header nav {
+  float: left;
+  background: transparent;
+  color: #fff; }
+
+nav {
+  /* 30px; 10px */
+  background: #222;
+  color: #fff;
+  line-height: 1.875em;
+  padding: .625em;
+  overflow: hidden; }
+
+nav > span {
+  float: left; }
+
+nav a {
+  color: #fff;
+  text-decoration: none; }
+
+nav > ol {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+nav > ol > li {
+  float: left;
+  margin: 0;
+  padding: 0; }
+
+nav > ol > li > a {
+  /* 10px */
+  display: block;
+  padding: 0 .625em; }
+
+nav > ol > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.2); }
+
+@media screen and (max-width: 360px) {
+  nav > ol > li {
+    float: none; } }
+section.body > nav {
+  background: #68A3B5; }
+
+section.body > .content:after {
+  display: block;
+  clear: both;
+  visibility: hidden;
+  content: "."; }
+
+.content ol {
+  list-style: decimal;
+  margin: 0 0 1.25em; }
+
+.content ul {
+  margin: 0 0 1.25em; }
+
+footer {
+  background: #000;
+  color: #fff; }
+
+footer nav {
+  background: #999;
+  padding: 0; }
+
+footer nav a {
+  /* 20px */
+  line-height: 1.25em; }
+
+footer p {
+  /* 10px */
+  padding: .625em;
+  margin: 0; }
+
+footer a {
+  color: #fff; }
+
 /*
-Syntax error: Undefined mixin 'box-shadow'.
-        on line 4 of /Users/markos/work/dz/delajozate/delajozate/sass/src/modules.scss, in `box-shadow'
-        from line 4 of /Users/markos/work/dz/delajozate/delajozate/sass/src/modules.scss
+ * Voting page
+ */
+.red {
+  background-color: #fdd; }
 
-1: /Users/markos/work/dz/delajozate/delajozate/sass/src/modules.scss
+.table-total {
+  font-weight: bold; }
 
-Backtrace:
-/Users/markos/work/dz/delajozate/delajozate/sass/src/modules.scss:4:in `box-shadow'
-/Users/markos/work/dz/delajozate/delajozate/sass/src/modules.scss:4
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:251:in `visit_mixin'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:53:in `map'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:107:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:119:in `with_environment'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:106:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:318:in `visit_rule'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:53:in `map'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:107:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:119:in `with_environment'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:106:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:126:in `visit_root'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:7:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:7:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/root_node.rb:20:in `render'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/engine.rb:315:in `_render'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/engine.rb:262:in `render'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `compile'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `compile'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `run'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `run'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:147:in `recompile'
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `to_proc'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/path.rb:73:in `call'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/path.rb:73:in `run_callback'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/path.rb:55:in `callback_action'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/path.rb:35:in `update'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/state/directory.rb:39:in `modified'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/state/directory.rb:37:in `each'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/state/directory.rb:37:in `modified'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/state/directory.rb:18:in `refresh'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `run'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `each'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `run'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:15:in `loop'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:15:in `run'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/monitor.rb:26:in `run'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm.rb:70:in `monitor'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:87:in `perform'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/bin/compass:30
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/bin/compass:44:in `call'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/bin/compass:44
-/usr/bin/compass:19:in `load'
-/usr/bin/compass:19
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined mixin 'box-shadow'.\A         on line 4 of /Users/markos/work/dz/delajozate/delajozate/sass/src/modules.scss, in `box-shadow'\A         from line 4 of /Users/markos/work/dz/delajozate/delajozate/sass/src/modules.scss\A \A 1: /Users/markos/work/dz/delajozate/delajozate/sass/src/modules.scss"; }
+.vote-summary,
+.vote-details {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0 2em; }
+
+.vote-summary td, .vote-summary th {
+  text-align: center; }
+
+.vote-details {
+  max-width: 40em; }
+
+.vote-summary th,
+.vote-summary td,
+.vote-details th,
+.vote-details td {
+  padding-left: .5em; }
+
+td.vote-graph {
+  margin: 0;
+  padding: 8px 0px;
+  padding-left: 0px; }
+
+.voted-no, .voted-yes {
+  height: 1em;
+  display: block; }
+
+.voted-no {
+  float: right;
+  background-color: red; }
+
+.voted-yes {
+  float: left;
+  background-color: green; }
+
+td.vote-graph-border {
+  border-right: 1px solid #ccc; }
+
+@media only screen and (max-width: 520px) {
+  /* We only need to handle vote-summary. vote-details always looks ok */
+  .vote-summary,
+  .vote-summary > thead,
+  .vote-summary > tbody,
+  .vote-summary th,
+  .vote-summary td,
+  .vote-summary tr {
+    display: block; }
+
+  .vote-summary > thead > tr {
+    position: absolute;
+    top: -4999px;
+    left: -4999px; }
+
+  .vote-summary tr {
+    border-bottom: 1px solid #ccc; }
+
+  /* Behave like a row */
+  .vote-summary td {
+    position: relative;
+    padding-left: 7em;
+    border: none; }
+
+  /* Now like a table header; top/left values mimic padding */
+  .vote-summary td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 5em;
+    padding-right: 10px;
+    white-space: nowrap; }
+
+  /* Label the data */
+  .vote-summary td:nth-of-type(1):before {
+    content: "Stranka"; }
+
+  .vote-summary td:nth-of-type(2):before {
+    content: "Večina"; }
+
+  .vote-summary td:nth-of-type(3):before {
+    content: "Manjšina"; }
+
+  .vote-summary td:nth-of-type(4):before {
+    content: "Vzdržanih"; }
+
+  .vote-summary td:nth-of-type(5):before {
+    content: "Odsotnih"; }
+
+  .vote-summary td:nth-of-type(6):before {
+    content: "Prisotnost"; } }
+/* TODO: Everything bellow is EXTRA suspicious */
+/* poslanci */
+.poslanci h1 {
+  margin-top: 0; }
