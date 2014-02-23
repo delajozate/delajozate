@@ -26,7 +26,7 @@ class ImeStrankeAdmin(admin.ModelAdmin):
 	list_display = ('ime', 'od', 'do')
 
 class PozicijaAdmin(admin.ModelAdmin):
-	list_display = ('oseba', 'organizacija')
+	list_display = ('oseba', 'tip', 'organizacija')
 	search_fields = ('oseba__ime', 'oseba__priimek',)
 
 admin.site.register(Oseba, OsebaAdmin)
