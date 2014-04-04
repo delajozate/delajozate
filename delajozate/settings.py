@@ -211,6 +211,9 @@ FIXTURE_DIRS = (
 SOLR_URL = "http://localhost:8984/solr/dz"
 NEWSBUDDY_URL = None
 
+ALLOWED_HOSTS = ['www.delajozate.si']
+USE_X_FORWARDED_HOST = True
+
 try:
     from localsettings import *
 except:
