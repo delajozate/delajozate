@@ -14,11 +14,11 @@
 	</hgroup>
 	<ul>
 		<li>
-			<a href="{% url delajozate.magnetogrami.views.seja_list dt.mandat 'dz' %}">Državni zbor</a>
+			<a href="{% url "delajozate.magnetogrami.views.seja_list" dt.mandat 'dz' %}">Državni zbor</a>
 		</li>
 	{% endifchanged %}
 		<li>{% spaceless %}
-			{% if dt.dz_id %}<a href="{% url delajozate.magnetogrami.views.seja_list dt.mandat dt.dz_id %}">{% endif %}
+			{% if dt.dz_id %}<a href="{% url "delajozate.magnetogrami.views.seja_list" dt.mandat dt.dz_id %}">{% endif %}
 			{{ dt.ime }}{% if dt.dz_id %}</a>{% endif %}
 		{% endspaceless %}</li>{% if forloop.last %}
 	</ul>

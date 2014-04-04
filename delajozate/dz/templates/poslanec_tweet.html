@@ -8,7 +8,7 @@
 	<div>
 		<h1>{{ oseba.ime }} {{ oseba.priimek }}</h1>
 		<p>
-			<a href="{% url poslanec oseba.slug %}">Nazaj na domačo stran osebe.</a>
+			<a href="{% url "poslanec" oseba.slug %}">Nazaj na domačo stran osebe.</a>
 		</p>
 	</div>
 	<div class="tweets">

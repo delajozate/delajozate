@@ -5,6 +5,7 @@ from dz.views import PoslanciList, GlasovanjaList, TweetList
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
+from django.views.generic import RedirectView
 
 urlpatterns = patterns('dz.data_check',
     url(r'^datacheck/$', 'data_check', name='data_check'),
@@ -24,6 +25,6 @@ urlpatterns += patterns('dz.views',
     url(r'^$', 'home', name='home'),
 )
 
-urlpatterns += patterns('django.views.generic',
-    url(r'^poslanci/$', 'simple.redirect_to', {'url': '/poslanci/danes/'}),
+urlpatterns += patterns('',
+    url(r'^poslanci/$', RedirectView.as_view(url='/poslanci/danes/')),
 )

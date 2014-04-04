@@ -37,7 +37,7 @@ addLoadEvent(updateHighlight);
     <p><strong>Zasedanja:</strong></p>
     <ul>
     {% for z in seja.magnetogrami %}
-        <li><a href="{% url delajozate.magnetogrami.views.seja seja.mandat seja.delovno_telo seja.slug z.datum %}">{{ z.datum }}</a></li>
+        <li><a href="{% url "delajozate.magnetogrami.views.seja" seja.mandat seja.delovno_telo seja.slug z.datum %}">{{ z.datum }}</a></li>
         <li>
             <ul>
                 {% if z.url %}
@@ -87,7 +87,7 @@ addLoadEvent(updateHighlight);
 
         <div id="p{{ zapis.seq }}">
             <div class="quote-link" >
-                <a href="{% url magnetogrami_citat mdt=seja.delovno_telo mandat=seja.mandat slug=seja.slug datum_zasedanja=zapis.zasedanje.datum odstavek=zapis.seq %}">#</a>
+                <a href="{% url "magnetogrami_citat" mdt=seja.delovno_telo mandat=seja.mandat slug=seja.slug datum_zasedanja=zapis.zasedanje.datum odstavek=zapis.seq %}">#</a>
             </div>
             {{ zapis.odstavki|linebreaksbr }}
         </div>
