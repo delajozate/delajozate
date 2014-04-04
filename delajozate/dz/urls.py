@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, include, url
 
 from dz.models import Oseba
 from dz.views import PoslanciList, GlasovanjaList, TweetList
