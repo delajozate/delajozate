@@ -154,7 +154,7 @@ def pobarvaj_glasove(glasovi):
 def poslanec(request, slug):
     vote_limit = 15
 
-    oseba = Oseba.objects.get(slug=slug)
+    oseba = get_object_or_404(Oseba, slug=slug)
     glasovi = Glas.objects.filter(oseba=oseba).select_related(
         'glasovanje', 'glasovanje__seja').order_by(
             '-glasovanje__datum')[:vote_limit]
