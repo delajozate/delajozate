@@ -291,6 +291,7 @@ class Glasovanje(models.Model):
             def getextra(glas):
                 g = glas.glasovanje
                 extra = {
+                    'glasovanje_pk': g.pk,
                     'glasovanje_seja_id': g.seja.pk,
                     'glasovanje_datum': g.datum,
                     'glasovanje_ura': g.ura,
@@ -316,11 +317,13 @@ class Glasovanje(models.Model):
                     okrajsava = stranka.okrajsava
                 except AttributeError:
                     stranka = okrajsava = 'Neznana'
-                    datalogger.info('Manjka povezava med poslancem in osebo: "%s". Dodaj preslikavo med govorcem in osebo.' % (glas.poslanec,), exc_info=False, extra=getextra(glas))
+                    msg = 'Manjka povezava med poslancem in osebo: "%s". Dodaj preslikavo med govorcem in osebo.' % (glas.poslanec,)
+                    datalogger.info(msg, exc_info=False, extra={'data': getextra(glas), 'stack': True})
 
                 except KeyError:
                     stranka = okrajsava = 'Neznana'
-                    datalogger.info('Manjka clanstvo stranke za osebo %s (oseba_id=%s)' % (glas.oseba, glas.oseba.id), exc_info=False, extra=getextra(glas))
+                    msg = 'Manjka clanstvo stranke za osebo %s (oseba_id=%s)' % (glas.oseba, glas.oseba.id)
+                    datalogger.info(msg, exc_info=False, extra={'data': getextra(glas), 'stack': True})
 
                 if not data.get(okrajsava, None):
                     data[okrajsava] = {
