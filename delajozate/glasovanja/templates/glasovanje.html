@@ -63,7 +63,7 @@
 		</thead>
 		<tbody>
 		{% for glas in objects %}
-			<tr{% if not glas.kvorum and glas.glasoval != "Ni"%} class="red"{% endif %}>
+			<tr id="{{ glas.oseba.slug }}" {% if not glas.kvorum and glas.glasoval != "Ni"%} class="red"{% endif %}>
 			{% if glas.oseba %}
 				<td class="" data="{{ clanstvo.0.stranka.okrajsava }}">	<a href="{% url "poslanec" glas.oseba.slug %}">{{ glas.oseba }}</a>
 				{% with clanstvo=glasovanje.stranke|get_item:glas.oseba.pk %}
